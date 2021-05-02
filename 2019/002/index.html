@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="theme-color" content="#ffffff">
+  
+  <meta name="baidu-site-verification" content="e0YUuV3foo" />
+  <meta content="Linux, fdisk, 磁盘" name="keywords">
+  <meta content="麻吉麻尼酱の个人博客 - Fdisk的使用心得" property="og:description">
+  
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/gh/mrbruce516/LeaveIt/assets/js/APlayer.min.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+
+  
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="麻吉麻尼酱">
+  <meta name="description" content="麻吉麻尼酱の个人博客">
+  
+  
+  <link rel="prev" href="https://mrbruce516.github.io/2019/001/" />
+  <link rel="next" href="https://mrbruce516.github.io/2019/003/" />
+  <link rel="canonical" href="https://mrbruce516.github.io/2019/002/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Fdisk的使用心得 | 麻吉麻之家
+       
+  </title>
+  <meta name="title" content="Fdisk的使用心得 | 麻吉麻之家">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/mrbruce516.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "Fdisk的使用心得",
+    "headline" : "Fdisk的使用心得",
+    "description" : "Fdisk的使用心得",
+    "inLanguage" : "zh-CN",
+    "author" : "麻吉麻尼酱",
+    "creator" : "麻吉麻尼酱",
+    "publisher": "麻吉麻尼酱",
+    "accountablePerson" : "麻吉麻尼酱",
+    "copyrightHolder" : "麻吉麻尼酱",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-07-26 16:36:45 \u002b0800 CST",
+    "dateModified" : "2019-07-26 16:36:45 \u002b0800 CST",
+    "url" : "https:\/\/mrbruce516.github.io\/2019\/002\/",
+    "wordCount" : "606",
+    "keywords" : [ "Linux","存储", "麻吉麻之家"]
+}
+</script>    
+
+  <link href="//use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    
+        <div class="top-scroll-bar"></div>
+    
+    <div class="container">
+        
+            <div class="navbar-header header-back2home-logo">
+                <span class="logo_mark" >>$</span>
+                <a href="https://mrbruce516.github.io">
+                    <span class="logo_text" >cd /home/</span>
+                    <span class="logo_cursor" ></span>
+                </a>
+            </div>
+        
+        <div class="navbar-right">
+                
+                <span class="menu">
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                </span>
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     
+         <div class="top-scroll-bar"></div>
+     
+     <div class="container">
+        <div class="navbar-header">
+            <div class="header-logo">
+                
+                    <span class="logo_mark">>$</span>
+                    <a href="https://mrbruce516.github.io">
+                        <span class="logo_text"> cd /home/ </span>
+                        <span class="logo_cursor"></span>
+                </a>
+                
+            </div>
+            <div class="navbar-right">
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a>
+                <div class="menu-toggle">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Fdisk的使用心得</h1>
+        <div class="post-meta">
+            <i class="far fa-folder-open"></i>
+            <span class="post-category">
+                <a href="https://mrbruce516.github.io/categories/%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/"> 从入门到入坟 </a>
+                
+            </span>
+            <span class="post-time">
+                <i class="far fa-calendar-alt"></i> <time
+                    datetime=2019-07-26
+                    itemprop="datePublished">2019-07-26</time>
+            </span>
+            <i class="far fa-file-word"></i> <span class="post-word-count"> 606 字</span>
+            <i class="far fa-clock"></i> <span class="more-meta"> 2 分钟</span>
+        </div>
+    </header>
+        
+            <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title"></h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#那么按下n来创建一个新的磁盘分区">那么<code>按下n</code>来创建一个新的磁盘分区</a></li>
+        <li><a href="#接下来-通知系统磁盘分区变化">接下来 通知系统磁盘分区变化</a></li>
+        <li><a href="#格式化分区">格式化分区</a></li>
+        <li><a href="#挂载磁盘">挂载磁盘</a></li>
+        <li><a href="#开机自动挂载">开机自动挂载</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+<script type="text/javascript">
+  window.onload = function () {
+    var fix = $('.post-toc');
+    var end = $('.post-comment');
+    var fixTop = fix.offset().top, fixHeight = fix.height();
+    var endTop, miss;
+    var offsetTop = fix[0].offsetTop;
+    $(window).scroll(function () {
+      var docTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+      if (end.length > 0) {
+        endTop = end.offset().top;
+        miss = endTop - docTop - fixHeight;
+      }
+      if (fixTop < docTop) {
+        fix.css({ 'position': 'fixed' });
+        if ((end.length > 0) && (endTop < (docTop + fixHeight))) {
+          fix.css({ top: miss });
+        } else {
+          fix.css({ top: 0 });
+        }
+      } else {
+        fix.css({ 'position': 'absolute' });
+        fix.css({ top: offsetTop });
+      }
+    })
+  }
+</script> 
+        
+    <div class="post-content">
+        
+
+        
+        
+        
+
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+
+        <p>  近期工作总是遇到开了虚拟机需要挂磁盘的问题，由于 fdisk 的操作比较生硬所以每次都要去找好多资料,比较浪费效率，这里写一下大致的 fdisk 挂载磁盘过程。</p>
+<p>  进入虚拟机，输入</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">fdisk -l
+</code></pre></div><p><img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/bWUZIEOw5C8K3pG.png" alt="检查磁盘信息"></p>
+<p>  红框中的为 fdisk 检测出的系统磁盘，这边环境提供了 500G 的存储，但是这边系统由类 OpenStack 创建后，只有一个模版的基础环境，所以弹性磁盘得需要自己进行手动挂载。<br>
+  那我们针对 <code>/dev/vda</code>这块磁盘进行编辑，新增一个分区。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">fdisk /dev/vda
+</code></pre></div><p><img src="https:/mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/k2H1ALiBIYUcoJX.png" alt="开始编辑磁盘信息"></p>
+<p>系统提示按下<code>m</code>可以查看所有命令
+我们这边的目的是</p>
+<ol>
+<li>新建一个分区，分区大小为弹性存储的所有大小</li>
+<li>通知系统磁盘分区变化情况</li>
+<li>格式化分区以使用</li>
+<li>开机自动挂载这块弹性存储盘</li>
+</ol>
+<h3 id="那么按下n来创建一个新的磁盘分区">那么<code>按下n</code>来创建一个新的磁盘分区</h3>
+<p><img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/XQ5r4lkiO6jx7Km.png" alt="划分磁盘大小"></p>
+<p>他会问你是主分区还是扩展分区，选择<code>p</code>（增加一个主分区）,（接下来若是所有的磁盘大小都分配给这个分区，可以一路按回车）<br>
+随后为主分区分配一个编号，为磁盘选择开始地址与结束地址（划分磁盘大小），最后系统告诉你，这一个分区创建成功～～你需要按下<code>w</code>以保存您的分区。</p>
+<h3 id="接下来-通知系统磁盘分区变化">接下来 通知系统磁盘分区变化</h3>
+<p>你可以使用以下命令或者重启系统</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">partprobe /dev/vda
+</code></pre></div><h3 id="格式化分区">格式化分区</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkfs.ext4 /dev/vda3
+</code></pre></div><p>这里选择的是我们要格式化的分区，如果你是一块全新的磁盘，那么就不用加分区号。</p>
+<h3 id="挂载磁盘">挂载磁盘</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir /你想挂载到的路径
+mount /你的磁盘 /你建好的路径
+df -h       //查看下挂载是否成功
+</code></pre></div><p>挂载好后就如下图红框中的
+<img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/3mJHi2WrCZVYPBR-20200507155844152.png" alt="挂载完成查看磁盘状态"></p>
+<h3 id="开机自动挂载">开机自动挂载</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim /etc/fstab
+</code></pre></div><p><img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/WjvrnsymReSf3VG-20200507155851479.png" alt="开机自动挂载"></p>
+<p>基本就 5 个参数 左 -&gt; 右 分别为 <strong>你需要挂载的分区</strong>、<strong>你想要挂载到的目录</strong>、<strong>磁盘格式</strong>、<strong>挂载参数</strong>、<strong>dump</strong>、<strong>pass</strong></p>
+<p>具体可以参考<a href="https://wiki.archlinux.org/index.php/Fstab_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">ArchWiki</a>的介绍，很全面</p>
+
+    </div>
+
+    <div class="post-copyright">
+        
+        <p class="copyright-item">
+            <span><i class="fas fa-user"></i> : </span>
+            <span>麻吉麻尼酱 </span>
+        </p>
+        
+
+        
+        <p class="copyright-item">
+            <span><i class="fa fa-link"> : </i></span>
+            <span><a href=https://mrbruce516.github.io/2019/002/>https://mrbruce516.github.io/2019/002/</span>
+        </p>
+        
+
+        <p class="copyright-item lincese">
+            <span><i class="fa fa-copyright"> : </i>
+            本文采用
+            <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh">
+            知识共享署名-非商业性使用 4.0 国际许可协议
+            </a>进行许可</span>
+        </p>
+        
+    </div>
+
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://mrbruce516.github.io/tags/linux/">
+                    #Linux</a></span>
+            
+            <span class="tag"><a href="https://mrbruce516.github.io/tags/%E5%AD%98%E5%82%A8/">
+                    #存储</a></span>
+            
+            </section>
+        
+        
+        <section>
+            <span><a href="javascript:window.history.back();">back</a></span> ·
+            <span><a href="https://mrbruce516.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://mrbruce516.github.io/2019/001/" class="prev" rel="prev" title="初见"><i
+                class="iconfont icon-left"></i>&nbsp;初见</a>
+        
+        
+        <a href="https://mrbruce516.github.io/2019/003/" class="next" rel="next"
+            title="OneNote与印象笔记的取舍">OneNote与印象笔记的取舍&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+        
+        
+        
+        <span id="/2019/002/" class="leancloud_visitors" data-flag-title="Fdisk的使用心得">
+            <span class="post-meta-item-text">访问量 </span>
+            <span class="leancloud-visitors-count"></span>
+            <p></p>
+        </span>
+        <div id="vcomments"></div>
+        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+        <script type="text/javascript">
+            new Valine({
+                el: '#vcomments',
+                appId: 'kmydF60Uqb5Njn6oTE0C5Yo0-9Nh9j0Va',
+                appKey: 't9u3imrn0fTc3FTvhcDjjkDM',
+                notify: 'false',
+                verify: 'false',
+                avatar: 'mp',
+                placeholder: '说点什么吧...',
+                visitor: 'true'
+            });
+        </script>
+        
+    
+    
+    <!DOCTYPE html>
+<html>
+
+<head>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/mrbruce516/LeaveIt/assets/js/APlayer.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+</head>
+
+<body>
+    <div class="demo">
+        <div id="player1">
+        </div>
+    </div>
+    <script>
+        var ap = new APlayer
+            ({
+                element: document.getElementById('player1'),
+                fixed: true,
+                autoplay: false,
+                mini: true,
+                theme: '#63b8fd',
+                loop: 'all',
+                order: 'random',
+                preload: 'auto',
+                volume: 0.7,
+                mutex: true,
+                listFolded: false,
+                listMaxHeight: 90,
+                lrcType: 0,
+                music:
+                    [
+                        {
+                            artist: '桜高軽音部',
+                            name: 'ふわふわ時間',
+                            url: 'https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/music/%E3%81%B5%E3%82%8F%E3%81%B5%E3%82%8F%E6%99%82%E9%96%93.mp3',
+                            cover: 'https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/109951163559682176.jpg',
+                        },
+                        {
+                            artist: '放課後ティータイム',
+                            name: 'U&I',
+                            url: 'https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/music/U%26I.m4a',
+                            cover: 'https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/109951163048673023.jpg',
+                        },
+                        {
+                            artist: 'スネオヘアー',
+                            name: '無くした日々にさよなら',
+                            url: 'https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/music/%E7%84%A1%E3%81%8F%E3%81%97%E3%81%9F%E6%97%A5%E3%80%85%E3%81%AB%E3%81%95%E3%82%88%E3%81%AA%E3%82%89.mp3',
+                            cover: 'https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/1378787586466255.jpg',
+                        },
+                        {
+                            artist: '今日から俺は!!',
+                            name: '男の勲章',
+                            url: 'https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/music/%E4%BB%8A%E6%97%A5%E3%81%8B%E3%82%89%E4%BF%BA%E3%81%AF%21%21%E4%B8%BB%E9%A1%8C%E6%AD%8C%E3%80%8C%E7%94%B7%E3%81%AE%E5%8B%B2%E7%AB%A0%E3%80%8D%E3%83%95%E3%83%AB%E3%82%B5%E3%82%A4%E3%82%B9%E3%82%99.m4a',
+                            cover: 'https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/c6481c90eece4f6faddf1349fe265267.jpeg',
+                        },
+                    ]
+                    
+        });
+        
+    </script>
+</body>
+
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+   <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2021</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://mrbruce516.github.io">麻吉麻尼酱</a> | </span> 
+         
+
+         
+            <a href="http://www.beian.miit.gov.cn" target="_blank" rel="external nofollow">沪ICP备20012525号 </a> |
+         
+        <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/mrbruce516/LeaveIt" target="_blank" rel="external nofollow">LeaveIt</a></span>
+   </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/mrbruce516/live2d-widget@1.0.3/autoload.js"></script>
+
+     </div>
+  </body>
+</html>

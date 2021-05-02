@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="theme-color" content="#ffffff">
+  
+  <meta name="baidu-site-verification" content="e0YUuV3foo" />
+  <meta content="vim" name="keywords">
+  <meta content="麻吉麻尼酱の个人博客 - 记录学习vim的各类技巧" property="og:description">
+  
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/gh/mrbruce516/LeaveIt/assets/js/APlayer.min.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+
+  
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="麻吉麻尼酱">
+  <meta name="description" content="麻吉麻尼酱の个人博客">
+  
+  
+  <link rel="prev" href="https://mrbruce516.github.io/2020/016/" />
+  <link rel="next" href="https://mrbruce516.github.io/2020/018/" />
+  <link rel="canonical" href="https://mrbruce516.github.io/2020/017/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           vim学习笔记 | 麻吉麻之家
+       
+  </title>
+  <meta name="title" content="vim学习笔记 | 麻吉麻之家">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/mrbruce516.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "vim学习笔记",
+    "headline" : "vim学习笔记",
+    "description" : "记录学习vim的各类技巧",
+    "inLanguage" : "zh-CN",
+    "author" : "麻吉麻尼酱",
+    "creator" : "麻吉麻尼酱",
+    "publisher": "麻吉麻尼酱",
+    "accountablePerson" : "麻吉麻尼酱",
+    "copyrightHolder" : "麻吉麻尼酱",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-08-20 11:34:00 \u002b0800 CST",
+    "dateModified" : "2020-08-20 11:34:00 \u002b0800 CST",
+    "url" : "https:\/\/mrbruce516.github.io\/2020\/017\/",
+    "wordCount" : "1258",
+    "keywords" : [ "vim","生产力", "麻吉麻之家"]
+}
+</script>    
+
+  <link href="//use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    
+        <div class="top-scroll-bar"></div>
+    
+    <div class="container">
+        
+            <div class="navbar-header header-back2home-logo">
+                <span class="logo_mark" >>$</span>
+                <a href="https://mrbruce516.github.io">
+                    <span class="logo_text" >cd /home/</span>
+                    <span class="logo_cursor" ></span>
+                </a>
+            </div>
+        
+        <div class="navbar-right">
+                
+                <span class="menu">
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                </span>
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     
+         <div class="top-scroll-bar"></div>
+     
+     <div class="container">
+        <div class="navbar-header">
+            <div class="header-logo">
+                
+                    <span class="logo_mark">>$</span>
+                    <a href="https://mrbruce516.github.io">
+                        <span class="logo_text"> cd /home/ </span>
+                        <span class="logo_cursor"></span>
+                </a>
+                
+            </div>
+            <div class="navbar-right">
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a>
+                <div class="menu-toggle">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">vim学习笔记</h1>
+        <div class="post-meta">
+            <i class="far fa-folder-open"></i>
+            <span class="post-category">
+                <a href="https://mrbruce516.github.io/categories/%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/"> 从入门到入坟 </a>
+                
+            </span>
+            <span class="post-time">
+                <i class="far fa-calendar-alt"></i> <time
+                    datetime=2020-08-20
+                    itemprop="datePublished">2020-08-20</time>
+            </span>
+            <i class="far fa-file-word"></i> <span class="post-word-count"> 1258 字</span>
+            <i class="far fa-clock"></i> <span class="more-meta"> 3 分钟</span>
+        </div>
+    </header>
+        
+            <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title"></h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#常用快捷键">常用快捷键</a></li>
+    <li><a href="#方向键">方向键</a></li>
+    <li><a href="#可视模式">可视模式</a></li>
+    <li><a href="#分屏">分屏</a></li>
+    <li><a href="#标签">标签</a></li>
+    <li><a href="#插件">插件</a></li>
+    <li><a href="#配置文件">配置文件</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+<script type="text/javascript">
+  window.onload = function () {
+    var fix = $('.post-toc');
+    var end = $('.post-comment');
+    var fixTop = fix.offset().top, fixHeight = fix.height();
+    var endTop, miss;
+    var offsetTop = fix[0].offsetTop;
+    $(window).scroll(function () {
+      var docTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+      if (end.length > 0) {
+        endTop = end.offset().top;
+        miss = endTop - docTop - fixHeight;
+      }
+      if (fixTop < docTop) {
+        fix.css({ 'position': 'fixed' });
+        if ((end.length > 0) && (endTop < (docTop + fixHeight))) {
+          fix.css({ top: miss });
+        } else {
+          fix.css({ top: 0 });
+        }
+      } else {
+        fix.css({ 'position': 'absolute' });
+        fix.css({ top: offsetTop });
+      }
+    })
+  }
+</script> 
+        
+    <div class="post-content">
+        
+
+        
+        
+        
+
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+
+        <p>  Vim是从vi发展出来的一个文本编辑器。其代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。和Emacs并列成为类Unix系统用户最喜欢的编辑器。</p>
+<img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/1024px-Vimlogo.svg.png" style="zoom:30%">
+<p>  时至2020年，vim已经走过了29个年头，虽然vim是个开源项目，但是提交分支全由Vim作者Bram Moolenaar进行管控，前些年巴西程序员 Thiago de Arruda Padilha（aka tarruda）向 Vim开源编辑器项目递交了两大补丁，对Vim的架构进行了大幅调整，被拒绝后tarruda发起了Vim fork项目Neovim，集资1万美元打造出21世纪的编辑器，提供更好的脚本、插件支持，整合现代的图形界面。</p>
+<p><img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/742px-Neovim-logo.svg.png" alt="File:Neovim-logo.svg"></p>
+<p>  neovim与vim的操作是一致的，连配置文件也可以复用，并且neovim对插件的兼容更好，除了支持原生vim-script编写的插件以外，还支持高级语言所编写的插件。并且现今开源社区的vim插件对neovim支持在第一梯队。</p>
+<p>  文末会配上本人的dotfile，是面向neovim的（当然不看插件部分，vim也是可以使用的）</p>
+<h2 id="常用快捷键">常用快捷键</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">键位</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">a</td>
+<td style="text-align:left">在下一个字符进行输入</td>
+</tr>
+<tr>
+<td style="text-align:center">shift+a</td>
+<td style="text-align:left">在行尾直接插入</td>
+</tr>
+<tr>
+<td style="text-align:center">shift+i</td>
+<td style="text-align:left">在行前直接插入</td>
+</tr>
+<tr>
+<td style="text-align:center">shift+o</td>
+<td style="text-align:left">在当前行上一行写入</td>
+</tr>
+<tr>
+<td style="text-align:center">s</td>
+<td style="text-align:left">删除当前字符并开始插入</td>
+</tr>
+<tr>
+<td style="text-align:center">x</td>
+<td style="text-align:left">删除当前字符</td>
+</tr>
+<tr>
+<td style="text-align:center">d</td>
+<td style="text-align:left">剪贴操作，可以剪贴多个字符例如d3⬅️：向左删除3个字符</td>
+</tr>
+<tr>
+<td style="text-align:center">p</td>
+<td style="text-align:left">粘贴</td>
+</tr>
+<tr>
+<td style="text-align:center">y</td>
+<td style="text-align:left">复制，具体用法与d相同</td>
+</tr>
+<tr>
+<td style="text-align:center">c</td>
+<td style="text-align:left">更改操作（删除后进入写入模式）</td>
+</tr>
+<tr>
+<td style="text-align:center">w</td>
+<td style="text-align:left">光标移动到下一个词</td>
+</tr>
+<tr>
+<td style="text-align:center">b</td>
+<td style="text-align:left">回到上一个词</td>
+</tr>
+<tr>
+<td style="text-align:center">f</td>
+<td style="text-align:left">查找下一个你需要的字母，例如fv（即找到下一个v）</td>
+</tr>
+<tr>
+<td style="text-align:center">zz</td>
+<td style="text-align:left">居中当前行</td>
+</tr>
+<tr>
+<td style="text-align:center">G</td>
+<td style="text-align:left">到文档最后一行</td>
+</tr>
+<tr>
+<td style="text-align:center">gg</td>
+<td style="text-align:left">到文档首行</td>
+</tr>
+</tbody>
+</table>
+<h2 id="方向键">方向键</h2>
+<table>
+<thead>
+<tr>
+<th>键位</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>h</td>
+<td>◀️</td>
+</tr>
+<tr>
+<td>j</td>
+<td>🔽</td>
+</tr>
+<tr>
+<td>k</td>
+<td>🔼</td>
+</tr>
+<tr>
+<td>l</td>
+<td>➡️</td>
+</tr>
+</tbody>
+</table>
+<h2 id="可视模式">可视模式</h2>
+<p>  可以当作鼠标光标开始选择的一个模式，方便做框选后的其他操作</p>
+<p>  在可视模式下，按下<code>:</code>后接<code>normal</code>可以输入普通模式下的指令，例如<code>shift+i</code>进入行首进行插入字符</p>
+<table>
+<thead>
+<tr>
+<th>键位</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v</td>
+<td>默认可视模式</td>
+</tr>
+<tr>
+<td>V</td>
+<td>选中行的可视模式</td>
+</tr>
+<tr>
+<td>ctrl+v</td>
+<td>选中块文本可视模式</td>
+</tr>
+</tbody>
+</table>
+<h2 id="分屏">分屏</h2>
+<p>  在普通模式下输入<code>:</code>后接以下指令进入分屏</p>
+<p>  分屏后按下<code>:e</code>后接文件路径，在分屏中开始编辑另一个文件</p>
+<p>  分屏后输入<code>:vertical resize</code>+-数字 进行更改垂直分屏大小</p>
+<table>
+<thead>
+<tr>
+<th>键位</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>split</td>
+<td>上下分屏</td>
+</tr>
+<tr>
+<td>vsplit</td>
+<td>左右分屏</td>
+</tr>
+<tr>
+<td>ctrl+w 后接hjkl</td>
+<td>在分屏间移动</td>
+</tr>
+</tbody>
+</table>
+<h2 id="标签">标签</h2>
+<p>  在不想退出vim，且想新开一个vim并占满全屏的情况下，输入<code>:tabe</code>即可新建一个vim窗口</p>
+<table>
+<thead>
+<tr>
+<th>键位</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tabe</td>
+<td>新建vim标签页</td>
+</tr>
+<tr>
+<td>-tabnext</td>
+<td>上一个标签页</td>
+</tr>
+<tr>
+<td>+tabnext</td>
+<td>下一个标签页</td>
+</tr>
+</tbody>
+</table>
+<h2 id="插件">插件</h2>
+<p>  插件推荐使用<a href="https://github.com/junegunn/vim-plug">vim-plug</a>进行管理，以下为本人使用的插件</p>
+<table>
+<thead>
+<tr>
+<th>名字</th>
+<th style="text-align:left">用处</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nerdtree</td>
+<td style="text-align:left">文件树，通过ff呼出</td>
+</tr>
+<tr>
+<td>coc.nvim</td>
+<td style="text-align:left">一个非常强大的补全插件</td>
+</tr>
+<tr>
+<td>airline</td>
+<td style="text-align:left">一个漂亮的状态栏插件</td>
+</tr>
+<tr>
+<td>nerdtree-git-plugin</td>
+<td style="text-align:left">nerdtree支持git状态侦测</td>
+</tr>
+<tr>
+<td>vim-devicons</td>
+<td style="text-align:left">支持文件类型检测，随后在编辑文件的时候有文件类型的logo</td>
+</tr>
+<tr>
+<td>onedark.vim</td>
+<td style="text-align:left">仿atom编辑器主题</td>
+</tr>
+<tr>
+<td>vim-gitgutter</td>
+<td style="text-align:left">支持行检测git状态</td>
+</tr>
+<tr>
+<td>vim-startify</td>
+<td style="text-align:left">一个便利的vim启动界面，可以更快的改配置文件，修改最近修改过的文件</td>
+</tr>
+<tr>
+<td>tagbar</td>
+<td style="text-align:left">查看文件内的定义</td>
+</tr>
+</tbody>
+</table>
+<h2 id="配置文件">配置文件</h2>
+<p>  nvim的<a href="https://github.com/mrbruce516/dotfile/blob/master/init.vim">配置文件</a>路径在<code>~/.config/nvim/init.vim</code>，vim的配置文件位置在<code>~/.vimrc</code>，个人推荐在你的shell的配置文件中设置别名，方便修改vim的配置文件。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">alias configvim<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;vim ~/.config/nvim/init.vim&#39;</span>
+</code></pre></div><p>如果你和我一样使用nvim，也可以为nvim使用别名</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">alias vim<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;nvim&#39;</span>
+alias vi<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;nvim&#39;</span>
+</code></pre></div>
+    </div>
+
+    <div class="post-copyright">
+        
+        <p class="copyright-item">
+            <span><i class="fas fa-user"></i> : </span>
+            <span>麻吉麻尼酱 </span>
+        </p>
+        
+
+        
+        <p class="copyright-item">
+            <span><i class="fa fa-link"> : </i></span>
+            <span><a href=https://mrbruce516.github.io/2020/017/>https://mrbruce516.github.io/2020/017/</span>
+        </p>
+        
+
+        <p class="copyright-item lincese">
+            <span><i class="fa fa-copyright"> : </i>
+            本文采用
+            <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh">
+            知识共享署名-非商业性使用 4.0 国际许可协议
+            </a>进行许可</span>
+        </p>
+        
+    </div>
+
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://mrbruce516.github.io/tags/vim/">
+                    #vim</a></span>
+            
+            <span class="tag"><a href="https://mrbruce516.github.io/tags/%E7%94%9F%E4%BA%A7%E5%8A%9B/">
+                    #生产力</a></span>
+            
+            </section>
+        
+        
+        <section>
+            <span><a href="javascript:window.history.back();">back</a></span> ·
+            <span><a href="https://mrbruce516.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://mrbruce516.github.io/2020/016/" class="prev" rel="prev" title="用好rpm包，解决离线安装痛点"><i
+                class="iconfont icon-left"></i>&nbsp;用好rpm包，解决离线安装痛点</a>
+        
+        
+        <a href="https://mrbruce516.github.io/2020/018/" class="next" rel="next"
+            title="为mysql搭建主从复制">为mysql搭建主从复制&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+        
+        
+        
+        <span id="/2020/017/" class="leancloud_visitors" data-flag-title="vim学习笔记">
+            <span class="post-meta-item-text">访问量 </span>
+            <span class="leancloud-visitors-count"></span>
+            <p></p>
+        </span>
+        <div id="vcomments"></div>
+        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+        <script type="text/javascript">
+            new Valine({
+                el: '#vcomments',
+                appId: 'kmydF60Uqb5Njn6oTE0C5Yo0-9Nh9j0Va',
+                appKey: 't9u3imrn0fTc3FTvhcDjjkDM',
+                notify: 'false',
+                verify: 'false',
+                avatar: 'mp',
+                placeholder: '说点什么吧...',
+                visitor: 'true'
+            });
+        </script>
+        
+    
+    
+    <!DOCTYPE html>
+<html>
+
+<head>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/mrbruce516/LeaveIt/assets/js/APlayer.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+</head>
+
+<body>
+    <div class="demo">
+        <div id="player1">
+        </div>
+    </div>
+    <script>
+        var ap = new APlayer
+            ({
+                element: document.getElementById('player1'),
+                fixed: true,
+                autoplay: false,
+                mini: true,
+                theme: '#63b8fd',
+                loop: 'all',
+                order: 'random',
+                preload: 'auto',
+                volume: 0.7,
+                mutex: true,
+                listFolded: false,
+                listMaxHeight: 90,
+                lrcType: 0,
+                music:
+                    [
+                        {
+                            artist: '桜高軽音部',
+                            name: 'ふわふわ時間',
+                            url: 'https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/music/%E3%81%B5%E3%82%8F%E3%81%B5%E3%82%8F%E6%99%82%E9%96%93.mp3',
+                            cover: 'https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/109951163559682176.jpg',
+                        },
+                        {
+                            artist: '放課後ティータイム',
+                            name: 'U&I',
+                            url: 'https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/music/U%26I.m4a',
+                            cover: 'https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/109951163048673023.jpg',
+                        },
+                        {
+                            artist: 'スネオヘアー',
+                            name: '無くした日々にさよなら',
+                            url: 'https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/music/%E7%84%A1%E3%81%8F%E3%81%97%E3%81%9F%E6%97%A5%E3%80%85%E3%81%AB%E3%81%95%E3%82%88%E3%81%AA%E3%82%89.mp3',
+                            cover: 'https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/1378787586466255.jpg',
+                        },
+                        {
+                            artist: '今日から俺は!!',
+                            name: '男の勲章',
+                            url: 'https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/music/%E4%BB%8A%E6%97%A5%E3%81%8B%E3%82%89%E4%BF%BA%E3%81%AF%21%21%E4%B8%BB%E9%A1%8C%E6%AD%8C%E3%80%8C%E7%94%B7%E3%81%AE%E5%8B%B2%E7%AB%A0%E3%80%8D%E3%83%95%E3%83%AB%E3%82%B5%E3%82%A4%E3%82%B9%E3%82%99.m4a',
+                            cover: 'https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/c6481c90eece4f6faddf1349fe265267.jpeg',
+                        },
+                    ]
+                    
+        });
+        
+    </script>
+</body>
+
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+   <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2021</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://mrbruce516.github.io">麻吉麻尼酱</a> | </span> 
+         
+
+         
+            <a href="http://www.beian.miit.gov.cn" target="_blank" rel="external nofollow">沪ICP备20012525号 </a> |
+         
+        <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/mrbruce516/LeaveIt" target="_blank" rel="external nofollow">LeaveIt</a></span>
+   </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/mrbruce516/live2d-widget@1.0.3/autoload.js"></script>
+
+     </div>
+  </body>
+</html>

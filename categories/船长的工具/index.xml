@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>船长的工具 on 麻吉麻之家</title>
+    <link>https://mrbruce516.github.io/categories/%E8%88%B9%E9%95%BF%E7%9A%84%E5%B7%A5%E5%85%B7/</link>
+    <description>Recent content in 船长的工具 on 麻吉麻之家</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 25 Nov 2020 19:26:41 +0800</lastBuildDate><atom:link href="https://mrbruce516.github.io/categories/%E8%88%B9%E9%95%BF%E7%9A%84%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>超棒的rss生成器，rsshub</title>
+      <link>https://mrbruce516.github.io/2020/020/</link>
+      <pubDate>Wed, 25 Nov 2020 19:26:41 +0800</pubDate>
+      
+      <guid>https://mrbruce516.github.io/2020/020/</guid>
+      <description>博主原本一直在用Inoreader作为rss的服务端，随着reeder5发布，发现reeder5支持iCloud同步feeds了，在一次偶然</description>
+    </item>
+    
+    <item>
+      <title>FFmpeg一些常用的小命令</title>
+      <link>https://mrbruce516.github.io/2020/010/</link>
+      <pubDate>Mon, 13 Apr 2020 13:45:10 +0800</pubDate>
+      
+      <guid>https://mrbruce516.github.io/2020/010/</guid>
+      <description>FFmpeg是一款强大的视频处理工具，一般许多视频播放器都是基于此工具开发的，此工具功能着实强大，用法非常之多，博主并不是非常懂视频编辑的一</description>
+    </item>
+    
+    <item>
+      <title>VIM配置分享</title>
+      <link>https://mrbruce516.github.io/2020/008/</link>
+      <pubDate>Sun, 05 Apr 2020 21:38:51 +0800</pubDate>
+      
+      <guid>https://mrbruce516.github.io/2020/008/</guid>
+      <description>最近有小伙伴们说，vim太丑了不好用，其实vim配置好以后，颜值&amp;amp;功能性都能上升好几个档次，我在下边放一下我的vim的配置项，并且对</description>
+    </item>
+    
+    <item>
+      <title>md输入利器Typora</title>
+      <link>https://mrbruce516.github.io/2020/007/</link>
+      <pubDate>Sat, 04 Apr 2020 01:16:02 +0800</pubDate>
+      
+      <guid>https://mrbruce516.github.io/2020/007/</guid>
+      <description>本博客是由hugo搭建的，所有的blog基于markdown编写，博主最早通过Visual Studio Code来编写markdown，后面使用过App</description>
+    </item>
+    
+    <item>
+      <title>开始用Bear熊掌记</title>
+      <link>https://mrbruce516.github.io/2020/006/</link>
+      <pubDate>Fri, 03 Apr 2020 23:30:08 +0800</pubDate>
+      
+      <guid>https://mrbruce516.github.io/2020/006/</guid>
+      <description>博主对笔记软件一直有一定的需求，即需要犹如iCloud备忘录的精简，也需要像OneNote般的强大，尝试了非常多的软件，总是觉得差一口气，直</description>
+    </item>
+    
+    <item>
+      <title>一行命令拿下你想要的视频资源</title>
+      <link>https://mrbruce516.github.io/2020/005/</link>
+      <pubDate>Thu, 02 Apr 2020 13:56:54 +0800</pubDate>
+      
+      <guid>https://mrbruce516.github.io/2020/005/</guid>
+      <description>You-Get 乃一小小哒命令行程序，提供便利的方式来下载网络上的媒体信息。 利用you-get下载这个网页的视频: $ you-get http://www.fsf.org/blogs/rms/20140407-geneva-tedx-talk-free-software-free-society Site: fsf.org Title: TEDxGE2014_Stallman05_LQ Type: WebM video (video/webm) Size: 27.12 MiB (28435804 Bytes) Downloading TEDxGE2014_Stallman05_LQ.webm ... 100.0%</description>
+    </item>
+    
+    <item>
+      <title>给你的Mac装上brew</title>
+      <link>https://mrbruce516.github.io/2020/004/</link>
+      <pubDate>Thu, 02 Apr 2020 13:27:49 +0800</pubDate>
+      
+      <guid>https://mrbruce516.github.io/2020/004/</guid>
+      <description>HomeBrew是什么 HomeBrew是macOS（或 Linux）缺失的软件包的管理器 （官方解释），简单说他就是为了方便你下一些依赖、软件、</description>
+    </item>
+    
+    <item>
+      <title>OneNote与印象笔记的取舍</title>
+      <link>https://mrbruce516.github.io/2019/003/</link>
+      <pubDate>Wed, 31 Jul 2019 22:56:58 +0800</pubDate>
+      
+      <guid>https://mrbruce516.github.io/2019/003/</guid>
+      <description>最近一次开会看某个老哥用印象笔记在记录会议纪要，从前对印象笔记的印象是坑爹。。因为他收费，而且免费用户的每月配额非常小，曾经在读书的时候无聊</description>
+    </item>
+    
+  </channel>
+</rss>

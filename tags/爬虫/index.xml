@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>爬虫 on 麻吉麻之家</title>
+    <link>https://mrbruce516.github.io/tags/%E7%88%AC%E8%99%AB/</link>
+    <description>Recent content in 爬虫 on 麻吉麻之家</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 25 Nov 2020 20:04:46 +0800</lastBuildDate><atom:link href="https://mrbruce516.github.io/tags/%E7%88%AC%E8%99%AB/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>为不支持rss的页面制作rss</title>
+      <link>https://mrbruce516.github.io/2020/021/</link>
+      <pubDate>Wed, 25 Nov 2020 20:04:46 +0800</pubDate>
+      
+      <guid>https://mrbruce516.github.io/2020/021/</guid>
+      <description>上一篇讲了如何搭建并开箱即用RSSHub，这一篇讲一下如何通过RSSHub来为不兼容rss的页面配置上rss。 首先聊一下原理吧，博主已经成功</description>
+    </item>
+    
+  </channel>
+</rss>

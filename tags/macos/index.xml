@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>macOS on 麻吉麻之家</title>
+    <link>https://mrbruce516.github.io/tags/macos/</link>
+    <description>Recent content in macOS on 麻吉麻之家</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 02 Apr 2020 13:27:49 +0800</lastBuildDate><atom:link href="https://mrbruce516.github.io/tags/macos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>给你的Mac装上brew</title>
+      <link>https://mrbruce516.github.io/2020/004/</link>
+      <pubDate>Thu, 02 Apr 2020 13:27:49 +0800</pubDate>
+      
+      <guid>https://mrbruce516.github.io/2020/004/</guid>
+      <description>HomeBrew是什么 HomeBrew是macOS（或 Linux）缺失的软件包的管理器 （官方解释），简单说他就是为了方便你下一些依赖、软件、</description>
+    </item>
+    
+  </channel>
+</rss>
