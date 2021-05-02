@@ -63,4 +63,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: https://mrbruce516.github.io/sitemap.xml
+Sitemap: https://mrbruce516.top/sitemap.xml

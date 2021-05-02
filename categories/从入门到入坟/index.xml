@@ -2,98 +2,98 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>从入门到入坟 on 麻吉麻之家</title>
-    <link>https://mrbruce516.github.io/categories/%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/</link>
+    <link>https://mrbruce516.top/categories/%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/</link>
     <description>Recent content in 从入门到入坟 on 麻吉麻之家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 25 Nov 2020 20:04:46 +0800</lastBuildDate><atom:link href="https://mrbruce516.github.io/categories/%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 Nov 2020 20:04:46 +0800</lastBuildDate><atom:link href="https://mrbruce516.top/categories/%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>为不支持rss的页面制作rss</title>
-      <link>https://mrbruce516.github.io/2020/021/</link>
+      <link>https://mrbruce516.top/2020/021/</link>
       <pubDate>Wed, 25 Nov 2020 20:04:46 +0800</pubDate>
       
-      <guid>https://mrbruce516.github.io/2020/021/</guid>
+      <guid>https://mrbruce516.top/2020/021/</guid>
       <description>上一篇讲了如何搭建并开箱即用RSSHub，这一篇讲一下如何通过RSSHub来为不兼容rss的页面配置上rss。 首先聊一下原理吧，博主已经成功</description>
     </item>
     
     <item>
       <title>玩转ssh免密登录</title>
-      <link>https://mrbruce516.github.io/2020/019/</link>
+      <link>https://mrbruce516.top/2020/019/</link>
       <pubDate>Wed, 28 Oct 2020 14:08:29 +0800</pubDate>
       
-      <guid>https://mrbruce516.github.io/2020/019/</guid>
+      <guid>https://mrbruce516.top/2020/019/</guid>
       <description>作为一名运维人员，经常会遇到SSH登录，而当你有很多服务器的时候使用密码可能不是一个好的选择了， 就像我要登录自己的服务器、公司各个环境的服务</description>
     </item>
     
     <item>
       <title>为mysql搭建主从复制</title>
-      <link>https://mrbruce516.github.io/2020/018/</link>
+      <link>https://mrbruce516.top/2020/018/</link>
       <pubDate>Thu, 22 Oct 2020 16:22:54 +0800</pubDate>
       
-      <guid>https://mrbruce516.github.io/2020/018/</guid>
+      <guid>https://mrbruce516.top/2020/018/</guid>
       <description>概要 MySQL Replication (MySQL 主从复制) 是什么？为什么要主从复制以及它的实现原理是什么？ 主从复制概念 MySQL 主从复制是指数据可以从一个MySQL数据库服务器主节点复制</description>
     </item>
     
     <item>
       <title>vim学习笔记</title>
-      <link>https://mrbruce516.github.io/2020/017/</link>
+      <link>https://mrbruce516.top/2020/017/</link>
       <pubDate>Thu, 20 Aug 2020 11:34:00 +0800</pubDate>
       
-      <guid>https://mrbruce516.github.io/2020/017/</guid>
+      <guid>https://mrbruce516.top/2020/017/</guid>
       <description>Vim是从vi发展出来的一个文本编辑器。其代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。和Emacs并列成为类Un</description>
     </item>
     
     <item>
       <title>用好rpm包，解决离线安装痛点</title>
-      <link>https://mrbruce516.github.io/2020/016/</link>
+      <link>https://mrbruce516.top/2020/016/</link>
       <pubDate>Thu, 30 Jul 2020 16:16:07 +0800</pubDate>
       
-      <guid>https://mrbruce516.github.io/2020/016/</guid>
+      <guid>https://mrbruce516.top/2020/016/</guid>
       <description>一般来说，在互联网环境下，安装软件可以用Linux自带的包管理器进行安装（例如YUM、apt等），在无互联网环境下一般通过编译安装来安装相应</description>
     </item>
     
     <item>
       <title>轻松安装配置mysql8</title>
-      <link>https://mrbruce516.github.io/2020/013/</link>
+      <link>https://mrbruce516.top/2020/013/</link>
       <pubDate>Mon, 20 Apr 2020 15:21:14 +0800</pubDate>
       
-      <guid>https://mrbruce516.github.io/2020/013/</guid>
+      <guid>https://mrbruce516.top/2020/013/</guid>
       <description>每次安装mysql都是一件比较繁琐的事情，这个数据库自从被oracle收购后，就不太方便从yum一键安装了，所以每次需要自己设置很多配置项，</description>
     </item>
     
     <item>
       <title>LVM动态扩容</title>
-      <link>https://mrbruce516.github.io/2020/002/</link>
+      <link>https://mrbruce516.top/2020/002/</link>
       <pubDate>Thu, 16 Jan 2020 16:56:48 +0800</pubDate>
       
-      <guid>https://mrbruce516.github.io/2020/002/</guid>
+      <guid>https://mrbruce516.top/2020/002/</guid>
       <description>工作中经常碰到有服务器磁盘空间不足的问题，之前写过一篇使用 fdisk 给新加的磁盘扩容的教程，这种方法适合在一个全新的挂载点上进行操作。若是需挂载的目</description>
     </item>
     
     <item>
       <title>如何搭离线yum源</title>
-      <link>https://mrbruce516.github.io/2020/001/</link>
+      <link>https://mrbruce516.top/2020/001/</link>
       <pubDate>Wed, 08 Jan 2020 15:52:52 +0800</pubDate>
       
-      <guid>https://mrbruce516.github.io/2020/001/</guid>
+      <guid>https://mrbruce516.top/2020/001/</guid>
       <description>有时候不一定你的 Linux 主机能够连接到互联网，在无法连接至互联网的时候，安装软件成为了一大痛点，今天就来聊一下如果在无网络环境的情况下，如何消除疼</description>
     </item>
     
     <item>
       <title>Fdisk的使用心得</title>
-      <link>https://mrbruce516.github.io/2019/002/</link>
+      <link>https://mrbruce516.top/2019/002/</link>
       <pubDate>Fri, 26 Jul 2019 16:36:45 +0800</pubDate>
       
-      <guid>https://mrbruce516.github.io/2019/002/</guid>
+      <guid>https://mrbruce516.top/2019/002/</guid>
       <description>近期工作总是遇到开了虚拟机需要挂磁盘的问题，由于 fdisk 的操作比较生硬所以每次都要去找好多资料,比较浪费效率，这里写一下大致的 fdisk 挂载磁盘过程。 进入</description>
     </item>
     
     <item>
       <title>利用bind9搭建dns服务器</title>
-      <link>https://mrbruce516.github.io/2018/001/</link>
+      <link>https://mrbruce516.top/2018/001/</link>
       <pubDate>Thu, 27 Dec 2018 13:33:47 +0800</pubDate>
       
-      <guid>https://mrbruce516.github.io/2018/001/</guid>
+      <guid>https://mrbruce516.top/2018/001/</guid>
       <description>这里介绍如何搭建dns解析服务器 基础环境 Linux发行版，这里用CentOS7 bind软件 本案例中父域服务器为192.168.250.72 子</description>
     </item>
     
