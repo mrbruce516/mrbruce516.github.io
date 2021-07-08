@@ -6,7 +6,16 @@
     <description>Recent content in Linux on 麻吉麻之家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 28 Oct 2020 14:08:29 +0800</lastBuildDate><atom:link href="https://mrbruce516.top/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Jul 2021 17:39:46 +0800</lastBuildDate><atom:link href="https://mrbruce516.top/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>学习使用systemd来管理服务</title>
+      <link>https://mrbruce516.top/2021/002/</link>
+      <pubDate>Thu, 08 Jul 2021 17:39:46 +0800</pubDate>
+      
+      <guid>https://mrbruce516.top/2021/002/</guid>
+      <description>感谢阮一峰大佬的博客，本文大量内容借鉴至此，原文地址 systemd是Linux电脑操作系统之下的一套中央化系统及设置管理程序（init），包</description>
+    </item>
+    
     <item>
       <title>玩转ssh免密登录</title>
       <link>https://mrbruce516.top/2020/019/</link>

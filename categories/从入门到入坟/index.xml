@@ -6,7 +6,16 @@
     <description>Recent content in 从入门到入坟 on 麻吉麻之家</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 25 Nov 2020 20:04:46 +0800</lastBuildDate><atom:link href="https://mrbruce516.top/categories/%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Jul 2021 17:39:46 +0800</lastBuildDate><atom:link href="https://mrbruce516.top/categories/%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>学习使用systemd来管理服务</title>
+      <link>https://mrbruce516.top/2021/002/</link>
+      <pubDate>Thu, 08 Jul 2021 17:39:46 +0800</pubDate>
+      
+      <guid>https://mrbruce516.top/2021/002/</guid>
+      <description>感谢阮一峰大佬的博客，本文大量内容借鉴至此，原文地址 systemd是Linux电脑操作系统之下的一套中央化系统及设置管理程序（init），包</description>
+    </item>
+    
     <item>
       <title>为不支持rss的页面制作rss</title>
       <link>https://mrbruce516.top/2020/021/</link>

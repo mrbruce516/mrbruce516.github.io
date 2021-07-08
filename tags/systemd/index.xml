@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>systemd on 麻吉麻之家</title>
+    <link>https://mrbruce516.top/tags/systemd/</link>
+    <description>Recent content in systemd on 麻吉麻之家</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 08 Jul 2021 17:39:46 +0800</lastBuildDate><atom:link href="https://mrbruce516.top/tags/systemd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>学习使用systemd来管理服务</title>
+      <link>https://mrbruce516.top/2021/002/</link>
+      <pubDate>Thu, 08 Jul 2021 17:39:46 +0800</pubDate>
+      
+      <guid>https://mrbruce516.top/2021/002/</guid>
+      <description>感谢阮一峰大佬的博客，本文大量内容借鉴至此，原文地址 systemd是Linux电脑操作系统之下的一套中央化系统及设置管理程序（init），包</description>
+    </item>
+    
+  </channel>
+</rss>
