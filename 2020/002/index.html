@@ -77,7 +77,7 @@
     "datePublished": "2020-01-16 16:56:48 \u002b0800 CST",
     "dateModified" : "2020-01-16 16:56:48 \u002b0800 CST",
     "url" : "https:\/\/mrbruce516.top\/2020\/002\/",
-    "wordCount" : "1466",
+    "wordCount" : "1459",
     "keywords" : [ "存储","Linux", "麻吉麻之家"]
 }
 </script>    
@@ -176,7 +176,7 @@
                     datetime=2020-01-16
                     itemprop="datePublished">2020-01-16</time>
             </span>
-            <i class="far fa-file-word"></i> <span class="post-word-count"> 1466 字</span>
+            <i class="far fa-file-word"></i> <span class="post-word-count"> 1459 字</span>
             <i class="far fa-clock"></i> <span class="more-meta"> 3 分钟</span>
         </div>
     </header>
@@ -306,8 +306,7 @@ lvdisplay              <span style="color:#75715e"># 再次查看逻辑卷</span
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">e2fsck -f /dev/volume-group1/lv1 
 </code></pre></div><p>运行以下命令扩展文件系统以后，ext4信息就更新了。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">resize2fs /dev/volume-group1/lv1
-</code></pre></div><p>现在，这个逻辑卷应该已经扩展到200MB了。我们可以用<code>lvdisplay</code>来验证。
-现在，这个逻辑卷可以再次挂载，同样这个方法也可用于其他分区。</p>
+</code></pre></div><p>现在，这个逻辑卷应该已经扩展完毕了。我们可以用<code>lvdisplay</code>来验证。这个逻辑卷可以再次挂载，同样这个方法也可用于其他分区。</p>
 <p>  OK，到此，扩容完成。</p>
 
     </div>
