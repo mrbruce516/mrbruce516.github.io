@@ -262,14 +262,14 @@
 <p><img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/image-20201125201443974.png" alt="image-20201125201443974"></p>
 <h3 id="2-clone到本地">2. Clone到本地</h3>
 <p>如果你和我一样，习惯使用终端的话</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd $你的工程目录
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd $你的工程目录
 git clone $你fork下来的地址
 </code></pre></div><p>如果你不怎么用终端，那么图形化界面点点即可，没啥好说的这一步。</p>
 <h3 id="3-部署并启动本地环境">3. 部署并启动本地环境</h3>
 <ol>
 <li>首先需要安装依赖包，本开源项目基于vue，可以使用npm/yarn来进行安装依赖，博主非常推荐yarn作为js的包管理器，速度真的非常快而且更加现代化，npm讲真的有点慢了。。</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># npm安装依赖</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># npm安装依赖</span>
 npm install
 <span style="color:#75715e"># 或者yarn安装依赖</span>
 yarn
@@ -283,7 +283,7 @@ yarn
 <ol start="2">
 <li>启动RSSHub开发环境</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># npm</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># npm</span>
 npm run dev
 <span style="color:#75715e"># 或者</span>
 yarn dev
@@ -296,7 +296,7 @@ yarn dev
 <p>修改项目文件夹下 <code>lib</code>路径下的<code>router.js</code>文件，向其中添加路由信息</p>
 <blockquote>
 <p>此处可仿照已有路由进行修改，例如：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//其中get函数的第一项是在浏览器上访问的路径，此路径是位于RSS Hub服务器中的相对路径，正式访问时还需再前面加上：（远程）https://rsshub.app 或（本地）localhost:1200。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//其中get函数的第一项是在浏览器上访问的路径，此路径是位于RSS Hub服务器中的相对路径，正式访问时还需再前面加上：（远程）https://rsshub.app 或（本地）localhost:1200。
 </span><span style="color:#75715e">//:type?-值传递给路径的参数信息，如键入https://rsshub.app/upc/main/notice，服务器端就可以通过脚本文件中的参数解析获取到notice，进而可以进行下一步操作。
 </span><span style="color:#75715e">//第二项是路由脚本文件的存放路径，当在浏览器中键入https://rsshub.app/upc/main/notice时，它会自动去服务器中的指定路径上寻找脚本文件，此处脚本文件是main.js，指定路径时文件后缀省略。
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/fudancce&#39;</span>, <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;./routes/universities/fudancce/index&#39;</span>));
@@ -327,7 +327,7 @@ yarn dev
 </li>
 <li>
 <p>添加完毕后，进行代码格式标准化，对其提示的警告和错误信息进行修改。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm run format
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm run format
 </code></pre></div></li>
 </ul>
 </blockquote>

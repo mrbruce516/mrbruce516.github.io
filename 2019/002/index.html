@@ -248,11 +248,11 @@
 
         <p>  近期工作总是遇到开了虚拟机需要挂磁盘的问题，由于 fdisk 的操作比较生硬所以每次都要去找好多资料,比较浪费效率，这里写一下大致的 fdisk 挂载磁盘过程。</p>
 <p>  进入虚拟机，输入</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">fdisk -l
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">fdisk -l
 </code></pre></div><p><img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/bWUZIEOw5C8K3pG.png" alt="检查磁盘信息"></p>
 <p>  红框中的为 fdisk 检测出的系统磁盘，这边环境提供了 500G 的存储，但是这边系统由类 OpenStack 创建后，只有一个模版的基础环境，所以弹性磁盘得需要自己进行手动挂载。<br>
   那我们针对 <code>/dev/vda</code>这块磁盘进行编辑，新增一个分区。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">fdisk /dev/vda
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">fdisk /dev/vda
 </code></pre></div><p><img src="https:/mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/k2H1ALiBIYUcoJX.png" alt="开始编辑磁盘信息"></p>
 <p>系统提示按下<code>m</code>可以查看所有命令
 我们这边的目的是</p>
@@ -268,18 +268,18 @@
 随后为主分区分配一个编号，为磁盘选择开始地址与结束地址（划分磁盘大小），最后系统告诉你，这一个分区创建成功～～你需要按下<code>w</code>以保存您的分区。</p>
 <h3 id="接下来-通知系统磁盘分区变化">接下来 通知系统磁盘分区变化</h3>
 <p>你可以使用以下命令或者重启系统</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">partprobe /dev/vda
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">partprobe /dev/vda
 </code></pre></div><h3 id="格式化分区">格式化分区</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkfs.ext4 /dev/vda3
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkfs.ext4 /dev/vda3
 </code></pre></div><p>这里选择的是我们要格式化的分区，如果你是一块全新的磁盘，那么就不用加分区号。</p>
 <h3 id="挂载磁盘">挂载磁盘</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir /你想挂载到的路径
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir /你想挂载到的路径
 mount /你的磁盘 /你建好的路径
 df -h       //查看下挂载是否成功
 </code></pre></div><p>挂载好后就如下图红框中的
 <img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/3mJHi2WrCZVYPBR-20200507155844152.png" alt="挂载完成查看磁盘状态"></p>
 <h3 id="开机自动挂载">开机自动挂载</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim /etc/fstab
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim /etc/fstab
 </code></pre></div><p><img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/WjvrnsymReSf3VG-20200507155851479.png" alt="开机自动挂载"></p>
 <p>基本就 5 个参数 左 -&gt; 右 分别为 <strong>你需要挂载的分区</strong>、<strong>你想要挂载到的目录</strong>、<strong>磁盘格式</strong>、<strong>挂载参数</strong>、<strong>dump</strong>、<strong>pass</strong></p>
 <p>具体可以参考<a href="https://wiki.archlinux.org/index.php/Fstab_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">ArchWiki</a>的介绍，很全面</p>

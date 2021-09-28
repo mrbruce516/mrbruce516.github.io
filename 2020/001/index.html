@@ -255,21 +255,21 @@
 <p>  稍微提一句，一般系统镜像在<a href="https://developer.aliyun.com/mirror">阿里源</a>上即可获取。</p>
 <h3 id="step2-导入镜像">Step.2 导入镜像</h3>
 <p>  下载完成后，通过工具（ftp、scp等）导入系统，在系统中创建一个存放系统镜像的盘。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir /mnt/iso      <span style="color:#75715e">#用于存放系统镜像</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir /mnt/iso      <span style="color:#75715e">#用于存放系统镜像</span>
 mkdir /mnt/cdrom    <span style="color:#75715e">#用于挂载目录</span>
 </code></pre></div><p>  创建好存放路径后</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#挂载镜像到cdrom下</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#挂载镜像到cdrom下</span>
 mount -o loop /mnt/iso/XXXXX.iso /mnt/cdrom
 <span style="color:#75715e"># 查看挂载情况</span>
 df -h
 </code></pre></div><h3 id="step3-编写yum源文件">Step.3 编写yum源文件</h3>
 <p>  若镜像挂载完毕，上述工作全部准备就绪，基本大部分工作已完成了，最后一步编写yum源文件，即可以后每次 <code>yum install</code> 的时候从本地镜像中离线安装软件，非常方便。</p>
 <p><strong>Yum源文件路径</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /etc/yum.repos.d
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /etc/yum.repos.d
 </code></pre></div><p><strong>编写yum文件</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim local.repo
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim local.repo
 </code></pre></div><p><strong>内容如下</strong></p>
-<pre><code class="language-repo" data-lang="repo">[local]
+<pre tabindex="0"><code class="language-repo" data-lang="repo">[local]
 name=local
 #注：这里的baseurl就是你挂载的目录，在这里是/mnt/cdrom
 baseurl=file:///mnt/cdrom
@@ -278,7 +278,7 @@ enabled=1
 #文件校验，我一般就关掉了
 gpgcheck=0
 </code></pre><h3 id="测试一下">测试一下</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yum clean all
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yum clean all
 yum search xxx
 </code></pre></div>
     </div>

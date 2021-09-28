@@ -270,7 +270,7 @@
 <ul>
 <li>主服务器</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>myslqd<span style="color:#f92672">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>myslqd<span style="color:#f92672">]</span>
 server-id<span style="color:#f92672">=</span>1			<span style="color:#75715e"># 必须。设置服务器id，不与从服务器冲突即可</span>
 log_bin<span style="color:#f92672">=</span>mysql-bin		<span style="color:#75715e"># 必须。启动MySQ二进制日志系统</span>
 binlog-do-db<span style="color:#f92672">=</span>test		<span style="color:#75715e"># 需要同步的数据库名，如果有多个数据库，可重复此参数，每个数据库一行</span>
@@ -282,10 +282,10 @@ expire_logs_days<span style="color:#f92672">=</span>7		<span style="color:#75715
 <ul>
 <li>
 <p>从服务器</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>mysqld<span style="color:#f92672">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>mysqld<span style="color:#f92672">]</span>
 server-id<span style="color:#f92672">=</span>2		<span style="color:#75715e"># 必须。设置服务器id，不与主服务器冲突即可</span>
 </code></pre></div><p>其他无特殊需求可以暂不设置，重启数据库后，进入mysql-client。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">change master to master_host<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;你的IP&#39;</span>,master_port<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;你的数据库端口&#39;</span>,master_user<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;主服务器的用户&#39;</span>,master_password<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;主服务器用户的密码&#39;</span>,master_log_file<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;mysql-bin.0000xx&#39;</span>,master_log_pos<span style="color:#f92672">=</span>0;		<span style="color:#75715e"># master_log_pos设置成0代表任意</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">change master to master_host<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;你的IP&#39;</span>,master_port<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;你的数据库端口&#39;</span>,master_user<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;主服务器的用户&#39;</span>,master_password<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;主服务器用户的密码&#39;</span>,master_log_file<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;mysql-bin.0000xx&#39;</span>,master_log_pos<span style="color:#f92672">=</span>0;		<span style="color:#75715e"># master_log_pos设置成0代表任意</span>
 start slave;
 show slave status<span style="color:#ae81ff">\G</span>;
 </code></pre></div><p>  在最后的状态中，看到<code>Slave_IO_Running</code> 以及 <code>Slave_SQL_Running</code> 都为YES即代表mysql主从同步搭建完毕</p>

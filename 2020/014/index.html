@@ -242,9 +242,9 @@
 <h2 id="step1-创建html标签">Step.1 创建html标签</h2>
 <p>  我们首先要新建一个 Hugo Shortcodes 来规范化的插入 HTML 标签</p>
 <p>  在 <code>layouts/shortcodes</code> 文件夹中创建文件 <code>spoiler.html</code> (如果没有那个文件夹就自己新建一个)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;spoiler&#34;</span> &gt;{{.Inner}}&lt;/<span style="color:#f92672">span</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;spoiler&#34;</span> &gt;{{.Inner}}&lt;/<span style="color:#f92672">span</span>&gt;
 </code></pre></div><p>  然后再在 <code>/assets/css/_common/_page/post.scss</code> (每个主题的不一样) 中编写 CSS</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">    <span style="color:#f92672">//</span> <span style="color:#f92672">隐藏文字</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">    <span style="color:#f92672">//</span> <span style="color:#f92672">隐藏文字</span>
     .<span style="color:#a6e22e">spoiler</span> { 
         <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">black</span>; 
         <span style="color:#66d9ef">background-color</span>:<span style="color:#66d9ef">black</span>;
@@ -253,7 +253,7 @@
         <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">white</span>;
     }
 </code></pre></div><p>  同样的，如果你实在是不知道你的主题的 CSS 文件在哪儿，也可以直接往 <code>layouts/shortcodes/spoiler.html</code> 里写</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">style</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">style</span>&gt;
 <span style="color:#f92672">//</span> <span style="color:#f92672">隐藏文字</span>
 .<span style="color:#a6e22e">spoiler</span> { 
   <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">black</span>; 
@@ -266,7 +266,7 @@
 </code></pre></div><p>  然后就可以用了！</p>
 <h2 id="step2-用法">Step.2 用法</h2>
 <p>  在你想使用「隐藏文字」的地方这么写</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">&lt;<span style="color:#f92672">spoiler</span>&gt; 隐藏文字 &lt;/<span style="color:#f92672">spoiler</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">&lt;<span style="color:#f92672">spoiler</span>&gt; 隐藏文字 &lt;/<span style="color:#f92672">spoiler</span>&gt;
 // 标签两旁记得带上{{ }}
 </code></pre></div>
     </div>

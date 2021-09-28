@@ -276,7 +276,7 @@
 <h2 id="systemd-基本命令">systemd 基本命令</h2>
 <p>监视和控制systemd的主要命令是<code>systemctl</code>。该命令可用于查看系统状态和管理系统及服务。</p>
 <p>常用命令：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl status				<span style="color:#75715e"># 显示系统状态</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl status				<span style="color:#75715e"># 显示系统状态</span>
 systemctl						<span style="color:#75715e"># 输出激活的服务</span>
 systemctl --failed				<span style="color:#75715e"># 输出运行失败的服务</span>
 systemctl list-unit-files		<span style="color:#75715e"># 查看所有已安装服务</span>
@@ -292,10 +292,10 @@ systemctl daemon-reload			<span style="color:#75715e"># 重载systemd系统配�
 </code></pre></div><h2 id="编写配置文件">编写配置文件</h2>
 <p>不使用包管理器安装的软件，一般是没有用systemd来管理的配置文件的，编译安装完成软件后，为了使用systemd来管理服务，需要自己手动编写配置文件</p>
 <p>配置文件路径</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/usr/lib/systemd/system/		<span style="color:#75715e"># 软件包安装的systemd配置文件目录</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/usr/lib/systemd/system/		<span style="color:#75715e"># 软件包安装的systemd配置文件目录</span>
 /etc/systemd/system/			<span style="color:#75715e"># 系统管理员安装的systemd配置文件目录</span>
 </code></pre></div><p><code>systemctl cat</code>命令可以用来查看配置文件，下面以<code>sshd.service</code>文件为例，它的作用是启动一个 SSH 服务器，供其他用户以 SSH 方式登录。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># /usr/lib/systemd/system/sshd.service</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># /usr/lib/systemd/system/sshd.service</span>
 <span style="color:#f92672">[</span>Unit<span style="color:#f92672">]</span>
 Description<span style="color:#f92672">=</span>OpenSSH server daemon
 Documentation<span style="color:#f92672">=</span>man:sshd<span style="color:#f92672">(</span>8<span style="color:#f92672">)</span> man:sshd_config<span style="color:#f92672">(</span>5<span style="color:#f92672">)</span>
@@ -355,14 +355,14 @@ WantedBy<span style="color:#f92672">=</span>multi-user.target
 <p>上面的例子中，启动<code>sshd</code>，执行的命令是<code>/usr/sbin/sshd -D $OPTIONS</code>，其中的变量<code>$OPTIONS</code>就来自<code>EnvironmentFile</code>字段指定的环境参数文件。</p>
 </blockquote>
 <p>与之作用相似的，还有如下这些字段。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ExecReload字段：重启服务时执行的命令
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ExecReload字段：重启服务时执行的命令
 ExecStop字段：停止服务时执行的命令
 ExecStartPre字段：启动服务之前执行的命令
 ExecStartPost字段：启动服务之后执行的命令
 ExecStopPost字段：停止服务之后执行的命令
 </code></pre></div><h3 id="定义启动类型">定义启动类型</h3>
 <p><code>Type</code>字段定义启动类型。它可以设置的值如下</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">simple（默认值）：ExecStart字段启动的进程为主进程
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">simple（默认值）：ExecStart字段启动的进程为主进程
 forking：ExecStart字段将以fork<span style="color:#f92672">()</span>方式启动，此时父进程将会退出，子进程将成为主进程, 如果使用了此种类型，那么建议同时设置 PIDFile<span style="color:#f92672">=</span> 选项，以帮助 systemd 准确可靠的定位该服务的主进程。
 oneshot：类似于simple，但只执行一次，Systemd 会等它执行完，才启动其他服务
 dbus：类似于simple，但会等待 D-Bus 信号后启动
@@ -374,7 +374,7 @@ idle：类似于simple，但是要等到其他任务都执行完，才会启动�
 <p>上面这个例子中，将<code>KillMode</code>设为<code>process</code>，表示只停止主进程，不停止任何sshd 子进程，即子进程打开的 SSH session 仍然保持连接。这个设置不太常见，但对 sshd 很重要，否则你停止服务的时候，会连自己打开的 SSH session 一起杀掉。</p>
 </blockquote>
 <p><code>KillMode</code>字段可以设置的值如下:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">control-group（默认值）：当前控制组里面的所有子进程，都会被杀掉
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">control-group（默认值）：当前控制组里面的所有子进程，都会被杀掉
 process：只杀主进程
 mixed：主进程将收到 SIGTERM 信号，子进程收到 SIGKILL 信号
 none：没有进程会被杀掉，只是执行服务的 stop 命令。
@@ -384,7 +384,7 @@ none：没有进程会被杀掉，只是执行服务的 stop 命令。
 <p><code>Restart</code>字段：定义了 sshd 退出后，Systemd 的重启方式。</p>
 </blockquote>
 <p><code>Restart</code>字段可以设置的值如下:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">no（默认值）：退出后不会重启
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">no（默认值）：退出后不会重启
 on-success：只有正常退出时（退出状态码为0），才会重启
 on-failure：非正常退出时（退出状态码非0），包括被信号终止和超时，才会重启
 on-abnormal：只有被信号终止和超时，才会重启
@@ -405,19 +405,19 @@ always：不管是什么退出原因，总是重启
 <p><code>Target</code>的含义是服务组，表示一组服务。<code>WantedBy=multi-user.target</code>指的是，sshd 所在的 Target 是<code>multi-user.target</code>。</p>
 <p>这个设置非常重要，因为执行<code>systemctl enable sshd.service</code>命令时，<code>sshd.service</code>的一个符号链接，就会放在<code>/etc/systemd/system</code>目录下面的<code>multi-user.target.wants</code>子目录之中。</p>
 <p>Systemd 有默认的启动 Target</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ systemctl get-default
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ systemctl get-default
 multi-user.target
 </code></pre></div><p>上面的结果表示，默认的启动 Target 是<code>multi-user.target</code>。在这个组里的所有服务，都将开机启动。这就是为什么<code>systemctl enable</code>命令能设置开机启动的原因。</p>
 <p>一般来说，常用的 Target 有两个：一个是<code>multi-user.target</code>，表示多用户命令行状态；另一个是<code>graphical.target</code>，表示图形用户状态，它依赖于<code>multi-user.target</code>。官方文档有一张非常清晰的 [Target 依赖关系图](<a href="https://www.freedesktop.org/software/systemd/man/bootup.html#System">https://www.freedesktop.org/software/systemd/man/bootup.html#System</a> Manager Bootup)。</p>
 <h2 id="修改配置文件后重启">修改配置文件后重启</h2>
 <p>修改配置文件以后，需要重新加载配置文件，然后重新启动相关服务。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#75715e"># 重新加载配置文件</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#75715e"># 重新加载配置文件</span>
 $ sudo systemctl daemon-reload
 
 <span style="color:#75715e"># 重启相关服务</span>
 $ sudo systemctl restart foobar
 </code></pre></div><h2 id="编写redisservice">编写redis.service</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-service" data-lang="service"><span style="color:#66d9ef">[Unit]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-service" data-lang="service"><span style="color:#66d9ef">[Unit]</span>
 <span style="color:#a6e22e">Description</span><span style="color:#f92672">=</span><span style="color:#e6db74">Redis</span>
 <span style="color:#a6e22e">After</span><span style="color:#f92672">=</span><span style="color:#e6db74">network.target</span>
 

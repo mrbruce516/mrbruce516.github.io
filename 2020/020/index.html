@@ -257,15 +257,15 @@
 <h3 id="docker部署">Docker部署</h3>
 <p>docker部署非常快捷，干净，首先需要在你的服务器上有个docker环境，怎么装就不在这篇里说了。</p>
 <p>运行下面的命令下载RSSHub镜像</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker pull diygod/rsshub
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker pull diygod/rsshub
 </code></pre></div><p>然后运行 RSSHub 即可</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run -d --name rsshub -p 1200:1200 diygod/rsshub
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run -d --name rsshub -p 1200:1200 diygod/rsshub
 </code></pre></div><p>在浏览器中打开 <a href="http://127.0.0.1:1200/">http://127.0.0.1:1200/ (opens new window)</a>，enjoy it! ✅</p>
 <p>您可以使用下面的命令来关闭 RSSHub</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker stop rsshub
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker stop rsshub
 </code></pre></div><h3 id="更新">更新</h3>
 <p>删除旧容器</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker stop rsshub
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker stop rsshub
 $ docker rm rsshub
 </code></pre></div><p>然后重复安装步骤</p>
 <h3 id="更多安装方法">更多安装方法</h3>

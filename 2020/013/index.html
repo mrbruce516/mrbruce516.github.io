@@ -265,7 +265,7 @@
 <p>  拿<strong>CentOS</strong>举例，如果服务器在海外，那么点第一个 <a href="https://dev.mysql.com/downloads/repo/yum/"><strong>MySQL Yum Repository</strong></a> 会进入到一个选择系统版本的页面，按照自己的情况选择合适的仓库源。</p>
 <p><img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/B96FfVoArypeb7j.png" alt="yum选择版本"></p>
 <p>  下载完成后，会得到一个rpm文件，用Uvh参数更新一些软件仓库，随后安装即可。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 把mysql添加至软件仓库</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 把mysql添加至软件仓库</span>
 yum -Uvh <span style="color:#f92672">{</span>你下载下来的rpm包<span style="color:#f92672">}</span>
 <span style="color:#75715e"># 安装mysql服务端及客户端</span>
 yum -y isntall mysql-community-server mysql-community-client
@@ -277,34 +277,34 @@ yum -y isntall mysql-community-server mysql-community-client
 <ol>
 <li>解压mysql安装包</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tar -xvf <span style="color:#f92672">{</span>你下载的mysql包.tar<span style="color:#f92672">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tar -xvf <span style="color:#f92672">{</span>你下载的mysql包.tar<span style="color:#f92672">}</span>
 </code></pre></div><ol start="2">
 <li>卸载CentOS7自带的MariaDB依赖</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rpm -qa|grep mariadb
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rpm -qa|grep mariadb
 rpm -e --nodeps mariadb-libs
 rpm -qa|grep mariadb		<span style="color:#75715e"># 再检查一下还有没有返回结果</span>
 </code></pre></div><ol start="3">
 <li>安装相关依赖</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yum -y install net-tools
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yum -y install net-tools
 yum -y install perl
 </code></pre></div><ol start="4">
 <li>依次安装mysql包</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rpm -ivh mysql-community-common-xxxxx.rpm		<span style="color:#75715e"># xxx代表你下载的版本号</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rpm -ivh mysql-community-common-xxxxx.rpm		<span style="color:#75715e"># xxx代表你下载的版本号</span>
 rpm -ivh mysql-community-libs*
 rpm -ivh mysql-community-client-xxxx.rpm
 rpm -ivh  mysql-community-server-xxxx.rpm
 </code></pre></div><ol start="5">
 <li>启动mysql，获取默认root密码</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">service mysqld start
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">service mysqld start
 grep <span style="color:#e6db74">&#39;temporary password&#39;</span> /var/log/mysqld.log		<span style="color:#75715e"># 查看预分配的密码</span>
 </code></pre></div><ol start="6">
 <li>初始化mysql</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 这一步主要是更新一下mysql的root密码</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 这一步主要是更新一下mysql的root密码</span>
 mysql_secure_installation
 <span style="color:#75715e"># 具体我就不写了，跟着他提示走，然后根据你的需求进行初始化</span>
 </code></pre></div><p>  至此，mysql已安装完毕～</p>
@@ -327,16 +327,16 @@ mysql_secure_installation
 <ul>
 <li>临时关闭</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">setenforce <span style="color:#ae81ff">0</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">setenforce <span style="color:#ae81ff">0</span>
 </code></pre></div><ul>
 <li>永久关闭</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim /etc/selinux/config
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim /etc/selinux/config
 把 SELINUX<span style="color:#f92672">=</span>enforcing 改为 SELINUX<span style="color:#f92672">=</span>disabled 即可
 source /etc/selinux/config			<span style="color:#75715e"># 让配置文件生效</span>
 </code></pre></div><h3 id="2-开启远程访问">2. 开启远程访问</h3>
 <p>  默认安装好的mysql是不开启远程连接的，但是在实际使用过程中，没有人直接登录上数据库服务器直接进行操作，所以得手动开一下</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mysql -u root -p
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mysql -u root -p
 输入密码
 use mysql;
 CREATE USER <span style="color:#e6db74">&#39;root&#39;</span>@<span style="color:#e6db74">&#39;%&#39;</span> IDENTIFIED BY <span style="color:#e6db74">&#39;你的密码&#39;</span>;
@@ -346,9 +346,9 @@ FLUSH PRIVILEGES;
 </code></pre></div><h3 id="3-设定数据存储路径">3. 设定数据存储路径</h3>
 <p>  一般来说MySQL默认存储位置在<code>/var/lib/mysql</code>下，这个位置一般用的是挂在系统根目录下的磁盘（一般来说不太会对这个位置扩容），为了更好的管理数据，一般会放在一块LVM的数据卷上，方便日后弹性扩容以及进行数据迁移。</p>
 <h4 id="step1-先看看磁盘具体分区情况">Step.1 先看看磁盘具体分区情况</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">df -h
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">df -h
 </code></pre></div><h4 id="step2-创建数据存放点">Step.2 创建数据存放点</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 找到你想要存放数据的目录，以下以/data 举例</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 找到你想要存放数据的目录，以下以/data 举例</span>
 
 <span style="color:#75715e"># 关闭mysql服务</span>
 service mysqld stop
@@ -359,7 +359,7 @@ cp -R /var/lib/mysql/*	/data/mysql		<span style="color:#75715e"># 递归把原�
 chown -R mysql:mysql /data/mysql		<span style="color:#75715e"># 给/data/mysql授权</span>
 
 </code></pre></div><h4 id="step3-修改mysql配置">Step.3 修改mysql配置</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim /etc/my.cnf
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim /etc/my.cnf
 <span style="color:#75715e"># 把原先的注释掉，养成好习惯，不要直接改</span>
 datadir<span style="color:#f92672">=</span>/data/mysql
 socket<span style="color:#f92672">=</span>/data/mysql/mysql.sock
@@ -368,7 +368,7 @@ socket<span style="color:#f92672">=</span>/data/mysql/mysql.sock
 <span style="color:#f92672">[</span>client<span style="color:#f92672">]</span>
 socket<span style="color:#f92672">=</span>/data/mysql/mysql.sock
 </code></pre></div><p>Step.4 验证结果</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">service mysqld start		<span style="color:#75715e"># 先把服务起起来</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">service mysqld start		<span style="color:#75715e"># 先把服务起起来</span>
 show global variables like <span style="color:#e6db74">&#34;%datadir%&#34;</span>;		<span style="color:#75715e"># 看看文件存储位置是否已经生效</span>
 </code></pre></div>
     </div>

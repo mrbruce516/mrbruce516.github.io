@@ -261,23 +261,23 @@
 <p>  首先讲一下如何在文章内嵌入播放器吧，这个场景比较适合写一些生活向文章（类似于vlog那种？）的时候使用。</p>
 <h3 id="1-解除安全限制">1. 解除安全限制</h3>
 <p>  需要注意的一点是<strong>20200111更新</strong>后的hugo，在文章（markdown）中嵌入的html标签，在浏览器中全部被替换成了一句<code>&lt;!-- raw HTML omitted --&gt;</code>,对于这个问题，官网论坛<a href="https://discourse.gohugo.io/t/hugo-0-60-0-raw-html-omitted-issue/22010">Hugo 0.60.0 Raw HTML omitted Issue </a>中已经有人提起过此问题，（其实也不是什么不好的事情，Hugo的安全性提高了），并且已经有人给出了答案，只需要启用非安全模式即可，在博客的根目录<code>config.toml</code>中添加如下代码</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">renderer</span>]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">renderer</span>]
 <span style="color:#a6e22e">unsafe</span>= <span style="color:#66d9ef">true</span>
 </code></pre></div><h3 id="2-引用aplayer和metingjs">2. 引用Aplayer和MetingJS</h3>
 <p>  完成上述步骤后，在你的<code>head.html</code>中添加以下代码，以引入Aplayer和MetingJS</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- require APlayer --&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- require APlayer --&gt;</span>
 &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css&#34;</span>&gt;
 &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
 <span style="color:#75715e">&lt;!-- require MetingJS --&gt;</span>
 &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
 </code></pre></div><p>  随后在你需要插入音乐播放器的文章中，添加</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">meting-js</span> <span style="color:#a6e22e">auto</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;link&#34;</span> <span style="color:#a6e22e">list-folded</span><span style="color:#f92672">=</span><span style="color:#e6db74">true</span>&gt;&lt;/<span style="color:#f92672">meting-js</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">meting-js</span> <span style="color:#a6e22e">auto</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;link&#34;</span> <span style="color:#a6e22e">list-folded</span><span style="color:#f92672">=</span><span style="color:#e6db74">true</span>&gt;&lt;/<span style="color:#f92672">meting-js</span>&gt;
 </code></pre></div><p>  上述<code>link</code>为你音乐的连接，<code>list-folded</code>是当你有多首歌的时候默认折叠列表，其他具体参数请看<a href="https://github.com/metowolf/MetingJS#option">Option</a>，成功的效果就像本文章中的播放器一致～</p>
 <h2 id="添加全局播放器">添加全局播放器</h2>
 <p>  有些场景下，可能不会为文章插入音乐，但是可以从网站整体插入个播放器，里面添加一些自己喜欢的歌，也是很不错的。</p>
 <h3 id="1-创建播放器组件">1. 创建播放器组件</h3>
 <p>  在你主题文件夹下<code>partials</code>中添加<code>music.html</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
 &lt;<span style="color:#f92672">html</span>&gt;
 
 &lt;<span style="color:#f92672">head</span>&gt;
@@ -321,10 +321,10 @@
 </span><span style="color:#75715e"></span>    &lt;/<span style="color:#f92672">script</span>&gt;
 &lt;/<span style="color:#f92672">body</span>&gt;
 </code></pre></div><p>  看你需要在哪里使用，我在footer.html中引用了这个文件</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"> {{ <span style="color:#a6e22e">partial</span> <span style="color:#e6db74">&#34;music&#34;</span> . }}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"> {{ <span style="color:#a6e22e">partial</span> <span style="color:#e6db74">&#34;music&#34;</span> . }}
 </code></pre></div><h3 id="2-歌曲外链寻找">2. 歌曲外链寻找</h3>
 <p>  你可能会为歌曲的那几个参数为难,推荐<a href="http://music.liuzhijin.cn">一个网站</a>，先把自己要添加的音乐从官网把url拿下来，然后放到这个网站的音乐地址功能栏中的输入框中去解析即可。最后把相关参数填入</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">music[
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">music[
 	{
 		name:&#39; &#39;,
 		artists:&#39; &#39;,

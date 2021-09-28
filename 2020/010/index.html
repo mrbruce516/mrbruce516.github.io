@@ -248,30 +248,30 @@
         <p>  FFmpeg是一款强大的视频处理工具，一般许多视频播放器都是基于此工具开发的，此工具功能着实强大，用法非常之多，博主并不是非常懂视频编辑的一款，日常使用中拿它最平凡的就是更改视频格式，改改码率，改改视频大小，通过命令行比使用视频编辑软件例如iMovie来说更加快捷。</p>
 <p>  本文章将简单介绍如何使用FFmpeg,将各类格式互相转换，以及让你的YouTubedl走sock5代理,关于如何下载网络上的视频可以看博主之前写的<a href="/2020/005">一行命令拿下你想要的视频资源</a></p>
 <h2 id="命令">命令</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ffmpeg -i <span style="color:#f92672">{</span>输入文件<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>输出文件<span style="color:#f92672">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ffmpeg -i <span style="color:#f92672">{</span>输入文件<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>输出文件<span style="color:#f92672">}</span>
 </code></pre></div><h2 id="示例">示例</h2>
 <h3 id="mp4转mp3">mp4转mp3</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ffmpeg -i foo.mp4 foobar.mp3
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ffmpeg -i foo.mp4 foobar.mp3
 </code></pre></div><h3 id="flv-转-mp3">flv 转 mp3</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ffmpeg -i foo.flv foobar.mp3
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ffmpeg -i foo.flv foobar.mp3
 </code></pre></div><h3 id="mp4-转-wav">mp4 转 wav</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ffmpeg -i foo.mp4 foobar.wav
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ffmpeg -i foo.mp4 foobar.wav
 </code></pre></div><h3 id="wav-转-mp3">wav 转 mp3</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ffmpeg -i foo.wav foobar.mp3
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ffmpeg -i foo.wav foobar.mp3
 </code></pre></div><h2 id="youtube-dl走代理">YouTube-dl走代理</h2>
 <p>  国内大部分视频网站可以通过you-get来获取，但是有些视频，以及YouTube等获取不了，这个时候可以使用功能更加强大的YouTube-dl来实现。</p>
 <p>  若电脑中有brew的话，可以直接在终端输入</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install youtube-dl
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install youtube-dl
 </code></pre></div><p>  安装完后，给YouTube-dl设置一个别名可以更方便的使用它。设置别名的话看你用的是什么shell了，每个shell设置别名方法大同小异，主要是配置文件不一样，bash的话可以写进bash_profile里，zsh的话写在.zshrc中</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ytbdlss是别名，socks5是代理的协议 如果不是socks5请自行修改，1086是自己socks5代理的监听端口号，自己看一下，不一定每台电脑都是1086</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ytbdlss是别名，socks5是代理的协议 如果不是socks5请自行修改，1086是自己socks5代理的监听端口号，自己看一下，不一定每台电脑都是1086</span>
 alias ytbdlss<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;youtube-dl --proxy socks5://127.0.0.1:1086&#34;</span>
 </code></pre></div><p>  至此，以后需要下载you-get下不下来的视频，分两种情况，第一种是网站在大陆不存在的情况。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 直接下载最高清画质</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 直接下载最高清画质</span>
 ytbdlss 视频链接
 <span style="color:#75715e"># 按照自己需要的格式下载</span>
 ytbdlss -F 视频链接
 </code></pre></div><p>  对于国内存在的网站，但是you-get用不了的</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 直接下载最高清画质</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 直接下载最高清画质</span>
 youtube-dl 视频链接
 <span style="color:#75715e"># 按照自己需要的格式下载</span>
 youtube-dl -F 视频链接

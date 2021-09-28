@@ -246,7 +246,7 @@
 
         <p><a href="https://github.com/soimort/you-get/wiki/%E4%B8%AD%E6%96%87%E8%AF%B4%E6%98%8E">You-Get</a> 乃一小小哒命令行程序，提供便利的方式来下载网络上的媒体信息。</p>
 <p>利用you-get下载这个网页的视频:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ you-get http://www.fsf.org/blogs/rms/20140407-geneva-tedx-talk-free-software-free-society
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ you-get http://www.fsf.org/blogs/rms/20140407-geneva-tedx-talk-free-software-free-society
 Site:       fsf.org
 Title:      TEDxGE2014_Stallman05_LQ
 Type:       WebM video <span style="color:#f92672">(</span>video/webm<span style="color:#f92672">)</span>
@@ -276,20 +276,20 @@ Downloading TEDxGE2014_Stallman05_LQ.webm ...
 <li>FFmpeg (强烈推荐) or Libav</li>
 <li>(可选) RTMPDump.</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install you-get
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install you-get
 </code></pre></div><p>安装完成后如下图
 <img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/7rfXUSbv1uQdLsc.png" alt="安装完成">
 随后根据提示安装ffmpeg</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install ffmpeg
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install ffmpeg
 </code></pre></div><p>等待一段时间后，安装完成如下图
 <img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/guqU4mcNZXwV6tj.png" alt="ffmpeg安装完成"></p>
 <h2 id="step2-开始">Step.2 开始</h2>
 <h3 id="1-下载视频">1. 下载视频</h3>
 <p>简单来说，这个给力的小工具使用非常方便，基本一行命令可以下载你想要的视频</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">you-get <span style="color:#e6db74">&#39;视频链接&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">you-get <span style="color:#e6db74">&#39;视频链接&#39;</span>
 </code></pre></div><h3 id="2-高级使用">2. 高级使用</h3>
 <p>当观赏感兴趣之视频，您可以使用 &ndash;info/-i 以查看所有可用画质与格式、s:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ you-get -i <span style="color:#e6db74">&#39;https://www.youtube.com/watch?v=jNQXAC9IVRw&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ you-get -i <span style="color:#e6db74">&#39;https://www.youtube.com/watch?v=jNQXAC9IVRw&#39;</span>
 site:                YouTube
 title:               Me at the zoo
 streams:             <span style="color:#75715e"># Available quality and codecs</span>
@@ -320,7 +320,7 @@ streams:             <span style="color:#75715e"># Available quality and codecs<
       quality:       small
     <span style="color:#75715e"># download-with: you-get --itag=17 [URL]</span>
 </code></pre></div><p>标有DEFAULT 为默认画质。如认同，可下载:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ you-get <span style="color:#e6db74">&#39;https://www.youtube.com/watch?v=jNQXAC9IVRw&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ you-get <span style="color:#e6db74">&#39;https://www.youtube.com/watch?v=jNQXAC9IVRw&#39;</span>
 site:                YouTube
 title:               Me at the zoo
 stream:
@@ -336,7 +336,7 @@ Downloading zoo.webm ...
 Saving Me at the zoo.en.srt ...Done.
 </code></pre></div><p>(如YouTube视频带有字幕，将被一同下载，以SubRip格式保存.)</p>
 <p>或，如您希望其他格式(mp4)，请使用其他提示选项:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ you-get --itag<span style="color:#f92672">=</span><span style="color:#ae81ff">18</span> <span style="color:#e6db74">&#39;https://www.youtube.com/watch?v=jNQXAC9IVRw&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ you-get --itag<span style="color:#f92672">=</span><span style="color:#ae81ff">18</span> <span style="color:#e6db74">&#39;https://www.youtube.com/watch?v=jNQXAC9IVRw&#39;</span>
 </code></pre></div><h4 id="注意">注意:</h4>
 <ul>
 <li>目前，格式选择没有大规模铺开；默认选项为最高画质.</li>
