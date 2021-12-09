@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="theme-color" content="#ffffff">
+  
+  <meta name="baidu-site-verification" content="e0YUuV3foo" />
+  <meta content="磁盘冗余, 磁盘阵列, raid" name="keywords">
+  <meta content="麻吉麻尼酱の个人博客 - 理清磁盘冗余技术" property="og:description">
+  
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/gh/mrbruce516/LeaveIt/assets/js/APlayer.min.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+
+  
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="麻吉麻尼酱">
+  <meta name="description" content="麻吉麻尼酱の个人博客">
+  
+  
+  <link rel="prev" href="https://mrbruce516.top/2021/002/" />
+  
+  <link rel="canonical" href="https://mrbruce516.top/2021/003/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           理清磁盘冗余技术 | 麻吉麻之家
+       
+  </title>
+  <meta name="title" content="理清磁盘冗余技术 | 麻吉麻之家">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/mrbruce516.top"
+    },
+    "articleSection" : "posts",
+    "name" : "理清磁盘冗余技术",
+    "headline" : "理清磁盘冗余技术",
+    "description" : "理清磁盘冗余技术",
+    "inLanguage" : "zh-CN",
+    "author" : "麻吉麻尼酱",
+    "creator" : "麻吉麻尼酱",
+    "publisher": "麻吉麻尼酱",
+    "accountablePerson" : "麻吉麻尼酱",
+    "copyrightHolder" : "麻吉麻尼酱",
+    "copyrightYear" : "2021",
+    "datePublished": "2021-12-09 12:59:39 \u002b0800 CST",
+    "dateModified" : "2021-12-09 12:59:39 \u002b0800 CST",
+    "url" : "https:\/\/mrbruce516.top\/2021\/003\/",
+    "wordCount" : "3887",
+    "keywords" : [ "磁盘冗余","磁盘阵列","raid", "麻吉麻之家"]
+}
+</script>    
+
+  <link href="//use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    
+        <div class="top-scroll-bar"></div>
+    
+    <div class="container">
+        
+            <div class="navbar-header header-back2home-logo">
+                <span class="logo_mark" >>$</span>
+                <a href="https://mrbruce516.top">
+                    <span class="logo_text" >cd /home/</span>
+                    <span class="logo_cursor" ></span>
+                </a>
+            </div>
+        
+        <div class="navbar-right">
+                
+                <span class="menu">
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                </span>
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     
+         <div class="top-scroll-bar"></div>
+     
+     <div class="container">
+        <div class="navbar-header">
+            <div class="header-logo">
+                
+                    <span class="logo_mark">>$</span>
+                    <a href="https://mrbruce516.top">
+                        <span class="logo_text"> cd /home/ </span>
+                        <span class="logo_cursor"></span>
+                </a>
+                
+            </div>
+            <div class="navbar-right">
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a>
+                <div class="menu-toggle">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">理清磁盘冗余技术</h1>
+        <div class="post-meta">
+            <i class="far fa-folder-open"></i>
+            <span class="post-category">
+                <a href="https://mrbruce516.top/categories/%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/"> 从入门到入坟 </a>
+                
+            </span>
+            <span class="post-time">
+                <i class="far fa-calendar-alt"></i> <time
+                    datetime=2021-12-09
+                    itemprop="datePublished">2021-12-09</time>
+            </span>
+            <i class="far fa-file-word"></i> <span class="post-word-count"> 3887 字</span>
+            <i class="far fa-clock"></i> <span class="more-meta"> 8 分钟</span>
+        </div>
+    </header>
+        
+            <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title"></h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#需求背景">需求背景</a></li>
+    <li><a href="#实现方式">实现方式</a>
+      <ul>
+        <li><a href="#踩坑过程">踩坑过程</a></li>
+        <li><a href="#raid-级别">RAID 级别</a></li>
+        <li><a href="#raid级别对比">raid级别对比</a></li>
+        <li><a href="#个人推荐">个人推荐</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+<script type="text/javascript">
+  window.onload = function () {
+    var fix = $('.post-toc');
+    var end = $('.post-comment');
+    var fixTop = fix.offset().top, fixHeight = fix.height();
+    var endTop, miss;
+    var offsetTop = fix[0].offsetTop;
+    $(window).scroll(function () {
+      var docTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+      if (end.length > 0) {
+        endTop = end.offset().top;
+        miss = endTop - docTop - fixHeight;
+      }
+      if (fixTop < docTop) {
+        fix.css({ 'position': 'fixed' });
+        if ((end.length > 0) && (endTop < (docTop + fixHeight))) {
+          fix.css({ top: miss });
+        } else {
+          fix.css({ top: 0 });
+        }
+      } else {
+        fix.css({ 'position': 'absolute' });
+        fix.css({ top: offsetTop });
+      }
+    })
+  }
+</script> 
+        
+    <div class="post-content">
+        
+
+        
+        
+        
+
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+
+        <p>独立磁盘冗余阵列 (Redundant Array of Independent Disks, <a href="https://zh.wikipedia.org/wiki/RAID">RAID</a>) 是一种将多个磁盘驱动器组件（通常是多块硬盘或多个分区）组合为一个逻辑单元的存储技术。根据 RAID 的部署情况，这个逻辑单元可以是单个的文件系统，也可以是一个能在其上建立多个分区的透明中间层。根据所需的冗余量和性能要求，数据按照 <a href="https://mrbruce516.top/2021/003/#raid-%E7%BA%A7%E5%88%AB">#RAID 级别</a> 中的某一种方式分布在驱动器中。所选的 RAID 级别决定了是否可以防止数据丢失（硬盘故障时）、是否提高性能或结合两者优势。</p>
+<h2 id="需求背景">需求背景</h2>
+<img title="" src="https://raw.githubusercontent.com/mrbruce516/picbed/main/img/IMG_0771%400.5x.png" alt="" width="445" data-align="inline">
+<p>由于最近买了3块西数HC550（16TB）来组建个人ALL-IN-ONE设备，那么势必需要对硬盘的可用性进行提升，最后选择了软RAID的方案（不想折腾再去搞靠谱的磁盘阵列卡+电池&amp;芯片了），虽然在数据安全性上可能并未有太大提升（待验证），但是在资源管理上以及性能方面一定是有提升的。</p>
+<h2 id="实现方式">实现方式</h2>
+<p>RAID 设备可以用不同方式来管理：</p>
+<p><strong>软件 RAID</strong></p>
+<p>这是最简单的实现方式，因为它不依赖于专用固件或专有软件。这种阵列由操作系统通过以下方式进行管理：</p>
+<ul>
+<li>
+<p>通过抽象层管理（比如 <a href="https://wiki.archlinux.org/title/RAID_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E5%AE%89%E8%A3%85">mdadm</a>）；</p>
+<p><strong>注意：</strong> 这是在本指南下文将要使用的方法。</p>
+</li>
+<li>
+<p>通过逻辑卷管理器来管理（比如 <a href="https://wiki.archlinux.org/title/LVM#RAID" title="LVM">LVM</a>）；</p>
+</li>
+<li>
+<p>通过文件系统的某个组件来管理（比如 <a href="https://wiki.archlinux.org/title/ZFS_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)" title="ZFS (简体中文)">ZFS</a>，<a href="https://wiki.archlinux.org/title/Btrfs#RAID" title="Btrfs">Btrfs</a>）。</p>
+</li>
+</ul>
+<p><strong>硬件 RAID</strong></p>
+<p>这种阵列由安装在计算机上的专用硬件卡直接管理，硬盘直接连接在该计算机上。RAID 的处理逻辑由板载的处理器完成，它独立于 <a href="https://en.wikipedia.org/wiki/Central_processing_unit" title="wikipedia:Central processing unit">主处理器 (CPU)</a>。尽管这种方案独立于任何操作系统，但却需要驱动程序来使硬件 RAID 控制器正常工作。取决于不同的制造商，硬件 RAID 阵列可以在 option ROM 里设置或者操作系统安装完成后另行安装配套软件来设置。这种设置是独立于 Linux 内核的：内核并不能看到单独的每块硬盘。</p>
+<p><strong><a href="https://wiki.archlinux.org/title/Install_Arch_Linux_with_Fake_RAID_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)" title="Install Arch Linux with Fake RAID (简体中文)">FakeRAID</a></strong></p>
+<p>这种类型的 RAID 应当称为 BIOS 或板载 RAID，却常被错误地当做硬件 RAID 来宣传。这种阵列由伪 RAID 控制器来管理，RAID 逻辑由 option ROM 或<a href="https://www.win-raid.com/t19f13-Intel-EFI-RAID-quot-SataDriver-quot-BIOS-Modules.html">安装了 EFI Sata 驱动程序的</a> 固件本身（<a href="https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)" title="Unified Extensible Firmware Interface (简体中文)">UEFI</a> 情况下）来完成，但并不是实现了 <em>所有</em> RAID 功能的完整硬件 RAID 控制器。因此，这种 RAID 有时被称为 FakeRAID。来自 <a href="https://wiki.archlinux.org/title/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)" title="Official repositories (简体中文)">官方仓库</a> 的 <a href="https://archlinux.org/packages/?name=dmraid">dmraid</a> 用于处理这种控制器。这里列出一些 FakeRAID 控制器：<a href="https://en.wikipedia.org/wiki/Intel_Rapid_Storage_Technology" title="wikipedia:Intel Rapid Storage Technology">Intel Rapid Storage</a>，JMicron JMB36x RAID ROM，AMD RAID，ASMedia 106x 和 NVIDIA MediaShield。</p>
+<h3 id="踩坑过程">踩坑过程</h3>
+<ol>
+<li>
+<p>首先最先尝试的是FakeRAID模式，我的MSI Z97 Gaming 7主板自带了 Intel Rapid Storage Technology，但是在Ubuntu下，系统并不能认出raid后的分区，估计是没有驱动的缘故，且在好大哥的帮助下看到了篇帖子：<a href="https://www.powerrc.net/intel-raid-fakeraid-ubuntu.html">Intel RAID (FakeRaid) 在ubuntu下的安装与使用初探</a>，文中总结了由于intel对Linux操作系统raid支持不善，所以为了稳定性弃用了此方案。</p>
+</li>
+<li>
+<p>随后把主板调回了AHCI模式，开始在软raid层面开始选择部署方案，首先看了文件系统级别的方案，目前主流为两种技术，分别是zfs与btrfs，本文不重点介绍文件系统间的区别。有意思的是，目前nas界两巨头 群晖与威联通分别站队，威联通甚至还专门写了一片为何不要用btrfs文件系统，有兴趣的可以去看一下：<a href="https://www.qnap.com/solution/qnap-ext4/zh-cn/">QNAP 使用 ext4 文件系统</a></p>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/mrbruce516/picbed/main/img/20211209135050.png" alt=""></p>
+<p>在深入探究后，发现论坛上很多大佬说ZFS在Linux上不稳定，最好是自己编译zfs进Linux内核，并且zfs非常吃内存，推荐8G ECC内存起。。弃用</p>
+<p>btrfs有许多漏洞，并且相对于常用的ext4，性能落后较为明显，以下拿一张块写入性能对比（此测试方法对硬盘是最常用的写入操作，最典型案例）</p>
+<p><img src="https://raw.githubusercontent.com/mrbruce516/picbed/main/img/20211209135740.png" alt=""></p>
+<p>可以看到性能上差不多，但是效率上（CPU占用率上）来说最好的是xfs接下来依次是EXT4，EXT3，BTRFS</p>
+<p>在其他几种测试方法下例如随机寻道、随机读写吞吐量、创建和删除大量文件等用例下，btrfs的效率都是最差的，图就不放了，感兴趣的可以去看一看：<a href="https://www.ilsistemista.net/index.php/linux-a-unix/6-linux-filesystems-benchmarked-ext3-vs-ext4-vs-xfs-vs-btrfs.html?start=2">EXT3 vs EXT4 vs XFS vs BTRFS linux filesystems benchmark</a></p>
+<ol start="3">
+<li>接下来开始纠结用lvm的raid模式还是直接通过mdadm直接抽象raid</li>
+</ol>
+<p>在查阅了大量帖子后，发现很多人也有这个疑问。。目前还没有可靠的对比分析，但是从设计上来看这两种模式分别对应以下两张图</p>
+<pre tabindex="0"><code># mdadm抽象raid模式
+| / | /var | /usr | /home  |
+ --------------------------
+|       RAID Volume        |
+ --------------------------
+| Disk 1 | Disk 2 | Disk 3 | 
+</code></pre><pre tabindex="0"><code># lvm创建raid模式
+| / | /var | /usr | /home  |
+ --------------------------
+|       LVM Volume 2       |
+ --------------------------
+|       RAID Volume        |
+ --------------------------
+|       LVM Volume 1       |
+ --------------------------
+| Disk 1 | Disk 2 | Disk 3 | 
+</code></pre><p>很明显，层级变多了，且好多大佬都猜测lvm创建raid可能是调用了mdadm而已。。</p>
+<blockquote>
+<p>Creating mdadm arrays on top of an LVM logical volume is nonsense. It technically works, but completely defeats the point of almost everything involved.</p>
+<p>However, LVM can create logical volumes that are backed by a software RAID. You still get all the fancy bits of LVM, though. Like the ability to move which physical disk is holding the stripes of your RAID. Afaik, LVM&rsquo;s software raid is actually just a call to mdadm anyway, so that adds an extra bit of confusion.</p>
+<p>&ndash; reddit (<a href="https://www.reddit.com/r/linuxadmin/comments/fhoinz/comment/fkdea29/?utm_source=share&amp;utm_medium=web2x&amp;context=3">LVM vs mdadm software raid : linuxadmin</a>)</p>
+<p>If you tried to RAID LVM volumes, you would be left with a normal device without any of the LVM volume benefits (e.g. growing filesystems etc.)</p>
+<p>I&rsquo;m guessing LVM is just using the mdam option <code>--assume-clean</code> behind the scene i.e. still no advantage of using LVM-RAID instead of mdadm (at leat not in that regard). If your&rsquo;re happy with no full resync when create array with mdadm just use that optino yourself. Today, 4 years later, resync the whole SSD disk make no difference in regards to wear-out as the endurance-levels on newer SSD are so high. </p>
+<p>&ndash; StackExchange <a href="https://serverfault.com/questions/217666/what-is-better-lvm-on-raid-or-raid-on-lvm#comment216925_217666">linux - What is better LVM on RAID or RAID on LVM? - Server Fault</a></p>
+</blockquote>
+<p>所以最终决定，直接通过软件对硬件设备进行抽象raid，最底层的技术一般也是最可靠的。当然若有lvm raid模式性能/可靠性好过mdadm的测试用例，还请告诉我</p>
+<h3 id="raid-级别">RAID 级别</h3>
+<p>那么选定了组建raid的工具后，首先就是要想清楚自己需要的是什么级别的raid。</p>
+<h4 id="基本-raid-级别">基本 RAID 级别</h4>
+<p>有多种不同的 <a href="https://en.wikipedia.org/wiki/Standard_RAID_levels" title="wikipedia:Standard RAID levels">基本 RAID 级别</a>，下面列出了最常用的几种。</p>
+<p><a href="https://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_0" title="wikipedia:Standard RAID levels">RAID 0</a></p>
+<p>将多块硬盘组合为一个带区卷，尽管它 <em>并不提供数据冗余</em>，它仍可以被当做是 RAID，而且它确实提供了 <em>巨幅的速度提升</em>。如果提高速度比数据安全更重要（比如作为 <a href="https://wiki.archlinux.org/title/Swap" title="Swap">swap</a> 分区），可以选择这种 RAID 级别。在服务器上，RAID 1 和 RAID 5 阵列更加合适。在 RAID 0 阵列中，块设备的大小是最小组成分区的大小乘以组成分区的数量。</p>
+<p><a href="https://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_1" title="wikipedia:Standard RAID levels">RAID 1</a></p>
+<p>这是最直接的 RAID 级别：完全镜像。与其他 RAID 级别一样，它只在分区位于不同物理硬盘上才有效。如果某一块硬盘损坏，由 RAID 阵列提供的块设备将不受影响。可以使用 RAID 1 的情境包括了除 <a href="https://wiki.archlinux.org/title/Swap" title="Swap">swap</a> 和临时文件外的其他所有情境。请注意，如果使用由软件实现的 RAID，引导分区只能选择 RAID 1，因为读取引导分区的引导器通常无法辨识 RAID，但一个 RAID 1 的组成分区可以像常规分区一样读取。RAID 1 阵列块设备的大小是最小组成分区的大小。</p>
+<p><a href="https://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_5" title="wikipedia:Standard RAID levels">RAID 5</a></p>
+<p>需要至少 3 块物理硬盘，并结合了 RAID 1 的数据冗余和 RAID 0 的速度与可用空间上的优势。RAID 5 使用了类似 RAID 0 的条带化技术，同时也将奇偶校验块<em>分布式地存储在每一块磁盘上</em>。如果遭遇硬盘损坏，这些奇偶校验块就可以用来在替代的新磁盘上重建损坏的数据。RAID 5 仅可弥补一个组成磁盘损坏带来的损失。</p>
+<p><strong>注意：</strong> RAID 5 是结合了速度与数据冗余优势的常用选择。但值得注意的是，当一块硬盘损坏而没有及时更换，此时若再有硬盘损坏，则所有数据都将丢失。此外，考虑到现代磁盘的超大容量和消费级硬盘无法恢复的读取错误率 (Unrecoverable read error, URE)，超过 4TiB 的阵列在重建数据时出现至少一处读取错误 (URE) 的概率几乎在<strong>预料之中</strong>（概率大于 50%）。因此，存储行业不再推荐使用 RAID 5。</p>
+<p><a href="https://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_6" title="wikipedia:Standard RAID levels">RAID 6</a></p>
+<p>需要至少 4 块物理硬盘，提供了和 RAID 5 一样的优势并且在两块硬盘损坏时仍能保证数据安全。RAID 6 使用了和 RAID 5 类似的条带化技术，但是把两个不同的奇偶校验块 <em>分布式地存储在每一块磁盘上</em>。如果磁盘发生故障，这些奇偶校验块将用于重建替换磁盘上的数据。RAID 6 可以承担两个组成磁盘的损失。在抵御无法恢复的读取错误 (Unrecoverable read error, URE) 时也某种程度上更加可靠，因为磁盘阵列在重建某一块损坏硬盘的数据时仍然有奇偶校验块可以校验数据。但是，总体而言，RAID 6 开销较大，大多数时候 far2 布局的 RAID 10（参见下文）提供了更快的速度和更强的可靠性，因此更倾向于采用 RAID 10。</p>
+<h4 id="嵌套-raid-级别">嵌套 RAID 级别</h4>
+<p><a href="https://en.wikipedia.org/wiki/Nested_RAID_levels#RAID_10_.28RAID_1.2B0.29" title="wikipedia:Nested RAID levels">RAID 1+0</a></p>
+<p>RAID1+0 是一种结合了两种基本 RAID 级别的嵌套级别，它相对基本级别提高了性能且增加了冗余量。它通常被称为 <em>RAID10</em>，但是，Linux MD（内核自带的 RAID 实现）支持的 RAID10 不是简单的两层 RAID 重叠，请看下文。</p>
+<p><a href="https://en.wikipedia.org/wiki/Non-standard_RAID_levels#Linux_MD_RAID_10" title="wikipedia:Non-standard RAID levels">RAID 10</a></p>
+<p>Linux 下的 RAID10 建立在 RAID1+0 的概念上，但它将其实现为单一的一层，这一层可以有多种不同的布局。可参考 <a href="https://documentation.suse.com/zh-cn/sles/15-SP2/html/SLES-all/cha-raid10.html#sec-raid10-complex">创建软件 RAID 10 设备 | 储存管理指南 | SUSE Linux Enterprise Server 15 SP2</a>。</p>
+<p>在 Y 块硬盘上的 <em>近 X 布局</em> 在不同硬盘上重复储存每个数据块 X 次，但不需要 Y 可以被 X 整除。数据块放在所镜像的磁盘上几乎相同的位置，这就是 <em>近布局</em> 名字的来源。它可以工作在任意数量的磁盘上，最少是 2 块。在 2 块硬盘上的近 2 布局相当于 RAID1，4 块硬盘上的近 2 布局相当于 RAID1+0。</p>
+<p>在 Y 块硬盘上的 <em>远 X 布局</em> 设计用于在镜像阵列中提供与条带化技术一样快的读取速度。它通过把每块硬盘分成前后两部分来实现这一点，写入第一块硬盘前半部分数据也会写入第二块硬盘的后半部分，反之亦然。这样可以达到一个效果，那就是把对连续数据的读取条带化，而这正是 RAID0 和 RAID5 读取性能高的原因。它的缺点在于写入连续数据时有轻微性能损失，因为硬盘磁头要运动到另一片区域来写入镜像。当数据读取性能和可用性/冗余性一样重要时，比起 RAID1+0 <strong>和</strong> RAID5，更应该优先考虑远 2 布局的 RAID10。需注意这种方式仍无法代替备份。详情请阅读维基百科相关页面。</p>
+<h3 id="raid级别对比">raid级别对比</h3>
+<table>
+<thead>
+<tr>
+<th>RAID 级别</th>
+<th>数据冗余</th>
+<th>物理设备利用率</th>
+<th>读取性能</th>
+<th>写入性能</th>
+<th>最少磁盘数量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>0</strong></td>
+<td>否</td>
+<td>100%</td>
+<td>n 倍<strong>最优</strong></td>
+<td>n 倍<strong>最优</strong></td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>1</strong></td>
+<td>是</td>
+<td>50%</td>
+<td>如果有多个进程同时读取，最多 n 倍，否则 1 倍</td>
+<td>1 倍</td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>是</td>
+<td>67% - 94%</td>
+<td>(n−1) 倍<strong>较优</strong></td>
+<td>(n−1) 倍<strong>较优</strong></td>
+<td>3</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td>是</td>
+<td>50% - 88%</td>
+<td>(n−2) 倍</td>
+<td>(n−2) 倍</td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>10,far2</strong></td>
+<td>是</td>
+<td>50%</td>
+<td>n 倍<strong>最优;</strong> 与 RAID0 相当但加入了数据冗余</td>
+<td>(n/2) 倍</td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>10,near2</strong></td>
+<td>是</td>
+<td>50%</td>
+<td>如果有多个进程同时读取，最多 n 倍，否则 1 倍</td>
+<td>(n/2) 倍</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>其中 <em>n</em> 表示用于组成阵列的磁盘数量。</li>
+<li>此表中的raid10方案由md工具驱动，硬raid10则至少需要4块盘。</li>
+</ul>
+<h3 id="个人推荐">个人推荐</h3>
+<ul>
+<li>
+<p>在服务器（商用）的情况下，推荐raid1/raid10</p>
+</li>
+<li>
+<p>在个人PC的情况下，推荐raid5/raid10</p>
+<ul>
+<li>raid10比raid5要靠谱，并且读取性能更强，但是在设备空间利用率上要多损耗20%左右，所以我自己用了raid5</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+        
+        <p class="copyright-item">
+            <span><i class="fas fa-user"></i> : </span>
+            <span>麻吉麻尼酱 </span>
+        </p>
+        
+
+        
+        <p class="copyright-item">
+            <span><i class="fa fa-link"> : </i></span>
+            <span><a href=https://mrbruce516.top/2021/003/>https://mrbruce516.top/2021/003/</span>
+        </p>
+        
+
+        <p class="copyright-item lincese">
+            <span><i class="fa fa-copyright"> : </i>
+            本文采用
+            <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh">
+            知识共享署名-非商业性使用 4.0 国际许可协议
+            </a>进行许可</span>
+        </p>
+        
+    </div>
+
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://mrbruce516.top/tags/%E7%A3%81%E7%9B%98%E5%86%97%E4%BD%99/">
+                    #磁盘冗余</a></span>
+            
+            <span class="tag"><a href="https://mrbruce516.top/tags/%E7%A3%81%E7%9B%98%E9%98%B5%E5%88%97/">
+                    #磁盘阵列</a></span>
+            
+            <span class="tag"><a href="https://mrbruce516.top/tags/raid/">
+                    #raid</a></span>
+            
+            </section>
+        
+        
+        <section>
+            <span><a href="javascript:window.history.back();">back</a></span> ·
+            <span><a href="https://mrbruce516.top">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://mrbruce516.top/2021/002/" class="prev" rel="prev" title="学习使用systemd来管理服务"><i
+                class="iconfont icon-left"></i>&nbsp;学习使用systemd来管理服务</a>
+        
+        
+    </div>
+
+    <div class="post-comment">
+        
+        
+        
+        <span id="/2021/003/" class="leancloud_visitors" data-flag-title="理清磁盘冗余技术">
+            <span class="post-meta-item-text">访问量 </span>
+            <span class="leancloud-visitors-count"></span>
+            <p></p>
+        </span>
+        <div id="vcomments"></div>
+        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+        <script type="text/javascript">
+            new Valine({
+                el: '#vcomments',
+                appId: 'kmydF60Uqb5Njn6oTE0C5Yo0-9Nh9j0Va',
+                appKey: 't9u3imrn0fTc3FTvhcDjjkDM',
+                notify: 'false',
+                verify: 'false',
+                avatar: 'mp',
+                placeholder: '说点什么吧...',
+                visitor: 'true'
+            });
+        </script>
+        
+    
+    
+    <!DOCTYPE html>
+<html>
+
+<head>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/mrbruce516/LeaveIt/assets/js/APlayer.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+</head>
+
+<body>
+    <div class="demo">
+        <div id="player1">
+        </div>
+    </div>
+    <script>
+        var ap = new APlayer
+            ({
+                element: document.getElementById('player1'),
+                fixed: true,
+                autoplay: false,
+                mini: true,
+                theme: '#63b8fd',
+                loop: 'all',
+                order: 'random',
+                preload: 'auto',
+                volume: 0.7,
+                mutex: true,
+                listFolded: false,
+                listMaxHeight: 90,
+                lrcType: 0,
+                music:
+                    [
+                        {
+                            artist: '桜高軽音部',
+                            name: 'ふわふわ時間',
+                            url: 'https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/music/%E3%81%B5%E3%82%8F%E3%81%B5%E3%82%8F%E6%99%82%E9%96%93.mp3',
+                            cover: 'https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/109951163559682176.jpg',
+                        },
+                        {
+                            artist: '放課後ティータイム',
+                            name: 'U&I',
+                            url: 'https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/music/U%26I.m4a',
+                            cover: 'https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/109951163048673023.jpg',
+                        },
+                        {
+                            artist: 'スネオヘアー',
+                            name: '無くした日々にさよなら',
+                            url: 'https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/music/%E7%84%A1%E3%81%8F%E3%81%97%E3%81%9F%E6%97%A5%E3%80%85%E3%81%AB%E3%81%95%E3%82%88%E3%81%AA%E3%82%89.mp3',
+                            cover: 'https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/1378787586466255.jpg',
+                        },
+                        {
+                            artist: '今日から俺は!!',
+                            name: '男の勲章',
+                            url: 'https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/music/%E4%BB%8A%E6%97%A5%E3%81%8B%E3%82%89%E4%BF%BA%E3%81%AF%21%21%E4%B8%BB%E9%A1%8C%E6%AD%8C%E3%80%8C%E7%94%B7%E3%81%AE%E5%8B%B2%E7%AB%A0%E3%80%8D%E3%83%95%E3%83%AB%E3%82%B5%E3%82%A4%E3%82%B9%E3%82%99.m4a',
+                            cover: 'https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/c6481c90eece4f6faddf1349fe265267.jpeg',
+                        },
+                    ]
+                    
+        });
+        
+    </script>
+</body>
+
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+   <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2021</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://mrbruce516.top">麻吉麻尼酱</a> | </span> 
+         
+
+         
+        <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/mrbruce516/LeaveIt" target="_blank" rel="external nofollow">LeaveIt</a></span>
+   </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/mrbruce516/live2d-widget@1.0.3/autoload.js"></script>
+
+     </div>
+  </body>
+</html>
