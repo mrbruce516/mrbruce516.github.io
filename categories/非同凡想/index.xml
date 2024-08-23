@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>非同凡想 on 麻吉麻之家</title>
-    <link>http://mrbruce516.github.io/categories/%E9%9D%9E%E5%90%8C%E5%87%A1%E6%83%B3/</link>
-    <description>Recent content in 非同凡想 on 麻吉麻之家</description>
+    <title>非同凡想 on 麻吉麻社长</title>
+    <link>http://localhost:1313/categories/%E9%9D%9E%E5%90%8C%E5%87%A1%E6%83%B3/</link>
+    <description>Recent content in 非同凡想 on 麻吉麻社长</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 27 Feb 2021 20:39:19 +0800</lastBuildDate>
-    <atom:link href="http://mrbruce516.github.io/categories/%E9%9D%9E%E5%90%8C%E5%87%A1%E6%83%B3/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/%E9%9D%9E%E5%90%8C%E5%87%A1%E6%83%B3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>再见👋2020</title>
-      <link>http://mrbruce516.github.io/2021/001/</link>
+      <link>http://localhost:1313/2021/001/</link>
       <pubDate>Sat, 27 Feb 2021 20:39:19 +0800</pubDate>
-      <guid>http://mrbruce516.github.io/2021/001/</guid>
+      <guid>http://localhost:1313/2021/001/</guid>
       <description>2020年对很多人来说都是非同寻常的一年，对我更是如此 🦠 新冠疫情 记得在19年低，我的好几个telegram群组都有在讨论后来全世界重点关注的</description>
     </item>
     <item>
       <title>Stay Hungry Stay Foolish</title>
-      <link>http://mrbruce516.github.io/2020/009/</link>
+      <link>http://localhost:1313/2020/009/</link>
       <pubDate>Sun, 05 Apr 2020 23:58:00 +0800</pubDate>
-      <guid>http://mrbruce516.github.io/2020/009/</guid>
+      <guid>http://localhost:1313/2020/009/</guid>
       <description>Stay Hungry 正如Jobs特别喜欢的这句话，谈谈我的理解，hungry意为饥饿，乔布斯饥饿吗？他成长在一个中产阶级家庭，除了他早年没事干，为了思考禅宗</description>
     </item>
   </channel>
