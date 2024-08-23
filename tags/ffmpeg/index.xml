@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ffmpeg on 麻吉麻社长</title>
-    <link>http://localhost:1313/tags/ffmpeg/</link>
+    <link>http://blog.mrbruce516.live/tags/ffmpeg/</link>
     <description>Recent content in Ffmpeg on 麻吉麻社长</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 13 Apr 2020 13:45:10 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://blog.mrbruce516.live/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>FFmpeg一些常用的小命令</title>
-      <link>http://localhost:1313/2020/010/</link>
+      <link>http://blog.mrbruce516.live/2020/010/</link>
       <pubDate>Mon, 13 Apr 2020 13:45:10 +0800</pubDate>
-      <guid>http://localhost:1313/2020/010/</guid>
+      <guid>http://blog.mrbruce516.live/2020/010/</guid>
       <description>FFmpeg是一款强大的视频处理工具，一般许多视频播放器都是基于此工具开发的，此工具功能着实强大，用法非常之多，博主并不是非常懂视频编辑的一</description>
     </item>
   </channel>

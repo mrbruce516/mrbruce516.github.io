@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>命令行工具 on 麻吉麻社长</title>
-    <link>http://localhost:1313/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/</link>
+    <link>http://blog.mrbruce516.live/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/</link>
     <description>Recent content in 命令行工具 on 麻吉麻社长</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 05 Apr 2020 21:38:51 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://blog.mrbruce516.live/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VIM配置分享</title>
-      <link>http://localhost:1313/2020/008/</link>
+      <link>http://blog.mrbruce516.live/2020/008/</link>
       <pubDate>Sun, 05 Apr 2020 21:38:51 +0800</pubDate>
-      <guid>http://localhost:1313/2020/008/</guid>
+      <guid>http://blog.mrbruce516.live/2020/008/</guid>
       <description>最近有小伙伴们说，vim太丑了不好用，其实vim配置好以后，颜值&amp;amp;功能性都能上升好几个档次，我在下边放一下我的vim的配置项，并且对</description>
     </item>
     <item>
       <title>一行命令拿下你想要的视频资源</title>
-      <link>http://localhost:1313/2020/005/</link>
+      <link>http://blog.mrbruce516.live/2020/005/</link>
       <pubDate>Thu, 02 Apr 2020 13:56:54 +0800</pubDate>
-      <guid>http://localhost:1313/2020/005/</guid>
+      <guid>http://blog.mrbruce516.live/2020/005/</guid>
       <description>You-Get 乃一小小哒命令行程序，提供便利的方式来下载网络上的媒体信息。 利用you-get下载这个网页的视频: $ you-get http://www.fsf.org/blogs/rms/20140407-geneva-tedx-talk-free-software-free-society Site: fsf.org Title: TEDxGE2014_Stallman05_LQ Type: WebM video (video/webm) Size: 27.12 MiB (28435804 Bytes) Downloading TEDxGE2014_Stallman05_LQ.webm ... 100.0%</description>
     </item>
     <item>
       <title>给你的Mac装上brew</title>
-      <link>http://localhost:1313/2020/004/</link>
+      <link>http://blog.mrbruce516.live/2020/004/</link>
       <pubDate>Thu, 02 Apr 2020 13:27:49 +0800</pubDate>
-      <guid>http://localhost:1313/2020/004/</guid>
+      <guid>http://blog.mrbruce516.live/2020/004/</guid>
       <description>HomeBrew是什么 HomeBrew是macOS（或 Linux）缺失的软件包的管理器 （官方解释），简单说他就是为了方便你下一些依赖、软件、</description>
     </item>
   </channel>

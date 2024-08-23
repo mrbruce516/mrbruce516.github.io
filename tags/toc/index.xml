@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Toc on 麻吉麻社长</title>
-    <link>http://localhost:1313/tags/toc/</link>
+    <link>http://blog.mrbruce516.live/tags/toc/</link>
     <description>Recent content in Toc on 麻吉麻社长</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 18 Apr 2020 14:51:13 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/toc/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://blog.mrbruce516.live/tags/toc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>解决aplayer导致文章toc失效</title>
-      <link>http://localhost:1313/2020/012/</link>
+      <link>http://blog.mrbruce516.live/2020/012/</link>
       <pubDate>Sat, 18 Apr 2020 14:51:13 +0800</pubDate>
-      <guid>http://localhost:1313/2020/012/</guid>
+      <guid>http://blog.mrbruce516.live/2020/012/</guid>
       <description>在使用了aplayer后，发现toc失效了，怎么点都没有用，前两天折腾过pjax，但是也没折腾出来，所以这个功能的锅先排除掉，Google上</description>
     </item>
   </channel>
