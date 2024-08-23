@@ -29,9 +29,9 @@
   <meta name="description" content="麻吉麻尼酱の个人博客">
   
   
-  <link rel="prev" href="https://mrbruce516.top/2020/019/" />
-  <link rel="next" href="https://mrbruce516.top/2020/021/" />
-  <link rel="canonical" href="https://mrbruce516.top/2020/020/" />
+  <link rel="prev" href="http://mrbruce516.github.io/2020/019/" />
+  <link rel="next" href="http://mrbruce516.github.io/2020/021/" />
+  <link rel="canonical" href="http://mrbruce516.github.io/2020/020/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -61,7 +61,7 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https:\/\/mrbruce516.top"
+         "@id": "http:\/\/mrbruce516.github.io\/"
     },
     "articleSection" : "posts",
     "name" : "超棒的rss生成器，rsshub",
@@ -76,7 +76,7 @@
     "copyrightYear" : "2020",
     "datePublished": "2020-11-25 19:26:41 \u002b0800 CST",
     "dateModified" : "2020-11-25 19:26:41 \u002b0800 CST",
-    "url" : "https:\/\/mrbruce516.top\/2020\/020\/",
+    "url" : "http:\/\/mrbruce516.github.io\/2020\/020\/",
     "wordCount" : "1050",
     "keywords" : [ "javascript","软件","rss", "麻吉麻之家"]
 }
@@ -99,7 +99,7 @@
         
             <div class="navbar-header header-back2home-logo">
                 <span class="logo_mark" >>$</span>
-                <a href="https://mrbruce516.top">
+                <a href="http://mrbruce516.github.io/">
                     <span class="logo_text" >cd /home/</span>
                     <span class="logo_cursor" ></span>
                 </a>
@@ -131,7 +131,7 @@
             <div class="header-logo">
                 
                     <span class="logo_mark">>$</span>
-                    <a href="https://mrbruce516.top">
+                    <a href="http://mrbruce516.github.io/">
                         <span class="logo_text"> cd /home/ </span>
                         <span class="logo_cursor"></span>
                 </a>
@@ -168,7 +168,7 @@
         <div class="post-meta">
             <i class="far fa-folder-open"></i>
             <span class="post-category">
-                <a href="https://mrbruce516.top/categories/%E8%88%B9%E9%95%BF%E7%9A%84%E5%B7%A5%E5%85%B7/"> 船长的工具 </a>
+                <a href="http://mrbruce516.github.io/categories/%E8%88%B9%E9%95%BF%E7%9A%84%E5%B7%A5%E5%85%B7/"> 船长的工具 </a>
                 
             </span>
             <span class="post-time">
@@ -257,17 +257,17 @@
 <h3 id="docker部署">Docker部署</h3>
 <p>docker部署非常快捷，干净，首先需要在你的服务器上有个docker环境，怎么装就不在这篇里说了。</p>
 <p>运行下面的命令下载RSSHub镜像</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker pull diygod/rsshub
-</code></pre></div><p>然后运行 RSSHub 即可</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run -d --name rsshub -p 1200:1200 diygod/rsshub
-</code></pre></div><p>在浏览器中打开 <a href="http://127.0.0.1:1200/">http://127.0.0.1:1200/ (opens new window)</a>，enjoy it! ✅</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker pull diygod/rsshub
+</span></span></code></pre></div><p>然后运行 RSSHub 即可</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ docker run -d --name rsshub -p 1200:1200 diygod/rsshub
+</span></span></code></pre></div><p>在浏览器中打开 <a href="http://127.0.0.1:1200/">http://127.0.0.1:1200/ (opens new window)</a>，enjoy it! ✅</p>
 <p>您可以使用下面的命令来关闭 RSSHub</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker stop rsshub
-</code></pre></div><h3 id="更新">更新</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ docker stop rsshub
+</span></span></code></pre></div><h3 id="更新">更新</h3>
 <p>删除旧容器</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker stop rsshub
-$ docker rm rsshub
-</code></pre></div><p>然后重复安装步骤</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ docker stop rsshub
+</span></span><span style="display:flex;"><span>$ docker rm rsshub
+</span></span></code></pre></div><p>然后重复安装步骤</p>
 <h3 id="更多安装方法">更多安装方法</h3>
 <p>其他还有如docker-compose、本地部署（仅推荐开发rss使用）等，可在官方的<a href="https://docs.rsshub.app/install/">部署手册</a>中进行查看</p>
 <h2 id="2-使用rsshub">2. 使用RSSHub</h2>
@@ -294,7 +294,7 @@ $ docker rm rsshub
         
         <p class="copyright-item">
             <span><i class="fa fa-link"> : </i></span>
-            <span><a href=https://mrbruce516.top/2020/020/>https://mrbruce516.top/2020/020/</span>
+            <span><a href=http://mrbruce516.github.io/2020/020/>http://mrbruce516.github.io/2020/020/</span>
         </p>
         
 
@@ -314,13 +314,13 @@ $ docker rm rsshub
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://mrbruce516.top/tags/javascript/">
+            <span class="tag"><a href="http://mrbruce516.github.io/tags/javascript/">
                     #javascript</a></span>
             
-            <span class="tag"><a href="https://mrbruce516.top/tags/%E8%BD%AF%E4%BB%B6/">
+            <span class="tag"><a href="http://mrbruce516.github.io/tags/%E8%BD%AF%E4%BB%B6/">
                     #软件</a></span>
             
-            <span class="tag"><a href="https://mrbruce516.top/tags/rss/">
+            <span class="tag"><a href="http://mrbruce516.github.io/tags/rss/">
                     #rss</a></span>
             
             </section>
@@ -328,17 +328,17 @@ $ docker rm rsshub
         
         <section>
             <span><a href="javascript:window.history.back();">back</a></span> ·
-            <span><a href="https://mrbruce516.top">home</a></span>
+            <span><a href="http://mrbruce516.github.io/">home</a></span>
         </section>
     </div>
 
     <div class="post-nav">
         
-        <a href="https://mrbruce516.top/2020/019/" class="prev" rel="prev" title="玩转ssh免密登录"><i
+        <a href="http://mrbruce516.github.io/2020/019/" class="prev" rel="prev" title="玩转ssh免密登录"><i
                 class="iconfont icon-left"></i>&nbsp;玩转ssh免密登录</a>
         
         
-        <a href="https://mrbruce516.top/2020/021/" class="next" rel="next"
+        <a href="http://mrbruce516.github.io/2020/021/" class="next" rel="next"
             title="为不支持rss的页面制作rss">为不支持rss的页面制作rss&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
@@ -348,8 +348,8 @@ $ docker rm rsshub
         
         
         <span id="/2020/020/" class="leancloud_visitors" data-flag-title="超棒的rss生成器，rsshub">
-            <span class="post-meta-item-text">访问量 </span>
-            <span class="leancloud-visitors-count"></span>
+            <em class="post-meta-item-text">访问量 </em>
+            <i class="leancloud-visitors-count"></i>
             <p></p>
         </span>
         <div id="vcomments"></div>
@@ -357,10 +357,10 @@ $ docker rm rsshub
         <script type="text/javascript">
             new Valine({
                 el: '#vcomments',
-                appId: 'kmydF60Uqb5Njn6oTE0C5Yo0-9Nh9j0Va',
-                appKey: 't9u3imrn0fTc3FTvhcDjjkDM',
-                notify: 'false',
-                verify: 'false',
+                appId: 'akZxFlWl93ch0j3q9zW344By-gzGzoHsz',
+                appKey: 'r0AJ6JpWaArIR0GoXVnxNY1R',
+                notify: '',
+                verify: '',
                 avatar: 'mp',
                 placeholder: '说点什么吧...',
                 visitor: 'true'
@@ -442,13 +442,13 @@ $ docker rm rsshub
    <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2018 - 2022</span>
+        <span itemprop="copyrightYear">2018 - 2024</span>
         
         <span class="with-love">
     	 <i class="iconfont icon-love"></i> 
          </span>
          
-            <span class="author" itemprop="copyrightHolder"><a href="https://mrbruce516.top">麻吉麻尼酱</a> | </span> 
+            <span class="author" itemprop="copyrightHolder"><a href="http://mrbruce516.github.io/">麻吉麻尼酱</a> | </span> 
          
 
          

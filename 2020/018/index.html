@@ -29,9 +29,9 @@
   <meta name="description" content="麻吉麻尼酱の个人博客">
   
   
-  <link rel="prev" href="https://mrbruce516.top/2020/017/" />
-  <link rel="next" href="https://mrbruce516.top/2020/019/" />
-  <link rel="canonical" href="https://mrbruce516.top/2020/018/" />
+  <link rel="prev" href="http://mrbruce516.github.io/2020/017/" />
+  <link rel="next" href="http://mrbruce516.github.io/2020/019/" />
+  <link rel="canonical" href="http://mrbruce516.github.io/2020/018/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -61,7 +61,7 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https:\/\/mrbruce516.top"
+         "@id": "http:\/\/mrbruce516.github.io\/"
     },
     "articleSection" : "posts",
     "name" : "为mysql搭建主从复制",
@@ -76,7 +76,7 @@
     "copyrightYear" : "2020",
     "datePublished": "2020-10-22 16:22:54 \u002b0800 CST",
     "dateModified" : "2020-10-22 16:22:54 \u002b0800 CST",
-    "url" : "https:\/\/mrbruce516.top\/2020\/018\/",
+    "url" : "http:\/\/mrbruce516.github.io\/2020\/018\/",
     "wordCount" : "990",
     "keywords" : [ "mysql","数据库", "麻吉麻之家"]
 }
@@ -99,7 +99,7 @@
         
             <div class="navbar-header header-back2home-logo">
                 <span class="logo_mark" >>$</span>
-                <a href="https://mrbruce516.top">
+                <a href="http://mrbruce516.github.io/">
                     <span class="logo_text" >cd /home/</span>
                     <span class="logo_cursor" ></span>
                 </a>
@@ -131,7 +131,7 @@
             <div class="header-logo">
                 
                     <span class="logo_mark">>$</span>
-                    <a href="https://mrbruce516.top">
+                    <a href="http://mrbruce516.github.io/">
                         <span class="logo_text"> cd /home/ </span>
                         <span class="logo_cursor"></span>
                 </a>
@@ -168,7 +168,7 @@
         <div class="post-meta">
             <i class="far fa-folder-open"></i>
             <span class="post-category">
-                <a href="https://mrbruce516.top/categories/%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/"> 从入门到入坟 </a>
+                <a href="http://mrbruce516.github.io/categories/%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/"> 从入门到入坟 </a>
                 
             </span>
             <span class="post-time">
@@ -270,25 +270,25 @@
 <ul>
 <li>主服务器</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>myslqd<span style="color:#f92672">]</span>
-server-id<span style="color:#f92672">=</span>1			<span style="color:#75715e"># 必须。设置服务器id，不与从服务器冲突即可</span>
-log_bin<span style="color:#f92672">=</span>mysql-bin		<span style="color:#75715e"># 必须。启动MySQ二进制日志系统</span>
-binlog-do-db<span style="color:#f92672">=</span>test		<span style="color:#75715e"># 需要同步的数据库名，如果有多个数据库，可重复此参数，每个数据库一行</span>
-binlog-ignore-db<span style="color:#f92672">=</span>mysql		<span style="color:#75715e"># 不同步mysql系统数据库</span>
-binlog_format<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;MIXED&#34;</span>		<span style="color:#75715e"># 优化mysql的复制模式</span>
-expire_logs_days<span style="color:#f92672">=</span>7		<span style="color:#75715e"># 设定binlog日志过期时间（过期自动删除）</span>
-</code></pre></div><p>  写好配置文件后，记得重启数据库<code>service msyqld restart</code>，然后用cli进入mysql，<code>show master status\G;</code>查询一下主服务器的状态。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>myslqd<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>server-id<span style="color:#f92672">=</span>1			<span style="color:#75715e"># 必须。设置服务器id，不与从服务器冲突即可</span>
+</span></span><span style="display:flex;"><span>log_bin<span style="color:#f92672">=</span>mysql-bin		<span style="color:#75715e"># 必须。启动MySQ二进制日志系统</span>
+</span></span><span style="display:flex;"><span>binlog-do-db<span style="color:#f92672">=</span>test		<span style="color:#75715e"># 需要同步的数据库名，如果有多个数据库，可重复此参数，每个数据库一行</span>
+</span></span><span style="display:flex;"><span>binlog-ignore-db<span style="color:#f92672">=</span>mysql		<span style="color:#75715e"># 不同步mysql系统数据库</span>
+</span></span><span style="display:flex;"><span>binlog_format<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;MIXED&#34;</span>		<span style="color:#75715e"># 优化mysql的复制模式</span>
+</span></span><span style="display:flex;"><span>expire_logs_days<span style="color:#f92672">=</span>7		<span style="color:#75715e"># 设定binlog日志过期时间（过期自动删除）</span>
+</span></span></code></pre></div><p>  写好配置文件后，记得重启数据库<code>service msyqld restart</code>，然后用cli进入mysql，<code>show master status\G;</code>查询一下主服务器的状态。</p>
 <p>  查询后需要记录下来比较重要的字段为：<code>mysql-bin.0000xx</code></p>
 <ul>
 <li>
 <p>从服务器</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>mysqld<span style="color:#f92672">]</span>
-server-id<span style="color:#f92672">=</span>2		<span style="color:#75715e"># 必须。设置服务器id，不与主服务器冲突即可</span>
-</code></pre></div><p>其他无特殊需求可以暂不设置，重启数据库后，进入mysql-client。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">change master to master_host<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;你的IP&#39;</span>,master_port<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;你的数据库端口&#39;</span>,master_user<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;主服务器的用户&#39;</span>,master_password<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;主服务器用户的密码&#39;</span>,master_log_file<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;mysql-bin.0000xx&#39;</span>,master_log_pos<span style="color:#f92672">=</span>0;		<span style="color:#75715e"># master_log_pos设置成0代表任意</span>
-start slave;
-show slave status<span style="color:#ae81ff">\G</span>;
-</code></pre></div><p>  在最后的状态中，看到<code>Slave_IO_Running</code> 以及 <code>Slave_SQL_Running</code> 都为YES即代表mysql主从同步搭建完毕</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>mysqld<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>server-id<span style="color:#f92672">=</span>2		<span style="color:#75715e"># 必须。设置服务器id，不与主服务器冲突即可</span>
+</span></span></code></pre></div><p>其他无特殊需求可以暂不设置，重启数据库后，进入mysql-client。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>change master to master_host<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;你的IP&#39;</span>,master_port<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;你的数据库端口&#39;</span>,master_user<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;主服务器的用户&#39;</span>,master_password<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;主服务器用户的密码&#39;</span>,master_log_file<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;mysql-bin.0000xx&#39;</span>,master_log_pos<span style="color:#f92672">=</span>0;		<span style="color:#75715e"># master_log_pos设置成0代表任意</span>
+</span></span><span style="display:flex;"><span>start slave;
+</span></span><span style="display:flex;"><span>show slave status<span style="color:#ae81ff">\G</span>;
+</span></span></code></pre></div><p>  在最后的状态中，看到<code>Slave_IO_Running</code> 以及 <code>Slave_SQL_Running</code> 都为YES即代表mysql主从同步搭建完毕</p>
 </li>
 </ul>
 
@@ -305,7 +305,7 @@ show slave status<span style="color:#ae81ff">\G</span>;
         
         <p class="copyright-item">
             <span><i class="fa fa-link"> : </i></span>
-            <span><a href=https://mrbruce516.top/2020/018/>https://mrbruce516.top/2020/018/</span>
+            <span><a href=http://mrbruce516.github.io/2020/018/>http://mrbruce516.github.io/2020/018/</span>
         </p>
         
 
@@ -325,10 +325,10 @@ show slave status<span style="color:#ae81ff">\G</span>;
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://mrbruce516.top/tags/mysql/">
+            <span class="tag"><a href="http://mrbruce516.github.io/tags/mysql/">
                     #mysql</a></span>
             
-            <span class="tag"><a href="https://mrbruce516.top/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+            <span class="tag"><a href="http://mrbruce516.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
                     #数据库</a></span>
             
             </section>
@@ -336,17 +336,17 @@ show slave status<span style="color:#ae81ff">\G</span>;
         
         <section>
             <span><a href="javascript:window.history.back();">back</a></span> ·
-            <span><a href="https://mrbruce516.top">home</a></span>
+            <span><a href="http://mrbruce516.github.io/">home</a></span>
         </section>
     </div>
 
     <div class="post-nav">
         
-        <a href="https://mrbruce516.top/2020/017/" class="prev" rel="prev" title="vim学习笔记"><i
+        <a href="http://mrbruce516.github.io/2020/017/" class="prev" rel="prev" title="vim学习笔记"><i
                 class="iconfont icon-left"></i>&nbsp;vim学习笔记</a>
         
         
-        <a href="https://mrbruce516.top/2020/019/" class="next" rel="next"
+        <a href="http://mrbruce516.github.io/2020/019/" class="next" rel="next"
             title="玩转ssh免密登录">玩转ssh免密登录&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
@@ -356,8 +356,8 @@ show slave status<span style="color:#ae81ff">\G</span>;
         
         
         <span id="/2020/018/" class="leancloud_visitors" data-flag-title="为mysql搭建主从复制">
-            <span class="post-meta-item-text">访问量 </span>
-            <span class="leancloud-visitors-count"></span>
+            <em class="post-meta-item-text">访问量 </em>
+            <i class="leancloud-visitors-count"></i>
             <p></p>
         </span>
         <div id="vcomments"></div>
@@ -365,10 +365,10 @@ show slave status<span style="color:#ae81ff">\G</span>;
         <script type="text/javascript">
             new Valine({
                 el: '#vcomments',
-                appId: 'kmydF60Uqb5Njn6oTE0C5Yo0-9Nh9j0Va',
-                appKey: 't9u3imrn0fTc3FTvhcDjjkDM',
-                notify: 'false',
-                verify: 'false',
+                appId: 'akZxFlWl93ch0j3q9zW344By-gzGzoHsz',
+                appKey: 'r0AJ6JpWaArIR0GoXVnxNY1R',
+                notify: '',
+                verify: '',
                 avatar: 'mp',
                 placeholder: '说点什么吧...',
                 visitor: 'true'
@@ -450,13 +450,13 @@ show slave status<span style="color:#ae81ff">\G</span>;
    <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2018 - 2022</span>
+        <span itemprop="copyrightYear">2018 - 2024</span>
         
         <span class="with-love">
     	 <i class="iconfont icon-love"></i> 
          </span>
          
-            <span class="author" itemprop="copyrightHolder"><a href="https://mrbruce516.top">麻吉麻尼酱</a> | </span> 
+            <span class="author" itemprop="copyrightHolder"><a href="http://mrbruce516.github.io/">麻吉麻尼酱</a> | </span> 
          
 
          

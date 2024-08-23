@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>raid on 麻吉麻之家</title>
-    <link>https://mrbruce516.top/tags/raid/</link>
-    <description>Recent content in raid on 麻吉麻之家</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Raid on 麻吉麻之家</title>
+    <link>http://mrbruce516.github.io/tags/raid/</link>
+    <description>Recent content in Raid on 麻吉麻之家</description>
+    <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 09 Dec 2021 12:59:39 +0800</lastBuildDate><atom:link href="https://mrbruce516.top/tags/raid/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Dec 2021 12:59:39 +0800</lastBuildDate>
+    <atom:link href="http://mrbruce516.github.io/tags/raid/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>理清磁盘冗余技术</title>
-      <link>https://mrbruce516.top/2021/003/</link>
+      <link>http://mrbruce516.github.io/2021/003/</link>
       <pubDate>Thu, 09 Dec 2021 12:59:39 +0800</pubDate>
-      
-      <guid>https://mrbruce516.top/2021/003/</guid>
+      <guid>http://mrbruce516.github.io/2021/003/</guid>
       <description>独立磁盘冗余阵列 (Redundant Array of Independent Disks, RAID) 是一种将多个磁盘驱动器组件（通常是多块硬盘或多个分区）组合为一个逻辑单元的存储技术。根据 RAID 的部署情况，这个逻辑单</description>
     </item>
-    
   </channel>
 </rss>

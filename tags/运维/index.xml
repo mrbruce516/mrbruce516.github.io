@@ -2,37 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>运维 on 麻吉麻之家</title>
-    <link>https://mrbruce516.top/tags/%E8%BF%90%E7%BB%B4/</link>
+    <link>http://mrbruce516.github.io/tags/%E8%BF%90%E7%BB%B4/</link>
     <description>Recent content in 运维 on 麻吉麻之家</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 30 Jul 2020 16:16:07 +0800</lastBuildDate><atom:link href="https://mrbruce516.top/tags/%E8%BF%90%E7%BB%B4/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Jul 2020 16:16:07 +0800</lastBuildDate>
+    <atom:link href="http://mrbruce516.github.io/tags/%E8%BF%90%E7%BB%B4/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>用好rpm包，解决离线安装痛点</title>
-      <link>https://mrbruce516.top/2020/016/</link>
+      <link>http://mrbruce516.github.io/2020/016/</link>
       <pubDate>Thu, 30 Jul 2020 16:16:07 +0800</pubDate>
-      
-      <guid>https://mrbruce516.top/2020/016/</guid>
+      <guid>http://mrbruce516.github.io/2020/016/</guid>
       <description>一般来说，在互联网环境下，安装软件可以用Linux自带的包管理器进行安装（例如YUM、apt等），在无互联网环境下一般通过编译安装来安装相应</description>
     </item>
-    
     <item>
       <title>轻松安装配置mysql8</title>
-      <link>https://mrbruce516.top/2020/013/</link>
+      <link>http://mrbruce516.github.io/2020/013/</link>
       <pubDate>Mon, 20 Apr 2020 15:21:14 +0800</pubDate>
-      
-      <guid>https://mrbruce516.top/2020/013/</guid>
+      <guid>http://mrbruce516.github.io/2020/013/</guid>
       <description>每次安装mysql都是一件比较繁琐的事情，这个数据库自从被oracle收购后，就不太方便从yum一键安装了，所以每次需要自己设置很多配置项，</description>
     </item>
-    
     <item>
       <title>利用bind9搭建dns服务器</title>
-      <link>https://mrbruce516.top/2018/001/</link>
+      <link>http://mrbruce516.github.io/2018/001/</link>
       <pubDate>Thu, 27 Dec 2018 13:33:47 +0800</pubDate>
-      
-      <guid>https://mrbruce516.top/2018/001/</guid>
+      <guid>http://mrbruce516.github.io/2018/001/</guid>
       <description>这里介绍如何搭建dns解析服务器 基础环境 Linux发行版，这里用CentOS7 bind软件 本案例中父域服务器为192.168.250.72 子</description>
     </item>
-    
   </channel>
 </rss>

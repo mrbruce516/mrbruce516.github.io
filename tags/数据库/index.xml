@@ -2,28 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>数据库 on 麻吉麻之家</title>
-    <link>https://mrbruce516.top/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+    <link>http://mrbruce516.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
     <description>Recent content in 数据库 on 麻吉麻之家</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 22 Oct 2020 16:22:54 +0800</lastBuildDate><atom:link href="https://mrbruce516.top/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Oct 2020 16:22:54 +0800</lastBuildDate>
+    <atom:link href="http://mrbruce516.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>为mysql搭建主从复制</title>
-      <link>https://mrbruce516.top/2020/018/</link>
+      <link>http://mrbruce516.github.io/2020/018/</link>
       <pubDate>Thu, 22 Oct 2020 16:22:54 +0800</pubDate>
-      
-      <guid>https://mrbruce516.top/2020/018/</guid>
+      <guid>http://mrbruce516.github.io/2020/018/</guid>
       <description>概要 MySQL Replication (MySQL 主从复制) 是什么？为什么要主从复制以及它的实现原理是什么？ 主从复制概念 MySQL 主从复制是指数据可以从一个MySQL数据库服务器主节点复制</description>
     </item>
-    
     <item>
       <title>轻松安装配置mysql8</title>
-      <link>https://mrbruce516.top/2020/013/</link>
+      <link>http://mrbruce516.github.io/2020/013/</link>
       <pubDate>Mon, 20 Apr 2020 15:21:14 +0800</pubDate>
-      
-      <guid>https://mrbruce516.top/2020/013/</guid>
+      <guid>http://mrbruce516.github.io/2020/013/</guid>
       <description>每次安装mysql都是一件比较繁琐的事情，这个数据库自从被oracle收购后，就不太方便从yum一键安装了，所以每次需要自己设置很多配置项，</description>
     </item>
-    
   </channel>
 </rss>

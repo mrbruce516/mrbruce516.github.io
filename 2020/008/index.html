@@ -29,9 +29,9 @@
   <meta name="description" content="麻吉麻尼酱の个人博客">
   
   
-  <link rel="prev" href="https://mrbruce516.top/2020/007/" />
-  <link rel="next" href="https://mrbruce516.top/2020/009/" />
-  <link rel="canonical" href="https://mrbruce516.top/2020/008/" />
+  <link rel="prev" href="http://mrbruce516.github.io/2020/007/" />
+  <link rel="next" href="http://mrbruce516.github.io/2020/009/" />
+  <link rel="canonical" href="http://mrbruce516.github.io/2020/008/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -61,7 +61,7 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https:\/\/mrbruce516.top"
+         "@id": "http:\/\/mrbruce516.github.io\/"
     },
     "articleSection" : "posts",
     "name" : "VIM配置分享",
@@ -76,7 +76,7 @@
     "copyrightYear" : "2020",
     "datePublished": "2020-04-05 21:38:51 \u002b0800 CST",
     "dateModified" : "2020-04-05 21:38:51 \u002b0800 CST",
-    "url" : "https:\/\/mrbruce516.top\/2020\/008\/",
+    "url" : "http:\/\/mrbruce516.github.io\/2020\/008\/",
     "wordCount" : "877",
     "keywords" : [ "软件","命令行工具","文本编辑器", "麻吉麻之家"]
 }
@@ -99,7 +99,7 @@
         
             <div class="navbar-header header-back2home-logo">
                 <span class="logo_mark" >>$</span>
-                <a href="https://mrbruce516.top">
+                <a href="http://mrbruce516.github.io/">
                     <span class="logo_text" >cd /home/</span>
                     <span class="logo_cursor" ></span>
                 </a>
@@ -131,7 +131,7 @@
             <div class="header-logo">
                 
                     <span class="logo_mark">>$</span>
-                    <a href="https://mrbruce516.top">
+                    <a href="http://mrbruce516.github.io/">
                         <span class="logo_text"> cd /home/ </span>
                         <span class="logo_cursor"></span>
                 </a>
@@ -168,7 +168,7 @@
         <div class="post-meta">
             <i class="far fa-folder-open"></i>
             <span class="post-category">
-                <a href="https://mrbruce516.top/categories/%E8%88%B9%E9%95%BF%E7%9A%84%E5%B7%A5%E5%85%B7/"> 船长的工具 </a>
+                <a href="http://mrbruce516.github.io/categories/%E8%88%B9%E9%95%BF%E7%9A%84%E5%B7%A5%E5%85%B7/"> 船长的工具 </a>
                 
             </span>
             <span class="post-time">
@@ -234,53 +234,52 @@
 
         <p>  最近有小伙伴们说，vim太丑了不好用，其实vim配置好以后，颜值&amp;功能性都能上升好几个档次，我在下边放一下我的vim的配置项，并且对配置项做相应的说明，有兴趣的小伙伴们自取～同时也放上我终端环境配置的备份，目前使用<a href="https://github.com/mrbruce516/shellBak">iterm+zsh</a>，之前用过一段时间的<a href="https://github.com/mrbruce516/hyperbackup">Hyper+fish</a>,都是非常不错的终端方案，有兴趣的话自取～</p>
 <p>  也是先开个坑，之后有时间的话准备详细聊聊iterm2的配置指南～</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#e6db74">&#34; 基础
-</span><span style="color:#e6db74">set nocompatible	&#34;</span> 不与 Vi 兼容
-set backspace<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>         <span style="color:#e6db74">&#34; 解决插入模式下delete/backspce键失效问题
-</span><span style="color:#e6db74">syntax on		&#34;</span> 打开语法高亮
-set showmode		<span style="color:#e6db74">&#34; 在底部显示，当前处于命令模式还是插入模式
-</span><span style="color:#e6db74">set showcmd		&#34;</span> 命令模式下，在底部显示，当前键入的指令
-set mouse<span style="color:#f92672">=</span>i		<span style="color:#e6db74">&#34; 支持使用鼠标。
-</span><span style="color:#e6db74">set encoding=utf-8	&#34;</span> 使用 utf-8 编码
-set t_Co<span style="color:#f92672">=</span>256		<span style="color:#e6db74">&#34; 启用256色
-</span><span style="color:#e6db74">filetype indent on	&#34;</span> 开启文件类型检查，并且载入与该类型对应的缩进规则
-                    
-<span style="color:#e6db74">&#34; 缩进
-</span><span style="color:#e6db74">set autoindent		&#34;</span> 按下回车键后，下一行的缩进会自动跟上一行的缩进保持一致
-set tabstop<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>                   <span style="color:#e6db74">&#34; 按下 Tab 键时，Vim 显示的空格数
-</span><span style="color:#e6db74">set shiftwidth=4	&#34;</span> 在文本上按下&gt;&gt;（增加一级缩进）、&lt;&lt;（取消一级缩进）或者<span style="color:#f92672">==</span>（取消全部缩进）时，每一级的字符数
-set expandtab		<span style="color:#e6db74">&#34; 由于 Tab 键在不同的编辑器缩进不一致，该设置自动将 Tab 转为空格
-</span><span style="color:#e6db74">set softtabstop=4	&#34;</span> Tab 转为多少个空格
-
-<span style="color:#e6db74">&#34; 外观
-</span><span style="color:#e6db74">set number		&#34;</span> 显示行号
-<span style="color:#e6db74">&#34; set relativenumber	&#34;</span> 显示光标所在的当前行的行号，其他行都为相对于该行的相对行号
-<span style="color:#e6db74">&#34; set cursorline	&#34;</span> 光标所在的当前行高亮
-set textwidth<span style="color:#f92672">=</span>80	<span style="color:#e6db74">&#34; 设置行宽
-</span><span style="color:#e6db74">set wrap		&#34;</span> 自动折行
-set linebreak		<span style="color:#e6db74">&#34; 不会在单词内部折行
-</span><span style="color:#e6db74">set wrapmargin=2	&#34;</span> 指定折行处与编辑窗口的右边缘之间空出的字符数
-set scrolloff<span style="color:#f92672">=</span>15	<span style="color:#e6db74">&#34; 垂直滚动时，光标距离顶部/底部的位置
-</span><span style="color:#e6db74">&#34;</span> set laststatus<span style="color:#f92672">=</span>2	<span style="color:#e6db74">&#34; 是否显示状态栏。0 表示不显示，1 表示只在多窗口时显示，2 表示显示
-</span><span style="color:#e6db74">set  ruler		&#34;</span> 在状态栏显示光标的当前位置（位于哪一行哪一列）
-
-<span style="color:#e6db74">&#34; 搜索
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">set showmatch           &#34;</span> 光标遇到圆括号、方括号、大括号时，自动高亮对应的另一个圆括号、方括号和大括号
-set hlsearch            <span style="color:#e6db74">&#34; 搜索时，高亮显示匹配结果
-</span><span style="color:#e6db74">set incsearch           &#34;</span> 输入搜索模式时，每输入一个字符，就自动跳到第一个匹配的结果
-set ignorecase          <span style="color:#e6db74">&#34; 搜索时忽略大小写
-</span><span style="color:#e6db74">set smartcase           &#34;</span> 大小写智能搜索
-
-<span style="color:#e6db74">&#34; 编辑
-</span><span style="color:#e6db74">set undofile            &#34;</span> 保留撤销历史
-set autochdir           <span style="color:#e6db74">&#34; 自动切换工作目录
-</span><span style="color:#e6db74">&#34;</span> set visualbell          <span style="color:#e6db74">&#34; 出错时，发出视觉提示，通常是屏幕闪烁
-</span><span style="color:#e6db74">set history=100         &#34;</span> Vim 需要记住多少次历史操作
-set wildmenu            <span style="color:#e6db74">&#34; 这两个是智能自动补全
-</span><span style="color:#e6db74">set wildmode=longest:list,full
-</span><span style="color:#e6db74">
-</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#e6db74">&#34; 基础
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set nocompatible	&#34;</span> 不与 Vi 兼容
+</span></span><span style="display:flex;"><span>set backspace<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>         <span style="color:#e6db74">&#34; 解决插入模式下delete/backspce键失效问题
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">syntax on		&#34;</span> 打开语法高亮
+</span></span><span style="display:flex;"><span>set showmode		<span style="color:#e6db74">&#34; 在底部显示，当前处于命令模式还是插入模式
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set showcmd		&#34;</span> 命令模式下，在底部显示，当前键入的指令
+</span></span><span style="display:flex;"><span>set mouse<span style="color:#f92672">=</span>i		<span style="color:#e6db74">&#34; 支持使用鼠标。
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set encoding=utf-8	&#34;</span> 使用 utf-8 编码
+</span></span><span style="display:flex;"><span>set t_Co<span style="color:#f92672">=</span>256		<span style="color:#e6db74">&#34; 启用256色
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">filetype indent on	&#34;</span> 开启文件类型检查，并且载入与该类型对应的缩进规则
+</span></span><span style="display:flex;"><span>                    
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34; 缩进
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set autoindent		&#34;</span> 按下回车键后，下一行的缩进会自动跟上一行的缩进保持一致
+</span></span><span style="display:flex;"><span>set tabstop<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>                   <span style="color:#e6db74">&#34; 按下 Tab 键时，Vim 显示的空格数
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set shiftwidth=4	&#34;</span> 在文本上按下&gt;&gt;（增加一级缩进）、&lt;&lt;（取消一级缩进）或者<span style="color:#f92672">==</span>（取消全部缩进）时，每一级的字符数
+</span></span><span style="display:flex;"><span>set expandtab		<span style="color:#e6db74">&#34; 由于 Tab 键在不同的编辑器缩进不一致，该设置自动将 Tab 转为空格
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set softtabstop=4	&#34;</span> Tab 转为多少个空格
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34; 外观
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set number		&#34;</span> 显示行号
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34; set relativenumber	&#34;</span> 显示光标所在的当前行的行号，其他行都为相对于该行的相对行号
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34; set cursorline	&#34;</span> 光标所在的当前行高亮
+</span></span><span style="display:flex;"><span>set textwidth<span style="color:#f92672">=</span>80	<span style="color:#e6db74">&#34; 设置行宽
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set wrap		&#34;</span> 自动折行
+</span></span><span style="display:flex;"><span>set linebreak		<span style="color:#e6db74">&#34; 不会在单词内部折行
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set wrapmargin=2	&#34;</span> 指定折行处与编辑窗口的右边缘之间空出的字符数
+</span></span><span style="display:flex;"><span>set scrolloff<span style="color:#f92672">=</span>15	<span style="color:#e6db74">&#34; 垂直滚动时，光标距离顶部/底部的位置
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span> set laststatus<span style="color:#f92672">=</span>2	<span style="color:#e6db74">&#34; 是否显示状态栏。0 表示不显示，1 表示只在多窗口时显示，2 表示显示
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set  ruler		&#34;</span> 在状态栏显示光标的当前位置（位于哪一行哪一列）
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34; 搜索
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set showmatch           &#34;</span> 光标遇到圆括号、方括号、大括号时，自动高亮对应的另一个圆括号、方括号和大括号
+</span></span><span style="display:flex;"><span>set hlsearch            <span style="color:#e6db74">&#34; 搜索时，高亮显示匹配结果
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set incsearch           &#34;</span> 输入搜索模式时，每输入一个字符，就自动跳到第一个匹配的结果
+</span></span><span style="display:flex;"><span>set ignorecase          <span style="color:#e6db74">&#34; 搜索时忽略大小写
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set smartcase           &#34;</span> 大小写智能搜索
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34; 编辑
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set undofile            &#34;</span> 保留撤销历史
+</span></span><span style="display:flex;"><span>set autochdir           <span style="color:#e6db74">&#34; 自动切换工作目录
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span> set visualbell          <span style="color:#e6db74">&#34; 出错时，发出视觉提示，通常是屏幕闪烁
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set history=100         &#34;</span> Vim 需要记住多少次历史操作
+</span></span><span style="display:flex;"><span>set wildmenu            <span style="color:#e6db74">&#34; 这两个是智能自动补全
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set wildmode=longest:list,full
+</span></span></span></code></pre></div>
     </div>
 
     <div class="post-copyright">
@@ -294,7 +293,7 @@ set wildmenu            <span style="color:#e6db74">&#34; 这两个是智能自�
         
         <p class="copyright-item">
             <span><i class="fa fa-link"> : </i></span>
-            <span><a href=https://mrbruce516.top/2020/008/>https://mrbruce516.top/2020/008/</span>
+            <span><a href=http://mrbruce516.github.io/2020/008/>http://mrbruce516.github.io/2020/008/</span>
         </p>
         
 
@@ -314,13 +313,13 @@ set wildmenu            <span style="color:#e6db74">&#34; 这两个是智能自�
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://mrbruce516.top/tags/%E8%BD%AF%E4%BB%B6/">
+            <span class="tag"><a href="http://mrbruce516.github.io/tags/%E8%BD%AF%E4%BB%B6/">
                     #软件</a></span>
             
-            <span class="tag"><a href="https://mrbruce516.top/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/">
+            <span class="tag"><a href="http://mrbruce516.github.io/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/">
                     #命令行工具</a></span>
             
-            <span class="tag"><a href="https://mrbruce516.top/tags/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/">
+            <span class="tag"><a href="http://mrbruce516.github.io/tags/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/">
                     #文本编辑器</a></span>
             
             </section>
@@ -328,17 +327,17 @@ set wildmenu            <span style="color:#e6db74">&#34; 这两个是智能自�
         
         <section>
             <span><a href="javascript:window.history.back();">back</a></span> ·
-            <span><a href="https://mrbruce516.top">home</a></span>
+            <span><a href="http://mrbruce516.github.io/">home</a></span>
         </section>
     </div>
 
     <div class="post-nav">
         
-        <a href="https://mrbruce516.top/2020/007/" class="prev" rel="prev" title="md输入利器Typora"><i
+        <a href="http://mrbruce516.github.io/2020/007/" class="prev" rel="prev" title="md输入利器Typora"><i
                 class="iconfont icon-left"></i>&nbsp;md输入利器Typora</a>
         
         
-        <a href="https://mrbruce516.top/2020/009/" class="next" rel="next"
+        <a href="http://mrbruce516.github.io/2020/009/" class="next" rel="next"
             title="Stay Hungry Stay Foolish">Stay Hungry Stay Foolish&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
@@ -348,8 +347,8 @@ set wildmenu            <span style="color:#e6db74">&#34; 这两个是智能自�
         
         
         <span id="/2020/008/" class="leancloud_visitors" data-flag-title="VIM配置分享">
-            <span class="post-meta-item-text">访问量 </span>
-            <span class="leancloud-visitors-count"></span>
+            <em class="post-meta-item-text">访问量 </em>
+            <i class="leancloud-visitors-count"></i>
             <p></p>
         </span>
         <div id="vcomments"></div>
@@ -357,10 +356,10 @@ set wildmenu            <span style="color:#e6db74">&#34; 这两个是智能自�
         <script type="text/javascript">
             new Valine({
                 el: '#vcomments',
-                appId: 'kmydF60Uqb5Njn6oTE0C5Yo0-9Nh9j0Va',
-                appKey: 't9u3imrn0fTc3FTvhcDjjkDM',
-                notify: 'false',
-                verify: 'false',
+                appId: 'akZxFlWl93ch0j3q9zW344By-gzGzoHsz',
+                appKey: 'r0AJ6JpWaArIR0GoXVnxNY1R',
+                notify: '',
+                verify: '',
                 avatar: 'mp',
                 placeholder: '说点什么吧...',
                 visitor: 'true'
@@ -442,13 +441,13 @@ set wildmenu            <span style="color:#e6db74">&#34; 这两个是智能自�
    <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2018 - 2022</span>
+        <span itemprop="copyrightYear">2018 - 2024</span>
         
         <span class="with-love">
     	 <i class="iconfont icon-love"></i> 
          </span>
          
-            <span class="author" itemprop="copyrightHolder"><a href="https://mrbruce516.top">麻吉麻尼酱</a> | </span> 
+            <span class="author" itemprop="copyrightHolder"><a href="http://mrbruce516.github.io/">麻吉麻尼酱</a> | </span> 
          
 
          

@@ -29,9 +29,9 @@
   <meta name="description" content="麻吉麻尼酱の个人博客">
   
   
-  <link rel="prev" href="https://mrbruce516.top/2020/009/" />
-  <link rel="next" href="https://mrbruce516.top/2020/011/" />
-  <link rel="canonical" href="https://mrbruce516.top/2020/010/" />
+  <link rel="prev" href="http://mrbruce516.github.io/2020/009/" />
+  <link rel="next" href="http://mrbruce516.github.io/2020/011/" />
+  <link rel="canonical" href="http://mrbruce516.github.io/2020/010/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -61,7 +61,7 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https:\/\/mrbruce516.top"
+         "@id": "http:\/\/mrbruce516.github.io\/"
     },
     "articleSection" : "posts",
     "name" : "FFmpeg一些常用的小命令",
@@ -76,7 +76,7 @@
     "copyrightYear" : "2020",
     "datePublished": "2020-04-13 13:45:10 \u002b0800 CST",
     "dateModified" : "2020-04-13 13:45:10 \u002b0800 CST",
-    "url" : "https:\/\/mrbruce516.top\/2020\/010\/",
+    "url" : "http:\/\/mrbruce516.github.io\/2020\/010\/",
     "wordCount" : "721",
     "keywords" : [ "ffmpeg", "麻吉麻之家"]
 }
@@ -99,7 +99,7 @@
         
             <div class="navbar-header header-back2home-logo">
                 <span class="logo_mark" >>$</span>
-                <a href="https://mrbruce516.top">
+                <a href="http://mrbruce516.github.io/">
                     <span class="logo_text" >cd /home/</span>
                     <span class="logo_cursor" ></span>
                 </a>
@@ -131,7 +131,7 @@
             <div class="header-logo">
                 
                     <span class="logo_mark">>$</span>
-                    <a href="https://mrbruce516.top">
+                    <a href="http://mrbruce516.github.io/">
                         <span class="logo_text"> cd /home/ </span>
                         <span class="logo_cursor"></span>
                 </a>
@@ -168,7 +168,7 @@
         <div class="post-meta">
             <i class="far fa-folder-open"></i>
             <span class="post-category">
-                <a href="https://mrbruce516.top/categories/%E8%88%B9%E9%95%BF%E7%9A%84%E5%B7%A5%E5%85%B7/"> 船长的工具 </a>
+                <a href="http://mrbruce516.github.io/categories/%E8%88%B9%E9%95%BF%E7%9A%84%E5%B7%A5%E5%85%B7/"> 船长的工具 </a>
                 
             </span>
             <span class="post-time">
@@ -248,34 +248,34 @@
         <p>  FFmpeg是一款强大的视频处理工具，一般许多视频播放器都是基于此工具开发的，此工具功能着实强大，用法非常之多，博主并不是非常懂视频编辑的一款，日常使用中拿它最平凡的就是更改视频格式，改改码率，改改视频大小，通过命令行比使用视频编辑软件例如iMovie来说更加快捷。</p>
 <p>  本文章将简单介绍如何使用FFmpeg,将各类格式互相转换，以及让你的YouTubedl走sock5代理,关于如何下载网络上的视频可以看博主之前写的<a href="/2020/005">一行命令拿下你想要的视频资源</a></p>
 <h2 id="命令">命令</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ffmpeg -i <span style="color:#f92672">{</span>输入文件<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>输出文件<span style="color:#f92672">}</span>
-</code></pre></div><h2 id="示例">示例</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i <span style="color:#f92672">{</span>输入文件<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>输出文件<span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="示例">示例</h2>
 <h3 id="mp4转mp3">mp4转mp3</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ffmpeg -i foo.mp4 foobar.mp3
-</code></pre></div><h3 id="flv-转-mp3">flv 转 mp3</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ffmpeg -i foo.flv foobar.mp3
-</code></pre></div><h3 id="mp4-转-wav">mp4 转 wav</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ffmpeg -i foo.mp4 foobar.wav
-</code></pre></div><h3 id="wav-转-mp3">wav 转 mp3</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ffmpeg -i foo.wav foobar.mp3
-</code></pre></div><h2 id="youtube-dl走代理">YouTube-dl走代理</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i foo.mp4 foobar.mp3
+</span></span></code></pre></div><h3 id="flv-转-mp3">flv 转 mp3</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i foo.flv foobar.mp3
+</span></span></code></pre></div><h3 id="mp4-转-wav">mp4 转 wav</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i foo.mp4 foobar.wav
+</span></span></code></pre></div><h3 id="wav-转-mp3">wav 转 mp3</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i foo.wav foobar.mp3
+</span></span></code></pre></div><h2 id="youtube-dl走代理">YouTube-dl走代理</h2>
 <p>  国内大部分视频网站可以通过you-get来获取，但是有些视频，以及YouTube等获取不了，这个时候可以使用功能更加强大的YouTube-dl来实现。</p>
 <p>  若电脑中有brew的话，可以直接在终端输入</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install youtube-dl
-</code></pre></div><p>  安装完后，给YouTube-dl设置一个别名可以更方便的使用它。设置别名的话看你用的是什么shell了，每个shell设置别名方法大同小异，主要是配置文件不一样，bash的话可以写进bash_profile里，zsh的话写在.zshrc中</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ytbdlss是别名，socks5是代理的协议 如果不是socks5请自行修改，1086是自己socks5代理的监听端口号，自己看一下，不一定每台电脑都是1086</span>
-alias ytbdlss<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;youtube-dl --proxy socks5://127.0.0.1:1086&#34;</span>
-</code></pre></div><p>  至此，以后需要下载you-get下不下来的视频，分两种情况，第一种是网站在大陆不存在的情况。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 直接下载最高清画质</span>
-ytbdlss 视频链接
-<span style="color:#75715e"># 按照自己需要的格式下载</span>
-ytbdlss -F 视频链接
-</code></pre></div><p>  对于国内存在的网站，但是you-get用不了的</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 直接下载最高清画质</span>
-youtube-dl 视频链接
-<span style="color:#75715e"># 按照自己需要的格式下载</span>
-youtube-dl -F 视频链接
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install youtube-dl
+</span></span></code></pre></div><p>  安装完后，给YouTube-dl设置一个别名可以更方便的使用它。设置别名的话看你用的是什么shell了，每个shell设置别名方法大同小异，主要是配置文件不一样，bash的话可以写进bash_profile里，zsh的话写在.zshrc中</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># ytbdlss是别名，socks5是代理的协议 如果不是socks5请自行修改，1086是自己socks5代理的监听端口号，自己看一下，不一定每台电脑都是1086</span>
+</span></span><span style="display:flex;"><span>alias ytbdlss<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;youtube-dl --proxy socks5://127.0.0.1:1086&#34;</span>
+</span></span></code></pre></div><p>  至此，以后需要下载you-get下不下来的视频，分两种情况，第一种是网站在大陆不存在的情况。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 直接下载最高清画质</span>
+</span></span><span style="display:flex;"><span>ytbdlss 视频链接
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 按照自己需要的格式下载</span>
+</span></span><span style="display:flex;"><span>ytbdlss -F 视频链接
+</span></span></code></pre></div><p>  对于国内存在的网站，但是you-get用不了的</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 直接下载最高清画质</span>
+</span></span><span style="display:flex;"><span>youtube-dl 视频链接
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 按照自己需要的格式下载</span>
+</span></span><span style="display:flex;"><span>youtube-dl -F 视频链接
+</span></span></code></pre></div>
     </div>
 
     <div class="post-copyright">
@@ -289,7 +289,7 @@ youtube-dl -F 视频链接
         
         <p class="copyright-item">
             <span><i class="fa fa-link"> : </i></span>
-            <span><a href=https://mrbruce516.top/2020/010/>https://mrbruce516.top/2020/010/</span>
+            <span><a href=http://mrbruce516.github.io/2020/010/>http://mrbruce516.github.io/2020/010/</span>
         </p>
         
 
@@ -309,7 +309,7 @@ youtube-dl -F 视频链接
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://mrbruce516.top/tags/ffmpeg/">
+            <span class="tag"><a href="http://mrbruce516.github.io/tags/ffmpeg/">
                     #ffmpeg</a></span>
             
             </section>
@@ -317,17 +317,17 @@ youtube-dl -F 视频链接
         
         <section>
             <span><a href="javascript:window.history.back();">back</a></span> ·
-            <span><a href="https://mrbruce516.top">home</a></span>
+            <span><a href="http://mrbruce516.github.io/">home</a></span>
         </section>
     </div>
 
     <div class="post-nav">
         
-        <a href="https://mrbruce516.top/2020/009/" class="prev" rel="prev" title="Stay Hungry Stay Foolish"><i
+        <a href="http://mrbruce516.github.io/2020/009/" class="prev" rel="prev" title="Stay Hungry Stay Foolish"><i
                 class="iconfont icon-left"></i>&nbsp;Stay Hungry Stay Foolish</a>
         
         
-        <a href="https://mrbruce516.top/2020/011/" class="next" rel="next"
+        <a href="http://mrbruce516.github.io/2020/011/" class="next" rel="next"
             title="Hugo嵌入音乐播放器">Hugo嵌入音乐播放器&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
@@ -337,8 +337,8 @@ youtube-dl -F 视频链接
         
         
         <span id="/2020/010/" class="leancloud_visitors" data-flag-title="FFmpeg一些常用的小命令">
-            <span class="post-meta-item-text">访问量 </span>
-            <span class="leancloud-visitors-count"></span>
+            <em class="post-meta-item-text">访问量 </em>
+            <i class="leancloud-visitors-count"></i>
             <p></p>
         </span>
         <div id="vcomments"></div>
@@ -346,10 +346,10 @@ youtube-dl -F 视频链接
         <script type="text/javascript">
             new Valine({
                 el: '#vcomments',
-                appId: 'kmydF60Uqb5Njn6oTE0C5Yo0-9Nh9j0Va',
-                appKey: 't9u3imrn0fTc3FTvhcDjjkDM',
-                notify: 'false',
-                verify: 'false',
+                appId: 'akZxFlWl93ch0j3q9zW344By-gzGzoHsz',
+                appKey: 'r0AJ6JpWaArIR0GoXVnxNY1R',
+                notify: '',
+                verify: '',
                 avatar: 'mp',
                 placeholder: '说点什么吧...',
                 visitor: 'true'
@@ -431,13 +431,13 @@ youtube-dl -F 视频链接
    <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2018 - 2022</span>
+        <span itemprop="copyrightYear">2018 - 2024</span>
         
         <span class="with-love">
     	 <i class="iconfont icon-love"></i> 
          </span>
          
-            <span class="author" itemprop="copyrightHolder"><a href="https://mrbruce516.top">麻吉麻尼酱</a> | </span> 
+            <span class="author" itemprop="copyrightHolder"><a href="http://mrbruce516.github.io/">麻吉麻尼酱</a> | </span> 
          
 
          

@@ -2,19 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>薅羊毛 on 麻吉麻之家</title>
-    <link>https://mrbruce516.top/tags/%E8%96%85%E7%BE%8A%E6%AF%9B/</link>
+    <link>http://mrbruce516.github.io/tags/%E8%96%85%E7%BE%8A%E6%AF%9B/</link>
     <description>Recent content in 薅羊毛 on 麻吉麻之家</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 28 May 2020 17:53:20 +0800</lastBuildDate><atom:link href="https://mrbruce516.top/tags/%E8%96%85%E7%BE%8A%E6%AF%9B/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 May 2020 17:53:20 +0800</lastBuildDate>
+    <atom:link href="http://mrbruce516.github.io/tags/%E8%96%85%E7%BE%8A%E6%AF%9B/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2020 京东 618 叠蛋糕活动</title>
-      <link>https://mrbruce516.top/2020/015/</link>
+      <link>http://mrbruce516.github.io/2020/015/</link>
       <pubDate>Thu, 28 May 2020 17:53:20 +0800</pubDate>
-      
-      <guid>https://mrbruce516.top/2020/015/</guid>
+      <guid>http://mrbruce516.github.io/2020/015/</guid>
       <description>使用步骤 建议使用 Chrome 最新版。 浏览器的 User-Agent 必须包含 jdapp，如果是 Chrome 浏览器，可以按 F12 在开发者工具中的 Network Conditions 中进行修改。 之后点击 Sources 选项卡，并点击下方</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ffmpeg on 麻吉麻之家</title>
-    <link>https://mrbruce516.top/tags/ffmpeg/</link>
-    <description>Recent content in ffmpeg on 麻吉麻之家</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Ffmpeg on 麻吉麻之家</title>
+    <link>http://mrbruce516.github.io/tags/ffmpeg/</link>
+    <description>Recent content in Ffmpeg on 麻吉麻之家</description>
+    <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 13 Apr 2020 13:45:10 +0800</lastBuildDate><atom:link href="https://mrbruce516.top/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Apr 2020 13:45:10 +0800</lastBuildDate>
+    <atom:link href="http://mrbruce516.github.io/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>FFmpeg一些常用的小命令</title>
-      <link>https://mrbruce516.top/2020/010/</link>
+      <link>http://mrbruce516.github.io/2020/010/</link>
       <pubDate>Mon, 13 Apr 2020 13:45:10 +0800</pubDate>
-      
-      <guid>https://mrbruce516.top/2020/010/</guid>
+      <guid>http://mrbruce516.github.io/2020/010/</guid>
       <description>FFmpeg是一款强大的视频处理工具，一般许多视频播放器都是基于此工具开发的，此工具功能着实强大，用法非常之多，博主并不是非常懂视频编辑的一</description>
     </item>
-    
   </channel>
 </rss>

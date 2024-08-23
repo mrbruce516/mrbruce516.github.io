@@ -29,9 +29,9 @@
   <meta name="description" content="麻吉麻尼酱の个人博客">
   
   
-  <link rel="prev" href="https://mrbruce516.top/2021/001/" />
-  <link rel="next" href="https://mrbruce516.top/2021/003/" />
-  <link rel="canonical" href="https://mrbruce516.top/2021/002/" />
+  <link rel="prev" href="http://mrbruce516.github.io/2021/001/" />
+  <link rel="next" href="http://mrbruce516.github.io/2021/003/" />
+  <link rel="canonical" href="http://mrbruce516.github.io/2021/002/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -61,7 +61,7 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https:\/\/mrbruce516.top"
+         "@id": "http:\/\/mrbruce516.github.io\/"
     },
     "articleSection" : "posts",
     "name" : "学习使用systemd来管理服务",
@@ -76,7 +76,7 @@
     "copyrightYear" : "2021",
     "datePublished": "2021-07-08 17:39:46 \u002b0800 CST",
     "dateModified" : "2021-07-08 17:39:46 \u002b0800 CST",
-    "url" : "https:\/\/mrbruce516.top\/2021\/002\/",
+    "url" : "http:\/\/mrbruce516.github.io\/2021\/002\/",
     "wordCount" : "3863",
     "keywords" : [ "linux","systemd", "麻吉麻之家"]
 }
@@ -99,7 +99,7 @@
         
             <div class="navbar-header header-back2home-logo">
                 <span class="logo_mark" >>$</span>
-                <a href="https://mrbruce516.top">
+                <a href="http://mrbruce516.github.io/">
                     <span class="logo_text" >cd /home/</span>
                     <span class="logo_cursor" ></span>
                 </a>
@@ -131,7 +131,7 @@
             <div class="header-logo">
                 
                     <span class="logo_mark">>$</span>
-                    <a href="https://mrbruce516.top">
+                    <a href="http://mrbruce516.github.io/">
                         <span class="logo_text"> cd /home/ </span>
                         <span class="logo_cursor"></span>
                 </a>
@@ -168,7 +168,7 @@
         <div class="post-meta">
             <i class="far fa-folder-open"></i>
             <span class="post-category">
-                <a href="https://mrbruce516.top/categories/%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/"> 从入门到入坟 </a>
+                <a href="http://mrbruce516.github.io/categories/%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/"> 从入门到入坟 </a>
                 
             </span>
             <span class="post-time">
@@ -276,44 +276,44 @@
 <h2 id="systemd-基本命令">systemd 基本命令</h2>
 <p>监视和控制systemd的主要命令是<code>systemctl</code>。该命令可用于查看系统状态和管理系统及服务。</p>
 <p>常用命令：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl status				<span style="color:#75715e"># 显示系统状态</span>
-systemctl						<span style="color:#75715e"># 输出激活的服务</span>
-systemctl --failed				<span style="color:#75715e"># 输出运行失败的服务</span>
-systemctl list-unit-files		<span style="color:#75715e"># 查看所有已安装服务</span>
-systemctl start &lt;unit&gt;			<span style="color:#75715e"># 启动服务</span>
-systemctl stop &lt;unit&gt;			<span style="color:#75715e"># 关闭服务</span>
-systemctl restart &lt;unit&gt;		<span style="color:#75715e"># 重启服务</span>
-systemctl reload &lt;unit&gt;			<span style="color:#75715e"># 重载服务的systemd配置</span>
-systemctl status &lt;unit&gt;			<span style="color:#75715e"># 显示服务的运行状态</span>
-systemctl is-enabled &lt;unit&gt;		<span style="color:#75715e"># 显示服务是否开机自启</span>
-systemctl enable &lt;unit&gt;			<span style="color:#75715e"># 开启服务开机自启</span>
-systemctl disable &lt;unit&gt;		<span style="color:#75715e"># 关闭服务开机自启</span>
-systemctl daemon-reload			<span style="color:#75715e"># 重载systemd系统配置</span>
-</code></pre></div><h2 id="编写配置文件">编写配置文件</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl status				<span style="color:#75715e"># 显示系统状态</span>
+</span></span><span style="display:flex;"><span>systemctl						<span style="color:#75715e"># 输出激活的服务</span>
+</span></span><span style="display:flex;"><span>systemctl --failed				<span style="color:#75715e"># 输出运行失败的服务</span>
+</span></span><span style="display:flex;"><span>systemctl list-unit-files		<span style="color:#75715e"># 查看所有已安装服务</span>
+</span></span><span style="display:flex;"><span>systemctl start &lt;unit&gt;			<span style="color:#75715e"># 启动服务</span>
+</span></span><span style="display:flex;"><span>systemctl stop &lt;unit&gt;			<span style="color:#75715e"># 关闭服务</span>
+</span></span><span style="display:flex;"><span>systemctl restart &lt;unit&gt;		<span style="color:#75715e"># 重启服务</span>
+</span></span><span style="display:flex;"><span>systemctl reload &lt;unit&gt;			<span style="color:#75715e"># 重载服务的systemd配置</span>
+</span></span><span style="display:flex;"><span>systemctl status &lt;unit&gt;			<span style="color:#75715e"># 显示服务的运行状态</span>
+</span></span><span style="display:flex;"><span>systemctl is-enabled &lt;unit&gt;		<span style="color:#75715e"># 显示服务是否开机自启</span>
+</span></span><span style="display:flex;"><span>systemctl enable &lt;unit&gt;			<span style="color:#75715e"># 开启服务开机自启</span>
+</span></span><span style="display:flex;"><span>systemctl disable &lt;unit&gt;		<span style="color:#75715e"># 关闭服务开机自启</span>
+</span></span><span style="display:flex;"><span>systemctl daemon-reload			<span style="color:#75715e"># 重载systemd系统配置</span>
+</span></span></code></pre></div><h2 id="编写配置文件">编写配置文件</h2>
 <p>不使用包管理器安装的软件，一般是没有用systemd来管理的配置文件的，编译安装完成软件后，为了使用systemd来管理服务，需要自己手动编写配置文件</p>
 <p>配置文件路径</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/usr/lib/systemd/system/		<span style="color:#75715e"># 软件包安装的systemd配置文件目录</span>
-/etc/systemd/system/			<span style="color:#75715e"># 系统管理员安装的systemd配置文件目录</span>
-</code></pre></div><p><code>systemctl cat</code>命令可以用来查看配置文件，下面以<code>sshd.service</code>文件为例，它的作用是启动一个 SSH 服务器，供其他用户以 SSH 方式登录。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># /usr/lib/systemd/system/sshd.service</span>
-<span style="color:#f92672">[</span>Unit<span style="color:#f92672">]</span>
-Description<span style="color:#f92672">=</span>OpenSSH server daemon
-Documentation<span style="color:#f92672">=</span>man:sshd<span style="color:#f92672">(</span>8<span style="color:#f92672">)</span> man:sshd_config<span style="color:#f92672">(</span>5<span style="color:#f92672">)</span>
-After<span style="color:#f92672">=</span>network.target sshd-keygen.service
-Wants<span style="color:#f92672">=</span>sshd-keygen.service
-
-<span style="color:#f92672">[</span>Service<span style="color:#f92672">]</span>
-Type<span style="color:#f92672">=</span>notify
-EnvironmentFile<span style="color:#f92672">=</span>/etc/sysconfig/sshd
-ExecStart<span style="color:#f92672">=</span>/usr/sbin/sshd -D $OPTIONS
-ExecReload<span style="color:#f92672">=</span>/bin/kill -HUP $MAINPID
-KillMode<span style="color:#f92672">=</span>process
-Restart<span style="color:#f92672">=</span>on-failure
-RestartSec<span style="color:#f92672">=</span>42s
-
-<span style="color:#f92672">[</span>Install<span style="color:#f92672">]</span>
-WantedBy<span style="color:#f92672">=</span>multi-user.target
-</code></pre></div><p>可以看到，配置文件分成几个区块，每个区块包含若干条键值对。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/usr/lib/systemd/system/		<span style="color:#75715e"># 软件包安装的systemd配置文件目录</span>
+</span></span><span style="display:flex;"><span>/etc/systemd/system/			<span style="color:#75715e"># 系统管理员安装的systemd配置文件目录</span>
+</span></span></code></pre></div><p><code>systemctl cat</code>命令可以用来查看配置文件，下面以<code>sshd.service</code>文件为例，它的作用是启动一个 SSH 服务器，供其他用户以 SSH 方式登录。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># /usr/lib/systemd/system/sshd.service</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>Unit<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Description<span style="color:#f92672">=</span>OpenSSH server daemon
+</span></span><span style="display:flex;"><span>Documentation<span style="color:#f92672">=</span>man:sshd<span style="color:#f92672">(</span>8<span style="color:#f92672">)</span> man:sshd_config<span style="color:#f92672">(</span>5<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>After<span style="color:#f92672">=</span>network.target sshd-keygen.service
+</span></span><span style="display:flex;"><span>Wants<span style="color:#f92672">=</span>sshd-keygen.service
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>Service<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Type<span style="color:#f92672">=</span>notify
+</span></span><span style="display:flex;"><span>EnvironmentFile<span style="color:#f92672">=</span>/etc/sysconfig/sshd
+</span></span><span style="display:flex;"><span>ExecStart<span style="color:#f92672">=</span>/usr/sbin/sshd -D $OPTIONS
+</span></span><span style="display:flex;"><span>ExecReload<span style="color:#f92672">=</span>/bin/kill -HUP $MAINPID
+</span></span><span style="display:flex;"><span>KillMode<span style="color:#f92672">=</span>process
+</span></span><span style="display:flex;"><span>Restart<span style="color:#f92672">=</span>on-failure
+</span></span><span style="display:flex;"><span>RestartSec<span style="color:#f92672">=</span>42s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>Install<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>WantedBy<span style="color:#f92672">=</span>multi-user.target
+</span></span></code></pre></div><p>可以看到，配置文件分成几个区块，每个区块包含若干条键值对。</p>
 <p>下面依次解释每个区块的内容。</p>
 <h2 id="unit模块">Unit模块</h2>
 <h3 id="服务描述">服务描述</h3>
@@ -355,43 +355,43 @@ WantedBy<span style="color:#f92672">=</span>multi-user.target
 <p>上面的例子中，启动<code>sshd</code>，执行的命令是<code>/usr/sbin/sshd -D $OPTIONS</code>，其中的变量<code>$OPTIONS</code>就来自<code>EnvironmentFile</code>字段指定的环境参数文件。</p>
 </blockquote>
 <p>与之作用相似的，还有如下这些字段。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ExecReload字段：重启服务时执行的命令
-ExecStop字段：停止服务时执行的命令
-ExecStartPre字段：启动服务之前执行的命令
-ExecStartPost字段：启动服务之后执行的命令
-ExecStopPost字段：停止服务之后执行的命令
-</code></pre></div><h3 id="定义启动类型">定义启动类型</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ExecReload字段：重启服务时执行的命令
+</span></span><span style="display:flex;"><span>ExecStop字段：停止服务时执行的命令
+</span></span><span style="display:flex;"><span>ExecStartPre字段：启动服务之前执行的命令
+</span></span><span style="display:flex;"><span>ExecStartPost字段：启动服务之后执行的命令
+</span></span><span style="display:flex;"><span>ExecStopPost字段：停止服务之后执行的命令
+</span></span></code></pre></div><h3 id="定义启动类型">定义启动类型</h3>
 <p><code>Type</code>字段定义启动类型。它可以设置的值如下</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">simple（默认值）：ExecStart字段启动的进程为主进程
-forking：ExecStart字段将以fork<span style="color:#f92672">()</span>方式启动，此时父进程将会退出，子进程将成为主进程, 如果使用了此种类型，那么建议同时设置 PIDFile<span style="color:#f92672">=</span> 选项，以帮助 systemd 准确可靠的定位该服务的主进程。
-oneshot：类似于simple，但只执行一次，Systemd 会等它执行完，才启动其他服务
-dbus：类似于simple，但会等待 D-Bus 信号后启动
-notify：类似于simple，启动结束后会发出通知信号，然后 Systemd 再启动其他服务
-idle：类似于simple，但是要等到其他任务都执行完，才会启动该服务。一种使用场合是为让该服务的输出，不与其他服务的输出相混合
-</code></pre></div><h3 id="定义停止服务逻辑">定义停止服务逻辑</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>simple（默认值）：ExecStart字段启动的进程为主进程
+</span></span><span style="display:flex;"><span>forking：ExecStart字段将以fork<span style="color:#f92672">()</span>方式启动，此时父进程将会退出，子进程将成为主进程, 如果使用了此种类型，那么建议同时设置 PIDFile<span style="color:#f92672">=</span> 选项，以帮助 systemd 准确可靠的定位该服务的主进程。
+</span></span><span style="display:flex;"><span>oneshot：类似于simple，但只执行一次，Systemd 会等它执行完，才启动其他服务
+</span></span><span style="display:flex;"><span>dbus：类似于simple，但会等待 D-Bus 信号后启动
+</span></span><span style="display:flex;"><span>notify：类似于simple，启动结束后会发出通知信号，然后 Systemd 再启动其他服务
+</span></span><span style="display:flex;"><span>idle：类似于simple，但是要等到其他任务都执行完，才会启动该服务。一种使用场合是为让该服务的输出，不与其他服务的输出相混合
+</span></span></code></pre></div><h3 id="定义停止服务逻辑">定义停止服务逻辑</h3>
 <p><code>KillMode</code>字段：定义 Systemd 如何停止 sshd 服务</p>
 <blockquote>
 <p>上面这个例子中，将<code>KillMode</code>设为<code>process</code>，表示只停止主进程，不停止任何sshd 子进程，即子进程打开的 SSH session 仍然保持连接。这个设置不太常见，但对 sshd 很重要，否则你停止服务的时候，会连自己打开的 SSH session 一起杀掉。</p>
 </blockquote>
 <p><code>KillMode</code>字段可以设置的值如下:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">control-group（默认值）：当前控制组里面的所有子进程，都会被杀掉
-process：只杀主进程
-mixed：主进程将收到 SIGTERM 信号，子进程收到 SIGKILL 信号
-none：没有进程会被杀掉，只是执行服务的 stop 命令。
-</code></pre></div><h3 id="定义是否要重启服务">定义是否要重启服务</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>control-group（默认值）：当前控制组里面的所有子进程，都会被杀掉
+</span></span><span style="display:flex;"><span>process：只杀主进程
+</span></span><span style="display:flex;"><span>mixed：主进程将收到 SIGTERM 信号，子进程收到 SIGKILL 信号
+</span></span><span style="display:flex;"><span>none：没有进程会被杀掉，只是执行服务的 stop 命令。
+</span></span></code></pre></div><h3 id="定义是否要重启服务">定义是否要重启服务</h3>
 <p>接下来是<code>Restart</code>字段</p>
 <blockquote>
 <p><code>Restart</code>字段：定义了 sshd 退出后，Systemd 的重启方式。</p>
 </blockquote>
 <p><code>Restart</code>字段可以设置的值如下:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">no（默认值）：退出后不会重启
-on-success：只有正常退出时（退出状态码为0），才会重启
-on-failure：非正常退出时（退出状态码非0），包括被信号终止和超时，才会重启
-on-abnormal：只有被信号终止和超时，才会重启
-on-abort：只有在收到没有捕捉到的信号终止时，才会重启
-on-watchdog：超时退出，才会重启
-always：不管是什么退出原因，总是重启
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>no（默认值）：退出后不会重启
+</span></span><span style="display:flex;"><span>on-success：只有正常退出时（退出状态码为0），才会重启
+</span></span><span style="display:flex;"><span>on-failure：非正常退出时（退出状态码非0），包括被信号终止和超时，才会重启
+</span></span><span style="display:flex;"><span>on-abnormal：只有被信号终止和超时，才会重启
+</span></span><span style="display:flex;"><span>on-abort：只有在收到没有捕捉到的信号终止时，才会重启
+</span></span><span style="display:flex;"><span>on-watchdog：超时退出，才会重启
+</span></span><span style="display:flex;"><span>always：不管是什么退出原因，总是重启
+</span></span></code></pre></div><blockquote>
 <p>对于守护进程，推荐设为<code>on-failure</code>。对于那些允许发生错误退出的服务，可以设为<code>on-abnormal</code></p>
 </blockquote>
 <p>最后是<code>RestartSec</code>字段:</p>
@@ -405,32 +405,32 @@ always：不管是什么退出原因，总是重启
 <p><code>Target</code>的含义是服务组，表示一组服务。<code>WantedBy=multi-user.target</code>指的是，sshd 所在的 Target 是<code>multi-user.target</code>。</p>
 <p>这个设置非常重要，因为执行<code>systemctl enable sshd.service</code>命令时，<code>sshd.service</code>的一个符号链接，就会放在<code>/etc/systemd/system</code>目录下面的<code>multi-user.target.wants</code>子目录之中。</p>
 <p>Systemd 有默认的启动 Target</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ systemctl get-default
-multi-user.target
-</code></pre></div><p>上面的结果表示，默认的启动 Target 是<code>multi-user.target</code>。在这个组里的所有服务，都将开机启动。这就是为什么<code>systemctl enable</code>命令能设置开机启动的原因。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ systemctl get-default
+</span></span><span style="display:flex;"><span>multi-user.target
+</span></span></code></pre></div><p>上面的结果表示，默认的启动 Target 是<code>multi-user.target</code>。在这个组里的所有服务，都将开机启动。这就是为什么<code>systemctl enable</code>命令能设置开机启动的原因。</p>
 <p>一般来说，常用的 Target 有两个：一个是<code>multi-user.target</code>，表示多用户命令行状态；另一个是<code>graphical.target</code>，表示图形用户状态，它依赖于<code>multi-user.target</code>。官方文档有一张非常清晰的 [Target 依赖关系图](<a href="https://www.freedesktop.org/software/systemd/man/bootup.html#System">https://www.freedesktop.org/software/systemd/man/bootup.html#System</a> Manager Bootup)。</p>
 <h2 id="修改配置文件后重启">修改配置文件后重启</h2>
 <p>修改配置文件以后，需要重新加载配置文件，然后重新启动相关服务。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#75715e"># 重新加载配置文件</span>
-$ sudo systemctl daemon-reload
-
-<span style="color:#75715e"># 重启相关服务</span>
-$ sudo systemctl restart foobar
-</code></pre></div><h2 id="编写redisservice">编写redis.service</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-service" data-lang="service"><span style="color:#66d9ef">[Unit]</span>
-<span style="color:#a6e22e">Description</span><span style="color:#f92672">=</span><span style="color:#e6db74">Redis</span>
-<span style="color:#a6e22e">After</span><span style="color:#f92672">=</span><span style="color:#e6db74">network.target</span>
-
-<span style="color:#66d9ef">[Service]</span>
-<span style="color:#a6e22e">ExecStart</span><span style="color:#f92672">=</span><span style="color:#e6db74">/usr/local/redis/bin/redis-server /usr/local/redis/etc/redis.conf</span>
-<span style="color:#a6e22e">ExecStop</span><span style="color:#f92672">=</span><span style="color:#e6db74">/usr/bin/redis-cli shutdown</span>
-<span style="color:#a6e22e">Type</span><span style="color:#f92672">=</span><span style="color:#e6db74">forking</span>
-<span style="color:#a6e22e">PIDFile</span><span style="color:#f92672">=</span><span style="color:#e6db74">/run/redis_6379.pid</span>
-<span style="color:#a6e22e">Restart</span><span style="color:#f92672">=</span><span style="color:#e6db74">on-failure</span>
-
-<span style="color:#66d9ef">[Install]</span>
-<span style="color:#a6e22e">WantedBy</span><span style="color:#f92672">=</span><span style="color:#e6db74">multi-user.target</span>
-</code></pre></div><p>结合之前的知识，写了个redis的service文件，其中有几点需要提一下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> <span style="color:#75715e"># 重新加载配置文件</span>
+</span></span><span style="display:flex;"><span>$ sudo systemctl daemon-reload
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 重启相关服务</span>
+</span></span><span style="display:flex;"><span>$ sudo systemctl restart foobar
+</span></span></code></pre></div><h2 id="编写redisservice">编写redis.service</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-service" data-lang="service"><span style="display:flex;"><span><span style="color:#66d9ef">[Unit]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Description</span><span style="color:#f92672">=</span><span style="color:#e6db74">Redis</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">After</span><span style="color:#f92672">=</span><span style="color:#e6db74">network.target</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Service]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ExecStart</span><span style="color:#f92672">=</span><span style="color:#e6db74">/usr/local/redis/bin/redis-server /usr/local/redis/etc/redis.conf</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ExecStop</span><span style="color:#f92672">=</span><span style="color:#e6db74">/usr/bin/redis-cli shutdown</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Type</span><span style="color:#f92672">=</span><span style="color:#e6db74">forking</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">PIDFile</span><span style="color:#f92672">=</span><span style="color:#e6db74">/run/redis_6379.pid</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Restart</span><span style="color:#f92672">=</span><span style="color:#e6db74">on-failure</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Install]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">WantedBy</span><span style="color:#f92672">=</span><span style="color:#e6db74">multi-user.target</span>
+</span></span></code></pre></div><p>结合之前的知识，写了个redis的service文件，其中有几点需要提一下：</p>
 <ol>
 <li>service文件中 空格隔开多个项，例如<code>ExecStart</code>中 redis.conf被隔开后，其实也被视为了一个命令，而非redis要挂载的配置文件</li>
 <li>因此，需要使用<code>Type</code>为forking的类型，他把<code>ExecStart</code>中的内容整体作为一个字符串，塞入fork()函数中被执行。</li>
@@ -458,7 +458,7 @@ $ sudo systemctl restart foobar
         
         <p class="copyright-item">
             <span><i class="fa fa-link"> : </i></span>
-            <span><a href=https://mrbruce516.top/2021/002/>https://mrbruce516.top/2021/002/</span>
+            <span><a href=http://mrbruce516.github.io/2021/002/>http://mrbruce516.github.io/2021/002/</span>
         </p>
         
 
@@ -478,10 +478,10 @@ $ sudo systemctl restart foobar
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://mrbruce516.top/tags/linux/">
+            <span class="tag"><a href="http://mrbruce516.github.io/tags/linux/">
                     #linux</a></span>
             
-            <span class="tag"><a href="https://mrbruce516.top/tags/systemd/">
+            <span class="tag"><a href="http://mrbruce516.github.io/tags/systemd/">
                     #systemd</a></span>
             
             </section>
@@ -489,17 +489,17 @@ $ sudo systemctl restart foobar
         
         <section>
             <span><a href="javascript:window.history.back();">back</a></span> ·
-            <span><a href="https://mrbruce516.top">home</a></span>
+            <span><a href="http://mrbruce516.github.io/">home</a></span>
         </section>
     </div>
 
     <div class="post-nav">
         
-        <a href="https://mrbruce516.top/2021/001/" class="prev" rel="prev" title="再见👋2020"><i
+        <a href="http://mrbruce516.github.io/2021/001/" class="prev" rel="prev" title="再见👋2020"><i
                 class="iconfont icon-left"></i>&nbsp;再见👋2020</a>
         
         
-        <a href="https://mrbruce516.top/2021/003/" class="next" rel="next"
+        <a href="http://mrbruce516.github.io/2021/003/" class="next" rel="next"
             title="理清磁盘冗余技术">理清磁盘冗余技术&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
@@ -509,8 +509,8 @@ $ sudo systemctl restart foobar
         
         
         <span id="/2021/002/" class="leancloud_visitors" data-flag-title="学习使用systemd来管理服务">
-            <span class="post-meta-item-text">访问量 </span>
-            <span class="leancloud-visitors-count"></span>
+            <em class="post-meta-item-text">访问量 </em>
+            <i class="leancloud-visitors-count"></i>
             <p></p>
         </span>
         <div id="vcomments"></div>
@@ -518,10 +518,10 @@ $ sudo systemctl restart foobar
         <script type="text/javascript">
             new Valine({
                 el: '#vcomments',
-                appId: 'kmydF60Uqb5Njn6oTE0C5Yo0-9Nh9j0Va',
-                appKey: 't9u3imrn0fTc3FTvhcDjjkDM',
-                notify: 'false',
-                verify: 'false',
+                appId: 'akZxFlWl93ch0j3q9zW344By-gzGzoHsz',
+                appKey: 'r0AJ6JpWaArIR0GoXVnxNY1R',
+                notify: '',
+                verify: '',
                 avatar: 'mp',
                 placeholder: '说点什么吧...',
                 visitor: 'true'
@@ -603,13 +603,13 @@ $ sudo systemctl restart foobar
    <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2018 - 2022</span>
+        <span itemprop="copyrightYear">2018 - 2024</span>
         
         <span class="with-love">
     	 <i class="iconfont icon-love"></i> 
          </span>
          
-            <span class="author" itemprop="copyrightHolder"><a href="https://mrbruce516.top">麻吉麻尼酱</a> | </span> 
+            <span class="author" itemprop="copyrightHolder"><a href="http://mrbruce516.github.io/">麻吉麻尼酱</a> | </span> 
          
 
          

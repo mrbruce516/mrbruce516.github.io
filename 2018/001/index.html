@@ -30,8 +30,8 @@
   
   
   
-  <link rel="next" href="https://mrbruce516.top/2019/001/" />
-  <link rel="canonical" href="https://mrbruce516.top/2018/001/" />
+  <link rel="next" href="http://mrbruce516.github.io/2019/001/" />
+  <link rel="canonical" href="http://mrbruce516.github.io/2018/001/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -61,7 +61,7 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https:\/\/mrbruce516.top"
+         "@id": "http:\/\/mrbruce516.github.io\/"
     },
     "articleSection" : "posts",
     "name" : "利用bind9搭建dns服务器",
@@ -76,7 +76,7 @@
     "copyrightYear" : "2018",
     "datePublished": "2018-12-27 13:33:47 \u002b0800 CST",
     "dateModified" : "2018-12-27 13:33:47 \u002b0800 CST",
-    "url" : "https:\/\/mrbruce516.top\/2018\/001\/",
+    "url" : "http:\/\/mrbruce516.github.io\/2018\/001\/",
     "wordCount" : "1261",
     "keywords" : [ "DNS","运维", "麻吉麻之家"]
 }
@@ -99,7 +99,7 @@
         
             <div class="navbar-header header-back2home-logo">
                 <span class="logo_mark" >>$</span>
-                <a href="https://mrbruce516.top">
+                <a href="http://mrbruce516.github.io/">
                     <span class="logo_text" >cd /home/</span>
                     <span class="logo_cursor" ></span>
                 </a>
@@ -131,7 +131,7 @@
             <div class="header-logo">
                 
                     <span class="logo_mark">>$</span>
-                    <a href="https://mrbruce516.top">
+                    <a href="http://mrbruce516.github.io/">
                         <span class="logo_text"> cd /home/ </span>
                         <span class="logo_cursor"></span>
                 </a>
@@ -168,7 +168,7 @@
         <div class="post-meta">
             <i class="far fa-folder-open"></i>
             <span class="post-category">
-                <a href="https://mrbruce516.top/categories/%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/"> 从入门到入坟 </a>
+                <a href="http://mrbruce516.github.io/categories/%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/"> 从入门到入坟 </a>
                 
             </span>
             <span class="post-time">
@@ -260,58 +260,58 @@
 <li>子域为74和77</li>
 </ul>
 <h3 id="一父域环境搭建">一、父域环境搭建</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yum install bind  
-</code></pre></div><p>安装完成后，要对__主配置文件__进行__部分__修改</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vim /etc/named.conf
-</code></pre></div><p>修改两处为<code>any</code>，两处进行注释</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">options <span style="color:#f92672">{</span>
-listen-on port <span style="color:#ae81ff">53</span> <span style="color:#f92672">{</span> any; <span style="color:#f92672">}</span>;     //这里修改为any
-//listen-on-v6 port <span style="color:#ae81ff">53</span> <span style="color:#f92672">{</span> ::1; <span style="color:#f92672">}</span>;   //用不到ipv6 注释掉
-directory       <span style="color:#e6db74">&#34;/var/named&#34;</span>;
-dump-file       <span style="color:#e6db74">&#34;/var/named/data/cache_dump.db&#34;</span>;
-statistics-file <span style="color:#e6db74">&#34;/var/named/data/named_stats.txt&#34;</span>;
-memstatistics-file <span style="color:#e6db74">&#34;/var/named/data/named_mem_stats.txt&#34;</span>;
-recursing-file  <span style="color:#e6db74">&#34;/var/named/data/named.recursing&#34;</span>;
-secroots-file   <span style="color:#e6db74">&#34;/var/named/data/named.secroots&#34;</span>;
-allow-query     <span style="color:#f92672">{</span> any; <span style="color:#f92672">}</span>;     //这里修改为any
-recursion yes;      //对子域的地址进行递归查询
-
-dnssec-enable no;
-dnssec-validation no;
-</code></pre></div><h4 id="二自定义域名配置">二、自定义域名配置</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>yum install bind  
+</span></span></code></pre></div><p>安装完成后，要对__主配置文件__进行__部分__修改</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>vim /etc/named.conf
+</span></span></code></pre></div><p>修改两处为<code>any</code>，两处进行注释</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>options <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>listen-on port <span style="color:#ae81ff">53</span> <span style="color:#f92672">{</span> any; <span style="color:#f92672">}</span>;     //这里修改为any
+</span></span><span style="display:flex;"><span>//listen-on-v6 port <span style="color:#ae81ff">53</span> <span style="color:#f92672">{</span> ::1; <span style="color:#f92672">}</span>;   //用不到ipv6 注释掉
+</span></span><span style="display:flex;"><span>directory       <span style="color:#e6db74">&#34;/var/named&#34;</span>;
+</span></span><span style="display:flex;"><span>dump-file       <span style="color:#e6db74">&#34;/var/named/data/cache_dump.db&#34;</span>;
+</span></span><span style="display:flex;"><span>statistics-file <span style="color:#e6db74">&#34;/var/named/data/named_stats.txt&#34;</span>;
+</span></span><span style="display:flex;"><span>memstatistics-file <span style="color:#e6db74">&#34;/var/named/data/named_mem_stats.txt&#34;</span>;
+</span></span><span style="display:flex;"><span>recursing-file  <span style="color:#e6db74">&#34;/var/named/data/named.recursing&#34;</span>;
+</span></span><span style="display:flex;"><span>secroots-file   <span style="color:#e6db74">&#34;/var/named/data/named.secroots&#34;</span>;
+</span></span><span style="display:flex;"><span>allow-query     <span style="color:#f92672">{</span> any; <span style="color:#f92672">}</span>;     //这里修改为any
+</span></span><span style="display:flex;"><span>recursion yes;      //对子域的地址进行递归查询
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dnssec-enable no;
+</span></span><span style="display:flex;"><span>dnssec-validation no;
+</span></span></code></pre></div><h4 id="二自定义域名配置">二、自定义域名配置</h4>
 <p>现在安装基本的dns服务器之后，我们就开始自定义个域名来进行解析:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vim /etc/named.rfc1912.zones
-</code></pre></div><p>增加一个需要解析的主域名比如：<code>test.com</code>，增加下面的文件到文件<code>named.rfc1912.zones</code>的最后</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">zone <span style="color:#e6db74">&#34;test.com&#34;</span> IN <span style="color:#f92672">{</span>
-type master;
-file <span style="color:#e6db74">&#34;test.com.zone&#34;</span>;
-<span style="color:#f92672">}</span>;
-</code></pre></div><h4 id="三指定转发器">三、指定转发器</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">zone <span style="color:#e6db74">&#34;paas.test.com&#34;</span> IN <span style="color:#f92672">{</span>
-    type forward;
-    forward only;
-    forwarders <span style="color:#f92672">{</span> 192.168.250.74;192.168.250.77; <span style="color:#f92672">}</span>;
-<span style="color:#f92672">}</span>;
-</code></pre></div><h4 id="四增加域名配置对子域授权">四、增加域名配置（对子域授权）</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>vim /etc/named.rfc1912.zones
+</span></span></code></pre></div><p>增加一个需要解析的主域名比如：<code>test.com</code>，增加下面的文件到文件<code>named.rfc1912.zones</code>的最后</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>zone <span style="color:#e6db74">&#34;test.com&#34;</span> IN <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>type master;
+</span></span><span style="display:flex;"><span>file <span style="color:#e6db74">&#34;test.com.zone&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>;
+</span></span></code></pre></div><h4 id="三指定转发器">三、指定转发器</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>zone <span style="color:#e6db74">&#34;paas.test.com&#34;</span> IN <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    type forward;
+</span></span><span style="display:flex;"><span>    forward only;
+</span></span><span style="display:flex;"><span>    forwarders <span style="color:#f92672">{</span> 192.168.250.74;192.168.250.77; <span style="color:#f92672">}</span>;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>;
+</span></span></code></pre></div><h4 id="四增加域名配置对子域授权">四、增加域名配置（对子域授权）</h4>
 <p>上面定义了<code>test.com.zone</code>的文件，现在增加配置<code>vim /var/named/test.com.zone</code><br>
 增加下面的内容：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$TTL <span style="color:#ae81ff">600</span>
-$ORIGIN test.com.
-@       IN      SOA     ns1.test.com.   admin.test.com <span style="color:#f92672">(</span>
-                        <span style="color:#ae81ff">100</span>
-                        1H
-                        5M
-                        7D
-                        1D
-<span style="color:#f92672">)</span>
-        IN      NS      ns
-ns      IN      A       192.168.250.72
-
-paas    IN      NS      ns1
-paas    IN      NS      ns2
-ns1     IN      A       192.168.250.74
-ns2     IN      A       192.168.250.77
-</code></pre></div><p>ns 对应的ip地址必须为dns服务器搭建的IP地址，也就是dns安装的机器的ip地址。<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$TTL <span style="color:#ae81ff">600</span>
+</span></span><span style="display:flex;"><span>$ORIGIN test.com.
+</span></span><span style="display:flex;"><span>@       IN      SOA     ns1.test.com.   admin.test.com <span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>                        1H
+</span></span><span style="display:flex;"><span>                        5M
+</span></span><span style="display:flex;"><span>                        7D
+</span></span><span style="display:flex;"><span>                        1D
+</span></span><span style="display:flex;"><span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>        IN      NS      ns
+</span></span><span style="display:flex;"><span>ns      IN      A       192.168.250.72
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>paas    IN      NS      ns1
+</span></span><span style="display:flex;"><span>paas    IN      NS      ns2
+</span></span><span style="display:flex;"><span>ns1     IN      A       192.168.250.74
+</span></span><span style="display:flex;"><span>ns2     IN      A       192.168.250.77
+</span></span></code></pre></div><p>ns 对应的ip地址必须为dns服务器搭建的IP地址，也就是dns安装的机器的ip地址。<br>
 ns IN A <code>xxx.xxx.xxx.xxx</code> ==&gt; 换成你dns服务器的ip</p>
 <blockquote>
 <p>DNS服务器中的资源类型:<br>
@@ -322,111 +322,111 @@ NS记录: Name Server，作用是标明当前区域的DNS服务器。</p>
 <h4 id="五检查配置文件">五、检查配置文件</h4>
 <p><code>named-checkconf</code>检查主配置文件是否配置正确，没有输出表明是正确的:<br>
 <code>named-checkzone</code>检查zone文件配置：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">named-checkzone <span style="color:#e6db74">&#34;test.com&#34;</span> /var/named/test.com.zone
-</code></pre></div><h4 id="六重启服务">六、重启服务</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">systemctl restart named.service
-rndc reload
-</code></pre></div><h3 id="到此父域环境搭建完毕">到此父域环境搭建完毕</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>named-checkzone <span style="color:#e6db74">&#34;test.com&#34;</span> /var/named/test.com.zone
+</span></span></code></pre></div><h4 id="六重启服务">六、重启服务</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>systemctl restart named.service
+</span></span><span style="display:flex;"><span>rndc reload
+</span></span></code></pre></div><h3 id="到此父域环境搭建完毕">到此父域环境搭建完毕</h3>
 <h3 id="一子域环境搭建">一、子域环境搭建</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yum install bind
-vim /etc/named.conf
-options <span style="color:#f92672">{</span>
-    listen-on port <span style="color:#ae81ff">53</span> <span style="color:#f92672">{</span> any; <span style="color:#f92672">}</span>;
-    //listen-on-v6 port <span style="color:#ae81ff">53</span> <span style="color:#f92672">{</span> ::1; <span style="color:#f92672">}</span>;
-    directory       <span style="color:#e6db74">&#34;/var/named&#34;</span>;
-    dump-file       <span style="color:#e6db74">&#34;/var/named/data/cache_dump.db&#34;</span>;
-    statistics-file <span style="color:#e6db74">&#34;/var/named/data/named_stats.txt&#34;</span>;
-    memstatistics-file <span style="color:#e6db74">&#34;/var/named/data/named_mem_stats.txt&#34;</span>;
-    recursing-file  <span style="color:#e6db74">&#34;/var/named/data/named.recursing&#34;</span>;
-    secroots-file   <span style="color:#e6db74">&#34;/var/named/data/named.secroots&#34;</span>;
-    allow-query     <span style="color:#f92672">{</span> any; <span style="color:#f92672">}</span>;
-    recursion no;       //由于这里开始搭建权威服务器应答，软件不建议开启递归查询功能
-
-    dnssec-enable no;
-    dnssec-validation no;
-</code></pre></div><h4 id="二定义可解析区域">二、定义可解析区域</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vim /etc/named.rfc1912.zones
-zone <span style="color:#e6db74">&#34;paas.test.com&#34;</span> IN <span style="color:#f92672">{</span>
-    type master;
-    file <span style="color:#e6db74">&#34;paas.test.com.zone&#34;</span>;
-<span style="color:#f92672">}</span>;
-</code></pre></div><h4 id="三编辑资源记录">三、编辑资源记录</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vim /var/named/paas.test.com.zone
-$TTL <span style="color:#ae81ff">600</span>
-$ORIGIN paas.test.com.
-@       IN      SOA     ns.paas.test.com.       admin.paas.test.com <span style="color:#f92672">(</span>
-                        <span style="color:#ae81ff">101</span>
-                        1H
-                        5M
-                        7D
-                        1D
-<span style="color:#f92672">)</span>           
-        IN      NS      ns
-ns      IN      A       192.168.250.74
-*       IN      A       192.168.250.74      //这个是泛域名解析
-</code></pre></div><h4 id="五检查语法错误">五、检查语法错误</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">named-checkzone  paas.test.com /var/named/paas.test.com.zone
-</code></pre></div><h4 id="六重启服务-1">六、重启服务</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">service named restart
-rndc reload
-</code></pre></div><h4 id="七给53端口放行dns端口">七、给53端口放行（dns端口）</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>yum install bind
+</span></span><span style="display:flex;"><span>vim /etc/named.conf
+</span></span><span style="display:flex;"><span>options <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    listen-on port <span style="color:#ae81ff">53</span> <span style="color:#f92672">{</span> any; <span style="color:#f92672">}</span>;
+</span></span><span style="display:flex;"><span>    //listen-on-v6 port <span style="color:#ae81ff">53</span> <span style="color:#f92672">{</span> ::1; <span style="color:#f92672">}</span>;
+</span></span><span style="display:flex;"><span>    directory       <span style="color:#e6db74">&#34;/var/named&#34;</span>;
+</span></span><span style="display:flex;"><span>    dump-file       <span style="color:#e6db74">&#34;/var/named/data/cache_dump.db&#34;</span>;
+</span></span><span style="display:flex;"><span>    statistics-file <span style="color:#e6db74">&#34;/var/named/data/named_stats.txt&#34;</span>;
+</span></span><span style="display:flex;"><span>    memstatistics-file <span style="color:#e6db74">&#34;/var/named/data/named_mem_stats.txt&#34;</span>;
+</span></span><span style="display:flex;"><span>    recursing-file  <span style="color:#e6db74">&#34;/var/named/data/named.recursing&#34;</span>;
+</span></span><span style="display:flex;"><span>    secroots-file   <span style="color:#e6db74">&#34;/var/named/data/named.secroots&#34;</span>;
+</span></span><span style="display:flex;"><span>    allow-query     <span style="color:#f92672">{</span> any; <span style="color:#f92672">}</span>;
+</span></span><span style="display:flex;"><span>    recursion no;       //由于这里开始搭建权威服务器应答，软件不建议开启递归查询功能
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    dnssec-enable no;
+</span></span><span style="display:flex;"><span>    dnssec-validation no;
+</span></span></code></pre></div><h4 id="二定义可解析区域">二、定义可解析区域</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>vim /etc/named.rfc1912.zones
+</span></span><span style="display:flex;"><span>zone <span style="color:#e6db74">&#34;paas.test.com&#34;</span> IN <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    type master;
+</span></span><span style="display:flex;"><span>    file <span style="color:#e6db74">&#34;paas.test.com.zone&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>;
+</span></span></code></pre></div><h4 id="三编辑资源记录">三、编辑资源记录</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>vim /var/named/paas.test.com.zone
+</span></span><span style="display:flex;"><span>$TTL <span style="color:#ae81ff">600</span>
+</span></span><span style="display:flex;"><span>$ORIGIN paas.test.com.
+</span></span><span style="display:flex;"><span>@       IN      SOA     ns.paas.test.com.       admin.paas.test.com <span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#ae81ff">101</span>
+</span></span><span style="display:flex;"><span>                        1H
+</span></span><span style="display:flex;"><span>                        5M
+</span></span><span style="display:flex;"><span>                        7D
+</span></span><span style="display:flex;"><span>                        1D
+</span></span><span style="display:flex;"><span><span style="color:#f92672">)</span>           
+</span></span><span style="display:flex;"><span>        IN      NS      ns
+</span></span><span style="display:flex;"><span>ns      IN      A       192.168.250.74
+</span></span><span style="display:flex;"><span>*       IN      A       192.168.250.74      //这个是泛域名解析
+</span></span></code></pre></div><h4 id="五检查语法错误">五、检查语法错误</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>named-checkzone  paas.test.com /var/named/paas.test.com.zone
+</span></span></code></pre></div><h4 id="六重启服务-1">六、重启服务</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>service named restart
+</span></span><span style="display:flex;"><span>rndc reload
+</span></span></code></pre></div><h4 id="七给53端口放行dns端口">七、给53端口放行（dns端口）</h4>
 <p>​    firewall-cmd &ndash;permanent &ndash;zone=public &ndash;add-port=53/tcp 
 ​    firewall-cmd &ndash;permanent &ndash;zone=public &ndash;add-port=53/udp
 ​    firewall-cmd &ndash;reload</p>
 <h4 id="八让dns解析服务开机自启">八、让dns解析服务开机自启</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">systemctl enable named.service
-</code></pre></div><h4 id="另一台备服务器同上配置">另一台备服务器同上配置</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>systemctl enable named.service
+</span></span></code></pre></div><h4 id="另一台备服务器同上配置">另一台备服务器同上配置</h4>
 <h2 id="测试">测试</h2>
 <p>首先<code>在要测试的机器上</code>dns配置为父域的ip（macOS/Windows不做阐述）<br>
 Linux 平台的配置方法为：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vim /etc/resolv.conf
-nameserver 192.168.250.72    //新增一条你父域的ip
-</code></pre></div><h3 id="ping">PING</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ping xxxxx.paas.test.com  //ping你要解析的域名
-</code></pre></div><h3 id="traceroute">traceroute</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>vim /etc/resolv.conf
+</span></span><span style="display:flex;"><span>nameserver 192.168.250.72    //新增一条你父域的ip
+</span></span></code></pre></div><h3 id="ping">PING</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ping xxxxx.paas.test.com  //ping你要解析的域名
+</span></span></code></pre></div><h3 id="traceroute">traceroute</h3>
 <p>这个工具CentOS7最小安装情况下需要自行安装</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yum install traceroute
-traceroute xxxxx.paas.test.com
-
-traceroute to fjek.paas.test.com <span style="color:#f92672">(</span>192.168.250.74<span style="color:#f92672">)</span>, <span style="color:#ae81ff">30</span> hops max, <span style="color:#ae81ff">60</span> byte packets
-<span style="color:#ae81ff">1</span>  192.168.250.74 <span style="color:#f92672">(</span>192.168.250.74<span style="color:#f92672">)</span>  0.274 ms !X  0.214 ms !X  0.191 ms !X
-</code></pre></div><h3 id="nslookup">nslookup</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">nslookup
-&gt; fjke.paas.test.com
-Server:		192.168.250.72
-Address:	192.168.250.72#53
-
-Non-authoritative answer:
-Name:	fjke.paas.test.com
-Address: 192.168.250.74     //能跳转到你做解析服务的子域服务器上说明搭建成功
-</code></pre></div><h3 id="dig">dig</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dig -t A fkef.paas.test.com @192.168.250.72
-
-; &lt;&lt;&gt;&gt; DiG 9.9.4-RedHat-9.9.4-72.el7 &lt;&lt;&gt;&gt; -t A fkef.paas.test.com @192.168.250.72
-;; global options: +cmd
-;; Got answer:
-;; -&gt;&gt;HEADER<span style="color:#e6db74">&lt;&lt;- opco</span>de: QUERY, status: NOERROR, id: <span style="color:#ae81ff">35718</span>
-;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 1, ADDITIONAL: <span style="color:#ae81ff">2</span>        
-
-;; OPT PSEUDOSECTION:
-; EDNS: version: 0, flags:; udp: <span style="color:#ae81ff">4096</span>
-;; QUESTION SECTION:
-;fkef.paas.test.com.		IN	A
-
-;; ANSWER SECTION:
-fkef.paas.test.com.	600	IN	A	192.168.250.74
-
-;; AUTHORITY SECTION:
-paas.test.com.		410	IN	NS	ns.paas.test.com.
-
-;; ADDITIONAL SECTION:
-ns.paas.test.com.	410	IN	A	192.168.250.74
-
-;; Query time: <span style="color:#ae81ff">1</span> msec
-;; SERVER: 192.168.250.72#53<span style="color:#f92672">(</span>192.168.250.72<span style="color:#f92672">)</span>
-;; WHEN: 四 12月 <span style="color:#ae81ff">27</span> 16:10:07 CST <span style="color:#ae81ff">2018</span>
-;; MSG SIZE  rcvd: <span style="color:#ae81ff">96</span>
-</code></pre></div><p>返回信息中应答有值（ANSWER: 1）下述ANSWER SECTION等指向的为你做的解析服务器即配置成功</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>yum install traceroute
+</span></span><span style="display:flex;"><span>traceroute xxxxx.paas.test.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>traceroute to fjek.paas.test.com <span style="color:#f92672">(</span>192.168.250.74<span style="color:#f92672">)</span>, <span style="color:#ae81ff">30</span> hops max, <span style="color:#ae81ff">60</span> byte packets
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span>  192.168.250.74 <span style="color:#f92672">(</span>192.168.250.74<span style="color:#f92672">)</span>  0.274 ms !X  0.214 ms !X  0.191 ms !X
+</span></span></code></pre></div><h3 id="nslookup">nslookup</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>nslookup
+</span></span><span style="display:flex;"><span>&gt; fjke.paas.test.com
+</span></span><span style="display:flex;"><span>Server:		192.168.250.72
+</span></span><span style="display:flex;"><span>Address:	192.168.250.72#53
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Non-authoritative answer:
+</span></span><span style="display:flex;"><span>Name:	fjke.paas.test.com
+</span></span><span style="display:flex;"><span>Address: 192.168.250.74     //能跳转到你做解析服务的子域服务器上说明搭建成功
+</span></span></code></pre></div><h3 id="dig">dig</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>dig -t A fkef.paas.test.com @192.168.250.72
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>; &lt;&lt;&gt;&gt; DiG 9.9.4-RedHat-9.9.4-72.el7 &lt;&lt;&gt;&gt; -t A fkef.paas.test.com @192.168.250.72
+</span></span><span style="display:flex;"><span>;; global options: +cmd
+</span></span><span style="display:flex;"><span>;; Got answer:
+</span></span><span style="display:flex;"><span>;; -&gt;&gt;HEADER<span style="color:#e6db74">&lt;&lt;- opco</span>de: QUERY, status: NOERROR, id: <span style="color:#ae81ff">35718</span>
+</span></span><span style="display:flex;"><span>;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 1, ADDITIONAL: <span style="color:#ae81ff">2</span>        
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>;; OPT PSEUDOSECTION:
+</span></span><span style="display:flex;"><span>; EDNS: version: 0, flags:; udp: <span style="color:#ae81ff">4096</span>
+</span></span><span style="display:flex;"><span>;; QUESTION SECTION:
+</span></span><span style="display:flex;"><span>;fkef.paas.test.com.		IN	A
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>;; ANSWER SECTION:
+</span></span><span style="display:flex;"><span>fkef.paas.test.com.	600	IN	A	192.168.250.74
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>;; AUTHORITY SECTION:
+</span></span><span style="display:flex;"><span>paas.test.com.		410	IN	NS	ns.paas.test.com.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>;; ADDITIONAL SECTION:
+</span></span><span style="display:flex;"><span>ns.paas.test.com.	410	IN	A	192.168.250.74
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>;; Query time: <span style="color:#ae81ff">1</span> msec
+</span></span><span style="display:flex;"><span>;; SERVER: 192.168.250.72#53<span style="color:#f92672">(</span>192.168.250.72<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>;; WHEN: 四 12月 <span style="color:#ae81ff">27</span> 16:10:07 CST <span style="color:#ae81ff">2018</span>
+</span></span><span style="display:flex;"><span>;; MSG SIZE  rcvd: <span style="color:#ae81ff">96</span>
+</span></span></code></pre></div><p>返回信息中应答有值（ANSWER: 1）下述ANSWER SECTION等指向的为你做的解析服务器即配置成功</p>
 
     </div>
 
@@ -441,7 +441,7 @@ ns.paas.test.com.	410	IN	A	192.168.250.74
         
         <p class="copyright-item">
             <span><i class="fa fa-link"> : </i></span>
-            <span><a href=https://mrbruce516.top/2018/001/>https://mrbruce516.top/2018/001/</span>
+            <span><a href=http://mrbruce516.github.io/2018/001/>http://mrbruce516.github.io/2018/001/</span>
         </p>
         
 
@@ -461,10 +461,10 @@ ns.paas.test.com.	410	IN	A	192.168.250.74
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://mrbruce516.top/tags/dns/">
+            <span class="tag"><a href="http://mrbruce516.github.io/tags/dns/">
                     #DNS</a></span>
             
-            <span class="tag"><a href="https://mrbruce516.top/tags/%E8%BF%90%E7%BB%B4/">
+            <span class="tag"><a href="http://mrbruce516.github.io/tags/%E8%BF%90%E7%BB%B4/">
                     #运维</a></span>
             
             </section>
@@ -472,14 +472,14 @@ ns.paas.test.com.	410	IN	A	192.168.250.74
         
         <section>
             <span><a href="javascript:window.history.back();">back</a></span> ·
-            <span><a href="https://mrbruce516.top">home</a></span>
+            <span><a href="http://mrbruce516.github.io/">home</a></span>
         </section>
     </div>
 
     <div class="post-nav">
         
         
-        <a href="https://mrbruce516.top/2019/001/" class="next" rel="next"
+        <a href="http://mrbruce516.github.io/2019/001/" class="next" rel="next"
             title="初见">初见&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
@@ -489,8 +489,8 @@ ns.paas.test.com.	410	IN	A	192.168.250.74
         
         
         <span id="/2018/001/" class="leancloud_visitors" data-flag-title="利用bind9搭建dns服务器">
-            <span class="post-meta-item-text">访问量 </span>
-            <span class="leancloud-visitors-count"></span>
+            <em class="post-meta-item-text">访问量 </em>
+            <i class="leancloud-visitors-count"></i>
             <p></p>
         </span>
         <div id="vcomments"></div>
@@ -498,10 +498,10 @@ ns.paas.test.com.	410	IN	A	192.168.250.74
         <script type="text/javascript">
             new Valine({
                 el: '#vcomments',
-                appId: 'kmydF60Uqb5Njn6oTE0C5Yo0-9Nh9j0Va',
-                appKey: 't9u3imrn0fTc3FTvhcDjjkDM',
-                notify: 'false',
-                verify: 'false',
+                appId: 'akZxFlWl93ch0j3q9zW344By-gzGzoHsz',
+                appKey: 'r0AJ6JpWaArIR0GoXVnxNY1R',
+                notify: '',
+                verify: '',
                 avatar: 'mp',
                 placeholder: '说点什么吧...',
                 visitor: 'true'
@@ -583,13 +583,13 @@ ns.paas.test.com.	410	IN	A	192.168.250.74
    <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2018 - 2022</span>
+        <span itemprop="copyrightYear">2018 - 2024</span>
         
         <span class="with-love">
     	 <i class="iconfont icon-love"></i> 
          </span>
          
-            <span class="author" itemprop="copyrightHolder"><a href="https://mrbruce516.top">麻吉麻尼酱</a> | </span> 
+            <span class="author" itemprop="copyrightHolder"><a href="http://mrbruce516.github.io/">麻吉麻尼酱</a> | </span> 
          
 
          

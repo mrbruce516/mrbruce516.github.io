@@ -29,9 +29,9 @@
   <meta name="description" content="麻吉麻尼酱の个人博客">
   
   
-  <link rel="prev" href="https://mrbruce516.top/2020/012/" />
-  <link rel="next" href="https://mrbruce516.top/2020/014/" />
-  <link rel="canonical" href="https://mrbruce516.top/2020/013/" />
+  <link rel="prev" href="http://mrbruce516.github.io/2020/012/" />
+  <link rel="next" href="http://mrbruce516.github.io/2020/014/" />
+  <link rel="canonical" href="http://mrbruce516.github.io/2020/013/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -61,7 +61,7 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https:\/\/mrbruce516.top"
+         "@id": "http:\/\/mrbruce516.github.io\/"
     },
     "articleSection" : "posts",
     "name" : "轻松安装配置mysql8",
@@ -76,7 +76,7 @@
     "copyrightYear" : "2020",
     "datePublished": "2020-04-20 15:21:14 \u002b0800 CST",
     "dateModified" : "2020-04-20 15:21:14 \u002b0800 CST",
-    "url" : "https:\/\/mrbruce516.top\/2020\/013\/",
+    "url" : "http:\/\/mrbruce516.github.io\/2020\/013\/",
     "wordCount" : "1710",
     "keywords" : [ "mysql","数据库","运维", "麻吉麻之家"]
 }
@@ -99,7 +99,7 @@
         
             <div class="navbar-header header-back2home-logo">
                 <span class="logo_mark" >>$</span>
-                <a href="https://mrbruce516.top">
+                <a href="http://mrbruce516.github.io/">
                     <span class="logo_text" >cd /home/</span>
                     <span class="logo_cursor" ></span>
                 </a>
@@ -131,7 +131,7 @@
             <div class="header-logo">
                 
                     <span class="logo_mark">>$</span>
-                    <a href="https://mrbruce516.top">
+                    <a href="http://mrbruce516.github.io/">
                         <span class="logo_text"> cd /home/ </span>
                         <span class="logo_cursor"></span>
                 </a>
@@ -168,7 +168,7 @@
         <div class="post-meta">
             <i class="far fa-folder-open"></i>
             <span class="post-category">
-                <a href="https://mrbruce516.top/categories/%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/"> 从入门到入坟 </a>
+                <a href="http://mrbruce516.github.io/categories/%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/"> 从入门到入坟 </a>
                 
             </span>
             <span class="post-time">
@@ -265,11 +265,11 @@
 <p>  拿<strong>CentOS</strong>举例，如果服务器在海外，那么点第一个 <a href="https://dev.mysql.com/downloads/repo/yum/"><strong>MySQL Yum Repository</strong></a> 会进入到一个选择系统版本的页面，按照自己的情况选择合适的仓库源。</p>
 <p><img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/B96FfVoArypeb7j.png" alt="yum选择版本"></p>
 <p>  下载完成后，会得到一个rpm文件，用Uvh参数更新一些软件仓库，随后安装即可。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 把mysql添加至软件仓库</span>
-yum -Uvh <span style="color:#f92672">{</span>你下载下来的rpm包<span style="color:#f92672">}</span>
-<span style="color:#75715e"># 安装mysql服务端及客户端</span>
-yum -y isntall mysql-community-server mysql-community-client
-</code></pre></div><p>  至此等待结束后，mysql就安装完成啦～</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 把mysql添加至软件仓库</span>
+</span></span><span style="display:flex;"><span>yum -Uvh <span style="color:#f92672">{</span>你下载下来的rpm包<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 安装mysql服务端及客户端</span>
+</span></span><span style="display:flex;"><span>yum -y isntall mysql-community-server mysql-community-client
+</span></span></code></pre></div><p>  至此等待结束后，mysql就安装完成啦～</p>
 <h2 id="离线安装">离线安装</h2>
 <p>  离线安装的话有两种方案，一种是通过预先下好的rpm安装包可以非常方便快捷的用少量命令完成安装工作，还有一种就是通过源码编译，这种方案比较复杂，但是可以在安装过程中定制各种参数，达到最大程度的客制化安装。</p>
 <h3 id="--rpm安装推荐">- rpm安装(推荐)</h3>
@@ -277,37 +277,37 @@ yum -y isntall mysql-community-server mysql-community-client
 <ol>
 <li>解压mysql安装包</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tar -xvf <span style="color:#f92672">{</span>你下载的mysql包.tar<span style="color:#f92672">}</span>
-</code></pre></div><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -xvf <span style="color:#f92672">{</span>你下载的mysql包.tar<span style="color:#f92672">}</span>
+</span></span></code></pre></div><ol start="2">
 <li>卸载CentOS7自带的MariaDB依赖</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rpm -qa|grep mariadb
-rpm -e --nodeps mariadb-libs
-rpm -qa|grep mariadb		<span style="color:#75715e"># 再检查一下还有没有返回结果</span>
-</code></pre></div><ol start="3">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rpm -qa|grep mariadb
+</span></span><span style="display:flex;"><span>rpm -e --nodeps mariadb-libs
+</span></span><span style="display:flex;"><span>rpm -qa|grep mariadb		<span style="color:#75715e"># 再检查一下还有没有返回结果</span>
+</span></span></code></pre></div><ol start="3">
 <li>安装相关依赖</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yum -y install net-tools
-yum -y install perl
-</code></pre></div><ol start="4">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yum -y install net-tools
+</span></span><span style="display:flex;"><span>yum -y install perl
+</span></span></code></pre></div><ol start="4">
 <li>依次安装mysql包</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rpm -ivh mysql-community-common-xxxxx.rpm		<span style="color:#75715e"># xxx代表你下载的版本号</span>
-rpm -ivh mysql-community-libs*
-rpm -ivh mysql-community-client-xxxx.rpm
-rpm -ivh  mysql-community-server-xxxx.rpm
-</code></pre></div><ol start="5">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rpm -ivh mysql-community-common-xxxxx.rpm		<span style="color:#75715e"># xxx代表你下载的版本号</span>
+</span></span><span style="display:flex;"><span>rpm -ivh mysql-community-libs*
+</span></span><span style="display:flex;"><span>rpm -ivh mysql-community-client-xxxx.rpm
+</span></span><span style="display:flex;"><span>rpm -ivh  mysql-community-server-xxxx.rpm
+</span></span></code></pre></div><ol start="5">
 <li>启动mysql，获取默认root密码</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">service mysqld start
-grep <span style="color:#e6db74">&#39;temporary password&#39;</span> /var/log/mysqld.log		<span style="color:#75715e"># 查看预分配的密码</span>
-</code></pre></div><ol start="6">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>service mysqld start
+</span></span><span style="display:flex;"><span>grep <span style="color:#e6db74">&#39;temporary password&#39;</span> /var/log/mysqld.log		<span style="color:#75715e"># 查看预分配的密码</span>
+</span></span></code></pre></div><ol start="6">
 <li>初始化mysql</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 这一步主要是更新一下mysql的root密码</span>
-mysql_secure_installation
-<span style="color:#75715e"># 具体我就不写了，跟着他提示走，然后根据你的需求进行初始化</span>
-</code></pre></div><p>  至此，mysql已安装完毕～</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 这一步主要是更新一下mysql的root密码</span>
+</span></span><span style="display:flex;"><span>mysql_secure_installation
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 具体我就不写了，跟着他提示走，然后根据你的需求进行初始化</span>
+</span></span></code></pre></div><p>  至此，mysql已安装完毕～</p>
 <h3 id="--源码编译安装">- 源码编译安装</h3>
 <p>  这个我就不讲了。。略复杂，稍微提一下就是在<code>cmake</code>的时候 带入各种参数，常用的有：</p>
 <ul>
@@ -327,50 +327,49 @@ mysql_secure_installation
 <ul>
 <li>临时关闭</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">setenforce <span style="color:#ae81ff">0</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>setenforce <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><ul>
 <li>永久关闭</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim /etc/selinux/config
-把 SELINUX<span style="color:#f92672">=</span>enforcing 改为 SELINUX<span style="color:#f92672">=</span>disabled 即可
-source /etc/selinux/config			<span style="color:#75715e"># 让配置文件生效</span>
-</code></pre></div><h3 id="2-开启远程访问">2. 开启远程访问</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim /etc/selinux/config
+</span></span><span style="display:flex;"><span>把 SELINUX<span style="color:#f92672">=</span>enforcing 改为 SELINUX<span style="color:#f92672">=</span>disabled 即可
+</span></span><span style="display:flex;"><span>source /etc/selinux/config			<span style="color:#75715e"># 让配置文件生效</span>
+</span></span></code></pre></div><h3 id="2-开启远程访问">2. 开启远程访问</h3>
 <p>  默认安装好的mysql是不开启远程连接的，但是在实际使用过程中，没有人直接登录上数据库服务器直接进行操作，所以得手动开一下</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mysql -u root -p
-输入密码
-use mysql;
-CREATE USER <span style="color:#e6db74">&#39;root&#39;</span>@<span style="color:#e6db74">&#39;%&#39;</span> IDENTIFIED BY <span style="color:#e6db74">&#39;你的密码&#39;</span>;
-GRANT ALL ON *.* TO <span style="color:#e6db74">&#39;root&#39;</span>@<span style="color:#e6db74">&#39;%&#39;</span>;
-ALTER USER <span style="color:#e6db74">&#39;root&#39;</span>@<span style="color:#e6db74">&#39;%&#39;</span> IDENTIFIED WITH mysql_native_password BY <span style="color:#e6db74">&#39;你的密码&#39;</span>;
-FLUSH PRIVILEGES;
-</code></pre></div><h3 id="3-设定数据存储路径">3. 设定数据存储路径</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql -u root -p
+</span></span><span style="display:flex;"><span>输入密码
+</span></span><span style="display:flex;"><span>use mysql;
+</span></span><span style="display:flex;"><span>CREATE USER <span style="color:#e6db74">&#39;root&#39;</span>@<span style="color:#e6db74">&#39;%&#39;</span> IDENTIFIED BY <span style="color:#e6db74">&#39;你的密码&#39;</span>;
+</span></span><span style="display:flex;"><span>GRANT ALL ON *.* TO <span style="color:#e6db74">&#39;root&#39;</span>@<span style="color:#e6db74">&#39;%&#39;</span>;
+</span></span><span style="display:flex;"><span>ALTER USER <span style="color:#e6db74">&#39;root&#39;</span>@<span style="color:#e6db74">&#39;%&#39;</span> IDENTIFIED WITH mysql_native_password BY <span style="color:#e6db74">&#39;你的密码&#39;</span>;
+</span></span><span style="display:flex;"><span>FLUSH PRIVILEGES;
+</span></span></code></pre></div><h3 id="3-设定数据存储路径">3. 设定数据存储路径</h3>
 <p>  一般来说MySQL默认存储位置在<code>/var/lib/mysql</code>下，这个位置一般用的是挂在系统根目录下的磁盘（一般来说不太会对这个位置扩容），为了更好的管理数据，一般会放在一块LVM的数据卷上，方便日后弹性扩容以及进行数据迁移。</p>
 <h4 id="step1-先看看磁盘具体分区情况">Step.1 先看看磁盘具体分区情况</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">df -h
-</code></pre></div><h4 id="step2-创建数据存放点">Step.2 创建数据存放点</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 找到你想要存放数据的目录，以下以/data 举例</span>
-
-<span style="color:#75715e"># 关闭mysql服务</span>
-service mysqld stop
-
-<span style="color:#75715e"># 创建数据存放点</span>
-mkdir /data/mysql
-cp -R /var/lib/mysql/*	/data/mysql		<span style="color:#75715e"># 递归把原始路径下所有文件放到新的目录中</span>
-chown -R mysql:mysql /data/mysql		<span style="color:#75715e"># 给/data/mysql授权</span>
-
-</code></pre></div><h4 id="step3-修改mysql配置">Step.3 修改mysql配置</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim /etc/my.cnf
-<span style="color:#75715e"># 把原先的注释掉，养成好习惯，不要直接改</span>
-datadir<span style="color:#f92672">=</span>/data/mysql
-socket<span style="color:#f92672">=</span>/data/mysql/mysql.sock
-
-<span style="color:#75715e"># 在配置文件中，找个合适的位置添加</span>
-<span style="color:#f92672">[</span>client<span style="color:#f92672">]</span>
-socket<span style="color:#f92672">=</span>/data/mysql/mysql.sock
-</code></pre></div><p>Step.4 验证结果</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">service mysqld start		<span style="color:#75715e"># 先把服务起起来</span>
-show global variables like <span style="color:#e6db74">&#34;%datadir%&#34;</span>;		<span style="color:#75715e"># 看看文件存储位置是否已经生效</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>df -h
+</span></span></code></pre></div><h4 id="step2-创建数据存放点">Step.2 创建数据存放点</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 找到你想要存放数据的目录，以下以/data 举例</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 关闭mysql服务</span>
+</span></span><span style="display:flex;"><span>service mysqld stop
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 创建数据存放点</span>
+</span></span><span style="display:flex;"><span>mkdir /data/mysql
+</span></span><span style="display:flex;"><span>cp -R /var/lib/mysql/*	/data/mysql		<span style="color:#75715e"># 递归把原始路径下所有文件放到新的目录中</span>
+</span></span><span style="display:flex;"><span>chown -R mysql:mysql /data/mysql		<span style="color:#75715e"># 给/data/mysql授权</span>
+</span></span></code></pre></div><h4 id="step3-修改mysql配置">Step.3 修改mysql配置</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim /etc/my.cnf
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 把原先的注释掉，养成好习惯，不要直接改</span>
+</span></span><span style="display:flex;"><span>datadir<span style="color:#f92672">=</span>/data/mysql
+</span></span><span style="display:flex;"><span>socket<span style="color:#f92672">=</span>/data/mysql/mysql.sock
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 在配置文件中，找个合适的位置添加</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>client<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>socket<span style="color:#f92672">=</span>/data/mysql/mysql.sock
+</span></span></code></pre></div><p>Step.4 验证结果</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>service mysqld start		<span style="color:#75715e"># 先把服务起起来</span>
+</span></span><span style="display:flex;"><span>show global variables like <span style="color:#e6db74">&#34;%datadir%&#34;</span>;		<span style="color:#75715e"># 看看文件存储位置是否已经生效</span>
+</span></span></code></pre></div>
     </div>
 
     <div class="post-copyright">
@@ -384,7 +383,7 @@ show global variables like <span style="color:#e6db74">&#34;%datadir%&#34;</span
         
         <p class="copyright-item">
             <span><i class="fa fa-link"> : </i></span>
-            <span><a href=https://mrbruce516.top/2020/013/>https://mrbruce516.top/2020/013/</span>
+            <span><a href=http://mrbruce516.github.io/2020/013/>http://mrbruce516.github.io/2020/013/</span>
         </p>
         
 
@@ -404,13 +403,13 @@ show global variables like <span style="color:#e6db74">&#34;%datadir%&#34;</span
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://mrbruce516.top/tags/mysql/">
+            <span class="tag"><a href="http://mrbruce516.github.io/tags/mysql/">
                     #mysql</a></span>
             
-            <span class="tag"><a href="https://mrbruce516.top/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+            <span class="tag"><a href="http://mrbruce516.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
                     #数据库</a></span>
             
-            <span class="tag"><a href="https://mrbruce516.top/tags/%E8%BF%90%E7%BB%B4/">
+            <span class="tag"><a href="http://mrbruce516.github.io/tags/%E8%BF%90%E7%BB%B4/">
                     #运维</a></span>
             
             </section>
@@ -418,17 +417,17 @@ show global variables like <span style="color:#e6db74">&#34;%datadir%&#34;</span
         
         <section>
             <span><a href="javascript:window.history.back();">back</a></span> ·
-            <span><a href="https://mrbruce516.top">home</a></span>
+            <span><a href="http://mrbruce516.github.io/">home</a></span>
         </section>
     </div>
 
     <div class="post-nav">
         
-        <a href="https://mrbruce516.top/2020/012/" class="prev" rel="prev" title="解决aplayer导致文章toc失效"><i
+        <a href="http://mrbruce516.github.io/2020/012/" class="prev" rel="prev" title="解决aplayer导致文章toc失效"><i
                 class="iconfont icon-left"></i>&nbsp;解决aplayer导致文章toc失效</a>
         
         
-        <a href="https://mrbruce516.top/2020/014/" class="next" rel="next"
+        <a href="http://mrbruce516.github.io/2020/014/" class="next" rel="next"
             title="为了防止剧透给博客加上隐藏文字">为了防止剧透给博客加上隐藏文字&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
@@ -438,8 +437,8 @@ show global variables like <span style="color:#e6db74">&#34;%datadir%&#34;</span
         
         
         <span id="/2020/013/" class="leancloud_visitors" data-flag-title="轻松安装配置mysql8">
-            <span class="post-meta-item-text">访问量 </span>
-            <span class="leancloud-visitors-count"></span>
+            <em class="post-meta-item-text">访问量 </em>
+            <i class="leancloud-visitors-count"></i>
             <p></p>
         </span>
         <div id="vcomments"></div>
@@ -447,10 +446,10 @@ show global variables like <span style="color:#e6db74">&#34;%datadir%&#34;</span
         <script type="text/javascript">
             new Valine({
                 el: '#vcomments',
-                appId: 'kmydF60Uqb5Njn6oTE0C5Yo0-9Nh9j0Va',
-                appKey: 't9u3imrn0fTc3FTvhcDjjkDM',
-                notify: 'false',
-                verify: 'false',
+                appId: 'akZxFlWl93ch0j3q9zW344By-gzGzoHsz',
+                appKey: 'r0AJ6JpWaArIR0GoXVnxNY1R',
+                notify: '',
+                verify: '',
                 avatar: 'mp',
                 placeholder: '说点什么吧...',
                 visitor: 'true'
@@ -532,13 +531,13 @@ show global variables like <span style="color:#e6db74">&#34;%datadir%&#34;</span
    <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2018 - 2022</span>
+        <span itemprop="copyrightYear">2018 - 2024</span>
         
         <span class="with-love">
     	 <i class="iconfont icon-love"></i> 
          </span>
          
-            <span class="author" itemprop="copyrightHolder"><a href="https://mrbruce516.top">麻吉麻尼酱</a> | </span> 
+            <span class="author" itemprop="copyrightHolder"><a href="http://mrbruce516.github.io/">麻吉麻尼酱</a> | </span> 
          
 
          

@@ -29,9 +29,9 @@
   <meta name="description" content="麻吉麻尼酱の个人博客">
   
   
-  <link rel="prev" href="https://mrbruce516.top/2019/003/" />
-  <link rel="next" href="https://mrbruce516.top/2020/002/" />
-  <link rel="canonical" href="https://mrbruce516.top/2020/001/" />
+  <link rel="prev" href="http://mrbruce516.github.io/2019/003/" />
+  <link rel="next" href="http://mrbruce516.github.io/2020/002/" />
+  <link rel="canonical" href="http://mrbruce516.github.io/2020/001/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -61,7 +61,7 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https:\/\/mrbruce516.top"
+         "@id": "http:\/\/mrbruce516.github.io\/"
     },
     "articleSection" : "posts",
     "name" : "如何搭离线yum源",
@@ -76,7 +76,7 @@
     "copyrightYear" : "2020",
     "datePublished": "2020-01-08 15:52:52 \u002b0800 CST",
     "dateModified" : "2020-01-08 15:52:52 \u002b0800 CST",
-    "url" : "https:\/\/mrbruce516.top\/2020\/001\/",
+    "url" : "http:\/\/mrbruce516.github.io\/2020\/001\/",
     "wordCount" : "484",
     "keywords" : [ "软件","Linux", "麻吉麻之家"]
 }
@@ -99,7 +99,7 @@
         
             <div class="navbar-header header-back2home-logo">
                 <span class="logo_mark" >>$</span>
-                <a href="https://mrbruce516.top">
+                <a href="http://mrbruce516.github.io/">
                     <span class="logo_text" >cd /home/</span>
                     <span class="logo_cursor" ></span>
                 </a>
@@ -131,7 +131,7 @@
             <div class="header-logo">
                 
                     <span class="logo_mark">>$</span>
-                    <a href="https://mrbruce516.top">
+                    <a href="http://mrbruce516.github.io/">
                         <span class="logo_text"> cd /home/ </span>
                         <span class="logo_cursor"></span>
                 </a>
@@ -168,7 +168,7 @@
         <div class="post-meta">
             <i class="far fa-folder-open"></i>
             <span class="post-category">
-                <a href="https://mrbruce516.top/categories/%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/"> 从入门到入坟 </a>
+                <a href="http://mrbruce516.github.io/categories/%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/"> 从入门到入坟 </a>
                 
             </span>
             <span class="post-time">
@@ -255,20 +255,20 @@
 <p>  稍微提一句，一般系统镜像在<a href="https://developer.aliyun.com/mirror">阿里源</a>上即可获取。</p>
 <h3 id="step2-导入镜像">Step.2 导入镜像</h3>
 <p>  下载完成后，通过工具（ftp、scp等）导入系统，在系统中创建一个存放系统镜像的盘。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir /mnt/iso      <span style="color:#75715e">#用于存放系统镜像</span>
-mkdir /mnt/cdrom    <span style="color:#75715e">#用于挂载目录</span>
-</code></pre></div><p>  创建好存放路径后</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#挂载镜像到cdrom下</span>
-mount -o loop /mnt/iso/XXXXX.iso /mnt/cdrom
-<span style="color:#75715e"># 查看挂载情况</span>
-df -h
-</code></pre></div><h3 id="step3-编写yum源文件">Step.3 编写yum源文件</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir /mnt/iso      <span style="color:#75715e">#用于存放系统镜像</span>
+</span></span><span style="display:flex;"><span>mkdir /mnt/cdrom    <span style="color:#75715e">#用于挂载目录</span>
+</span></span></code></pre></div><p>  创建好存放路径后</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#挂载镜像到cdrom下</span>
+</span></span><span style="display:flex;"><span>mount -o loop /mnt/iso/XXXXX.iso /mnt/cdrom
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看挂载情况</span>
+</span></span><span style="display:flex;"><span>df -h
+</span></span></code></pre></div><h3 id="step3-编写yum源文件">Step.3 编写yum源文件</h3>
 <p>  若镜像挂载完毕，上述工作全部准备就绪，基本大部分工作已完成了，最后一步编写yum源文件，即可以后每次 <code>yum install</code> 的时候从本地镜像中离线安装软件，非常方便。</p>
 <p><strong>Yum源文件路径</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /etc/yum.repos.d
-</code></pre></div><p><strong>编写yum文件</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim local.repo
-</code></pre></div><p><strong>内容如下</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /etc/yum.repos.d
+</span></span></code></pre></div><p><strong>编写yum文件</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim local.repo
+</span></span></code></pre></div><p><strong>内容如下</strong></p>
 <pre tabindex="0"><code class="language-repo" data-lang="repo">[local]
 name=local
 #注：这里的baseurl就是你挂载的目录，在这里是/mnt/cdrom
@@ -278,9 +278,9 @@ enabled=1
 #文件校验，我一般就关掉了
 gpgcheck=0
 </code></pre><h3 id="测试一下">测试一下</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yum clean all
-yum search xxx
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yum clean all
+</span></span><span style="display:flex;"><span>yum search xxx
+</span></span></code></pre></div>
     </div>
 
     <div class="post-copyright">
@@ -294,7 +294,7 @@ yum search xxx
         
         <p class="copyright-item">
             <span><i class="fa fa-link"> : </i></span>
-            <span><a href=https://mrbruce516.top/2020/001/>https://mrbruce516.top/2020/001/</span>
+            <span><a href=http://mrbruce516.github.io/2020/001/>http://mrbruce516.github.io/2020/001/</span>
         </p>
         
 
@@ -314,10 +314,10 @@ yum search xxx
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://mrbruce516.top/tags/%E8%BD%AF%E4%BB%B6/">
+            <span class="tag"><a href="http://mrbruce516.github.io/tags/%E8%BD%AF%E4%BB%B6/">
                     #软件</a></span>
             
-            <span class="tag"><a href="https://mrbruce516.top/tags/linux/">
+            <span class="tag"><a href="http://mrbruce516.github.io/tags/linux/">
                     #Linux</a></span>
             
             </section>
@@ -325,17 +325,17 @@ yum search xxx
         
         <section>
             <span><a href="javascript:window.history.back();">back</a></span> ·
-            <span><a href="https://mrbruce516.top">home</a></span>
+            <span><a href="http://mrbruce516.github.io/">home</a></span>
         </section>
     </div>
 
     <div class="post-nav">
         
-        <a href="https://mrbruce516.top/2019/003/" class="prev" rel="prev" title="OneNote与印象笔记的取舍"><i
+        <a href="http://mrbruce516.github.io/2019/003/" class="prev" rel="prev" title="OneNote与印象笔记的取舍"><i
                 class="iconfont icon-left"></i>&nbsp;OneNote与印象笔记的取舍</a>
         
         
-        <a href="https://mrbruce516.top/2020/002/" class="next" rel="next"
+        <a href="http://mrbruce516.github.io/2020/002/" class="next" rel="next"
             title="LVM动态扩容">LVM动态扩容&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
@@ -345,8 +345,8 @@ yum search xxx
         
         
         <span id="/2020/001/" class="leancloud_visitors" data-flag-title="如何搭离线yum源">
-            <span class="post-meta-item-text">访问量 </span>
-            <span class="leancloud-visitors-count"></span>
+            <em class="post-meta-item-text">访问量 </em>
+            <i class="leancloud-visitors-count"></i>
             <p></p>
         </span>
         <div id="vcomments"></div>
@@ -354,10 +354,10 @@ yum search xxx
         <script type="text/javascript">
             new Valine({
                 el: '#vcomments',
-                appId: 'kmydF60Uqb5Njn6oTE0C5Yo0-9Nh9j0Va',
-                appKey: 't9u3imrn0fTc3FTvhcDjjkDM',
-                notify: 'false',
-                verify: 'false',
+                appId: 'akZxFlWl93ch0j3q9zW344By-gzGzoHsz',
+                appKey: 'r0AJ6JpWaArIR0GoXVnxNY1R',
+                notify: '',
+                verify: '',
                 avatar: 'mp',
                 placeholder: '说点什么吧...',
                 visitor: 'true'
@@ -439,13 +439,13 @@ yum search xxx
    <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2018 - 2022</span>
+        <span itemprop="copyrightYear">2018 - 2024</span>
         
         <span class="with-love">
     	 <i class="iconfont icon-love"></i> 
          </span>
          
-            <span class="author" itemprop="copyrightHolder"><a href="https://mrbruce516.top">麻吉麻尼酱</a> | </span> 
+            <span class="author" itemprop="copyrightHolder"><a href="http://mrbruce516.github.io/">麻吉麻尼酱</a> | </span> 
          
 
          

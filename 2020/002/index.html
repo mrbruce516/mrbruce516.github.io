@@ -29,9 +29,9 @@
   <meta name="description" content="麻吉麻尼酱の个人博客">
   
   
-  <link rel="prev" href="https://mrbruce516.top/2020/001/" />
-  <link rel="next" href="https://mrbruce516.top/2020/003/" />
-  <link rel="canonical" href="https://mrbruce516.top/2020/002/" />
+  <link rel="prev" href="http://mrbruce516.github.io/2020/001/" />
+  <link rel="next" href="http://mrbruce516.github.io/2020/003/" />
+  <link rel="canonical" href="http://mrbruce516.github.io/2020/002/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -61,7 +61,7 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https:\/\/mrbruce516.top"
+         "@id": "http:\/\/mrbruce516.github.io\/"
     },
     "articleSection" : "posts",
     "name" : "LVM动态扩容",
@@ -76,8 +76,8 @@
     "copyrightYear" : "2020",
     "datePublished": "2020-01-16 16:56:48 \u002b0800 CST",
     "dateModified" : "2020-01-16 16:56:48 \u002b0800 CST",
-    "url" : "https:\/\/mrbruce516.top\/2020\/002\/",
-    "wordCount" : "1459",
+    "url" : "http:\/\/mrbruce516.github.io\/2020\/002\/",
+    "wordCount" : "1465",
     "keywords" : [ "存储","Linux", "麻吉麻之家"]
 }
 </script>    
@@ -99,7 +99,7 @@
         
             <div class="navbar-header header-back2home-logo">
                 <span class="logo_mark" >>$</span>
-                <a href="https://mrbruce516.top">
+                <a href="http://mrbruce516.github.io/">
                     <span class="logo_text" >cd /home/</span>
                     <span class="logo_cursor" ></span>
                 </a>
@@ -131,7 +131,7 @@
             <div class="header-logo">
                 
                     <span class="logo_mark">>$</span>
-                    <a href="https://mrbruce516.top">
+                    <a href="http://mrbruce516.github.io/">
                         <span class="logo_text"> cd /home/ </span>
                         <span class="logo_cursor"></span>
                 </a>
@@ -168,7 +168,7 @@
         <div class="post-meta">
             <i class="far fa-folder-open"></i>
             <span class="post-category">
-                <a href="https://mrbruce516.top/categories/%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/"> 从入门到入坟 </a>
+                <a href="http://mrbruce516.github.io/categories/%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/"> 从入门到入坟 </a>
                 
             </span>
             <span class="post-time">
@@ -176,7 +176,7 @@
                     datetime=2020-01-16
                     itemprop="datePublished">2020-01-16</time>
             </span>
-            <i class="far fa-file-word"></i> <span class="post-word-count"> 1459 字</span>
+            <i class="far fa-file-word"></i> <span class="post-word-count"> 1465 字</span>
             <i class="far fa-clock"></i> <span class="more-meta"> 3 分钟</span>
         </div>
     </header>
@@ -258,55 +258,55 @@
 <p>  图中画框的部分为我为虚拟机新加的 5G 磁盘。那么接下来就让我们对已有文件的<code>/根目录</code>进行扩容。</p>
 <h2 id="step1-创建分区">Step.1 创建分区</h2>
 <p>  我们已经通过 fdisk 查询命令看到了新加入的磁盘，通过命令选中它</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">fdisk /dev/sdb <span style="color:#75715e">#这里跟你的磁盘</span>
-</code></pre></div><p>  <code>按n</code>创建一个分区，然后系统会问你你要创建主分区还是扩展分区，具体看个人需求，我们这里选择主分区，接下来系统会问你分区号用哪个，一般默认即可。划分分区大小有个小技巧，这里划分的单位是扇区来计量的，其实没必要这么复杂，假设你有 100G 的硬盘加上去，你需要划分几个分区，其中一个你要分 50G,你在这里输入<code>+50G</code>即可。这里不多阐述，没什么特别需求，一路回车即可～</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fdisk /dev/sdb <span style="color:#75715e">#这里跟你的磁盘</span>
+</span></span></code></pre></div><p>  <code>按n</code>创建一个分区，然后系统会问你你要创建主分区还是扩展分区，具体看个人需求，我们这里选择主分区，接下来系统会问你分区号用哪个，一般默认即可。划分分区大小有个小技巧，这里划分的单位是扇区来计量的，其实没必要这么复杂，假设你有 100G 的硬盘加上去，你需要划分几个分区，其中一个你要分 50G,你在这里输入<code>+50G</code>即可。这里不多阐述，没什么特别需求，一路回车即可～</p>
 <p><img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/nAq7U45vMsJy9w1.png" alt="创建分区"></p>
 <p>  此时系统告诉你，你创建了个<strong>类型为Linux的分区</strong>，Linux 分区格式一般是用与 ex4 这样的磁盘格式，这里LVM的话需要修改磁盘格式为 LVM。<code>按t</code>修改磁盘格式，由 L 查知，8e 为 LVM 的 Hex 码，输入<code>8e</code>，即可成功修改为 LVM。最后<code>按下w</code>保存此配置。</p>
 <p><img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/aUX8LHenlZWgwcF.png" alt="修改磁盘格式"></p>
 <p>  <strong>在一些较老的系统上</strong>，系统可能不会调用<code>ioctl()</code>来重读分区表，您可能需要通过以下命令来通知系统内核磁盘发生变化，刷新相关信息。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">partprobe /dev/sdb  <span style="color:#75715e">#具体看你是哪一块盘了</span>
-</code></pre></div><h2 id="step2-创建物理卷pv">Step.2 创建物理卷(PV)</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>partprobe /dev/sdb  <span style="color:#75715e">#具体看你是哪一块盘了</span>
+</span></span></code></pre></div><h2 id="step2-创建物理卷pv">Step.2 创建物理卷(PV)</h2>
 <p>  透过 fdisk 命令看一下，新建的分区是否已经就绪，如果没问题的话，应该和下图是一样的。
 <img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/AY5s3iKvUoJVXfw.png" alt="查询磁盘"></p>
 <p>  接下来通过以下命令创建物理卷</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pvcreate /dev/sdb1      <span style="color:#75715e"># 创建物理卷</span>
-pvdisplay               <span style="color:#75715e"># 查看物理卷</span>
-</code></pre></div><p>使用下列命令可以删除物理卷</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pvremove /dev/sdb1
-</code></pre></div><h2 id="step3-准备卷组vg">Step.3 准备卷组(VG)</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pvcreate /dev/sdb1      <span style="color:#75715e"># 创建物理卷</span>
+</span></span><span style="display:flex;"><span>pvdisplay               <span style="color:#75715e"># 查看物理卷</span>
+</span></span></code></pre></div><p>使用下列命令可以删除物理卷</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pvremove /dev/sdb1
+</span></span></code></pre></div><h2 id="step3-准备卷组vg">Step.3 准备卷组(VG)</h2>
 <p>下列命令用来创建名为&rsquo;volume-group1&rsquo;的卷组，使用/dev/sdb1创建。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vgcreate volume-group1 /dev/sdb1
-</code></pre></div><p>使用<code>vgdisplay</code>，我们可以看见卷组的使用量/总量。物理卷给卷组提供空间。只要在这个卷组中还有可用空间，我们就可以随意创建逻辑卷。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vgcreate volume-group1 /dev/sdb1
+</span></span></code></pre></div><p>使用<code>vgdisplay</code>，我们可以看见卷组的使用量/总量。物理卷给卷组提供空间。只要在这个卷组中还有可用空间，我们就可以随意创建逻辑卷。
 使用下列命令删除卷组</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vgremove volume-group1 
-</code></pre></div><h3 id="对已有卷组添加物理卷">对已有卷组添加物理卷</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vgremove volume-group1 
+</span></span></code></pre></div><h3 id="对已有卷组添加物理卷">对已有卷组添加物理卷</h3>
 <p>若要对已有卷组添加物理卷，使用<code>vgextend</code>命令，将物理卷添加到现有卷组中，这样才能在卷组中进行分配。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vgdisplay               <span style="color:#75715e"># 查看卷组</span>
-vgextend volume-group1 /dev/sdb1   <span style="color:#75715e"># 添加到卷组</span>
-vgdisplay               <span style="color:#75715e"># 再次查看卷组</span>
-</code></pre></div><p>  可以在返回结果中看到，<code>Free PE / Size</code>这个字段已经有你加进去的磁盘容量了。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vgdisplay               <span style="color:#75715e"># 查看卷组</span>
+</span></span><span style="display:flex;"><span>vgextend volume-group1 /dev/sdb1   <span style="color:#75715e"># 添加到卷组</span>
+</span></span><span style="display:flex;"><span>vgdisplay               <span style="color:#75715e"># 再次查看卷组</span>
+</span></span></code></pre></div><p>  可以在返回结果中看到，<code>Free PE / Size</code>这个字段已经有你加进去的磁盘容量了。</p>
 <h2 id="step4-对逻辑卷扩容lv">Step.4 对逻辑卷扩容(LV)</h2>
-<p>下列命令创建一个名为'1v1'、大小为100MB的逻辑卷。我们使用小分区减少执行时间。这个逻辑卷使用之前创建的卷组的空间。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lvcreate -L 100M -n lv1 volume-group1 
-lvdisplay		<span style="color:#75715e"># 查看一下</span>
-</code></pre></div><p>现在逻辑卷已经准备好了，我们可以格式化和挂载逻辑卷，就像其它ext2/3/4分区一样！</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkfs.ext4 /dev/volume-group1/lv1
-mkdir /lvm-mount
-mount /dev/volume-group1/lv1 /lvm-mount/ 
-</code></pre></div><p>一旦逻辑卷挂载，我们就可以到挂载点 /lvm-mount/ 上读写了。要创建和挂载其它的逻辑卷，我们重复这个过程。
+<p>下列命令创建一个名为'1v1&rsquo;、大小为100MB的逻辑卷。我们使用小分区减少执行时间。这个逻辑卷使用之前创建的卷组的空间。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lvcreate -L 100M -n lv1 volume-group1 
+</span></span><span style="display:flex;"><span>lvdisplay		<span style="color:#75715e"># 查看一下</span>
+</span></span></code></pre></div><p>现在逻辑卷已经准备好了，我们可以格式化和挂载逻辑卷，就像其它ext2/3/4分区一样！</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkfs.ext4 /dev/volume-group1/lv1
+</span></span><span style="display:flex;"><span>mkdir /lvm-mount
+</span></span><span style="display:flex;"><span>mount /dev/volume-group1/lv1 /lvm-mount/ 
+</span></span></code></pre></div><p>一旦逻辑卷挂载，我们就可以到挂载点 /lvm-mount/ 上读写了。要创建和挂载其它的逻辑卷，我们重复这个过程。
 最后，使用lvremove我们可以删除逻辑卷。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">umount /lvm-mount/
-lvremove /dev/volume-group1/lv1 
-</code></pre></div><h3 id="对现有逻辑卷扩容">对现有逻辑卷扩容</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>umount /lvm-mount/
+</span></span><span style="display:flex;"><span>lvremove /dev/volume-group1/lv1 
+</span></span></code></pre></div><h3 id="对现有逻辑卷扩容">对现有逻辑卷扩容</h3>
 <p>  添加进卷组后，就是将剩余空间对逻辑卷进行扩容。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lvdisplay              <span style="color:#75715e"># 查看逻辑卷</span>
-lvextend -l +100%FREE $你需要添加的逻辑卷      <span style="color:#75715e"># 将剩余百分百空间都添加到逻辑卷中</span>
-lvdisplay              <span style="color:#75715e"># 再次查看逻辑卷</span>
-</code></pre></div><p>  可以在返回结果中看到，<code>LV Size</code>这个字段查看现在逻辑卷磁盘容量。最后重新识别一下分区大小，就可以通过 df -h 看到新增的容量了。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">e2fsck -f /dev/volume-group1/lv1 
-</code></pre></div><p>运行以下命令扩展文件系统以后，ext4信息就更新了。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">resize2fs /dev/volume-group1/lv1
-</code></pre></div><p>现在，这个逻辑卷应该已经扩展完毕了。我们可以用<code>lvdisplay</code>来验证。这个逻辑卷可以再次挂载，同样这个方法也可用于其他分区。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lvdisplay              <span style="color:#75715e"># 查看逻辑卷</span>
+</span></span><span style="display:flex;"><span>lvextend -l +100%FREE $你需要添加的逻辑卷      <span style="color:#75715e"># 将剩余百分百空间都添加到逻辑卷中</span>
+</span></span><span style="display:flex;"><span>lvdisplay              <span style="color:#75715e"># 再次查看逻辑卷</span>
+</span></span></code></pre></div><p>  可以在返回结果中看到，<code>LV Size</code>这个字段查看现在逻辑卷磁盘容量。最后重新识别一下分区大小，就可以通过 df -h 看到新增的容量了。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>e2fsck -f /dev/volume-group1/lv1 
+</span></span></code></pre></div><p>运行以下命令扩展文件系统以后，ext4信息就更新了。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>resize2fs /dev/volume-group1/lv1
+</span></span></code></pre></div><p>现在，这个逻辑卷应该已经扩展完毕了。我们可以用<code>lvdisplay</code>来验证。这个逻辑卷可以再次挂载，同样这个方法也可用于其他分区。</p>
 <p>  OK，到此，扩容完成。</p>
 
     </div>
@@ -322,7 +322,7 @@ lvdisplay              <span style="color:#75715e"># 再次查看逻辑卷</span
         
         <p class="copyright-item">
             <span><i class="fa fa-link"> : </i></span>
-            <span><a href=https://mrbruce516.top/2020/002/>https://mrbruce516.top/2020/002/</span>
+            <span><a href=http://mrbruce516.github.io/2020/002/>http://mrbruce516.github.io/2020/002/</span>
         </p>
         
 
@@ -342,10 +342,10 @@ lvdisplay              <span style="color:#75715e"># 再次查看逻辑卷</span
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://mrbruce516.top/tags/%E5%AD%98%E5%82%A8/">
+            <span class="tag"><a href="http://mrbruce516.github.io/tags/%E5%AD%98%E5%82%A8/">
                     #存储</a></span>
             
-            <span class="tag"><a href="https://mrbruce516.top/tags/linux/">
+            <span class="tag"><a href="http://mrbruce516.github.io/tags/linux/">
                     #Linux</a></span>
             
             </section>
@@ -353,17 +353,17 @@ lvdisplay              <span style="color:#75715e"># 再次查看逻辑卷</span
         
         <section>
             <span><a href="javascript:window.history.back();">back</a></span> ·
-            <span><a href="https://mrbruce516.top">home</a></span>
+            <span><a href="http://mrbruce516.github.io/">home</a></span>
         </section>
     </div>
 
     <div class="post-nav">
         
-        <a href="https://mrbruce516.top/2020/001/" class="prev" rel="prev" title="如何搭离线yum源"><i
+        <a href="http://mrbruce516.github.io/2020/001/" class="prev" rel="prev" title="如何搭离线yum源"><i
                 class="iconfont icon-left"></i>&nbsp;如何搭离线yum源</a>
         
         
-        <a href="https://mrbruce516.top/2020/003/" class="next" rel="next"
+        <a href="http://mrbruce516.github.io/2020/003/" class="next" rel="next"
             title="用电脑给智能电视安装应用">用电脑给智能电视安装应用&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
@@ -373,8 +373,8 @@ lvdisplay              <span style="color:#75715e"># 再次查看逻辑卷</span
         
         
         <span id="/2020/002/" class="leancloud_visitors" data-flag-title="LVM动态扩容">
-            <span class="post-meta-item-text">访问量 </span>
-            <span class="leancloud-visitors-count"></span>
+            <em class="post-meta-item-text">访问量 </em>
+            <i class="leancloud-visitors-count"></i>
             <p></p>
         </span>
         <div id="vcomments"></div>
@@ -382,10 +382,10 @@ lvdisplay              <span style="color:#75715e"># 再次查看逻辑卷</span
         <script type="text/javascript">
             new Valine({
                 el: '#vcomments',
-                appId: 'kmydF60Uqb5Njn6oTE0C5Yo0-9Nh9j0Va',
-                appKey: 't9u3imrn0fTc3FTvhcDjjkDM',
-                notify: 'false',
-                verify: 'false',
+                appId: 'akZxFlWl93ch0j3q9zW344By-gzGzoHsz',
+                appKey: 'r0AJ6JpWaArIR0GoXVnxNY1R',
+                notify: '',
+                verify: '',
                 avatar: 'mp',
                 placeholder: '说点什么吧...',
                 visitor: 'true'
@@ -467,13 +467,13 @@ lvdisplay              <span style="color:#75715e"># 再次查看逻辑卷</span
    <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2018 - 2022</span>
+        <span itemprop="copyrightYear">2018 - 2024</span>
         
         <span class="with-love">
     	 <i class="iconfont icon-love"></i> 
          </span>
          
-            <span class="author" itemprop="copyrightHolder"><a href="https://mrbruce516.top">麻吉麻尼酱</a> | </span> 
+            <span class="author" itemprop="copyrightHolder"><a href="http://mrbruce516.github.io/">麻吉麻尼酱</a> | </span> 
          
 
          
