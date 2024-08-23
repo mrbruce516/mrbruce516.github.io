@@ -78,7 +78,7 @@
     "dateModified" : "2020-01-16 16:56:48 \u002b0800 CST",
     "url" : "http:\/\/blog.mrbruce516.live\/2020\/002\/",
     "wordCount" : "1465",
-    "keywords" : [ "存储","Linux", "麻吉麻社长"]
+    "keywords" : [ "存储","linux", "麻吉麻社长"]
 }
 </script>    
 
@@ -168,7 +168,7 @@
         <div class="post-meta">
             <i class="far fa-folder-open"></i>
             <span class="post-category">
-                <a href="http://blog.mrbruce516.live/categories/%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/"> 从入门到入坟 </a>
+                <a href="http://blog.mrbruce516.live/categories/%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C/"> 技术手册 </a>
                 
             </span>
             <span class="post-time">
@@ -288,7 +288,7 @@
 <h2 id="step4-对逻辑卷扩容lv">Step.4 对逻辑卷扩容(LV)</h2>
 <p>下列命令创建一个名为'1v1&rsquo;、大小为100MB的逻辑卷。我们使用小分区减少执行时间。这个逻辑卷使用之前创建的卷组的空间。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lvcreate -L 100M -n lv1 volume-group1 
-</span></span><span style="display:flex;"><span>lvdisplay		<span style="color:#75715e"># 查看一下</span>
+</span></span><span style="display:flex;"><span>lvdisplay        <span style="color:#75715e"># 查看一下</span>
 </span></span></code></pre></div><p>现在逻辑卷已经准备好了，我们可以格式化和挂载逻辑卷，就像其它ext2/3/4分区一样！</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkfs.ext4 /dev/volume-group1/lv1
 </span></span><span style="display:flex;"><span>mkdir /lvm-mount
@@ -346,7 +346,7 @@
                     #存储</a></span>
             
             <span class="tag"><a href="http://blog.mrbruce516.live/tags/linux/">
-                    #Linux</a></span>
+                    #linux</a></span>
             
             </section>
         

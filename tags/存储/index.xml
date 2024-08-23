@@ -17,9 +17,9 @@
     </item>
     <item>
       <title>Fdisk的使用心得</title>
-      <link>http://blog.mrbruce516.live/2019/002/</link>
+      <link>http://blog.mrbruce516.live/2019/001/</link>
       <pubDate>Fri, 26 Jul 2019 16:36:45 +0800</pubDate>
-      <guid>http://blog.mrbruce516.live/2019/002/</guid>
+      <guid>http://blog.mrbruce516.live/2019/001/</guid>
       <description>近期工作总是遇到开了虚拟机需要挂磁盘的问题，由于 fdisk 的操作比较生硬所以每次都要去找好多资料,比较浪费效率，这里写一下大致的 fdisk 挂载磁盘过程。 进入</description>
     </item>
   </channel>

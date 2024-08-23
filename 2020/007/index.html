@@ -11,8 +11,8 @@
   <meta name="theme-color" content="#ffffff">
   
   <meta name="baidu-site-verification" content="e0YUuV3foo" />
-  <meta content="Typora, markdown编辑器" name="keywords">
-  <meta content="麻吉麻社长的个人博客 - 优秀的markdown编辑器，typora" property="og:description">
+  <meta content="vim" name="keywords">
+  <meta content="麻吉麻社长的个人博客 - 记录学习vim的各类技巧" property="og:description">
   
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
@@ -42,10 +42,10 @@
   <title>
        
        
-           md输入利器Typora | 麻吉麻社长
+           vim学习笔记 | 麻吉麻社长
        
   </title>
-  <meta name="title" content="md输入利器Typora | 麻吉麻社长">
+  <meta name="title" content="vim学习笔记 | 麻吉麻社长">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -64,9 +64,9 @@
          "@id": "http:\/\/blog.mrbruce516.live\/"
     },
     "articleSection" : "posts",
-    "name" : "md输入利器Typora",
-    "headline" : "md输入利器Typora",
-    "description" : "优秀的markdown编辑器，typora",
+    "name" : "vim学习笔记",
+    "headline" : "vim学习笔记",
+    "description" : "记录学习vim的各类技巧",
     "inLanguage" : "zh-CN",
     "author" : "麻吉麻社长",
     "creator" : "麻吉麻社长",
@@ -74,11 +74,11 @@
     "accountablePerson" : "麻吉麻社长",
     "copyrightHolder" : "麻吉麻社长",
     "copyrightYear" : "2020",
-    "datePublished": "2020-04-04 01:16:02 \u002b0800 CST",
-    "dateModified" : "2020-04-04 01:16:02 \u002b0800 CST",
+    "datePublished": "2020-08-20 11:34:00 \u002b0800 CST",
+    "dateModified" : "2020-08-20 11:34:00 \u002b0800 CST",
     "url" : "http:\/\/blog.mrbruce516.live\/2020\/007\/",
-    "wordCount" : "1317",
-    "keywords" : [ "markdown","软件","文本编辑器", "麻吉麻社长"]
+    "wordCount" : "1258",
+    "keywords" : [ "vim", "麻吉麻社长"]
 }
 </script>    
 
@@ -164,19 +164,19 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">md输入利器Typora</h1>
+        <h1 class="post-title" itemprop="name headline">vim学习笔记</h1>
         <div class="post-meta">
             <i class="far fa-folder-open"></i>
             <span class="post-category">
-                <a href="http://blog.mrbruce516.live/categories/%E8%88%B9%E9%95%BF%E7%9A%84%E5%B7%A5%E5%85%B7/"> 船长的工具 </a>
+                <a href="http://blog.mrbruce516.live/categories/%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C/"> 技术手册 </a>
                 
             </span>
             <span class="post-time">
                 <i class="far fa-calendar-alt"></i> <time
-                    datetime=2020-04-04
-                    itemprop="datePublished">2020-04-04</time>
+                    datetime=2020-08-20
+                    itemprop="datePublished">2020-08-20</time>
             </span>
-            <i class="far fa-file-word"></i> <span class="post-word-count"> 1317 字</span>
+            <i class="far fa-file-word"></i> <span class="post-word-count"> 1258 字</span>
             <i class="far fa-clock"></i> <span class="more-meta"> 3 分钟</span>
         </div>
     </header>
@@ -187,15 +187,13 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#typora有哪些好用的功能">Typora有哪些好用的功能</a>
-      <ul>
-        <li><a href="#1-输入即所得">1. 输入即所得</a></li>
-        <li><a href="#2-超强自定义">2. 超强自定义</a></li>
-        <li><a href="#3-整合图床">3. 整合图床</a></li>
-        <li><a href="#4-迅速打开工程目录">4. 迅速打开工程目录</a></li>
-        <li><a href="#5-优秀的输入体验">5. 优秀的输入体验</a></li>
-      </ul>
-    </li>
+    <li><a href="#常用快捷键">常用快捷键</a></li>
+    <li><a href="#方向键">方向键</a></li>
+    <li><a href="#可视模式">可视模式</a></li>
+    <li><a href="#分屏">分屏</a></li>
+    <li><a href="#标签">标签</a></li>
+    <li><a href="#插件">插件</a></li>
+    <li><a href="#配置文件">配置文件</a></li>
   </ul>
 </nav>
   </div>
@@ -246,40 +244,244 @@
         
         
 
-        <p>  本博客是由hugo搭建的，所有的blog基于markdown编写，博主最早通过Visual Studio Code来编写markdown，后面使用过App Store上的IA Writer以及Ulysses。每个软件各自都有优点，在深度的体验了每个软件后，决定还是使用Typora来作为输出markdown的文本编辑器。</p>
-<h2 id="typora有哪些好用的功能">Typora有哪些好用的功能</h2>
-<h3 id="1-输入即所得">1. 输入即所得</h3>
-<p>  这个功能非常的好用，你输入了任何markdown语法，软件会自动生成预览样式，整体页面非常干净，看不见多余的语法符号了。当然在复杂编辑的情况下，还是可以打开默认输入模式的（即不随时渲染效果）。再配合hugo的预览效果，写作体验非常愉悦。</p>
-<p><img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/yXepZJOHnRcVrT7.png" alt="写作环境"></p>
-<h3 id="2-超强自定义">2. 超强自定义</h3>
-<p>  对Typora默认字体/大小不满意？没问题，Typora可以直接通过修改CSS文件来修改软件的显示效果。在偏好设置中，外观选项下选择打开主题文件夹。</p>
-<p><img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/3VhuReTEFxfpLN8.png" alt="打开配置文件目录"></p>
-<h4 id="设定字体">设定字体</h4>
-<p>  在主题文件夹中找到你对应的皮肤CSS文件，用文本编辑器打开，博主这里用的是默认主题night,找到textarea下的font-family，这个设定影响的是软件全局的默认字体。</p>
-<p><img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/Q4knPo1AdwqfbTe.png" alt="设定默认字体集"></p>
-<p>  以上设定的是默认字体，标题等其他样式字体并不会更变，搜索<code>h1</code>寻找标题样式，在标题样式中同样设定字体集。</p>
-<h4 id="设定字体大小">设定字体大小</h4>
-<p>  在搜索中找寻font-size即可定义字体大小，html块下的font-size设定的是全局的文字大小（即会影响各标题的大小，因为各标题的大小是相对这个属性的）。</p>
-<p><img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/zGro9FPjIURhQp5.png" alt="设定全局字体大小"></p>
-<p>  若放大或缩小全局字体大小后，对其他文字样式受到的联动效果不满意的情况下，可以针对单独样式进行单独设定。</p>
-<p><img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/qJgAd936xoEfQ4C.png" alt="h2文字大小设定"></p>
-<h3 id="3-整合图床">3. 整合图床</h3>
-<p>  一般来说markdown要插入图片是比较麻烦的，并不能直接粘贴图片到编辑器内，所以通常做法是把图片上传到smms一类的图床，通过图床生成的md url插入编辑器中。</p>
-<p><img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/916BNzpgelhA34O.png" alt="整合图床"></p>
-<p>  Typora的优势是可以整合图床，非常方便的直接插入图片后生成图片链接。打开偏好设置，在上传服务设定中博主推荐使用<a href="https://molunerfinn.com/PicGo/">PicGo</a>服务(免费开源万岁)，这个工具的扩展性很强，支持绝大部分图床，甚至可以自行添加自定义图床。博主一般把图片托管在smms上，没有什么特殊需求，smms配置是最简单直接的。</p>
-<h4 id="配置smms">配置smms</h4>
-<p>  安装完PicGo后，在任务栏中右击logo，打开详细窗口，进入插件设置中，由于smms官方不再支持V1的API接口，所以下载一个smms-user的插件。</p>
-<p><img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/PMAmSsI1g2tr6Rk.png" alt="安装插件"></p>
-<p>  安装插件完成后，在图床设置中选中smms，它会让你填写一个Auth，用于认证你的smms图床，随后通过接口就可以非常便捷的把图片上传到图床中。</p>
-<p><img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/krlVcxhJFmyS3ZK.png" alt="smms用户认证"></p>
-<p>  完成上述步骤，即可在编辑器中插入图片并自动上传至图床～（若你PicGo未打开情况下也可以，Typora会自动拉起PicGo的程序）</p>
-<h3 id="4-迅速打开工程目录">4. 迅速打开工程目录</h3>
-<p>  在使用IA Writer/Ulysses 的时候发现他们都有非常棒的目录管理，其实Typora也是具备的，在软件的右上方可以发现。这个打开过的目录时是具备记忆功能的，所以之后每次打开工程目录可以直接开启Typora。</p>
-<p><img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/KCGs3BWIRPrVZN9.png" alt="开启目录"></p>
-<h3 id="5-优秀的输入体验">5. 优秀的输入体验</h3>
-<p>  之前使用过最舒服的markdown编辑器应该是IA Writer，他支持打字机模式，语法检查等。仔细看了下Typora也有相似功能，在任务栏中，<code>显示-专注模式、打字机模式</code>即可开启，输入体验不亚于IA Writer。</p>
-<p><img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/KaNzYOxVRCroBhW.png" alt="开启专注模式、打字机模式"></p>
-
+        <p>  Vim是从vi发展出来的一个文本编辑器。其代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。和Emacs并列成为类Unix系统用户最喜欢的编辑器。</p>
+<img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/1024px-Vimlogo.svg.png" style="zoom:30%">
+<p>  时至2020年，vim已经走过了29个年头，虽然vim是个开源项目，但是提交分支全由Vim作者Bram Moolenaar进行管控，前些年巴西程序员 Thiago de Arruda Padilha（aka tarruda）向 Vim开源编辑器项目递交了两大补丁，对Vim的架构进行了大幅调整，被拒绝后tarruda发起了Vim fork项目Neovim，集资1万美元打造出21世纪的编辑器，提供更好的脚本、插件支持，整合现代的图形界面。</p>
+<p><img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/742px-Neovim-logo.svg.png" alt="File:Neovim-logo.svg"></p>
+<p>  neovim与vim的操作是一致的，连配置文件也可以复用，并且neovim对插件的兼容更好，除了支持原生vim-script编写的插件以外，还支持高级语言所编写的插件。并且现今开源社区的vim插件对neovim支持在第一梯队。</p>
+<p>  文末会配上本人的dotfile，是面向neovim的（当然不看插件部分，vim也是可以使用的）</p>
+<h2 id="常用快捷键">常用快捷键</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">键位</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">a</td>
+<td style="text-align:left">在下一个字符进行输入</td>
+</tr>
+<tr>
+<td style="text-align:center">shift+a</td>
+<td style="text-align:left">在行尾直接插入</td>
+</tr>
+<tr>
+<td style="text-align:center">shift+i</td>
+<td style="text-align:left">在行前直接插入</td>
+</tr>
+<tr>
+<td style="text-align:center">shift+o</td>
+<td style="text-align:left">在当前行上一行写入</td>
+</tr>
+<tr>
+<td style="text-align:center">s</td>
+<td style="text-align:left">删除当前字符并开始插入</td>
+</tr>
+<tr>
+<td style="text-align:center">x</td>
+<td style="text-align:left">删除当前字符</td>
+</tr>
+<tr>
+<td style="text-align:center">d</td>
+<td style="text-align:left">剪贴操作，可以剪贴多个字符例如d3⬅️：向左删除3个字符</td>
+</tr>
+<tr>
+<td style="text-align:center">p</td>
+<td style="text-align:left">粘贴</td>
+</tr>
+<tr>
+<td style="text-align:center">y</td>
+<td style="text-align:left">复制，具体用法与d相同</td>
+</tr>
+<tr>
+<td style="text-align:center">c</td>
+<td style="text-align:left">更改操作（删除后进入写入模式）</td>
+</tr>
+<tr>
+<td style="text-align:center">w</td>
+<td style="text-align:left">光标移动到下一个词</td>
+</tr>
+<tr>
+<td style="text-align:center">b</td>
+<td style="text-align:left">回到上一个词</td>
+</tr>
+<tr>
+<td style="text-align:center">f</td>
+<td style="text-align:left">查找下一个你需要的字母，例如fv（即找到下一个v）</td>
+</tr>
+<tr>
+<td style="text-align:center">zz</td>
+<td style="text-align:left">居中当前行</td>
+</tr>
+<tr>
+<td style="text-align:center">G</td>
+<td style="text-align:left">到文档最后一行</td>
+</tr>
+<tr>
+<td style="text-align:center">gg</td>
+<td style="text-align:left">到文档首行</td>
+</tr>
+</tbody>
+</table>
+<h2 id="方向键">方向键</h2>
+<table>
+<thead>
+<tr>
+<th>键位</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>h</td>
+<td>◀️</td>
+</tr>
+<tr>
+<td>j</td>
+<td>🔽</td>
+</tr>
+<tr>
+<td>k</td>
+<td>🔼</td>
+</tr>
+<tr>
+<td>l</td>
+<td>➡️</td>
+</tr>
+</tbody>
+</table>
+<h2 id="可视模式">可视模式</h2>
+<p>  可以当作鼠标光标开始选择的一个模式，方便做框选后的其他操作</p>
+<p>  在可视模式下，按下<code>:</code>后接<code>normal</code>可以输入普通模式下的指令，例如<code>shift+i</code>进入行首进行插入字符</p>
+<table>
+<thead>
+<tr>
+<th>键位</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v</td>
+<td>默认可视模式</td>
+</tr>
+<tr>
+<td>V</td>
+<td>选中行的可视模式</td>
+</tr>
+<tr>
+<td>ctrl+v</td>
+<td>选中块文本可视模式</td>
+</tr>
+</tbody>
+</table>
+<h2 id="分屏">分屏</h2>
+<p>  在普通模式下输入<code>:</code>后接以下指令进入分屏</p>
+<p>  分屏后按下<code>:e</code>后接文件路径，在分屏中开始编辑另一个文件</p>
+<p>  分屏后输入<code>:vertical resize</code>+-数字 进行更改垂直分屏大小</p>
+<table>
+<thead>
+<tr>
+<th>键位</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>split</td>
+<td>上下分屏</td>
+</tr>
+<tr>
+<td>vsplit</td>
+<td>左右分屏</td>
+</tr>
+<tr>
+<td>ctrl+w 后接hjkl</td>
+<td>在分屏间移动</td>
+</tr>
+</tbody>
+</table>
+<h2 id="标签">标签</h2>
+<p>  在不想退出vim，且想新开一个vim并占满全屏的情况下，输入<code>:tabe</code>即可新建一个vim窗口</p>
+<table>
+<thead>
+<tr>
+<th>键位</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tabe</td>
+<td>新建vim标签页</td>
+</tr>
+<tr>
+<td>-tabnext</td>
+<td>上一个标签页</td>
+</tr>
+<tr>
+<td>+tabnext</td>
+<td>下一个标签页</td>
+</tr>
+</tbody>
+</table>
+<h2 id="插件">插件</h2>
+<p>  插件推荐使用<a href="https://github.com/junegunn/vim-plug">vim-plug</a>进行管理，以下为本人使用的插件</p>
+<table>
+<thead>
+<tr>
+<th>名字</th>
+<th style="text-align:left">用处</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nerdtree</td>
+<td style="text-align:left">文件树，通过ff呼出</td>
+</tr>
+<tr>
+<td>coc.nvim</td>
+<td style="text-align:left">一个非常强大的补全插件</td>
+</tr>
+<tr>
+<td>airline</td>
+<td style="text-align:left">一个漂亮的状态栏插件</td>
+</tr>
+<tr>
+<td>nerdtree-git-plugin</td>
+<td style="text-align:left">nerdtree支持git状态侦测</td>
+</tr>
+<tr>
+<td>vim-devicons</td>
+<td style="text-align:left">支持文件类型检测，随后在编辑文件的时候有文件类型的logo</td>
+</tr>
+<tr>
+<td>onedark.vim</td>
+<td style="text-align:left">仿atom编辑器主题</td>
+</tr>
+<tr>
+<td>vim-gitgutter</td>
+<td style="text-align:left">支持行检测git状态</td>
+</tr>
+<tr>
+<td>vim-startify</td>
+<td style="text-align:left">一个便利的vim启动界面，可以更快的改配置文件，修改最近修改过的文件</td>
+</tr>
+<tr>
+<td>tagbar</td>
+<td style="text-align:left">查看文件内的定义</td>
+</tr>
+</tbody>
+</table>
+<h2 id="配置文件">配置文件</h2>
+<p>  nvim的<a href="https://github.com/mrbruce516/dotfile/blob/master/init.vim">配置文件</a>路径在<code>~/.config/nvim/init.vim</code>，vim的配置文件位置在<code>~/.vimrc</code>，个人推荐在你的shell的配置文件中设置别名，方便修改vim的配置文件。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>alias configvim<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;vim ~/.config/nvim/init.vim&#39;</span>
+</span></span></code></pre></div><p>如果你和我一样使用nvim，也可以为nvim使用别名</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>alias vim<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;nvim&#39;</span>
+</span></span><span style="display:flex;"><span>alias vi<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;nvim&#39;</span>
+</span></span></code></pre></div>
     </div>
 
     <div class="post-copyright">
@@ -313,14 +515,8 @@
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="http://blog.mrbruce516.live/tags/markdown/">
-                    #markdown</a></span>
-            
-            <span class="tag"><a href="http://blog.mrbruce516.live/tags/%E8%BD%AF%E4%BB%B6/">
-                    #软件</a></span>
-            
-            <span class="tag"><a href="http://blog.mrbruce516.live/tags/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/">
-                    #文本编辑器</a></span>
+            <span class="tag"><a href="http://blog.mrbruce516.live/tags/vim/">
+                    #vim</a></span>
             
             </section>
         
@@ -333,12 +529,12 @@
 
     <div class="post-nav">
         
-        <a href="http://blog.mrbruce516.live/2020/006/" class="prev" rel="prev" title="开始用Bear熊掌记"><i
-                class="iconfont icon-left"></i>&nbsp;开始用Bear熊掌记</a>
+        <a href="http://blog.mrbruce516.live/2020/006/" class="prev" rel="prev" title="为了防止剧透给博客加上隐藏文字"><i
+                class="iconfont icon-left"></i>&nbsp;为了防止剧透给博客加上隐藏文字</a>
         
         
         <a href="http://blog.mrbruce516.live/2020/008/" class="next" rel="next"
-            title="VIM配置分享">VIM配置分享&nbsp;<i class="iconfont icon-right"></i></a>
+            title="为mysql搭建主从复制">为mysql搭建主从复制&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
@@ -346,7 +542,7 @@
         
         
         
-        <span id="/2020/007/" class="leancloud_visitors" data-flag-title="md输入利器Typora">
+        <span id="/2020/007/" class="leancloud_visitors" data-flag-title="vim学习笔记">
             <em class="post-meta-item-text">访问量 </em>
             <i class="leancloud-visitors-count"></i>
             <p></p>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Yum on 麻吉麻社长</title>
+    <link>http://blog.mrbruce516.live/tags/yum/</link>
+    <description>Recent content in Yum on 麻吉麻社长</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 08 Jan 2020 15:52:52 +0800</lastBuildDate>
+    <atom:link href="http://blog.mrbruce516.live/tags/yum/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何搭离线yum源</title>
+      <link>http://blog.mrbruce516.live/2020/001/</link>
+      <pubDate>Wed, 08 Jan 2020 15:52:52 +0800</pubDate>
+      <guid>http://blog.mrbruce516.live/2020/001/</guid>
+      <description>有时候不一定你的 Linux 主机能够连接到互联网，在无法连接至互联网的时候，安装软件成为了一大痛点，今天就来聊一下如果在无网络环境的情况下，如何消除疼</description>
+    </item>
+  </channel>
+</rss>

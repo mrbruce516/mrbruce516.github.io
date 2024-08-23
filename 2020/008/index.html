@@ -11,8 +11,8 @@
   <meta name="theme-color" content="#ffffff">
   
   <meta name="baidu-site-verification" content="e0YUuV3foo" />
-  <meta content="vim, 文本编辑器" name="keywords">
-  <meta content="麻吉麻社长的个人博客 - 个性化配置vim" property="og:description">
+  <meta content="mysql, 数据库, 主从复制" name="keywords">
+  <meta content="麻吉麻社长的个人博客 - 为mysql搭建主从复制" property="og:description">
   
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
@@ -42,10 +42,10 @@
   <title>
        
        
-           VIM配置分享 | 麻吉麻社长
+           为mysql搭建主从复制 | 麻吉麻社长
        
   </title>
-  <meta name="title" content="VIM配置分享 | 麻吉麻社长">
+  <meta name="title" content="为mysql搭建主从复制 | 麻吉麻社长">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -64,9 +64,9 @@
          "@id": "http:\/\/blog.mrbruce516.live\/"
     },
     "articleSection" : "posts",
-    "name" : "VIM配置分享",
-    "headline" : "VIM配置分享",
-    "description" : "个性化配置vim",
+    "name" : "为mysql搭建主从复制",
+    "headline" : "为mysql搭建主从复制",
+    "description" : "为mysql搭建主从复制",
     "inLanguage" : "zh-CN",
     "author" : "麻吉麻社长",
     "creator" : "麻吉麻社长",
@@ -74,11 +74,11 @@
     "accountablePerson" : "麻吉麻社长",
     "copyrightHolder" : "麻吉麻社长",
     "copyrightYear" : "2020",
-    "datePublished": "2020-04-05 21:38:51 \u002b0800 CST",
-    "dateModified" : "2020-04-05 21:38:51 \u002b0800 CST",
+    "datePublished": "2020-10-22 16:22:54 \u002b0800 CST",
+    "dateModified" : "2020-10-22 16:22:54 \u002b0800 CST",
     "url" : "http:\/\/blog.mrbruce516.live\/2020\/008\/",
-    "wordCount" : "877",
-    "keywords" : [ "软件","命令行工具","文本编辑器", "麻吉麻社长"]
+    "wordCount" : "990",
+    "keywords" : [ "mysql", "麻吉麻社长"]
 }
 </script>    
 
@@ -164,19 +164,19 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">VIM配置分享</h1>
+        <h1 class="post-title" itemprop="name headline">为mysql搭建主从复制</h1>
         <div class="post-meta">
             <i class="far fa-folder-open"></i>
             <span class="post-category">
-                <a href="http://blog.mrbruce516.live/categories/%E8%88%B9%E9%95%BF%E7%9A%84%E5%B7%A5%E5%85%B7/"> 船长的工具 </a>
+                <a href="http://blog.mrbruce516.live/categories/%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C/"> 技术手册 </a>
                 
             </span>
             <span class="post-time">
                 <i class="far fa-calendar-alt"></i> <time
-                    datetime=2020-04-05
-                    itemprop="datePublished">2020-04-05</time>
+                    datetime=2020-10-22
+                    itemprop="datePublished">2020-10-22</time>
             </span>
-            <i class="far fa-file-word"></i> <span class="post-word-count"> 877 字</span>
+            <i class="far fa-file-word"></i> <span class="post-word-count"> 990 字</span>
             <i class="far fa-clock"></i> <span class="more-meta"> 2 分钟</span>
         </div>
     </header>
@@ -185,7 +185,12 @@
   <h2 class="post-toc-title"></h2>
   
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#概要">概要</a></li>
+    <li><a href="#配置服务器">配置服务器</a></li>
+  </ul>
+</nav>
   </div>
 </div>
 <script type="text/javascript">
@@ -232,54 +237,61 @@
         
         
 
-        <p>  最近有小伙伴们说，vim太丑了不好用，其实vim配置好以后，颜值&amp;功能性都能上升好几个档次，我在下边放一下我的vim的配置项，并且对配置项做相应的说明，有兴趣的小伙伴们自取～同时也放上我终端环境配置的备份，目前使用<a href="https://github.com/mrbruce516/shellBak">iterm+zsh</a>，之前用过一段时间的<a href="https://github.com/mrbruce516/hyperbackup">Hyper+fish</a>,都是非常不错的终端方案，有兴趣的话自取～</p>
-<p>  也是先开个坑，之后有时间的话准备详细聊聊iterm2的配置指南～</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#e6db74">&#34; 基础
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set nocompatible	&#34;</span> 不与 Vi 兼容
-</span></span><span style="display:flex;"><span>set backspace<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>         <span style="color:#e6db74">&#34; 解决插入模式下delete/backspce键失效问题
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">syntax on		&#34;</span> 打开语法高亮
-</span></span><span style="display:flex;"><span>set showmode		<span style="color:#e6db74">&#34; 在底部显示，当前处于命令模式还是插入模式
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set showcmd		&#34;</span> 命令模式下，在底部显示，当前键入的指令
-</span></span><span style="display:flex;"><span>set mouse<span style="color:#f92672">=</span>i		<span style="color:#e6db74">&#34; 支持使用鼠标。
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set encoding=utf-8	&#34;</span> 使用 utf-8 编码
-</span></span><span style="display:flex;"><span>set t_Co<span style="color:#f92672">=</span>256		<span style="color:#e6db74">&#34; 启用256色
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">filetype indent on	&#34;</span> 开启文件类型检查，并且载入与该类型对应的缩进规则
-</span></span><span style="display:flex;"><span>                    
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34; 缩进
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set autoindent		&#34;</span> 按下回车键后，下一行的缩进会自动跟上一行的缩进保持一致
-</span></span><span style="display:flex;"><span>set tabstop<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>                   <span style="color:#e6db74">&#34; 按下 Tab 键时，Vim 显示的空格数
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set shiftwidth=4	&#34;</span> 在文本上按下&gt;&gt;（增加一级缩进）、&lt;&lt;（取消一级缩进）或者<span style="color:#f92672">==</span>（取消全部缩进）时，每一级的字符数
-</span></span><span style="display:flex;"><span>set expandtab		<span style="color:#e6db74">&#34; 由于 Tab 键在不同的编辑器缩进不一致，该设置自动将 Tab 转为空格
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set softtabstop=4	&#34;</span> Tab 转为多少个空格
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34; 外观
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set number		&#34;</span> 显示行号
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34; set relativenumber	&#34;</span> 显示光标所在的当前行的行号，其他行都为相对于该行的相对行号
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34; set cursorline	&#34;</span> 光标所在的当前行高亮
-</span></span><span style="display:flex;"><span>set textwidth<span style="color:#f92672">=</span>80	<span style="color:#e6db74">&#34; 设置行宽
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set wrap		&#34;</span> 自动折行
-</span></span><span style="display:flex;"><span>set linebreak		<span style="color:#e6db74">&#34; 不会在单词内部折行
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set wrapmargin=2	&#34;</span> 指定折行处与编辑窗口的右边缘之间空出的字符数
-</span></span><span style="display:flex;"><span>set scrolloff<span style="color:#f92672">=</span>15	<span style="color:#e6db74">&#34; 垂直滚动时，光标距离顶部/底部的位置
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span> set laststatus<span style="color:#f92672">=</span>2	<span style="color:#e6db74">&#34; 是否显示状态栏。0 表示不显示，1 表示只在多窗口时显示，2 表示显示
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set  ruler		&#34;</span> 在状态栏显示光标的当前位置（位于哪一行哪一列）
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34; 搜索
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set showmatch           &#34;</span> 光标遇到圆括号、方括号、大括号时，自动高亮对应的另一个圆括号、方括号和大括号
-</span></span><span style="display:flex;"><span>set hlsearch            <span style="color:#e6db74">&#34; 搜索时，高亮显示匹配结果
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set incsearch           &#34;</span> 输入搜索模式时，每输入一个字符，就自动跳到第一个匹配的结果
-</span></span><span style="display:flex;"><span>set ignorecase          <span style="color:#e6db74">&#34; 搜索时忽略大小写
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set smartcase           &#34;</span> 大小写智能搜索
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34; 编辑
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set undofile            &#34;</span> 保留撤销历史
-</span></span><span style="display:flex;"><span>set autochdir           <span style="color:#e6db74">&#34; 自动切换工作目录
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span> set visualbell          <span style="color:#e6db74">&#34; 出错时，发出视觉提示，通常是屏幕闪烁
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set history=100         &#34;</span> Vim 需要记住多少次历史操作
-</span></span><span style="display:flex;"><span>set wildmenu            <span style="color:#e6db74">&#34; 这两个是智能自动补全
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">set wildmode=longest:list,full
-</span></span></span></code></pre></div>
+        <h2 id="概要">概要</h2>
+<p>MySQL Replication (<strong>MySQL 主从复制</strong>) 是什么？为什么要主从复制以及它的实现原理是什么？</p>
+<ul>
+<li>主从复制概念</li>
+</ul>
+<p>  MySQL 主从复制是指数据可以从一个MySQL数据库服务器主节点复制到一个或多个从节点。MySQL 默认采用异步复制方式，这样从节点不用一直访问主服务器来更新自己的数据，数据的更新可以在远程连接上进行，从节点可以复制主数据库中的所有数据库或者特定的数据库，或者特定的表。</p>
+<ul>
+<li>
+<p>主要用途</p>
+<ul>
+<li>
+<p><strong>读写分离</strong></p>
+<p>  在开发工作中，有时候会遇见某个sql 语句需要锁表，导致暂时不能使用读的服务，这样就会影响现有业务，使用主从复制，让主库负责写，从库负责读，这样，即使主库出现了锁表的情景，通过读从库也可以保证业务的正常运作。</p>
+</li>
+</ul>
+<ul>
+<li>
+<p><strong>数据实时备份</strong>，当系统中某个节点发生故障时，可以方便的故障切换</p>
+</li>
+<li>
+<p><strong>高可用HA</strong></p>
+</li>
+<li>
+<p><strong>架构扩展</strong></p>
+<p>  随着系统中业务访问量的增大，如果是单机部署数据库，就会导致I/O访问频率过高。有了主从复制，增加多个数据存储节点，将负载分布在多个从节点上，降低单机磁盘I/O访问的频率，提高单个机器的I/O性能。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="配置服务器">配置服务器</h2>
+<ul>
+<li>主服务器</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>myslqd<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>server-id<span style="color:#f92672">=</span>1			<span style="color:#75715e"># 必须。设置服务器id，不与从服务器冲突即可</span>
+</span></span><span style="display:flex;"><span>log_bin<span style="color:#f92672">=</span>mysql-bin		<span style="color:#75715e"># 必须。启动MySQ二进制日志系统</span>
+</span></span><span style="display:flex;"><span>binlog-do-db<span style="color:#f92672">=</span>test		<span style="color:#75715e"># 需要同步的数据库名，如果有多个数据库，可重复此参数，每个数据库一行</span>
+</span></span><span style="display:flex;"><span>binlog-ignore-db<span style="color:#f92672">=</span>mysql		<span style="color:#75715e"># 不同步mysql系统数据库</span>
+</span></span><span style="display:flex;"><span>binlog_format<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;MIXED&#34;</span>		<span style="color:#75715e"># 优化mysql的复制模式</span>
+</span></span><span style="display:flex;"><span>expire_logs_days<span style="color:#f92672">=</span>7		<span style="color:#75715e"># 设定binlog日志过期时间（过期自动删除）</span>
+</span></span></code></pre></div><p>  写好配置文件后，记得重启数据库<code>service msyqld restart</code>，然后用cli进入mysql，<code>show master status\G;</code>查询一下主服务器的状态。</p>
+<p>  查询后需要记录下来比较重要的字段为：<code>mysql-bin.0000xx</code></p>
+<ul>
+<li>
+<p>从服务器</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>mysqld<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>server-id<span style="color:#f92672">=</span>2		<span style="color:#75715e"># 必须。设置服务器id，不与主服务器冲突即可</span>
+</span></span></code></pre></div><p>其他无特殊需求可以暂不设置，重启数据库后，进入mysql-client。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>change master to master_host<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;你的IP&#39;</span>,master_port<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;你的数据库端口&#39;</span>,master_user<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;主服务器的用户&#39;</span>,master_password<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;主服务器用户的密码&#39;</span>,master_log_file<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;mysql-bin.0000xx&#39;</span>,master_log_pos<span style="color:#f92672">=</span>0;		<span style="color:#75715e"># master_log_pos设置成0代表任意</span>
+</span></span><span style="display:flex;"><span>start slave;
+</span></span><span style="display:flex;"><span>show slave status<span style="color:#ae81ff">\G</span>;
+</span></span></code></pre></div><p>  在最后的状态中，看到<code>Slave_IO_Running</code> 以及 <code>Slave_SQL_Running</code> 都为YES即代表mysql主从同步搭建完毕</p>
+</li>
+</ul>
+
     </div>
 
     <div class="post-copyright">
@@ -313,14 +325,8 @@
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="http://blog.mrbruce516.live/tags/%E8%BD%AF%E4%BB%B6/">
-                    #软件</a></span>
-            
-            <span class="tag"><a href="http://blog.mrbruce516.live/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/">
-                    #命令行工具</a></span>
-            
-            <span class="tag"><a href="http://blog.mrbruce516.live/tags/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/">
-                    #文本编辑器</a></span>
+            <span class="tag"><a href="http://blog.mrbruce516.live/tags/mysql/">
+                    #mysql</a></span>
             
             </section>
         
@@ -333,12 +339,12 @@
 
     <div class="post-nav">
         
-        <a href="http://blog.mrbruce516.live/2020/007/" class="prev" rel="prev" title="md输入利器Typora"><i
-                class="iconfont icon-left"></i>&nbsp;md输入利器Typora</a>
+        <a href="http://blog.mrbruce516.live/2020/007/" class="prev" rel="prev" title="vim学习笔记"><i
+                class="iconfont icon-left"></i>&nbsp;vim学习笔记</a>
         
         
         <a href="http://blog.mrbruce516.live/2020/009/" class="next" rel="next"
-            title="Stay Hungry Stay Foolish">Stay Hungry Stay Foolish&nbsp;<i class="iconfont icon-right"></i></a>
+            title="玩转ssh免密登录">玩转ssh免密登录&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
@@ -346,7 +352,7 @@
         
         
         
-        <span id="/2020/008/" class="leancloud_visitors" data-flag-title="VIM配置分享">
+        <span id="/2020/008/" class="leancloud_visitors" data-flag-title="为mysql搭建主从复制">
             <em class="post-meta-item-text">访问量 </em>
             <i class="leancloud-visitors-count"></i>
             <p></p>

@@ -11,8 +11,8 @@
   <meta name="theme-color" content="#ffffff">
   
   <meta name="baidu-site-verification" content="e0YUuV3foo" />
-  <meta content="macOS, brew, Mac" name="keywords">
-  <meta content="麻吉麻社长的个人博客 - 为mac安装brew" property="og:description">
+  <meta content="hugo, aplayer, 音乐播放器" name="keywords">
+  <meta content="麻吉麻社长的个人博客 - 给Hugo嵌入音乐播放器" property="og:description">
   
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
@@ -42,10 +42,10 @@
   <title>
        
        
-           给你的Mac装上brew | 麻吉麻社长
+           Hugo嵌入音乐播放器 | 麻吉麻社长
        
   </title>
-  <meta name="title" content="给你的Mac装上brew | 麻吉麻社长">
+  <meta name="title" content="Hugo嵌入音乐播放器 | 麻吉麻社长">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -64,9 +64,9 @@
          "@id": "http:\/\/blog.mrbruce516.live\/"
     },
     "articleSection" : "posts",
-    "name" : "给你的Mac装上brew",
-    "headline" : "给你的Mac装上brew",
-    "description" : "为mac安装brew",
+    "name" : "Hugo嵌入音乐播放器",
+    "headline" : "Hugo嵌入音乐播放器",
+    "description" : "给Hugo嵌入音乐播放器",
     "inLanguage" : "zh-CN",
     "author" : "麻吉麻社长",
     "creator" : "麻吉麻社长",
@@ -74,11 +74,11 @@
     "accountablePerson" : "麻吉麻社长",
     "copyrightHolder" : "麻吉麻社长",
     "copyrightYear" : "2020",
-    "datePublished": "2020-04-02 13:27:49 \u002b0800 CST",
-    "dateModified" : "2020-04-02 13:27:49 \u002b0800 CST",
+    "datePublished": "2020-04-18 13:08:24 \u002b0800 CST",
+    "dateModified" : "2020-04-18 13:08:24 \u002b0800 CST",
     "url" : "http:\/\/blog.mrbruce516.live\/2020\/004\/",
-    "wordCount" : "392",
-    "keywords" : [ "macOS","命令行工具", "麻吉麻社长"]
+    "wordCount" : "998",
+    "keywords" : [ "hugo", "麻吉麻社长"]
 }
 </script>    
 
@@ -164,20 +164,20 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">给你的Mac装上brew</h1>
+        <h1 class="post-title" itemprop="name headline">Hugo嵌入音乐播放器</h1>
         <div class="post-meta">
             <i class="far fa-folder-open"></i>
             <span class="post-category">
-                <a href="http://blog.mrbruce516.live/categories/%E8%88%B9%E9%95%BF%E7%9A%84%E5%B7%A5%E5%85%B7/"> 船长的工具 </a>
+                <a href="http://blog.mrbruce516.live/categories/%E5%8D%9A%E5%AE%A2/"> 博客 </a>
                 
             </span>
             <span class="post-time">
                 <i class="far fa-calendar-alt"></i> <time
-                    datetime=2020-04-02
-                    itemprop="datePublished">2020-04-02</time>
+                    datetime=2020-04-18
+                    itemprop="datePublished">2020-04-18</time>
             </span>
-            <i class="far fa-file-word"></i> <span class="post-word-count"> 392 字</span>
-            <i class="far fa-clock"></i> <span class="more-meta"> 1 分钟</span>
+            <i class="far fa-file-word"></i> <span class="post-word-count"> 998 字</span>
+            <i class="far fa-clock"></i> <span class="more-meta"> 2 分钟</span>
         </div>
     </header>
         
@@ -187,7 +187,24 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#homebrew是什么">HomeBrew是什么</a></li>
+    <li><a href="#文章内插入播放器">文章内插入播放器</a>
+      <ul>
+        <li><a href="#1-解除安全限制">1. 解除安全限制</a></li>
+        <li><a href="#2-引用aplayer和metingjs">2. 引用Aplayer和MetingJS</a></li>
+      </ul>
+    </li>
+    <li><a href="#添加全局播放器">添加全局播放器</a>
+      <ul>
+        <li><a href="#1-创建播放器组件">1. 创建播放器组件</a></li>
+        <li><a href="#2-歌曲外链寻找">2. 歌曲外链寻找</a></li>
+      </ul>
+    </li>
+    <li><a href="#一些指南">一些指南</a>
+      <ul>
+        <li><a href="#aplayer的参数">Aplayer的参数</a></li>
+        <li><a href="#cdn">CDN</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -238,18 +255,99 @@
         
         
 
-        <h2 id="homebrew是什么">HomeBrew是什么</h2>
-<p>  HomeBrew是macOS（或 Linux）缺失的软件包的管理器 （官方解释），简单说他就是为了方便你下一些依赖、软件、命令行工具的app store，就像是RedHat下的Yum、Debian系下的Apt。<br>
-  首先进入<a href="https://brew.sh/index_zh-cn">官网</a>，打开你电脑的终端软件，输入以下命令，即可进行安装。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/bin/bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-</span></span></code></pre></div><p><img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/FbAz1MXlsniZBvu.png" alt="安装截图">
-  安装过程中会叫你输入密码，输入后（看不见你输入的东西是正常的），等待即可完成自动安装。<br>
-<img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/dnBSqErCFKDupef.png" alt="安装完成">
-  完成安装后，需要设置一下国内的镜像源，不然直接通过官方brew源下载对于国内用户来说是非常痛苦的（速度很慢），这里推荐使用<a href="https://mirror.tuna.tsinghua.edu.cn/help/homebrew/">清华大学的镜像源</a>。根据网站上的命令提示，输入以下命令，即可替换brew更新源。<img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/3714KdOPm2A9rs6.png" alt="替换brew源">
-  同时，别忘了替换完成后，替换brew的<a href="https://mirrors.tuna.tsinghua.edu.cn/help/homebrew-bottles/">二进制包源</a>。
-<img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/2co6D9SJ3CpuB1H.png" alt="二进制包源">
-  我这里推荐用长期替换的方案，以后每次要用<code>brew install</code>之前<code>source ~/.bash_profile</code>即可。
-至此，HomeBrew安装完成啦～</p>
+        <p><meting-js auto="https://y.qq.com/n/yqq/song/002SSc5i2LWVYe.html" list-folded=true></meting-js></p>
+<p>  嗯，有好几次在浏览他人博客的时候，发现有个对文章内容相关的音乐，是一件非常棒的事情，也想着有时间的话也给我的blog弄一个，其实方法还是蛮多的，之前用过网易云的用户都发现有些歌曲是可以生成站外播放器的，但是这个功能有些许局限性（主要是版权的因素），所以我在这里用了一个更加麻烦，但是在功能、颜值、各方面更棒的解决方案，那就是 <em><strong><a href="https://aplayer.js.org/#/">APlayer</a> + <a href="https://github.com/metowolf/MetingJS">MetingJS</a></strong></em></p>
+<h2 id="文章内插入播放器">文章内插入播放器</h2>
+<p>  首先讲一下如何在文章内嵌入播放器吧，这个场景比较适合写一些生活向文章（类似于vlog那种？）的时候使用。</p>
+<h3 id="1-解除安全限制">1. 解除安全限制</h3>
+<p>  需要注意的一点是<strong>20200111更新</strong>后的hugo，在文章（markdown）中嵌入的html标签，在浏览器中全部被替换成了一句<code>&lt;!-- raw HTML omitted --&gt;</code>,对于这个问题，官网论坛<a href="https://discourse.gohugo.io/t/hugo-0-60-0-raw-html-omitted-issue/22010">Hugo 0.60.0 Raw HTML omitted Issue </a>中已经有人提起过此问题，（其实也不是什么不好的事情，Hugo的安全性提高了），并且已经有人给出了答案，只需要启用非安全模式即可，在博客的根目录<code>config.toml</code>中添加如下代码</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">renderer</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">unsafe</span>= <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><h3 id="2-引用aplayer和metingjs">2. 引用Aplayer和MetingJS</h3>
+<p>  完成上述步骤后，在你的<code>head.html</code>中添加以下代码，以引入Aplayer和MetingJS</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- require APlayer --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- require MetingJS --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>  随后在你需要插入音乐播放器的文章中，添加</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">meting-js</span> <span style="color:#a6e22e">auto</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;link&#34;</span> <span style="color:#a6e22e">list-folded</span><span style="color:#f92672">=</span><span style="color:#e6db74">true</span>&gt;&lt;/<span style="color:#f92672">meting-js</span>&gt;
+</span></span></code></pre></div><p>  上述<code>link</code>为你音乐的连接，<code>list-folded</code>是当你有多首歌的时候默认折叠列表，其他具体参数请看<a href="https://github.com/metowolf/MetingJS#option">Option</a>，成功的效果就像本文章中的播放器一致～</p>
+<h2 id="添加全局播放器">添加全局播放器</h2>
+<p>  有些场景下，可能不会为文章插入音乐，但是可以从网站整体插入个播放器，里面添加一些自己喜欢的歌，也是很不错的。</p>
+<h3 id="1-创建播放器组件">1. 创建播放器组件</h3>
+<p>  在你主题文件夹下<code>partials</code>中添加<code>music.html</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- require APlayer --&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- require MetingJS --&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;demo&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;player1&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ap</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">APlayer</span>
+</span></span><span style="display:flex;"><span>            ({
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">element</span><span style="color:#f92672">:</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;player1&#39;</span>),
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">fixed</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">autoplay</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">mini</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">theme</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;#63b8fd&#39;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">loop</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;all&#39;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">order</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;random&#39;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">preload</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;auto&#39;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">volume</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0.7</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">mutex</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">listFolded</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">listMaxHeight</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">90</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">lrcType</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">music</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>                    [
+</span></span><span style="display:flex;"><span>                        {
+</span></span><span style="display:flex;"><span>                            <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39; &#39;</span>,
+</span></span><span style="display:flex;"><span>                            ...
+</span></span><span style="display:flex;"><span>                        },
+</span></span><span style="display:flex;"><span>                    ]
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//ap.init();
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span></code></pre></div><p>  看你需要在哪里使用，我在footer.html中引用了这个文件</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span> {{ <span style="color:#a6e22e">partial</span> <span style="color:#e6db74">&#34;music&#34;</span> . }}
+</span></span></code></pre></div><h3 id="2-歌曲外链寻找">2. 歌曲外链寻找</h3>
+<p>  你可能会为歌曲的那几个参数为难,推荐<a href="http://music.liuzhijin.cn">一个网站</a>，先把自己要添加的音乐从官网把url拿下来，然后放到这个网站的音乐地址功能栏中的输入框中去解析即可。最后把相关参数填入</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>music[
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        name:&#39; &#39;,
+</span></span><span style="display:flex;"><span>        artists:&#39; &#39;,
+</span></span><span style="display:flex;"><span>        url:&#39; &#39;,
+</span></span><span style="display:flex;"><span>        cover:&#39; &#39;
+</span></span><span style="display:flex;"><span>        lrc:&#39; &#39;,
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        name:&#39; &#39;,
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><p>  最终效果为本站左下角的小播放器～</p>
+<h2 id="一些指南">一些指南</h2>
+<h3 id="aplayer的参数">Aplayer的参数</h3>
+<p><img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/2WMVd9eruEohTBn.png" alt="Aplayer的参数"></p>
+<p>详细请看：<a href="https://aplayer.js.org/#/zh-Hans/?id=%E5%8F%82%E6%95%B0">官网地址</a></p>
+<h3 id="cdn">CDN</h3>
+<p>  Aplayer和MetingJS会保持持续更新，别忘了经常更新代码中的引用版本。</p>
+<ul>
+<li><a href="https://aplayer.js.org/#/zh-Hans/?id=cdn">Aplayer</a></li>
+<li><a href="https://github.com/metowolf/MetingJS#cdn">MetingJS</a></li>
+</ul>
 
     </div>
 
@@ -284,11 +382,8 @@
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="http://blog.mrbruce516.live/tags/macos/">
-                    #macOS</a></span>
-            
-            <span class="tag"><a href="http://blog.mrbruce516.live/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7/">
-                    #命令行工具</a></span>
+            <span class="tag"><a href="http://blog.mrbruce516.live/tags/hugo/">
+                    #hugo</a></span>
             
             </section>
         
@@ -306,7 +401,7 @@
         
         
         <a href="http://blog.mrbruce516.live/2020/005/" class="next" rel="next"
-            title="一行命令拿下你想要的视频资源">一行命令拿下你想要的视频资源&nbsp;<i class="iconfont icon-right"></i></a>
+            title="解决aplayer导致文章toc失效">解决aplayer导致文章toc失效&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
@@ -314,7 +409,7 @@
         
         
         
-        <span id="/2020/004/" class="leancloud_visitors" data-flag-title="给你的Mac装上brew">
+        <span id="/2020/004/" class="leancloud_visitors" data-flag-title="Hugo嵌入音乐播放器">
             <em class="post-meta-item-text">访问量 </em>
             <i class="leancloud-visitors-count"></i>
             <p></p>

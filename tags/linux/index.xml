@@ -17,17 +17,10 @@
     </item>
     <item>
       <title>玩转ssh免密登录</title>
-      <link>http://blog.mrbruce516.live/2020/019/</link>
+      <link>http://blog.mrbruce516.live/2020/009/</link>
       <pubDate>Wed, 28 Oct 2020 14:08:29 +0800</pubDate>
-      <guid>http://blog.mrbruce516.live/2020/019/</guid>
+      <guid>http://blog.mrbruce516.live/2020/009/</guid>
       <description>作为一名运维人员，经常会遇到SSH登录，而当你有很多服务器的时候使用密码可能不是一个好的选择了， 就像我要登录自己的服务器、公司各个环境的服务</description>
-    </item>
-    <item>
-      <title>用好rpm包，解决离线安装痛点</title>
-      <link>http://blog.mrbruce516.live/2020/016/</link>
-      <pubDate>Thu, 30 Jul 2020 16:16:07 +0800</pubDate>
-      <guid>http://blog.mrbruce516.live/2020/016/</guid>
-      <description>一般来说，在互联网环境下，安装软件可以用Linux自带的包管理器进行安装（例如YUM、apt等），在无互联网环境下一般通过编译安装来安装相应</description>
     </item>
     <item>
       <title>用电脑给智能电视安装应用</title>
@@ -52,9 +45,9 @@
     </item>
     <item>
       <title>Fdisk的使用心得</title>
-      <link>http://blog.mrbruce516.live/2019/002/</link>
+      <link>http://blog.mrbruce516.live/2019/001/</link>
       <pubDate>Fri, 26 Jul 2019 16:36:45 +0800</pubDate>
-      <guid>http://blog.mrbruce516.live/2019/002/</guid>
+      <guid>http://blog.mrbruce516.live/2019/001/</guid>
       <description>近期工作总是遇到开了虚拟机需要挂磁盘的问题，由于 fdisk 的操作比较生硬所以每次都要去找好多资料,比较浪费效率，这里写一下大致的 fdisk 挂载磁盘过程。 进入</description>
     </item>
   </channel>

@@ -78,7 +78,7 @@
     "dateModified" : "2018-12-27 13:33:47 \u002b0800 CST",
     "url" : "http:\/\/blog.mrbruce516.live\/2018\/001\/",
     "wordCount" : "1261",
-    "keywords" : [ "DNS","运维", "麻吉麻社长"]
+    "keywords" : [ "dns","运维", "麻吉麻社长"]
 }
 </script>    
 
@@ -168,7 +168,7 @@
         <div class="post-meta">
             <i class="far fa-folder-open"></i>
             <span class="post-category">
-                <a href="http://blog.mrbruce516.live/categories/%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/"> 从入门到入坟 </a>
+                <a href="http://blog.mrbruce516.live/categories/%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C/"> 技术手册 </a>
                 
             </span>
             <span class="post-time">
@@ -393,11 +393,11 @@ Linux 平台的配置方法为：</p>
 </span></span></code></pre></div><h3 id="nslookup">nslookup</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>nslookup
 </span></span><span style="display:flex;"><span>&gt; fjke.paas.test.com
-</span></span><span style="display:flex;"><span>Server:		192.168.250.72
-</span></span><span style="display:flex;"><span>Address:	192.168.250.72#53
+</span></span><span style="display:flex;"><span>Server:        192.168.250.72
+</span></span><span style="display:flex;"><span>Address:    192.168.250.72#53
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Non-authoritative answer:
-</span></span><span style="display:flex;"><span>Name:	fjke.paas.test.com
+</span></span><span style="display:flex;"><span>Name:    fjke.paas.test.com
 </span></span><span style="display:flex;"><span>Address: 192.168.250.74     //能跳转到你做解析服务的子域服务器上说明搭建成功
 </span></span></code></pre></div><h3 id="dig">dig</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>dig -t A fkef.paas.test.com @192.168.250.72
@@ -411,16 +411,16 @@ Linux 平台的配置方法为：</p>
 </span></span><span style="display:flex;"><span>;; OPT PSEUDOSECTION:
 </span></span><span style="display:flex;"><span>; EDNS: version: 0, flags:; udp: <span style="color:#ae81ff">4096</span>
 </span></span><span style="display:flex;"><span>;; QUESTION SECTION:
-</span></span><span style="display:flex;"><span>;fkef.paas.test.com.		IN	A
+</span></span><span style="display:flex;"><span>;fkef.paas.test.com.        IN    A
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>;; ANSWER SECTION:
-</span></span><span style="display:flex;"><span>fkef.paas.test.com.	600	IN	A	192.168.250.74
+</span></span><span style="display:flex;"><span>fkef.paas.test.com.    <span style="color:#ae81ff">600</span>    IN    A    192.168.250.74
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>;; AUTHORITY SECTION:
-</span></span><span style="display:flex;"><span>paas.test.com.		410	IN	NS	ns.paas.test.com.
+</span></span><span style="display:flex;"><span>paas.test.com.        <span style="color:#ae81ff">410</span>    IN    NS    ns.paas.test.com.
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>;; ADDITIONAL SECTION:
-</span></span><span style="display:flex;"><span>ns.paas.test.com.	410	IN	A	192.168.250.74
+</span></span><span style="display:flex;"><span>ns.paas.test.com.    <span style="color:#ae81ff">410</span>    IN    A    192.168.250.74
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>;; Query time: <span style="color:#ae81ff">1</span> msec
 </span></span><span style="display:flex;"><span>;; SERVER: 192.168.250.72#53<span style="color:#f92672">(</span>192.168.250.72<span style="color:#f92672">)</span>
@@ -462,7 +462,7 @@ Linux 平台的配置方法为：</p>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
             <span class="tag"><a href="http://blog.mrbruce516.live/tags/dns/">
-                    #DNS</a></span>
+                    #dns</a></span>
             
             <span class="tag"><a href="http://blog.mrbruce516.live/tags/%E8%BF%90%E7%BB%B4/">
                     #运维</a></span>
@@ -480,7 +480,7 @@ Linux 平台的配置方法为：</p>
         
         
         <a href="http://blog.mrbruce516.live/2019/001/" class="next" rel="next"
-            title="初见">初见&nbsp;<i class="iconfont icon-right"></i></a>
+            title="Fdisk的使用心得">Fdisk的使用心得&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 

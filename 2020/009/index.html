@@ -11,8 +11,8 @@
   <meta name="theme-color" content="#ffffff">
   
   <meta name="baidu-site-verification" content="e0YUuV3foo" />
-  <meta content="乔布斯, 苹果, 哲学, 思考, Stay Hungry Stay Foolish" name="keywords">
-  <meta content="麻吉麻社长的个人博客 - Stay Hungry Stay Foolish" property="og:description">
+  <meta content="linux, ssh" name="keywords">
+  <meta content="麻吉麻社长的个人博客 - 玩转ssh免密登录" property="og:description">
   
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
@@ -42,10 +42,10 @@
   <title>
        
        
-           Stay Hungry Stay Foolish | 麻吉麻社长
+           玩转ssh免密登录 | 麻吉麻社长
        
   </title>
-  <meta name="title" content="Stay Hungry Stay Foolish | 麻吉麻社长">
+  <meta name="title" content="玩转ssh免密登录 | 麻吉麻社长">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -64,9 +64,9 @@
          "@id": "http:\/\/blog.mrbruce516.live\/"
     },
     "articleSection" : "posts",
-    "name" : "Stay Hungry Stay Foolish",
-    "headline" : "Stay Hungry Stay Foolish",
-    "description" : "Stay Hungry Stay Foolish",
+    "name" : "玩转ssh免密登录",
+    "headline" : "玩转ssh免密登录",
+    "description" : "玩转ssh免密登录",
     "inLanguage" : "zh-CN",
     "author" : "麻吉麻社长",
     "creator" : "麻吉麻社长",
@@ -74,11 +74,11 @@
     "accountablePerson" : "麻吉麻社长",
     "copyrightHolder" : "麻吉麻社长",
     "copyrightYear" : "2020",
-    "datePublished": "2020-04-05 23:58:00 \u002b0800 CST",
-    "dateModified" : "2020-04-05 23:58:00 \u002b0800 CST",
+    "datePublished": "2020-10-28 14:08:29 \u002b0800 CST",
+    "dateModified" : "2020-10-28 14:08:29 \u002b0800 CST",
     "url" : "http:\/\/blog.mrbruce516.live\/2020\/009\/",
-    "wordCount" : "1047",
-    "keywords" : [ "哲学","思考", "麻吉麻社长"]
+    "wordCount" : "2455",
+    "keywords" : [ "linux", "麻吉麻社长"]
 }
 </script>    
 
@@ -164,20 +164,20 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Stay Hungry Stay Foolish</h1>
+        <h1 class="post-title" itemprop="name headline">玩转ssh免密登录</h1>
         <div class="post-meta">
             <i class="far fa-folder-open"></i>
             <span class="post-category">
-                <a href="http://blog.mrbruce516.live/categories/%E9%9D%9E%E5%90%8C%E5%87%A1%E6%83%B3/"> 非同凡想 </a>
+                <a href="http://blog.mrbruce516.live/categories/%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C/"> 技术手册 </a>
                 
             </span>
             <span class="post-time">
                 <i class="far fa-calendar-alt"></i> <time
-                    datetime=2020-04-05
-                    itemprop="datePublished">2020-04-05</time>
+                    datetime=2020-10-28
+                    itemprop="datePublished">2020-10-28</time>
             </span>
-            <i class="far fa-file-word"></i> <span class="post-word-count"> 1047 字</span>
-            <i class="far fa-clock"></i> <span class="more-meta"> 3 分钟</span>
+            <i class="far fa-file-word"></i> <span class="post-word-count"> 2455 字</span>
+            <i class="far fa-clock"></i> <span class="more-meta"> 5 分钟</span>
         </div>
     </header>
         
@@ -187,20 +187,24 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#stay-hungry">Stay Hungry</a>
+    <li><a href="#基本概念">基本概念</a>
       <ul>
-        <li><a href="#1-勿忘初心">1. 勿忘初心</a></li>
-        <li><a href="#2-抓住机会">2. 抓住机会</a></li>
+        <li><a href="#ssh协议">SSH协议</a></li>
+        <li><a href="#加密">加密</a></li>
+        <li><a href="#私钥加密">私钥加密</a></li>
+        <li><a href="#公钥加密">公钥加密</a></li>
+        <li><a href="#数据一致性完整性">数据一致性/完整性</a></li>
+        <li><a href="#身份验证">身份验证</a></li>
       </ul>
     </li>
-    <li><a href="#stay-foolish">Stay Foolish</a>
+    <li><a href="#免密码登录">免密码登录</a>
       <ul>
-        <li><a href="#1-保持执着">1. 保持执着</a></li>
-        <li><a href="#2-保持独立">2. 保持独立</a></li>
-        <li><a href="#3-保持学习">3. 保持学习</a></li>
-        <li><a href="#4-保持简单">4. 保持简单</a></li>
+        <li><a href="#生成ssh私钥和公钥">生成SSH私钥和公钥</a></li>
+        <li><a href="#服务器配置">服务器配置</a></li>
+        <li><a href="#上传公钥文件">上传公钥文件</a></li>
       </ul>
     </li>
+    <li><a href="#为服务器设置别名">为服务器设置别名</a></li>
   </ul>
 </nav>
   </div>
@@ -251,23 +255,100 @@
         
         
 
-        <p><img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/wksjz49bpdYHK31.jpg" alt="头图"></p>
-<h2 id="stay-hungry">Stay Hungry</h2>
-<p>  正如Jobs特别喜欢的这句话，谈谈我的理解，hungry意为饥饿，乔布斯饥饿吗？他成长在一个中产阶级家庭，除了他早年没事干，为了思考禅宗哲学、间断性绝食以外，我觉得他所说的hungry并不是真正意义的饥饿，而是在他一无所有的年纪遇到了<a href="https://zh.wikipedia.org/zh/%E6%96%AF%E8%92%82%E5%A4%AB%C2%B7%E6%B2%83%E5%85%B9%E5%B0%BC%E4%BA%9A%E5%85%8B">史蒂夫沃兹尼亚克</a>，在自己只知道中二、搞朋克的时候，嗅到了一丝能够喂饱人生的机遇（与他一起创办了Apple）。犹如饥饿的人一般只有饿的时候吃东西才香、只有失业的时候，才会渴望有工作挣钱的好处，只有贫穷的人才会幻想着富了后的景象。</p>
-<h3 id="1-勿忘初心">1. 勿忘初心</h3>
-<p>  有很多东西，在成长过后就无法在有未发生时的心境。例如当你拥有了梦寐以求的事物之后，你的心境或许就不会和当初追求这件事物的时候保持一致。我买过很多书，但是真正读完的没有几本，就是这个意思吧。</p>
-<p>  所以我理解的Stay hungry的第一层含义既是不管你目前处于人生的何种阶段，事情的发展到了何种境地，请铭记还未开始时的心境。只有这样，才会有更多的动力去让自己不断的在这件事情上继续坚持下去，努力做得更好，即勿忘初心。</p>
-<h3 id="2-抓住机会">2. 抓住机会</h3>
-<p>  Stay Hungry的第二层含义，我觉得是善于发现机会，正如乔布斯与沃兹，当乔布斯知道沃兹有这个能力的时候，就冒险的与他创办了Apple。也正因为年轻、在一无所有的年纪，无需承担更多的包袱，使得Jobs能够更加顺利的去做这些事情。所以“Hungry”可以当作更敏锐的嗅觉，应该在“年轻”（精神，你觉得折腾的起就是年轻）的时候勇于抓住机会。</p>
-<h2 id="stay-foolish">Stay Foolish</h2>
-<h3 id="1-保持执着">1. 保持执着</h3>
-<p>  嗯，Jobs读过斯坦福大学，他决不foolish，而这个社会上的大多数人也几乎都是clever的，毕竟人都是为了自己更加舒服而活着。打个比方，这个学期有一门非常无聊且难懂的课程，clever的人或许为了通过考试用一些小手段，可以非常轻松的学过去，而foolish的人可能会不断的碰壁，不断的求证，不断的想办法解决。显然foolish man没有clever man过的轻松。但就因这一份执着，这一门知识对foolish man来说，就是他的知识了，clever man没有获得什么，那么Stay foolish的第一层含义就是保持执着。</p>
-<h3 id="2-保持独立">2. 保持独立</h3>
-<p>  一个人若是和大家显得格格不入、特立独行、是否对于大多数人来说这一类人就算得上foolish呢，这更多成为了独狼们的自嘲，所以第二层含义即是保持独立，坚持独立。</p>
-<h3 id="3-保持学习">3. 保持学习</h3>
-<p>  人”傻“才知道多读书，不懂才会去学嘛。</p>
-<h3 id="4-保持简单">4. 保持简单</h3>
-<p>  往往很多东西越来越复杂，其实并不完美，而简单的事物做到极致就是完美。大多数的结局也就是0与1的关系不是吗。</p>
+        <p><img src="https://pic1.zhimg.com/v2-ef6cd713d7d4d77364a969e17c197f0d_1440w.jpg?source=172ae18b" alt="SSH 免密登录是怎么玩儿的?"></p>
+<p>作为一名运维人员，经常会遇到SSH登录，而当你有很多服务器的时候使用密码可能不是一个好的选择了，
+就像我要登录自己的服务器、公司各个环境的服务器，虽然有工具可以帮我们做这些，但我习惯在命令行下操作。
+下面我带你了解一下免密登录的原理和如何实现。</p>
+<h2 id="基本概念">基本概念</h2>
+<h3 id="ssh协议">SSH协议</h3>
+<p>SSH 是一种计算机之间加密登录的协议，它相对于telnet和rsh的明文传输，
+提供了加密、校验和压缩，使得我们可以很安全的远程操作，
+而不用担心信息泄露(当然不是绝对的，加密总有可能被破解，只是比起明文来说那是强了不少)。</p>
+<h3 id="加密">加密</h3>
+<p>加密的意思是将一段数据经过处理之后，输出为一段外人无法或者很难破译的数据，除了指定的人可以解密之外。
+一般来说，加密的输入还会有一个key，这个key作为加密的参数，而在解密的时候也会用一个相关联(有可能是相同)的key作为输入。
+粗略来说是下面的流程：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 加密方</span>
+</span></span><span style="display:flex;"><span>encrypted_data <span style="color:#f92672">=</span> encrypt<span style="color:#f92672">(</span>raw_data, key<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 解密方</span>
+</span></span><span style="display:flex;"><span>raw_data <span style="color:#f92672">=</span> decrypt<span style="color:#f92672">(</span>encrypted_data, key1<span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>目前主流的加密算法一般分为下面两类：</p>
+<ol>
+<li><a href="https://link.zhihu.com/?target=http%3A//en.wikipedia.org/wiki/Symmetric-key_algorithm">私钥(secret key)加密</a>，也称为对称加密</li>
+<li><a href="https://link.zhihu.com/?target=http%3A//en.wikipedia.org/wiki/Public-key_encryption">公钥(public key)加密</a></li>
+</ol>
+<h3 id="私钥加密">私钥加密</h3>
+<p>所谓的私钥加密，是说加密方和解密方用的都是同一个key，这个key对于加密方和解密方来说是保密的，
+第三方是不能知道的。在第三方不知道私钥的情况下，是很难将加密的数据解密的。
+一般来说是加密方先产生私钥，然后通过一个安全的途径来告知解密方这个私钥。</p>
+<h3 id="公钥加密">公钥加密</h3>
+<p>公钥加密，是说解密的一方首先生成一对密钥，一个私钥一个公钥，私钥不会泄漏出去，而公钥则是可以任意的对外发布的。
+用公钥进行加密的数据，只能用私钥才能解密。加密方首先从解密方获取公钥，然后利用这个公钥进行加密，把数据发送给解密方。
+解密方利用私钥进行解密。如果解密的数据在传输的过程中被第三方截获，也不用担心，因为第三方没有私钥，没有办法进行解密。</p>
+<p>公钥加密的问题还包括获取了公钥之后，加密方如何保证公钥来自于确定的一方，而不是某个冒充的机器。
+假设公钥不是来自我们信任的机器，那么就算我们用公钥加密也没有用，因为加密之后的数据是发送给了冒充的机器，
+该机器就可以利用它产生的私钥进行解密了。所以公钥加密里面比较重要的一步是身份认证。</p>
+<p>需要说明一下，一般的私钥加密都会比公钥加密快，所以大数据量的加密一般都会使用私钥加密，
+而公钥加密会作为身份验证和交换私钥的一个手段。</p>
+<h3 id="数据一致性完整性">数据一致性/完整性</h3>
+<p>数据一致性说得是如何保证一段数据在传输的过程中没有遗漏、破坏或者修改过。一般来说，目前流行的做法是对数据进行hash，
+得到的hash值和数据一起传输，然后在收到数据的时候也对数据进行hash，将得到的hash值和传输过来的hash值进行比对，
+如果是不一样的，说明数据已经被修改过；如果是一样的，则说明极有可能是完整的。</p>
+<p>目前流行的hash算法有<a href="https://link.zhihu.com/?target=http%3A//en.wikipedia.org/wiki/MD5">MD5</a>和<a href="https://link.zhihu.com/?target=http%3A//en.wikipedia.org/wiki/Sha1">SHA-1</a>算法。</p>
+<h3 id="身份验证">身份验证</h3>
+<p>身份验证说的是，判断一个人或者机器是不是就是你想要联系的。也就是说如果A想要和B通信，一般来说开始的时候会交换一些数据，
+A怎么可以判断发送回来的数据就真的是B发送的呢？现实中有很多方法可以假冒一个机器。</p>
+<p>在SSH里面，这主要是通过公钥来完成的。首先客户端会有一个公钥列表，保存的是它信任的机器上面的公钥。
+在开始SSH连接之后，服务器会发送过来一个公钥，然后客户端就会进行查找，如果这个公钥在这个列表里面，就说明这个机器是真的服务器。</p>
+<p>当然实际的情况会复杂一些。实际上服务器不是真的发送公钥过来，因为这很容易被第三方盗取。</p>
+<h2 id="免密码登录">免密码登录</h2>
+<ol>
+<li>在自己的操作系统上生成一对SSH KEY，如果已经存在可以不生成</li>
+<li>将公钥上传到服务器上</li>
+</ol>
+<h3 id="生成ssh私钥和公钥">生成SSH私钥和公钥</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-keygen		<span style="color:#75715e"># ssh-keygen不带参数默认为rsa加密</span>
+</span></span></code></pre></div><p>如果你只输入ssh-keygen生成的RSA密钥长度为2048，如果你对安全性要求比较高可以指定4096位的长度：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-keygen -b <span style="color:#ae81ff">4096</span> -t rsa
+</span></span></code></pre></div><p>这里-b就是多少位，当然你对这些参数感兴趣可以使用&ndash;help参数看看具体的含义和解释。</p>
+<p>当你在生成SSHKEY的时候在命令行下会提示你Enter file in which to save the key，让你确认密钥文件保存的路径，
+一般回车即可（一般默认会在当前用户家目录下的.ssh目录下）。</p>
+<p>第二个提示是 Enter passphrase (empty for no passphrase) 让你输入一个密钥的密码，如果不输入则留空；回车生成公私钥完毕 :)</p>
+<p><code>其实吧我们生成证书就是为了免密登录，如果说这里设置了密钥那么还是需要自己输入密码去解开证书加密的，所以博主推荐不设置密码</code></p>
+<p>此时你可以使用cat命令看下自己的公私钥。</p>
+<h3 id="服务器配置">服务器配置</h3>
+<p>我们前面在自己的操作系统生成了公私钥，然后将公钥的内容告诉给服务器就可以了，让服务器知道自己公钥的操作方式还蛮多的。</p>
+<h3 id="上传公钥文件">上传公钥文件</h3>
+<p>将本地的公钥文件上传到服务器上，如果说你已经给服务器设置过别名了，那么这个过程将会非常的简单便捷，具体看下面的代码。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 若已设置过别名</span>
+</span></span><span style="display:flex;"><span>scp id_rsa.pub $你设置好的别名:
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 若无设置别名</span>
+</span></span><span style="display:flex;"><span>scp -P $端口 id_rsa.pub $用户@$IP:
+</span></span></code></pre></div><p>然后在服务器需要免密登录的用户家目录下查看是否有 ~/.ssh/authorized_keys 这个文件，如果没有手动创建一个:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>touch ~/.ssh/authorized_keys
+</span></span></code></pre></div><p>然后我们将公钥内容写入到authorized_keys文件中，因为这个文件可能已经有内容了，所以你可以使用如下方式</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat ~/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys
+</span></span></code></pre></div><p>这样就将公钥内容追加到authorized_keys中了，然后需要注意配置权限了，否则SSH不会工作的，我在这里踩了坑。。</p>
+<ol>
+<li>将.ssh目录的权限为700</li>
+<li>将authorized_keys目录的权限为600</li>
+</ol>
+<h2 id="为服务器设置别名">为服务器设置别名</h2>
+<blockquote>
+<p>Q:：为什么要设置服务器别名？</p>
+<p>A：设置了服务器别名后，可以用最便捷的方式登录服务器</p>
+</blockquote>
+<p>配置本地的ssh，修改 ~/.ssh/config 文件（如果没有，新建一个）：</p>
+<p><img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/image-20201028142649066.png" alt="image-20201028142649066"></p>
+<p>格式如上，主要由5个字段组成：服务器别名、服务器地址、端口、用户名、认证方式</p>
+<p>基本上这些字段都比较通俗易懂，认证方式我个人比较推荐用<strong>IdentitiesOnly</strong></p>
+<blockquote>
+<p><strong>IdentitiesOnly</strong></p>
+<p>指定 ssh 只能使用配置文件指定的 identity 和 certificate 文件或通过 ssh 命令行通过身份验证，即使 ssh-agent 或 PKCS11Provider 提供了多个 identities。值可以为 no(default)/yes。</p>
+</blockquote>
+<p>如果说一切配置正常，那么使用使用ssh登录到服务器将会是一件非常爽快的事情</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh $服务器别名
+</span></span></code></pre></div><p>这一行命令就免密登录上你的机器啦</p>
 
     </div>
 
@@ -302,11 +383,8 @@
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="http://blog.mrbruce516.live/tags/%E5%93%B2%E5%AD%A6/">
-                    #哲学</a></span>
-            
-            <span class="tag"><a href="http://blog.mrbruce516.live/tags/%E6%80%9D%E8%80%83/">
-                    #思考</a></span>
+            <span class="tag"><a href="http://blog.mrbruce516.live/tags/linux/">
+                    #linux</a></span>
             
             </section>
         
@@ -319,12 +397,12 @@
 
     <div class="post-nav">
         
-        <a href="http://blog.mrbruce516.live/2020/008/" class="prev" rel="prev" title="VIM配置分享"><i
-                class="iconfont icon-left"></i>&nbsp;VIM配置分享</a>
+        <a href="http://blog.mrbruce516.live/2020/008/" class="prev" rel="prev" title="为mysql搭建主从复制"><i
+                class="iconfont icon-left"></i>&nbsp;为mysql搭建主从复制</a>
         
         
         <a href="http://blog.mrbruce516.live/2020/010/" class="next" rel="next"
-            title="FFmpeg一些常用的小命令">FFmpeg一些常用的小命令&nbsp;<i class="iconfont icon-right"></i></a>
+            title="超棒的rss生成器，rsshub">超棒的rss生成器，rsshub&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
@@ -332,7 +410,7 @@
         
         
         
-        <span id="/2020/009/" class="leancloud_visitors" data-flag-title="Stay Hungry Stay Foolish">
+        <span id="/2020/009/" class="leancloud_visitors" data-flag-title="玩转ssh免密登录">
             <em class="post-meta-item-text">访问量 </em>
             <i class="leancloud-visitors-count"></i>
             <p></p>

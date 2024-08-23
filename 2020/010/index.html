@@ -11,8 +11,8 @@
   <meta name="theme-color" content="#ffffff">
   
   <meta name="baidu-site-verification" content="e0YUuV3foo" />
-  <meta content="YouTube-dl, ffmpeg, you-get, 视频下载" name="keywords">
-  <meta content="麻吉麻社长的个人博客 - 本文章将简单介绍如何使用FFmpeg,将各类格式互相转换，以及让你的YouTubedl走sock5代理" property="og:description">
+  <meta content="rss, rsshub" name="keywords">
+  <meta content="麻吉麻社长的个人博客 - 简单上手rsshub，一个超棒的rss服务端" property="og:description">
   
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
@@ -42,10 +42,10 @@
   <title>
        
        
-           FFmpeg一些常用的小命令 | 麻吉麻社长
+           超棒的rss生成器，rsshub | 麻吉麻社长
        
   </title>
-  <meta name="title" content="FFmpeg一些常用的小命令 | 麻吉麻社长">
+  <meta name="title" content="超棒的rss生成器，rsshub | 麻吉麻社长">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -64,9 +64,9 @@
          "@id": "http:\/\/blog.mrbruce516.live\/"
     },
     "articleSection" : "posts",
-    "name" : "FFmpeg一些常用的小命令",
-    "headline" : "FFmpeg一些常用的小命令",
-    "description" : "本文章将简单介绍如何使用FFmpeg,将各类格式互相转换，以及让你的YouTubedl走sock5代理",
+    "name" : "超棒的rss生成器，rsshub",
+    "headline" : "超棒的rss生成器，rsshub",
+    "description" : "简单上手rsshub，一个超棒的rss服务端",
     "inLanguage" : "zh-CN",
     "author" : "麻吉麻社长",
     "creator" : "麻吉麻社长",
@@ -74,11 +74,11 @@
     "accountablePerson" : "麻吉麻社长",
     "copyrightHolder" : "麻吉麻社长",
     "copyrightYear" : "2020",
-    "datePublished": "2020-04-13 13:45:10 \u002b0800 CST",
-    "dateModified" : "2020-04-13 13:45:10 \u002b0800 CST",
+    "datePublished": "2020-11-25 19:26:41 \u002b0800 CST",
+    "dateModified" : "2020-11-25 19:26:41 \u002b0800 CST",
     "url" : "http:\/\/blog.mrbruce516.live\/2020\/010\/",
-    "wordCount" : "721",
-    "keywords" : [ "ffmpeg", "麻吉麻社长"]
+    "wordCount" : "1050",
+    "keywords" : [ "javascript","rss", "麻吉麻社长"]
 }
 </script>    
 
@@ -164,20 +164,20 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">FFmpeg一些常用的小命令</h1>
+        <h1 class="post-title" itemprop="name headline">超棒的rss生成器，rsshub</h1>
         <div class="post-meta">
             <i class="far fa-folder-open"></i>
             <span class="post-category">
-                <a href="http://blog.mrbruce516.live/categories/%E8%88%B9%E9%95%BF%E7%9A%84%E5%B7%A5%E5%85%B7/"> 船长的工具 </a>
+                <a href="http://blog.mrbruce516.live/categories/%E7%8E%A9%E8%BD%AF%E4%BB%B6/"> 玩软件 </a>
                 
             </span>
             <span class="post-time">
                 <i class="far fa-calendar-alt"></i> <time
-                    datetime=2020-04-13
-                    itemprop="datePublished">2020-04-13</time>
+                    datetime=2020-11-25
+                    itemprop="datePublished">2020-11-25</time>
             </span>
-            <i class="far fa-file-word"></i> <span class="post-word-count"> 721 字</span>
-            <i class="far fa-clock"></i> <span class="more-meta"> 2 分钟</span>
+            <i class="far fa-file-word"></i> <span class="post-word-count"> 1050 字</span>
+            <i class="far fa-clock"></i> <span class="more-meta"> 3 分钟</span>
         </div>
     </header>
         
@@ -187,16 +187,18 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#命令">命令</a></li>
-    <li><a href="#示例">示例</a>
+    <li><a href="#1-安装rsshub">1. 安装RSSHub</a>
       <ul>
-        <li><a href="#mp4转mp3">mp4转mp3</a></li>
-        <li><a href="#flv-转-mp3">flv 转 mp3</a></li>
-        <li><a href="#mp4-转-wav">mp4 转 wav</a></li>
-        <li><a href="#wav-转-mp3">wav 转 mp3</a></li>
+        <li><a href="#docker部署">Docker部署</a></li>
+        <li><a href="#更新">更新</a></li>
+        <li><a href="#更多安装方法">更多安装方法</a></li>
       </ul>
     </li>
-    <li><a href="#youtube-dl走代理">YouTube-dl走代理</a></li>
+    <li><a href="#2-使用rsshub">2. 使用RSSHub</a>
+      <ul>
+        <li><a href="#生成订阅源">生成订阅源</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -233,49 +235,52 @@
         
 
         
-
         
         
 
         
         
-        
 
         
         
         
 
-        <p>  FFmpeg是一款强大的视频处理工具，一般许多视频播放器都是基于此工具开发的，此工具功能着实强大，用法非常之多，博主并不是非常懂视频编辑的一款，日常使用中拿它最平凡的就是更改视频格式，改改码率，改改视频大小，通过命令行比使用视频编辑软件例如iMovie来说更加快捷。</p>
-<p>  本文章将简单介绍如何使用FFmpeg,将各类格式互相转换，以及让你的YouTubedl走sock5代理,关于如何下载网络上的视频可以看博主之前写的<a href="/2020/005">一行命令拿下你想要的视频资源</a></p>
-<h2 id="命令">命令</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i <span style="color:#f92672">{</span>输入文件<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>输出文件<span style="color:#f92672">}</span>
-</span></span></code></pre></div><h2 id="示例">示例</h2>
-<h3 id="mp4转mp3">mp4转mp3</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i foo.mp4 foobar.mp3
-</span></span></code></pre></div><h3 id="flv-转-mp3">flv 转 mp3</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i foo.flv foobar.mp3
-</span></span></code></pre></div><h3 id="mp4-转-wav">mp4 转 wav</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i foo.mp4 foobar.wav
-</span></span></code></pre></div><h3 id="wav-转-mp3">wav 转 mp3</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i foo.wav foobar.mp3
-</span></span></code></pre></div><h2 id="youtube-dl走代理">YouTube-dl走代理</h2>
-<p>  国内大部分视频网站可以通过you-get来获取，但是有些视频，以及YouTube等获取不了，这个时候可以使用功能更加强大的YouTube-dl来实现。</p>
-<p>  若电脑中有brew的话，可以直接在终端输入</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install youtube-dl
-</span></span></code></pre></div><p>  安装完后，给YouTube-dl设置一个别名可以更方便的使用它。设置别名的话看你用的是什么shell了，每个shell设置别名方法大同小异，主要是配置文件不一样，bash的话可以写进bash_profile里，zsh的话写在.zshrc中</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># ytbdlss是别名，socks5是代理的协议 如果不是socks5请自行修改，1086是自己socks5代理的监听端口号，自己看一下，不一定每台电脑都是1086</span>
-</span></span><span style="display:flex;"><span>alias ytbdlss<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;youtube-dl --proxy socks5://127.0.0.1:1086&#34;</span>
-</span></span></code></pre></div><p>  至此，以后需要下载you-get下不下来的视频，分两种情况，第一种是网站在大陆不存在的情况。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 直接下载最高清画质</span>
-</span></span><span style="display:flex;"><span>ytbdlss 视频链接
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 按照自己需要的格式下载</span>
-</span></span><span style="display:flex;"><span>ytbdlss -F 视频链接
-</span></span></code></pre></div><p>  对于国内存在的网站，但是you-get用不了的</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 直接下载最高清画质</span>
-</span></span><span style="display:flex;"><span>youtube-dl 视频链接
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 按照自己需要的格式下载</span>
-</span></span><span style="display:flex;"><span>youtube-dl -F 视频链接
-</span></span></code></pre></div>
+        
+        
+        
+
+        <p><img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/image-20201125193731439.png" alt="image-20201125193731439"></p>
+<p>博主原本一直在用Inoreader作为rss的服务端，随着reeder5发布，发现reeder5支持iCloud同步feeds了，在一次偶然的逛少数派的时候发现有人推荐了rsshub这个开源rss服务端应用，试了下非常的好用且强大。如果你对rss是什么还不是很了解的话，可以移步<a href="https://zh.wikipedia.org/wiki/RSS">维基百科</a>。</p>
+<p>我本人是非常喜欢rss的，虽然这是一个非常老旧的技术了，但是他非常高效的把你最关心的信息集合在一起，比如我经常逛少数派，知乎，v2ex等，一般情况下大部分人都是一个个网站打开进行浏览，而rss可以把你对这个站最关心的信息集合到一起进行浏览，大幅提升了阅读幸福感。</p>
+<h2 id="1-安装rsshub">1. 安装RSSHub</h2>
+<p>rsshub是一个服务端应用，如果无特殊需求，直接用官方的示例页即可 <a href="https://rsshub.app">rsshub.app</a>。当然我是选择把这个应用部署在了我自己的阿里云服务器上，主机在国内，拉去信息速度更快，而且自己的机器也更稳定和放心些（心理因素），安装有多种途径个人比较推荐docker～</p>
+<h3 id="docker部署">Docker部署</h3>
+<p>docker部署非常快捷，干净，首先需要在你的服务器上有个docker环境，怎么装就不在这篇里说了。</p>
+<p>运行下面的命令下载RSSHub镜像</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker pull diygod/rsshub
+</span></span></code></pre></div><p>然后运行 RSSHub 即可</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ docker run -d --name rsshub -p 1200:1200 diygod/rsshub
+</span></span></code></pre></div><p>在浏览器中打开 <a href="http://127.0.0.1:1200/">http://127.0.0.1:1200/ (opens new window)</a>，enjoy it! ✅</p>
+<p>您可以使用下面的命令来关闭 RSSHub</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ docker stop rsshub
+</span></span></code></pre></div><h3 id="更新">更新</h3>
+<p>删除旧容器</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ docker stop rsshub
+</span></span><span style="display:flex;"><span>$ docker rm rsshub
+</span></span></code></pre></div><p>然后重复安装步骤</p>
+<h3 id="更多安装方法">更多安装方法</h3>
+<p>其他还有如docker-compose、本地部署（仅推荐开发rss使用）等，可在官方的<a href="https://docs.rsshub.app/install/">部署手册</a>中进行查看</p>
+<h2 id="2-使用rsshub">2. 使用RSSHub</h2>
+<p>在部署完毕后，打开浏览器输入地址，能看到如本篇头图的页面，即代表部署成功，RSSHub是一个开箱即用的RSS服务端，目前拥有了大量的社区开发者为RSSHub提交页面适配（包括我2333）所以在rsshub的<a href="https://docs.rsshub.app">路由页面</a>可以轻松找到你需要的rss源。</p>
+<h3 id="生成订阅源">生成订阅源</h3>
+<p>比如我希望订阅 Twitter 上一个名为 DIYgod 的用户的时间线</p>
+<p>根据 <a href="https://docs.rsshub.app/social-media.html#twitter">Twitter 用户时间线路由</a>的文档，路由为 <code>/twitter/user/:id</code>，把 <code>:id</code> 替换为用户名，得到路径为 <code>/twitter/user/DIYgod</code>，再加上域名 <code>https://rsshub.app</code>，一个订阅源就生成了：<a href="https://rsshub.app/twitter/user/DIYgod">https://rsshub.app/twitter/user/DIYgod(opens new window)</a></p>
+<p>然后我们可以把 <a href="https://rsshub.app/twitter/user/DIYgod">https://rsshub.app/twitter/user/DIYgod (opens new window)</a>添加到任意 RSS 阅读器里来使用</p>
+<p>其中域名 <code>https://rsshub.app</code> 可以替换为你<a href="https://docs.rsshub.app/install/">自部署</a>的域名</p>
+<p>另外 RSSHub 支持很多实用的参数，比如内容过滤、全文输出等，可以在 <a href="https://docs.rsshub.app/parameter.html">通用参数</a> 文档了解具体使用方法</p>
+<p><strong>附一张作者通过reeder5订阅的rss源～</strong></p>
+<p><img src="https://mrbruce516blog.oss-cn-shanghai.aliyuncs.com/img/image-20201125195501808.png" alt="image-20201125195501808"></p>
+
     </div>
 
     <div class="post-copyright">
@@ -309,8 +314,11 @@
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="http://blog.mrbruce516.live/tags/ffmpeg/">
-                    #ffmpeg</a></span>
+            <span class="tag"><a href="http://blog.mrbruce516.live/tags/javascript/">
+                    #javascript</a></span>
+            
+            <span class="tag"><a href="http://blog.mrbruce516.live/tags/rss/">
+                    #rss</a></span>
             
             </section>
         
@@ -323,12 +331,12 @@
 
     <div class="post-nav">
         
-        <a href="http://blog.mrbruce516.live/2020/009/" class="prev" rel="prev" title="Stay Hungry Stay Foolish"><i
-                class="iconfont icon-left"></i>&nbsp;Stay Hungry Stay Foolish</a>
+        <a href="http://blog.mrbruce516.live/2020/009/" class="prev" rel="prev" title="玩转ssh免密登录"><i
+                class="iconfont icon-left"></i>&nbsp;玩转ssh免密登录</a>
         
         
         <a href="http://blog.mrbruce516.live/2020/011/" class="next" rel="next"
-            title="Hugo嵌入音乐播放器">Hugo嵌入音乐播放器&nbsp;<i class="iconfont icon-right"></i></a>
+            title="为不支持rss的页面制作rss">为不支持rss的页面制作rss&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
@@ -336,7 +344,7 @@
         
         
         
-        <span id="/2020/010/" class="leancloud_visitors" data-flag-title="FFmpeg一些常用的小命令">
+        <span id="/2020/010/" class="leancloud_visitors" data-flag-title="超棒的rss生成器，rsshub">
             <em class="post-meta-item-text">访问量 </em>
             <i class="leancloud-visitors-count"></i>
             <p></p>
@@ -458,8 +466,9 @@
 
 
     
-    
-    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
     
   
 
