@@ -2,143 +2,143 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 麻吉麻社长</title>
-    <link>http://blog.mrbruce516.life/tags/</link>
+    <link>https://blog.mrbruce516.life/tags/</link>
     <description>Recent content in Tags on 麻吉麻社长</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 09 Dec 2021 12:59:39 +0800</lastBuildDate>
-    <atom:link href="http://blog.mrbruce516.life/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.mrbruce516.life/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Raid</title>
-      <link>http://blog.mrbruce516.life/tags/raid/</link>
+      <link>https://blog.mrbruce516.life/tags/raid/</link>
       <pubDate>Thu, 09 Dec 2021 12:59:39 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/tags/raid/</guid>
+      <guid>https://blog.mrbruce516.life/tags/raid/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
-      <link>http://blog.mrbruce516.life/tags/linux/</link>
+      <link>https://blog.mrbruce516.life/tags/linux/</link>
       <pubDate>Thu, 08 Jul 2021 17:39:46 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/tags/linux/</guid>
+      <guid>https://blog.mrbruce516.life/tags/linux/</guid>
       <description></description>
     </item>
     <item>
       <title>Systemd</title>
-      <link>http://blog.mrbruce516.life/tags/systemd/</link>
+      <link>https://blog.mrbruce516.life/tags/systemd/</link>
       <pubDate>Thu, 08 Jul 2021 17:39:46 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/tags/systemd/</guid>
+      <guid>https://blog.mrbruce516.life/tags/systemd/</guid>
       <description></description>
     </item>
     <item>
       <title>随笔</title>
-      <link>http://blog.mrbruce516.life/tags/%E9%9A%8F%E7%AC%94/</link>
+      <link>https://blog.mrbruce516.life/tags/%E9%9A%8F%E7%AC%94/</link>
       <pubDate>Sat, 27 Feb 2021 20:39:19 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/tags/%E9%9A%8F%E7%AC%94/</guid>
+      <guid>https://blog.mrbruce516.life/tags/%E9%9A%8F%E7%AC%94/</guid>
       <description></description>
     </item>
     <item>
       <title>Rss</title>
-      <link>http://blog.mrbruce516.life/tags/rss/</link>
+      <link>https://blog.mrbruce516.life/tags/rss/</link>
       <pubDate>Wed, 25 Nov 2020 20:04:46 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/tags/rss/</guid>
+      <guid>https://blog.mrbruce516.life/tags/rss/</guid>
       <description></description>
     </item>
     <item>
       <title>爬虫</title>
-      <link>http://blog.mrbruce516.life/tags/%E7%88%AC%E8%99%AB/</link>
+      <link>https://blog.mrbruce516.life/tags/%E7%88%AC%E8%99%AB/</link>
       <pubDate>Wed, 25 Nov 2020 20:04:46 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/tags/%E7%88%AC%E8%99%AB/</guid>
+      <guid>https://blog.mrbruce516.life/tags/%E7%88%AC%E8%99%AB/</guid>
       <description></description>
     </item>
     <item>
       <title>Javascript</title>
-      <link>http://blog.mrbruce516.life/tags/javascript/</link>
+      <link>https://blog.mrbruce516.life/tags/javascript/</link>
       <pubDate>Wed, 25 Nov 2020 19:26:41 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/tags/javascript/</guid>
+      <guid>https://blog.mrbruce516.life/tags/javascript/</guid>
       <description></description>
     </item>
     <item>
       <title>Mysql</title>
-      <link>http://blog.mrbruce516.life/tags/mysql/</link>
+      <link>https://blog.mrbruce516.life/tags/mysql/</link>
       <pubDate>Thu, 22 Oct 2020 16:22:54 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/tags/mysql/</guid>
+      <guid>https://blog.mrbruce516.life/tags/mysql/</guid>
       <description></description>
     </item>
     <item>
       <title>Vim</title>
-      <link>http://blog.mrbruce516.life/tags/vim/</link>
+      <link>https://blog.mrbruce516.life/tags/vim/</link>
       <pubDate>Thu, 20 Aug 2020 11:34:00 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/tags/vim/</guid>
+      <guid>https://blog.mrbruce516.life/tags/vim/</guid>
       <description></description>
     </item>
     <item>
       <title>Hugo</title>
-      <link>http://blog.mrbruce516.life/tags/hugo/</link>
+      <link>https://blog.mrbruce516.life/tags/hugo/</link>
       <pubDate>Mon, 27 Apr 2020 11:26:00 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/tags/hugo/</guid>
+      <guid>https://blog.mrbruce516.life/tags/hugo/</guid>
       <description></description>
     </item>
     <item>
       <title>Aplayer</title>
-      <link>http://blog.mrbruce516.life/tags/aplayer/</link>
+      <link>https://blog.mrbruce516.life/tags/aplayer/</link>
       <pubDate>Sat, 18 Apr 2020 14:51:13 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/tags/aplayer/</guid>
+      <guid>https://blog.mrbruce516.life/tags/aplayer/</guid>
       <description></description>
     </item>
     <item>
       <title>Toc</title>
-      <link>http://blog.mrbruce516.life/tags/toc/</link>
+      <link>https://blog.mrbruce516.life/tags/toc/</link>
       <pubDate>Sat, 18 Apr 2020 14:51:13 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/tags/toc/</guid>
+      <guid>https://blog.mrbruce516.life/tags/toc/</guid>
       <description></description>
     </item>
     <item>
       <title>汽车</title>
-      <link>http://blog.mrbruce516.life/tags/%E6%B1%BD%E8%BD%A6/</link>
+      <link>https://blog.mrbruce516.life/tags/%E6%B1%BD%E8%BD%A6/</link>
       <pubDate>Thu, 19 Mar 2020 10:31:11 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/tags/%E6%B1%BD%E8%BD%A6/</guid>
+      <guid>https://blog.mrbruce516.life/tags/%E6%B1%BD%E8%BD%A6/</guid>
       <description></description>
     </item>
     <item>
       <title>电子产品</title>
-      <link>http://blog.mrbruce516.life/tags/%E7%94%B5%E5%AD%90%E4%BA%A7%E5%93%81/</link>
+      <link>https://blog.mrbruce516.life/tags/%E7%94%B5%E5%AD%90%E4%BA%A7%E5%93%81/</link>
       <pubDate>Wed, 18 Mar 2020 12:52:38 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/tags/%E7%94%B5%E5%AD%90%E4%BA%A7%E5%93%81/</guid>
+      <guid>https://blog.mrbruce516.life/tags/%E7%94%B5%E5%AD%90%E4%BA%A7%E5%93%81/</guid>
       <description></description>
     </item>
     <item>
       <title>存储</title>
-      <link>http://blog.mrbruce516.life/tags/%E5%AD%98%E5%82%A8/</link>
+      <link>https://blog.mrbruce516.life/tags/%E5%AD%98%E5%82%A8/</link>
       <pubDate>Thu, 16 Jan 2020 16:56:48 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/tags/%E5%AD%98%E5%82%A8/</guid>
+      <guid>https://blog.mrbruce516.life/tags/%E5%AD%98%E5%82%A8/</guid>
       <description></description>
     </item>
     <item>
       <title>Yum</title>
-      <link>http://blog.mrbruce516.life/tags/yum/</link>
+      <link>https://blog.mrbruce516.life/tags/yum/</link>
       <pubDate>Wed, 08 Jan 2020 15:52:52 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/tags/yum/</guid>
+      <guid>https://blog.mrbruce516.life/tags/yum/</guid>
       <description></description>
     </item>
     <item>
       <title>包管理器</title>
-      <link>http://blog.mrbruce516.life/tags/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/</link>
+      <link>https://blog.mrbruce516.life/tags/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/</link>
       <pubDate>Wed, 08 Jan 2020 15:52:52 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/tags/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/</guid>
+      <guid>https://blog.mrbruce516.life/tags/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/</guid>
       <description></description>
     </item>
     <item>
       <title>运维</title>
-      <link>http://blog.mrbruce516.life/tags/%E8%BF%90%E7%BB%B4/</link>
+      <link>https://blog.mrbruce516.life/tags/%E8%BF%90%E7%BB%B4/</link>
       <pubDate>Fri, 26 Jul 2019 16:36:45 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/tags/%E8%BF%90%E7%BB%B4/</guid>
+      <guid>https://blog.mrbruce516.life/tags/%E8%BF%90%E7%BB%B4/</guid>
       <description></description>
     </item>
     <item>
       <title>Dns</title>
-      <link>http://blog.mrbruce516.life/tags/dns/</link>
+      <link>https://blog.mrbruce516.life/tags/dns/</link>
       <pubDate>Thu, 27 Dec 2018 13:33:47 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/tags/dns/</guid>
+      <guid>https://blog.mrbruce516.life/tags/dns/</guid>
       <description></description>
     </item>
   </channel>

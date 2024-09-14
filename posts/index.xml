@@ -2,129 +2,129 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 麻吉麻社长</title>
-    <link>http://blog.mrbruce516.life/posts/</link>
+    <link>https://blog.mrbruce516.life/posts/</link>
     <description>Recent content in Posts on 麻吉麻社长</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 09 Dec 2021 12:59:39 +0800</lastBuildDate>
-    <atom:link href="http://blog.mrbruce516.life/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.mrbruce516.life/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>理清磁盘冗余技术</title>
-      <link>http://blog.mrbruce516.life/2021/003/</link>
+      <link>https://blog.mrbruce516.life/2021/003/</link>
       <pubDate>Thu, 09 Dec 2021 12:59:39 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/2021/003/</guid>
+      <guid>https://blog.mrbruce516.life/2021/003/</guid>
       <description>独立磁盘冗余阵列 (Redundant Array of Independent Disks, RAID) 是一种将多个磁盘驱动器组件（通常是多块硬盘或多个分区）组合为一个逻辑单元的存储技术。根据 RAID 的部署情况，这个逻辑单</description>
     </item>
     <item>
       <title>学习使用systemd来管理服务</title>
-      <link>http://blog.mrbruce516.life/2021/002/</link>
+      <link>https://blog.mrbruce516.life/2021/002/</link>
       <pubDate>Thu, 08 Jul 2021 17:39:46 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/2021/002/</guid>
+      <guid>https://blog.mrbruce516.life/2021/002/</guid>
       <description>感谢阮一峰大佬的博客，本文大量内容借鉴至此，原文地址 systemd是Linux电脑操作系统之下的一套中央化系统及设置管理程序（init），包</description>
     </item>
     <item>
       <title>再见👋2020</title>
-      <link>http://blog.mrbruce516.life/2021/001/</link>
+      <link>https://blog.mrbruce516.life/2021/001/</link>
       <pubDate>Sat, 27 Feb 2021 20:39:19 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/2021/001/</guid>
+      <guid>https://blog.mrbruce516.life/2021/001/</guid>
       <description>2020年对很多人来说都是非同寻常的一年，对我更是如此 🦠 新冠疫情 记得在19年低，我的好几个telegram群组都有在讨论后来全世界重点关注的</description>
     </item>
     <item>
       <title>为不支持rss的页面制作rss</title>
-      <link>http://blog.mrbruce516.life/2020/011/</link>
+      <link>https://blog.mrbruce516.life/2020/011/</link>
       <pubDate>Wed, 25 Nov 2020 20:04:46 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/2020/011/</guid>
+      <guid>https://blog.mrbruce516.life/2020/011/</guid>
       <description>上一篇讲了如何搭建并开箱即用RSSHub，这一篇讲一下如何通过RSSHub来为不兼容rss的页面配置上rss。 首先聊一下原理吧，博主已经成功</description>
     </item>
     <item>
       <title>超棒的rss生成器，rsshub</title>
-      <link>http://blog.mrbruce516.life/2020/010/</link>
+      <link>https://blog.mrbruce516.life/2020/010/</link>
       <pubDate>Wed, 25 Nov 2020 19:26:41 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/2020/010/</guid>
+      <guid>https://blog.mrbruce516.life/2020/010/</guid>
       <description>博主原本一直在用Inoreader作为rss的服务端，随着reeder5发布，发现reeder5支持iCloud同步feeds了，在一次偶然</description>
     </item>
     <item>
       <title>玩转ssh免密登录</title>
-      <link>http://blog.mrbruce516.life/2020/009/</link>
+      <link>https://blog.mrbruce516.life/2020/009/</link>
       <pubDate>Wed, 28 Oct 2020 14:08:29 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/2020/009/</guid>
+      <guid>https://blog.mrbruce516.life/2020/009/</guid>
       <description>作为一名运维人员，经常会遇到SSH登录，而当你有很多服务器的时候使用密码可能不是一个好的选择了， 就像我要登录自己的服务器、公司各个环境的服务</description>
     </item>
     <item>
       <title>为mysql搭建主从复制</title>
-      <link>http://blog.mrbruce516.life/2020/008/</link>
+      <link>https://blog.mrbruce516.life/2020/008/</link>
       <pubDate>Thu, 22 Oct 2020 16:22:54 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/2020/008/</guid>
+      <guid>https://blog.mrbruce516.life/2020/008/</guid>
       <description>概要 MySQL Replication (MySQL 主从复制) 是什么？为什么要主从复制以及它的实现原理是什么？ 主从复制概念 MySQL 主从复制是指数据可以从一个MySQL数据库服务器主节点复制</description>
     </item>
     <item>
       <title>vim学习笔记</title>
-      <link>http://blog.mrbruce516.life/2020/007/</link>
+      <link>https://blog.mrbruce516.life/2020/007/</link>
       <pubDate>Thu, 20 Aug 2020 11:34:00 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/2020/007/</guid>
+      <guid>https://blog.mrbruce516.life/2020/007/</guid>
       <description>Vim是从vi发展出来的一个文本编辑器。其代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。和Emacs并列成为类Un</description>
     </item>
     <item>
       <title>为了防止剧透给博客加上隐藏文字</title>
-      <link>http://blog.mrbruce516.life/2020/006/</link>
+      <link>https://blog.mrbruce516.life/2020/006/</link>
       <pubDate>Mon, 27 Apr 2020 11:26:00 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/2020/006/</guid>
+      <guid>https://blog.mrbruce516.life/2020/006/</guid>
       <description>很早以前浏览steam社区以及nga、萌娘百科的时候都有发现过，涂黑一段文字，鼠标移上去文字就展示出来的一种效果，个人还是蛮喜欢这种样式的，</description>
     </item>
     <item>
       <title>解决aplayer导致文章toc失效</title>
-      <link>http://blog.mrbruce516.life/2020/005/</link>
+      <link>https://blog.mrbruce516.life/2020/005/</link>
       <pubDate>Sat, 18 Apr 2020 14:51:13 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/2020/005/</guid>
+      <guid>https://blog.mrbruce516.life/2020/005/</guid>
       <description>在使用了aplayer后，发现toc失效了，怎么点都没有用，前两天折腾过pjax，但是也没折腾出来，所以这个功能的锅先排除掉，Google上</description>
     </item>
     <item>
       <title>Hugo嵌入音乐播放器</title>
-      <link>http://blog.mrbruce516.life/2020/004/</link>
+      <link>https://blog.mrbruce516.life/2020/004/</link>
       <pubDate>Sat, 18 Apr 2020 13:08:24 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/2020/004/</guid>
+      <guid>https://blog.mrbruce516.life/2020/004/</guid>
       <description>嗯，有好几次在浏览他人博客的时候，发现有个对文章内容相关的音乐，是一件非常棒的事情，也想着有时间的话也给我的blog弄一个，其实方法还是蛮多</description>
     </item>
     <item>
       <title>特斯拉引荐码</title>
-      <link>http://blog.mrbruce516.life/2020/tesla/</link>
+      <link>https://blog.mrbruce516.life/2020/tesla/</link>
       <pubDate>Thu, 19 Mar 2020 10:31:11 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/2020/tesla/</guid>
+      <guid>https://blog.mrbruce516.life/2020/tesla/</guid>
       <description>想买一辆车？ 通过我的引荐链接下单的车辆交付后，您和我都将获得 1,500 公里的免费超级充电额度。 引荐链接: https://www.tesla.cn/referral/mrbruce57325 为何选择特斯拉？ 它降价了 是的，它降价了，现</description>
     </item>
     <item>
       <title>用电脑给智能电视安装应用</title>
-      <link>http://blog.mrbruce516.life/2020/003/</link>
+      <link>https://blog.mrbruce516.life/2020/003/</link>
       <pubDate>Wed, 18 Mar 2020 12:52:38 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/2020/003/</guid>
+      <guid>https://blog.mrbruce516.life/2020/003/</guid>
       <description>家里前不久买了台sony的智能电视机，闲暇之余，想在电视上直接看YouTube、Netflix,偶尔再通过Steamlink串流到电视上打个</description>
     </item>
     <item>
       <title>LVM动态扩容</title>
-      <link>http://blog.mrbruce516.life/2020/002/</link>
+      <link>https://blog.mrbruce516.life/2020/002/</link>
       <pubDate>Thu, 16 Jan 2020 16:56:48 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/2020/002/</guid>
+      <guid>https://blog.mrbruce516.life/2020/002/</guid>
       <description>工作中经常碰到有服务器磁盘空间不足的问题，之前写过一篇使用 fdisk 给新加的磁盘扩容的教程，这种方法适合在一个全新的挂载点上进行操作。若是需挂载的目</description>
     </item>
     <item>
       <title>如何搭离线yum源</title>
-      <link>http://blog.mrbruce516.life/2020/001/</link>
+      <link>https://blog.mrbruce516.life/2020/001/</link>
       <pubDate>Wed, 08 Jan 2020 15:52:52 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/2020/001/</guid>
+      <guid>https://blog.mrbruce516.life/2020/001/</guid>
       <description>有时候不一定你的 Linux 主机能够连接到互联网，在无法连接至互联网的时候，安装软件成为了一大痛点，今天就来聊一下如果在无网络环境的情况下，如何消除疼</description>
     </item>
     <item>
       <title>Fdisk的使用心得</title>
-      <link>http://blog.mrbruce516.life/2019/001/</link>
+      <link>https://blog.mrbruce516.life/2019/001/</link>
       <pubDate>Fri, 26 Jul 2019 16:36:45 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/2019/001/</guid>
+      <guid>https://blog.mrbruce516.life/2019/001/</guid>
       <description>近期工作总是遇到开了虚拟机需要挂磁盘的问题，由于 fdisk 的操作比较生硬所以每次都要去找好多资料,比较浪费效率，这里写一下大致的 fdisk 挂载磁盘过程。 进入</description>
     </item>
     <item>
       <title>利用bind9搭建dns服务器</title>
-      <link>http://blog.mrbruce516.life/2018/001/</link>
+      <link>https://blog.mrbruce516.life/2018/001/</link>
       <pubDate>Thu, 27 Dec 2018 13:33:47 +0800</pubDate>
-      <guid>http://blog.mrbruce516.life/2018/001/</guid>
+      <guid>https://blog.mrbruce516.life/2018/001/</guid>
       <description>这里介绍如何搭建dns解析服务器 基础环境 Linux发行版，这里用CentOS7 bind软件 本案例中父域服务器为192.168.250.72 子</description>
     </item>
   </channel>
