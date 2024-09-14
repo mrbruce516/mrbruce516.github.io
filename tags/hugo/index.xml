@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on 麻吉麻社长</title>
-    <link>http://blog.mrbruce516.live/tags/hugo/</link>
+    <link>http://blog.mrbruce516.life/tags/hugo/</link>
     <description>Recent content in Hugo on 麻吉麻社长</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 27 Apr 2020 11:26:00 +0800</lastBuildDate>
-    <atom:link href="http://blog.mrbruce516.live/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://blog.mrbruce516.life/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>为了防止剧透给博客加上隐藏文字</title>
-      <link>http://blog.mrbruce516.live/2020/006/</link>
+      <link>http://blog.mrbruce516.life/2020/006/</link>
       <pubDate>Mon, 27 Apr 2020 11:26:00 +0800</pubDate>
-      <guid>http://blog.mrbruce516.live/2020/006/</guid>
+      <guid>http://blog.mrbruce516.life/2020/006/</guid>
       <description>很早以前浏览steam社区以及nga、萌娘百科的时候都有发现过，涂黑一段文字，鼠标移上去文字就展示出来的一种效果，个人还是蛮喜欢这种样式的，</description>
     </item>
     <item>
       <title>Hugo嵌入音乐播放器</title>
-      <link>http://blog.mrbruce516.live/2020/004/</link>
+      <link>http://blog.mrbruce516.life/2020/004/</link>
       <pubDate>Sat, 18 Apr 2020 13:08:24 +0800</pubDate>
-      <guid>http://blog.mrbruce516.live/2020/004/</guid>
+      <guid>http://blog.mrbruce516.life/2020/004/</guid>
       <description>嗯，有好几次在浏览他人博客的时候，发现有个对文章内容相关的音乐，是一件非常棒的事情，也想着有时间的话也给我的blog弄一个，其实方法还是蛮多</description>
     </item>
   </channel>
