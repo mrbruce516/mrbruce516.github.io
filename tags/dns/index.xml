@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dns on 麻吉麻社长</title>
-    <link>https://blog.mrbruce516.life/tags/dns/</link>
+    <link>https://blog.mrbruce516.online/tags/dns/</link>
     <description>Recent content in Dns on 麻吉麻社长</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 27 Dec 2018 13:33:47 +0800</lastBuildDate>
-    <atom:link href="https://blog.mrbruce516.life/tags/dns/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.mrbruce516.online/tags/dns/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>利用bind9搭建dns服务器</title>
-      <link>https://blog.mrbruce516.life/2018/001/</link>
+      <link>https://blog.mrbruce516.online/2018/001/</link>
       <pubDate>Thu, 27 Dec 2018 13:33:47 +0800</pubDate>
-      <guid>https://blog.mrbruce516.life/2018/001/</guid>
+      <guid>https://blog.mrbruce516.online/2018/001/</guid>
       <description>这里介绍如何搭建dns解析服务器 基础环境 Linux发行版，这里用CentOS7 bind软件 本案例中父域服务器为192.168.250.72 子</description>
     </item>
   </channel>

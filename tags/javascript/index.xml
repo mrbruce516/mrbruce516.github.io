@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Javascript on 麻吉麻社长</title>
-    <link>https://blog.mrbruce516.life/tags/javascript/</link>
+    <link>https://blog.mrbruce516.online/tags/javascript/</link>
     <description>Recent content in Javascript on 麻吉麻社长</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 25 Nov 2020 19:26:41 +0800</lastBuildDate>
-    <atom:link href="https://blog.mrbruce516.life/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.mrbruce516.online/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>超棒的rss生成器，rsshub</title>
-      <link>https://blog.mrbruce516.life/2020/010/</link>
+      <link>https://blog.mrbruce516.online/2020/010/</link>
       <pubDate>Wed, 25 Nov 2020 19:26:41 +0800</pubDate>
-      <guid>https://blog.mrbruce516.life/2020/010/</guid>
+      <guid>https://blog.mrbruce516.online/2020/010/</guid>
       <description>博主原本一直在用Inoreader作为rss的服务端，随着reeder5发布，发现reeder5支持iCloud同步feeds了，在一次偶然</description>
     </item>
   </channel>

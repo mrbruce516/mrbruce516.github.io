@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>包管理器 on 麻吉麻社长</title>
-    <link>https://blog.mrbruce516.life/tags/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/</link>
+    <link>https://blog.mrbruce516.online/tags/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/</link>
     <description>Recent content in 包管理器 on 麻吉麻社长</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 08 Jan 2020 15:52:52 +0800</lastBuildDate>
-    <atom:link href="https://blog.mrbruce516.life/tags/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.mrbruce516.online/tags/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>如何搭离线yum源</title>
-      <link>https://blog.mrbruce516.life/2020/001/</link>
+      <link>https://blog.mrbruce516.online/2020/001/</link>
       <pubDate>Wed, 08 Jan 2020 15:52:52 +0800</pubDate>
-      <guid>https://blog.mrbruce516.life/2020/001/</guid>
+      <guid>https://blog.mrbruce516.online/2020/001/</guid>
       <description>有时候不一定你的 Linux 主机能够连接到互联网，在无法连接至互联网的时候，安装软件成为了一大痛点，今天就来聊一下如果在无网络环境的情况下，如何消除疼</description>
     </item>
   </channel>
