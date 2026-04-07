@@ -6,8 +6,15 @@
     <description>Recent content in Posts on 麻吉麻社长</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 09 Dec 2021 12:59:39 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 07 Apr 2026 12:00:00 +0800</lastBuildDate>
     <atom:link href="https://blog.mrbruce516.online/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>基于 Docker 的 PaddleOCR 快速部署与使用指南</title>
+      <link>https://blog.mrbruce516.online/2026/ppocr-guide/</link>
+      <pubDate>Tue, 07 Apr 2026 12:00:00 +0800</pubDate>
+      <guid>https://blog.mrbruce516.online/2026/ppocr-guide/</guid>
+      <description>在文档数字化与信息提取领域，光学字符识别（OCR）是一项基础且核心的技术。在众多开源的 OCR 方案中，PaddleOCR 凭借其卓越的识别精度、丰富</description>
+    </item>
     <item>
       <title>理清磁盘冗余技术</title>
       <link>https://blog.mrbruce516.online/2021/003/</link>

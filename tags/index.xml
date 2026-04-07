@@ -6,8 +6,36 @@
     <description>Recent content in Tags on 麻吉麻社长</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 09 Dec 2021 12:59:39 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 07 Apr 2026 12:00:00 +0800</lastBuildDate>
     <atom:link href="https://blog.mrbruce516.online/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker</title>
+      <link>https://blog.mrbruce516.online/tags/docker/</link>
+      <pubDate>Tue, 07 Apr 2026 12:00:00 +0800</pubDate>
+      <guid>https://blog.mrbruce516.online/tags/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ocr</title>
+      <link>https://blog.mrbruce516.online/tags/ocr/</link>
+      <pubDate>Tue, 07 Apr 2026 12:00:00 +0800</pubDate>
+      <guid>https://blog.mrbruce516.online/tags/ocr/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Paddleocr</title>
+      <link>https://blog.mrbruce516.online/tags/paddleocr/</link>
+      <pubDate>Tue, 07 Apr 2026 12:00:00 +0800</pubDate>
+      <guid>https://blog.mrbruce516.online/tags/paddleocr/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>部署教程</title>
+      <link>https://blog.mrbruce516.online/tags/%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Tue, 07 Apr 2026 12:00:00 +0800</pubDate>
+      <guid>https://blog.mrbruce516.online/tags/%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Raid</title>
       <link>https://blog.mrbruce516.online/tags/raid/</link>
