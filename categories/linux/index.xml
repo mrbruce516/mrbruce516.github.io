@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on 麻吉麻社长</title>
+    <link>https://blog.mrbruce516.online/categories/linux/</link>
+    <description>Recent content in Linux on 麻吉麻社长</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 23 Jul 2026 17:15:39 +0800</lastBuildDate>
+    <atom:link href="https://blog.mrbruce516.online/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux LVM 创建命令速查</title>
+      <link>https://blog.mrbruce516.online/2026/lvm-commands/</link>
+      <pubDate>Thu, 23 Jul 2026 17:15:39 +0800</pubDate>
+      <guid>https://blog.mrbruce516.online/2026/lvm-commands/</guid>
+      <description>主要以命令为主。层级关系：PV（物理卷）→ VG（卷组）→ LV（逻辑卷） 1. 查看磁盘与分区 复制1lsblk # 树状查看块设备 2fdisk -l # 查看磁盘及分区表</description>
+    </item>
+  </channel>
+</rss>

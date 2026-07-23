@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="theme-color" content="#ffffff">
+  
+  <meta name="baidu-site-verification" content="e0YUuV3foo" />
+  <meta content="LVM, Linux, 逻辑卷, 磁盘管理, 命令速查" name="keywords">
+  <meta content="麻吉麻社长的个人博客 - 从查看磁盘到创建 PV/VG/LV、格式化挂载、在线扩容、快照的 LVM 全流程命令速查，含典型完整流程。" property="og:description">
+  
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/gh/mrbruce516/LeaveIt/assets/js/APlayer.min.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+
+  
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="麻吉麻社长">
+  <meta name="description" content="麻吉麻社长的个人博客">
+  
+  
+  <link rel="prev" href="https://blog.mrbruce516.online/2026/claude-code-guide/" />
+  
+  <link rel="canonical" href="https://blog.mrbruce516.online/2026/lvm-commands/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Linux LVM 创建命令速查 | 麻吉麻社长
+       
+  </title>
+  <meta name="title" content="Linux LVM 创建命令速查 | 麻吉麻社长">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/blog.mrbruce516.online\/"
+    },
+    "articleSection" : "posts",
+    "name" : "Linux LVM 创建命令速查",
+    "headline" : "Linux LVM 创建命令速查",
+    "description" : "从查看磁盘到创建 PV\/VG\/LV、格式化挂载、在线扩容、快照的 LVM 全流程命令速查，含典型完整流程。",
+    "inLanguage" : "zh-CN",
+    "author" : "麻吉麻社长",
+    "creator" : "麻吉麻社长",
+    "publisher": "麻吉麻社长",
+    "accountablePerson" : "麻吉麻社长",
+    "copyrightHolder" : "麻吉麻社长",
+    "copyrightYear" : "2026",
+    "datePublished": "2026-07-23 17:15:39 \u002b0800 CST",
+    "dateModified" : "2026-07-23 17:15:39 \u002b0800 CST",
+    "url" : "https:\/\/blog.mrbruce516.online\/2026\/lvm-commands\/",
+    "wordCount" : "991",
+    "keywords" : [ "LVM","磁盘管理","命令速查", "麻吉麻社长"]
+}
+</script>    
+
+  <link href="//use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    
+        <div class="top-scroll-bar"></div>
+    
+    <div class="container">
+        
+            <div class="navbar-header header-back2home-logo">
+                <span class="logo_mark" >>$</span>
+                <a href="https://blog.mrbruce516.online/">
+                    <span class="logo_text" >cd /home/</span>
+                    <span class="logo_cursor" ></span>
+                </a>
+            </div>
+        
+        <div class="navbar-right">
+                
+                <span class="menu">
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                </span>
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     
+         <div class="top-scroll-bar"></div>
+     
+     <div class="container">
+        <div class="navbar-header">
+            <div class="header-logo">
+                
+                    <span class="logo_mark">>$</span>
+                    <a href="https://blog.mrbruce516.online/">
+                        <span class="logo_text"> cd /home/ </span>
+                        <span class="logo_cursor"></span>
+                </a>
+                
+            </div>
+            <div class="navbar-right">
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a>
+                <div class="menu-toggle">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Linux LVM 创建命令速查</h1>
+        <div class="post-meta">
+            <i class="far fa-folder-open"></i>
+            <span class="post-category">
+                <a href="https://blog.mrbruce516.online/categories/linux/"> Linux </a>
+                <a href="https://blog.mrbruce516.online/categories/%E8%BF%90%E7%BB%B4/"> 运维 </a>
+                
+            </span>
+            <span class="post-time">
+                <i class="far fa-calendar-alt"></i> <time
+                    datetime=2026-07-23
+                    itemprop="datePublished">2026-07-23</time>
+            </span>
+            <i class="far fa-file-word"></i> <span class="post-word-count"> 991 字</span>
+            <i class="far fa-clock"></i> <span class="more-meta"> 2 分钟</span>
+        </div>
+    </header>
+        
+            <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title"></h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-查看磁盘与分区">1. 查看磁盘与分区</a></li>
+    <li><a href="#2-准备分区可选也可直接用整块盘">2. 准备分区（可选，也可直接用整块盘）</a>
+      <ul>
+        <li><a href="#fdisk-方式mbr">fdisk 方式（MBR）</a></li>
+        <li><a href="#parted-方式gpt推荐大盘">parted 方式（GPT，推荐大盘）</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-创建-pv物理卷">3. 创建 PV（物理卷）</a></li>
+    <li><a href="#4-创建-vg卷组">4. 创建 VG（卷组）</a></li>
+    <li><a href="#5-创建-lv逻辑卷">5. 创建 LV（逻辑卷）</a></li>
+    <li><a href="#6-格式化文件系统">6. 格式化文件系统</a></li>
+    <li><a href="#7-挂载与开机自动挂载">7. 挂载与开机自动挂载</a></li>
+    <li><a href="#8-扩展-lv在线扩容常用">8. 扩展 LV（在线扩容，常用）</a></li>
+    <li><a href="#9-缩小-lv需离线谨慎">9. 缩小 LV（需离线，谨慎）</a></li>
+    <li><a href="#10-vg-扩展--收缩">10. VG 扩展 / 收缩</a></li>
+    <li><a href="#11-删除按创建的逆序">11. 删除（按创建的逆序）</a></li>
+    <li><a href="#12-快照可选">12. 快照（可选）</a></li>
+    <li><a href="#13-常用查看命令汇总">13. 常用查看命令汇总</a>
+      <ul>
+        <li><a href="#典型完整流程从零到挂载">典型完整流程（从零到挂载）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+        
+    <div class="post-content">
+        
+
+        
+
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+
+        <blockquote>
+<p>主要以命令为主。层级关系：<strong>PV（物理卷）→ VG（卷组）→ LV（逻辑卷）</strong></p>
+</blockquote>
+<hr>
+<h2 id="1-查看磁盘与分区">1. 查看磁盘与分区</h2>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">lsblk                 <span class="c1"># 树状查看块设备</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">fdisk -l              <span class="c1"># 查看磁盘及分区表</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">parted -l             <span class="c1"># GPT 友好的查看方式</span></span></span></code></pre></div></div>
+<h2 id="2-准备分区可选也可直接用整块盘">2. 准备分区（可选，也可直接用整块盘）</h2>
+<h3 id="fdisk-方式mbr">fdisk 方式（MBR）</h3>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">fdisk /dev/sdb
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c1"># 交互：n 新建分区 -&gt; t 改类型为 8e (Linux LVM) -&gt; w 保存</span></span></span></code></pre></div></div>
+<h3 id="parted-方式gpt推荐大盘">parted 方式（GPT，推荐大盘）</h3>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">parted /dev/sdb mklabel gpt
+</span></span><span class="line"><span class="ln">2</span><span class="cl">parted /dev/sdb mkpart primary 0% 100%
+</span></span><span class="line"><span class="ln">3</span><span class="cl">parted /dev/sdb <span class="nb">set</span> <span class="m">1</span> lvm on</span></span></code></pre></div></div>
+<h2 id="3-创建-pv物理卷">3. 创建 PV（物理卷）</h2>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">pvcreate /dev/sdb1                  <span class="c1"># 单个分区</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">pvcreate /dev/sdb /dev/sdc          <span class="c1"># 直接用整盘，多个一起建</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">
+</span></span><span class="line"><span class="ln">4</span><span class="cl">pvs                                 <span class="c1"># 简要信息</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">pvdisplay                           <span class="c1"># 详细信息</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">pvscan</span></span></code></pre></div></div>
+<h2 id="4-创建-vg卷组">4. 创建 VG（卷组）</h2>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">vgcreate vg0 /dev/sdb1                       <span class="c1"># 单 PV</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">vgcreate vg0 /dev/sdb1 /dev/sdc1             <span class="c1"># 多 PV 组成一个 VG</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">
+</span></span><span class="line"><span class="ln">4</span><span class="cl">vgs
+</span></span><span class="line"><span class="ln">5</span><span class="cl">vgdisplay
+</span></span><span class="line"><span class="ln">6</span><span class="cl">vgscan</span></span></code></pre></div></div>
+<h2 id="5-创建-lv逻辑卷">5. 创建 LV（逻辑卷）</h2>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">lvcreate -L 20G -n lv_data vg0              <span class="c1"># 指定大小 20G</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">lvcreate -l 100%FREE -n lv_data vg0         <span class="c1"># 用完 VG 剩余全部空间</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">lvcreate -L 10G -n lv_log vg0               <span class="c1"># 再建一个</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">
+</span></span><span class="line"><span class="ln">5</span><span class="cl">lvs
+</span></span><span class="line"><span class="ln">6</span><span class="cl">lvdisplay
+</span></span><span class="line"><span class="ln">7</span><span class="cl">lvscan</span></span></code></pre></div></div>
+<blockquote>
+<p>LV 设备路径：<code>/dev/vg0/lv_data</code>（也可写作 <code>/dev/mapper/vg0-lv_data</code>）</p>
+</blockquote>
+<h2 id="6-格式化文件系统">6. 格式化文件系统</h2>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">mkfs.ext4 /dev/vg0/lv_data          <span class="c1"># ext4</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">mkfs.xfs  /dev/vg0/lv_log           <span class="c1"># xfs</span></span></span></code></pre></div></div>
+<h2 id="7-挂载与开机自动挂载">7. 挂载与开机自动挂载</h2>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">mkdir -p /data
+</span></span><span class="line"><span class="ln">2</span><span class="cl">mount /dev/vg0/lv_data /data</span></span></code></pre></div></div>
+<p>写入 <code>/etc/fstab</code>（推荐用 UUID，避免设备名漂移）：</p>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">blkid /dev/vg0/lv_data              <span class="c1"># 拿到 UUID</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c1"># 在 /etc/fstab 追加一行：</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c1"># UUID=xxxx-xxxx-xxxx  /data  ext4  defaults  0 0</span></span></span></code></pre></div></div>
+<p>验证 fstab 是否正确（重要，写错会导致开机失败）：</p>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">mount -a                            <span class="c1"># 无输出即成功</span></span></span></code></pre></div></div>
+<h2 id="8-扩展-lv在线扩容常用">8. 扩展 LV（在线扩容，常用）</h2>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="c1"># 先扩 LV</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">lvextend -L +10G /dev/vg0/lv_data            <span class="c1"># 在原有基础上加 10G</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">lvextend -l +100%FREE /dev/vg0/lv_data       <span class="c1"># 用完 VG 剩余空间</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="c1"># 再扩文件系统（必须，否则大小不会变）</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">resize2fs /dev/vg0/lv_data                   <span class="c1"># ext4，可在线</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl">xfs_growfs /data                             <span class="c1"># xfs，必须已挂载，按挂载点扩</span></span></span></code></pre></div></div>
+<blockquote>
+<p>若 VG 空间不够，先扩 VG（见第 10 节）。</p>
+</blockquote>
+<h2 id="9-缩小-lv需离线谨慎">9. 缩小 LV（需离线，谨慎）</h2>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">umount /data
+</span></span><span class="line"><span class="ln">2</span><span class="cl">e2fsck -f /dev/vg0/lv_data          <span class="c1"># 强制检查</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">resize2fs /dev/vg0/lv_data 15G      <span class="c1"># 先缩文件系统到 15G</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">lvreduce -L 15G /dev/vg0/lv_data    <span class="c1"># 再缩 LV 到 15G</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">mount /dev/vg0/lv_data /data</span></span></code></pre></div></div>
+<blockquote>
+<p><strong>xfs 不支持缩小</strong>，只能备份后重建。</p>
+</blockquote>
+<h2 id="10-vg-扩展--收缩">10. VG 扩展 / 收缩</h2>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">vgextend vg0 /dev/sdd1              <span class="c1"># 加入新 PV，扩容 VG</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">pvmove /dev/sdb1                    <span class="c1"># 迁移该 PV 上的数据到同 VG 其他 PV</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">vgreduce vg0 /dev/sdb1              <span class="c1"># 数据迁完后从 VG 移除 PV</span></span></span></code></pre></div></div>
+<h2 id="11-删除按创建的逆序">11. 删除（按创建的逆序）</h2>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">umount /data
+</span></span><span class="line"><span class="ln">2</span><span class="cl">lvremove /dev/vg0/lv_data           <span class="c1"># 删 LV</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">vgremove vg0                        <span class="c1"># 删 VG</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">pvremove /dev/sdb1                  <span class="c1"># 删 PV</span></span></span></code></pre></div></div>
+<h2 id="12-快照可选">12. 快照（可选）</h2>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c1"># 创建快照（大小决定可保存的变更量）</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">lvcreate -L 5G -s -n lv_data_snap /dev/vg0/lv_data
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="c1"># 从快照恢复</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">umount /data
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">lvconvert --merge /dev/vg0/lv_data_snap
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="c1"># 重启或激活后合并生效</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="c1"># 删除快照</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">lvremove /dev/vg0/lv_data_snap</span></span></code></pre></div></div>
+<h2 id="13-常用查看命令汇总">13. 常用查看命令汇总</h2>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">lsblk
+</span></span><span class="line"><span class="ln">2</span><span class="cl">pvs / vgs / lvs                     <span class="c1"># 三件套，日常最常用</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">pvdisplay / vgdisplay / lvdisplay   <span class="c1"># 详细版</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">df -hT                              <span class="c1"># 查看已挂载文件系统使用情况</span></span></span></code></pre></div></div>
+<hr>
+<h3 id="典型完整流程从零到挂载">典型完整流程（从零到挂载）</h3>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">pvcreate /dev/sdb1
+</span></span><span class="line"><span class="ln">2</span><span class="cl">vgcreate vg0 /dev/sdb1
+</span></span><span class="line"><span class="ln">3</span><span class="cl">lvcreate -l 100%FREE -n lv_data vg0
+</span></span><span class="line"><span class="ln">4</span><span class="cl">mkfs.ext4 /dev/vg0/lv_data
+</span></span><span class="line"><span class="ln">5</span><span class="cl">mkdir -p /data
+</span></span><span class="line"><span class="ln">6</span><span class="cl">mount /dev/vg0/lv_data /data
+</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="c1"># 写入 /etc/fstab 实现开机自动挂载</span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl">blkid /dev/vg0/lv_data</span></span></code></pre></div></div>
+
+    </div>
+
+    <div class="post-copyright">
+        
+        <p class="copyright-item">
+            <span><i class="fas fa-user"></i> : </span>
+            <span>麻吉麻社长 </span>
+        </p>
+        
+
+        
+        <p class="copyright-item">
+            <span><i class="fa fa-link"> : </i></span>
+            <span><a href=https://blog.mrbruce516.online/2026/lvm-commands/>https://blog.mrbruce516.online/2026/lvm-commands/</span>
+        </p>
+        
+
+        <p class="copyright-item lincese">
+            <span><i class="fa fa-copyright"> : </i>
+            本文采用
+            <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh">
+            知识共享署名-非商业性使用 4.0 国际许可协议
+            </a>进行许可</span>
+        </p>
+        
+    </div>
+
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://blog.mrbruce516.online/tags/lvm/">
+                    #LVM</a></span>
+            
+            <span class="tag"><a href="https://blog.mrbruce516.online/tags/%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/">
+                    #磁盘管理</a></span>
+            
+            <span class="tag"><a href="https://blog.mrbruce516.online/tags/%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/">
+                    #命令速查</a></span>
+            
+            </section>
+        
+        
+        <section>
+            <span><a href="javascript:window.history.back();">back</a></span> ·
+            <span><a href="https://blog.mrbruce516.online/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://blog.mrbruce516.online/2026/claude-code-guide/" class="prev" rel="prev" title="Claude Code 命令行活用指南"><i
+                class="iconfont icon-left"></i>&nbsp;Claude Code 命令行活用指南</a>
+        
+        
+    </div>
+
+    <div class="post-comment">
+        
+        
+        
+    
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+   <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2026</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://blog.mrbruce516.online/">麻吉麻社长</a> | </span> 
+         
+
+         
+        <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/mrbruce516/LeaveIt" target="_blank" rel="external nofollow">LeaveIt</a></span>
+   </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/mrbruce516/live2d-widget@1.0.3/autoload.js"></script>
+
+     </div>
+  </body>
+</html>
