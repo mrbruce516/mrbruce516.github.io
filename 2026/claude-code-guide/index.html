@@ -57,7 +57,8 @@
  
 
 <script type="application/ld+json">
- "@context" : "http://schema.org",
+{
+    "@context" : "http://schema.org",
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
@@ -77,7 +78,7 @@
     "datePublished": "2026-07-15 12:00:00 \u002b0800 CST",
     "dateModified" : "2026-07-15 12:00:00 \u002b0800 CST",
     "url" : "https:\/\/blog.mrbruce516.online\/2026\/claude-code-guide\/",
-    "wordCount" : "6488",
+    "wordCount" : "6666",
     "keywords" : [ "claude-code","ai","agent","cli", "麻吉麻社长"]
 }
 </script>    
@@ -176,8 +177,8 @@
                     datetime=2026-07-15
                     itemprop="datePublished">2026-07-15</time>
             </span>
-            <i class="far fa-file-word"></i> <span class="post-word-count"> 6488 字</span>
-            <i class="far fa-clock"></i> <span class="more-meta"> 13 分钟</span>
+            <i class="far fa-file-word"></i> <span class="post-word-count"> 6666 字</span>
+            <i class="far fa-clock"></i> <span class="more-meta"> 14 分钟</span>
         </div>
     </header>
         
@@ -277,22 +278,27 @@
 </ul>
 <h3 id="02-安装">0.2 安装</h3>
 <p>需要先有 Node.js（建议 18+）。然后全局安装：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install -g @anthropic-ai/claude-code
-</span></span></code></pre></div><p>安装完验证一下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>claude --version
-</span></span></code></pre></div><p>能看到版本号就成功了。</p>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">npm install -g @anthropic-ai/claude-code</span></span></code></pre></div></div>
+<p>安装完验证一下：</p>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">claude --version</span></span></code></pre></div></div>
+<p>能看到版本号就成功了。</p>
 <blockquote>
 <p>第一次运行 <code>claude</code> 会引导你登录认证（用 Anthropic 账号或 API key）。按提示走完即可。</p>
 </blockquote>
 <h3 id="03-第一次启动">0.3 第一次启动</h3>
 <p>在任意目录输入：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>claude
-</span></span></code></pre></div><p>就进入交互式会话。你会看到一个输入框，光标闪烁，等你说第一句话。</p>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">claude</span></span></code></pre></div></div>
+<p>就进入交互式会话。你会看到一个输入框，光标闪烁，等你说第一句话。</p>
 <p>试试这样开场：</p>
-<pre tabindex="0"><code>你好，介绍一下你能做什么
-</code></pre><p>或者直接给个任务：</p>
-<pre tabindex="0"><code>帮我看一下当前目录有哪些文件，简单解释一下项目结构
-</code></pre><p>它会调用工具去读目录、读文件，然后给你解释。</p>
+<div class="chroma-wrapper" data-lang="text">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="ln">1</span><span class="cl">你好，介绍一下你能做什么</span></span></code></pre></div></div>
+<p>或者直接给个任务：</p>
+<div class="chroma-wrapper" data-lang="text">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="ln">1</span><span class="cl">帮我看一下当前目录有哪些文件，简单解释一下项目结构</span></span></code></pre></div></div>
+<p>它会调用工具去读目录、读文件，然后给你解释。</p>
 <h3 id="04-怎么提问最有效">0.4 怎么提问最有效</h3>
 <p>Claude Code 不是搜索引擎，给它<strong>上下文</strong>和<strong>目标</strong>比给关键词管用得多：</p>
 <ul>
@@ -306,23 +312,28 @@
 <h2 id="1-基础与工作流">1. 基础与工作流</h2>
 <h3 id="11-启动继续与恢复会话">1.1 启动、继续与恢复会话</h3>
 <p>每次直接敲 <code>claude</code> 是开一个新会话。但你经常想<strong>接着上次的活</strong>继续干。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>claude -c            <span style="color:#75715e"># 继续当前目录里最近的一次会话</span>
-</span></span><span style="display:flex;"><span>claude --continue    <span style="color:#75715e"># 同上（完整写法）</span>
-</span></span><span style="display:flex;"><span>claude -r            <span style="color:#75715e"># 弹出列表，从历史会话里挑一个恢复</span>
-</span></span><span style="display:flex;"><span>claude --resume      <span style="color:#75715e"># 同上（完整写法）</span>
-</span></span></code></pre></div><p><code>-c</code> 是&quot;接着干&quot;，<code>-r</code> 是&quot;翻历史挑一个&quot;。日常用 <code>-c</code> 最多。</p>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">claude -c            <span class="c1"># 继续当前目录里最近的一次会话</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">claude --continue    <span class="c1"># 同上（完整写法）</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">claude -r            <span class="c1"># 弹出列表，从历史会话里挑一个恢复</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">claude --resume      <span class="c1"># 同上（完整写法）</span></span></span></code></pre></div></div>
+<p><code>-c</code> 是&quot;接着干&quot;，<code>-r</code> 是&quot;翻历史挑一个&quot;。日常用 <code>-c</code> 最多。</p>
 <p>也可以给会话起名字，方便以后找：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>claude -n <span style="color:#e6db74">&#34;重构登录模块&#34;</span>     <span style="color:#75715e"># 启动并命名</span>
-</span></span></code></pre></div><h3 id="12-对话循环与上下文">1.2 对话循环与上下文</h3>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">claude -n <span class="s2">&#34;重构登录模块&#34;</span>     <span class="c1"># 启动并命名</span></span></span></code></pre></div></div>
+<h3 id="12-对话循环与上下文">1.2 对话循环与上下文</h3>
 <p>一轮对话里，你说话 → 它思考并调工具 → 给你结果 → 等你下一句。几个影响&quot;上下文&quot;（它记得多少东西）的要点：</p>
 <p><strong>引用文件</strong>：用 <code>@</code> 直接喂文件给它，比让它自己找快且准：</p>
-<pre tabindex="0"><code>看一下 @package.json，目前依赖了哪些框架
-</code></pre><p><strong>清空重来</strong>：聊岔了、上下文乱了，想从干净状态开始：</p>
-<pre tabindex="0"><code>/clear
-</code></pre><p>这会清掉当前会话的所有记忆，重新开始（但不退出程序）。</p>
+<div class="chroma-wrapper" data-lang="text">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="ln">1</span><span class="cl">看一下 @package.json，目前依赖了哪些框架</span></span></code></pre></div></div>
+<p><strong>清空重来</strong>：聊岔了、上下文乱了，想从干净状态开始：</p>
+<div class="chroma-wrapper" data-lang="text">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="ln">1</span><span class="cl">/clear</span></span></code></pre></div></div>
+<p>这会清掉当前会话的所有记忆，重新开始（但不退出程序）。</p>
 <p><strong>压缩长对话</strong>：对话太长时，可以主动让它总结压缩，省 token、聚焦：</p>
-<pre tabindex="0"><code>/compact
-</code></pre><blockquote>
+<div class="chroma-wrapper" data-lang="text">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="ln">1</span><span class="cl">/compact</span></span></code></pre></div></div>
+<blockquote>
 <p>Claude Code 在对话变长时会自动做上下文管理（总结旧内容、保留要点），你通常不用手动管。<code>/compact</code> 是你想主动控制时用的。</p>
 </blockquote>
 <h3 id="13-claudemd让它记住你的规矩">1.3 CLAUDE.md：让它&quot;记住&quot;你的规矩</h3>
@@ -351,24 +362,27 @@
 </table>
 <p>优先级：项目级会叠加在用户级之上。</p>
 <p><strong>快速生成</strong>：在一个项目里运行：</p>
-<pre tabindex="0"><code>/init
-</code></pre><p>它会扫描代码库，自动生成一份 <code>CLAUDE.md</code> 草稿，你再手动调整。</p>
+<div class="chroma-wrapper" data-lang="text">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="ln">1</span><span class="cl">/init</span></span></code></pre></div></div>
+<p>它会扫描代码库，自动生成一份 <code>CLAUDE.md</code> 草稿，你再手动调整。</p>
 <p><strong>写什么</strong>：好的 <code>CLAUDE.md</code> 不写&quot;做了什么&quot;（代码自己能看出来），而写<strong>为什么</strong>和<strong>约束</strong>：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span># 项目说明
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## 技术栈
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">-</span> 后端 Python 3.11 + FastAPI
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 前端 React 18
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## 规范
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">-</span> 提交信息用中文
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 不自动安装依赖，需要时告诉我手动装
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 测试用 pytest，改完逻辑要跑一遍
-</span></span></code></pre></div><h3 id="14-权限提示怎么应对">1.4 权限提示怎么应对</h3>
+<div class="chroma-wrapper" data-lang="markdown">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="gh"># 项目说明
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="gh"></span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="gu">## 技术栈
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="gu"></span><span class="k">-</span> 后端 Python 3.11 + FastAPI
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">-</span> 前端 React 18
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="gu">## 规范
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="gu"></span><span class="k">-</span> 提交信息用中文
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="k">-</span> 不自动安装依赖，需要时告诉我手动装
+</span></span><span class="line"><span class="ln">10</span><span class="cl">- 测试用 pytest，改完逻辑要跑一遍</span></span></code></pre></div></div>
+<h3 id="14-权限提示怎么应对">1.4 权限提示怎么应对</h3>
 <p>Claude Code 要执行&quot;有副作用&quot;的操作（写文件、跑命令）时，默认会<strong>先问你</strong>。你会看到类似这样的提示：</p>
-<pre tabindex="0"><code>Claude wants to run: npm test
-Allow?  (y)es / (n)o / (a)lways allow
-</code></pre><ul>
+<div class="chroma-wrapper" data-lang="text">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="ln">1</span><span class="cl">Claude wants to run: npm test
+</span></span><span class="line"><span class="ln">2</span><span class="cl">Allow?  (y)es / (n)o / (a)lways allow</span></span></code></pre></div></div>
+<ul>
 <li><code>y</code> —— 这次允许</li>
 <li><code>n</code> —— 拒绝，它会换个做法或停下问你</li>
 <li><code>a</code> —— 以后这类操作都自动允许（写入允许列表，不再问）</li>
@@ -378,15 +392,16 @@ Allow?  (y)es / (n)o / (a)lways allow
 <h2 id="2-slash-命令与模式">2. Slash 命令与模式</h2>
 <h3 id="21-什么是-slash-命令">2.1 什么是 Slash 命令</h3>
 <p>在输入框里以 <code>/</code> 开头的是<strong>斜杠命令</strong>，用来快速触发功能，不用记 CLI 参数。输入 <code>/</code> 就能看到自动补全列表。最常用的几个：</p>
-<pre tabindex="0"><code>/help        # 查看帮助
-/clear       # 清空当前会话上下文
-/compact     # 压缩长对话
-/init        # 为当前项目生成 CLAUDE.md
-/config      # 打开设置面板（主题、模型等）
-/model       # 切换模型
-/cost        # 查看本次会话花了多少 token / 钱
-/review      # 审查当前改动（diff）
-</code></pre><h3 id="22-计划模式plan-mode">2.2 计划模式（Plan Mode）</h3>
+<div class="chroma-wrapper" data-lang="text">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="ln">1</span><span class="cl">/help        # 查看帮助
+</span></span><span class="line"><span class="ln">2</span><span class="cl">/clear       # 清空当前会话上下文
+</span></span><span class="line"><span class="ln">3</span><span class="cl">/compact     # 压缩长对话
+</span></span><span class="line"><span class="ln">4</span><span class="cl">/init        # 为当前项目生成 CLAUDE.md
+</span></span><span class="line"><span class="ln">5</span><span class="cl">/config      # 打开设置面板（主题、模型等）
+</span></span><span class="line"><span class="ln">6</span><span class="cl">/model       # 切换模型
+</span></span><span class="line"><span class="ln">7</span><span class="cl">/cost        # 查看本次会话花了多少 token / 钱
+</span></span><span class="line"><span class="ln">8</span><span class="cl">/review      # 审查当前改动（diff）</span></span></code></pre></div></div>
+<h3 id="22-计划模式plan-mode">2.2 计划模式（Plan Mode）</h3>
 <p>有些任务你想让它<strong>先想清楚再动手</strong>，而不是边想边改一通。计划模式就是干这个的。</p>
 <p>进入方式：在输入框按 <code>Shift+Tab</code> 切换模式，会在几种模式间轮换；切到&quot;Plan mode&quot;时输入框会有提示。</p>
 <p>在计划模式下：</p>
@@ -402,21 +417,24 @@ Allow?  (y)es / (n)o / (a)lways allow
 <h3 id="23-自定义-slash-命令">2.3 自定义 Slash 命令</h3>
 <p>如果有些话你反复说（比如&quot;按我们的规范审查这次改动&quot;），可以做成自定义命令。</p>
 <p>在项目里建文件 <code>.claude/commands/审查.md</code>（文件名即命令名）：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>请按以下标准审查当前 git 改动：
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 是否有未处理的异常
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 命名是否清晰
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 是否符合项目提交规范
-</span></span><span style="display:flex;"><span>列出问题并给修改建议。
-</span></span></code></pre></div><p>之后在会话里输入 <code>/审查</code> 就能触发。也可以放用户级目录 <code>~/.claude/commands/</code> 让所有项目都能用。</p>
+<div class="chroma-wrapper" data-lang="markdown">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="ln">1</span><span class="cl">请按以下标准审查当前 git 改动：
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="k">-</span> 是否有未处理的异常
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="k">-</span> 命名是否清晰
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="k">-</span> 是否符合项目提交规范
+</span></span><span class="line"><span class="ln">5</span><span class="cl">列出问题并给修改建议。</span></span></code></pre></div></div>
+<p>之后在会话里输入 <code>/审查</code> 就能触发。也可以放用户级目录 <code>~/.claude/commands/</code> 让所有项目都能用。</p>
 <p>命令文件里可以用 <code>$ARGUMENTS</code> 接收你传入的参数，比如：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>解释 $ARGUMENTS 这个概念的实现，并给出使用示例
-</span></span></code></pre></div><p>然后用 <code>/解释 依赖注入</code> 调用，<code>$ARGUMENTS</code> 会被替换成&quot;依赖注入&quot;。</p>
+<div class="chroma-wrapper" data-lang="markdown">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="ln">1</span><span class="cl">解释 $ARGUMENTS 这个概念的实现，并给出使用示例</span></span></code></pre></div></div>
+<p>然后用 <code>/解释 依赖注入</code> 调用，<code>$ARGUMENTS</code> 会被替换成&quot;依赖注入&quot;。</p>
 <h3 id="24-用--直接跑-shell-命令">2.4 用 <code>!</code> 直接跑 shell 命令</h3>
 <p>在输入框里以 <code>!</code> 开头，能<strong>直接在当前会话里执行 shell 命令</strong>，输出会进到对话上下文里，Claude 能看到：</p>
-<pre tabindex="0"><code>! git status
-! ls -la
-! cat config.json
-</code></pre><p>适合你自己想跑个命令、又想让 Claude 看到结果的场景。比开新终端窗口再贴回来方便。</p>
+<div class="chroma-wrapper" data-lang="text">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="ln">1</span><span class="cl">! git status
+</span></span><span class="line"><span class="ln">2</span><span class="cl">! ls -la
+</span></span><span class="line"><span class="ln">3</span><span class="cl">! cat config.json</span></span></code></pre></div></div>
+<p>适合你自己想跑个命令、又想让 Claude 看到结果的场景。比开新终端窗口再贴回来方便。</p>
 <hr>
 <h2 id="3-配置与-hooks">3. 配置与 Hooks</h2>
 <h3 id="31-settingsjson配置文件">3.1 settings.json：配置文件</h3>
@@ -453,23 +471,24 @@ Allow?  (y)es / (n)o / (a)lways allow
 </blockquote>
 <h3 id="32-权限配置">3.2 权限配置</h3>
 <p>权限决定哪些工具调用要问、哪些自动放行。在 <code>settings.json</code> 里：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;permissions&#34;</span>: {
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;allow&#34;</span>: [
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;Bash(npm test)&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;Bash(git status)&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;Bash(git diff:*)&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;Read&#34;</span>
-</span></span><span style="display:flex;"><span>    ],
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;deny&#34;</span>: [
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;Bash(rm -rf:*)&#34;</span>
-</span></span><span style="display:flex;"><span>    ],
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;ask&#34;</span>: [
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;Bash(git push:*)&#34;</span>
-</span></span><span style="display:flex;"><span>    ]
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><ul>
+<div class="chroma-wrapper" data-lang="json">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">  <span class="nt">&#34;permissions&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="nt">&#34;allow&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">      <span class="s2">&#34;Bash(npm test)&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">      <span class="s2">&#34;Bash(git status)&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">      <span class="s2">&#34;Bash(git diff:*)&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">      <span class="s2">&#34;Read&#34;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="p">],</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="nt">&#34;deny&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">      <span class="s2">&#34;Bash(rm -rf:*)&#34;</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="p">],</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="nt">&#34;ask&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">      <span class="s2">&#34;Bash(git push:*)&#34;</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<ul>
 <li><code>allow</code> —— 自动允许，不问（只读、安全的命令放这）</li>
 <li><code>deny</code> —— 一律禁止</li>
 <li><code>ask</code> —— 每次都问</li>
@@ -512,22 +531,23 @@ Allow?  (y)es / (n)o / (a)lways allow
 </tbody>
 </table>
 <p><strong>一个实用例子</strong>：每次 Claude 编辑文件后，自动跑 <code>prettier</code> 格式化。在 <code>settings.json</code> 里：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;hooks&#34;</span>: {
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;PostToolUse&#34;</span>: [
-</span></span><span style="display:flex;"><span>      {
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;matcher&#34;</span>: <span style="color:#e6db74">&#34;Edit|Write&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;hooks&#34;</span>: [
-</span></span><span style="display:flex;"><span>          {
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;command&#34;</span>,
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;npx prettier --write \&#34;$CLAUDE_FILE_PATHS\&#34; 2&gt;/dev/null || true&#34;</span>
-</span></span><span style="display:flex;"><span>          }
-</span></span><span style="display:flex;"><span>        ]
-</span></span><span style="display:flex;"><span>      }
-</span></span><span style="display:flex;"><span>    ]
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>解读：</p>
+<div class="chroma-wrapper" data-lang="json">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">  <span class="nt">&#34;hooks&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="nt">&#34;PostToolUse&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">        <span class="nt">&#34;matcher&#34;</span><span class="p">:</span> <span class="s2">&#34;Edit|Write&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">        <span class="nt">&#34;hooks&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">          <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">            <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;command&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">            <span class="nt">&#34;command&#34;</span><span class="p">:</span> <span class="s2">&#34;npx prettier --write \&#34;$CLAUDE_FILE_PATHS\&#34; 2&gt;/dev/null || true&#34;</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">          <span class="p">}</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">        <span class="p">]</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<p>解读：</p>
 <ul>
 <li><code>matcher: &quot;Edit|Write&quot;</code> —— 只在 Edit/Write 工具触发后执行（正则匹配工具名）</li>
 <li><code>command</code> —— 实际跑的 shell 命令，<code>$CLAUDE_FILE_PATHS</code> 是 Claude Code 注入的环境变量，含刚改动的文件路径</li>
@@ -535,13 +555,14 @@ Allow?  (y)es / (n)o / (a)lways allow
 <p>Hook 脚本的退出码有含义：退出码 <code>0</code> = 通过，<code>2</code> = 阻止该操作并把 stderr 反馈给 Claude（可用于拦截危险操作），其它非零 = 报错但不阻止。</p>
 <h3 id="34-statusline-与环境变量">3.4 statusline 与环境变量</h3>
 <p><strong>状态栏（statusline）</strong>：终端底部那行显示当前状态的信息。可以在 <code>settings.json</code> 里自定义显示什么：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;statusLine&#34;</span>: {
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;command&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;echo \&#34;$(git branch --show-current 2&gt;/dev/null) | $(pwd)\&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>它会把命令的输出显示在状态栏。适合放当前分支、目录、模型等信息。</p>
+<div class="chroma-wrapper" data-lang="json">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="ln">1</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">  <span class="nt">&#34;statusLine&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;command&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="nt">&#34;command&#34;</span><span class="p">:</span> <span class="s2">&#34;echo \&#34;$(git branch --show-current 2&gt;/dev/null) | $(pwd)\&#34;&#34;</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<p>它会把命令的输出显示在状态栏。适合放当前分支、目录、模型等信息。</p>
 <blockquote>
 <p>不想手写？运行 <code>/statusline</code>（或让我帮你配）有向导。</p>
 </blockquote>
@@ -583,18 +604,19 @@ Allow?  (y)es / (n)o / (a)lways allow
 <h3 id="42-自定义-agent">4.2 自定义 Agent</h3>
 <p>就像自定义 slash 命令一样，你可以定义<strong>专门角色的子代理</strong>，给它固定的身份、工具范围、提示词。放在 <code>.claude/agents/</code> 目录下，一个 <code>.md</code> 文件一个 agent。</p>
 <p>例如 <code>.claude/agents/code-reviewer.md</code>：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>name: code-reviewer
-</span></span><span style="display:flex;"><span>description: 代码审查专员。审查改动，专注找 bug 和可简化之处。需要审查时使用。
-</span></span><span style="display:flex;"><span>tools: Read, Grep, Glob, Bash
-</span></span><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>你是一名严谨的代码审查员。审查给定的代码改动时：
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 优先找正确性 bug（边界条件、空值、资源泄漏）
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 其次找可简化、可复用的地方
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 每条问题给出：文件:行号、问题描述、复现场景、修复建议
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 不要为了凑数而提无关紧要的风格问题
-</span></span></code></pre></div><p>之后在会话里就能让 Claude 调用这个 reviewer 角色去审查。<code>tools</code> 字段限定它只能用哪些工具（这里只给读和跑命令，不让它改文件，符合&quot;审查员&quot;角色）。</p>
+<div class="chroma-wrapper" data-lang="markdown">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="ln"> 1</span><span class="cl">---
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">name: code-reviewer
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">description: 代码审查专员。审查改动，专注找 bug 和可简化之处。需要审查时使用。
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">tools: Read, Grep, Glob, Bash
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">---
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">你是一名严谨的代码审查员。审查给定的代码改动时：
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="k">-</span> 优先找正确性 bug（边界条件、空值、资源泄漏）
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="k">-</span> 其次找可简化、可复用的地方
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="k">-</span> 每条问题给出：文件:行号、问题描述、复现场景、修复建议
+</span></span><span class="line"><span class="ln">11</span><span class="cl">- 不要为了凑数而提无关紧要的风格问题</span></span></code></pre></div></div>
+<p>之后在会话里就能让 Claude 调用这个 reviewer 角色去审查。<code>tools</code> 字段限定它只能用哪些工具（这里只给读和跑命令，不让它改文件，符合&quot;审查员&quot;角色）。</p>
 <h3 id="43-mcp-是什么">4.3 MCP 是什么</h3>
 <p><strong>MCP</strong>（Model Context Protocol）是一个开放协议，让 Claude Code 能接入<strong>外部工具和数据源</strong>。你可以理解为&quot;给 Claude 装插件&rdquo;：</p>
 <ul>
@@ -605,26 +627,29 @@ Allow?  (y)es / (n)o / (a)lways allow
 <p>一个 MCP server 就是一个&quot;工具包&quot;，装上后 Claude 就多了这包里的能力。</p>
 <h3 id="44-添加-mcp-server">4.4 添加 MCP server</h3>
 <p>用 <code>claude mcp add</code> 命令。三种传输方式（transport）：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 1. HTTP 方式（远程服务，最常见）</span>
-</span></span><span style="display:flex;"><span>claude mcp add --transport http sentry https://mcp.sentry.dev/mcp
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. stdio 方式（本地启动一个进程）</span>
-</span></span><span style="display:flex;"><span>claude mcp add my-server -- npx my-mcp-server
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3. 带环境变量（如需要 API key）</span>
-</span></span><span style="display:flex;"><span>claude mcp add my-server -e API_KEY<span style="color:#f92672">=</span>xxx -- npx my-mcp-server
-</span></span></code></pre></div><p>管理命令：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>claude mcp list              <span style="color:#75715e"># 列出已配置的 MCP server</span>
-</span></span><span style="display:flex;"><span>claude mcp get &lt;名字&gt;        <span style="color:#75715e"># 查看某个 server 详情</span>
-</span></span><span style="display:flex;"><span>claude mcp remove &lt;名字&gt;     <span style="color:#75715e"># 删除</span>
-</span></span></code></pre></div><p><strong>作用域</strong>（<code>-s</code> / <code>--scope</code>）决定配置存哪：</p>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="c1"># 1. HTTP 方式（远程服务，最常见）</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">claude mcp add --transport http sentry https://mcp.sentry.dev/mcp
+</span></span><span class="line"><span class="ln">3</span><span class="cl">
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="c1"># 2. stdio 方式（本地启动一个进程）</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">claude mcp add my-server -- npx my-mcp-server
+</span></span><span class="line"><span class="ln">6</span><span class="cl">
+</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="c1"># 3. 带环境变量（如需要 API key）</span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl">claude mcp add my-server -e <span class="nv">API_KEY</span><span class="o">=</span>xxx -- npx my-mcp-server</span></span></code></pre></div></div>
+<p>管理命令：</p>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">claude mcp list              <span class="c1"># 列出已配置的 MCP server</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">claude mcp get &lt;名字&gt;        <span class="c1"># 查看某个 server 详情</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">claude mcp remove &lt;名字&gt;     <span class="c1"># 删除</span></span></span></code></pre></div></div>
+<p><strong>作用域</strong>（<code>-s</code> / <code>--scope</code>）决定配置存哪：</p>
 <ul>
 <li><code>local</code>（默认）—— 仅当前项目本地</li>
 <li><code>project</code> —— 存进 <code>.mcp.json</code>，团队共享</li>
 <li><code>user</code> —— 你所有项目可用</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>claude mcp add -s user --transport http sentry https://mcp.sentry.dev/mcp
-</span></span></code></pre></div><blockquote>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">claude mcp add -s user --transport http sentry https://mcp.sentry.dev/mcp</span></span></code></pre></div></div>
+<blockquote>
 <p>第一次用某个项目级 MCP server 时，Claude Code 会让你确认是否信任——这是安全机制，防止恶意项目偷偷装工具。</p>
 </blockquote>
 <hr>
@@ -833,18 +858,20 @@ Allow?  (y)es / (n)o / (a)lways allow
 </table>
 <h2 id="d-配置与-hooks-速查">D. 配置与 Hooks 速查</h2>
 <p><strong>配置文件层级</strong>（优先级从高到低）：</p>
-<pre tabindex="0"><code>项目/.claude/settings.local.json   # 本地私有，不提交
-项目/.claude/settings.json          # 团队共享
-~/.claude/settings.json             # 用户全局
-</code></pre><p><strong>权限规则</strong>：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;permissions&#34;</span>: {
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;allow&#34;</span>: [<span style="color:#e6db74">&#34;Bash(npm test)&#34;</span>, <span style="color:#e6db74">&#34;Bash(git diff:*)&#34;</span>, <span style="color:#e6db74">&#34;Read&#34;</span>],
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;deny&#34;</span>:  [<span style="color:#e6db74">&#34;Bash(rm -rf:*)&#34;</span>],
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;ask&#34;</span>:   [<span style="color:#e6db74">&#34;Bash(git push:*)&#34;</span>]
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p><strong>Hooks 时机</strong>：</p>
+<div class="chroma-wrapper" data-lang="text">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="ln">1</span><span class="cl">项目/.claude/settings.local.json   # 本地私有，不提交
+</span></span><span class="line"><span class="ln">2</span><span class="cl">项目/.claude/settings.json          # 团队共享
+</span></span><span class="line"><span class="ln">3</span><span class="cl">~/.claude/settings.json             # 用户全局</span></span></code></pre></div></div>
+<p><strong>权限规则</strong>：</p>
+<div class="chroma-wrapper" data-lang="json">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="ln">1</span><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">  <span class="nt">&#34;permissions&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="nt">&#34;allow&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;Bash(npm test)&#34;</span><span class="p">,</span> <span class="s2">&#34;Bash(git diff:*)&#34;</span><span class="p">,</span> <span class="s2">&#34;Read&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="nt">&#34;deny&#34;</span><span class="p">:</span>  <span class="p">[</span><span class="s2">&#34;Bash(rm -rf:*)&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="nt">&#34;ask&#34;</span><span class="p">:</span>   <span class="p">[</span><span class="s2">&#34;Bash(git push:*)&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<p><strong>Hooks 时机</strong>：</p>
 <table>
 <thead>
 <tr>
@@ -908,18 +935,19 @@ Allow?  (y)es / (n)o / (a)lways allow
 </tbody>
 </table>
 <h2 id="e-mcp-速查">E. MCP 速查</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 添加</span>
-</span></span><span style="display:flex;"><span>claude mcp add --transport http &lt;名&gt; &lt;url&gt;           <span style="color:#75715e"># HTTP</span>
-</span></span><span style="display:flex;"><span>claude mcp add &lt;名&gt; -- &lt;命令&gt; <span style="color:#f92672">[</span>参数...<span style="color:#f92672">]</span>              <span style="color:#75715e"># stdio（本地进程）</span>
-</span></span><span style="display:flex;"><span>claude mcp add &lt;名&gt; -e KEY<span style="color:#f92672">=</span>val -- &lt;命令&gt;             <span style="color:#75715e"># 带环境变量</span>
-</span></span><span style="display:flex;"><span>claude mcp add -s &lt;作用域&gt; ...                        <span style="color:#75715e"># 指定作用域 local/project/user</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 管理</span>
-</span></span><span style="display:flex;"><span>claude mcp list                                       <span style="color:#75715e"># 列表</span>
-</span></span><span style="display:flex;"><span>claude mcp get &lt;名&gt;                                   <span style="color:#75715e"># 详情</span>
-</span></span><span style="display:flex;"><span>claude mcp remove &lt;名&gt;                                <span style="color:#75715e"># 删除</span>
-</span></span><span style="display:flex;"><span>claude mcp add-from-claude-desktop                    <span style="color:#75715e"># 从 Claude Desktop 导入（仅 Mac/WSL）</span>
-</span></span></code></pre></div><p><strong>作用域</strong>：<code>local</code>（默认，仅本项目本地）/ <code>project</code>（存 <code>.mcp.json</code>，团队共享）/ <code>user</code>（全局）。</p>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c1"># 添加</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">claude mcp add --transport http &lt;名&gt; &lt;url&gt;           <span class="c1"># HTTP</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">claude mcp add &lt;名&gt; -- &lt;命令&gt; <span class="o">[</span>参数...<span class="o">]</span>              <span class="c1"># stdio（本地进程）</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">claude mcp add &lt;名&gt; -e <span class="nv">KEY</span><span class="o">=</span>val -- &lt;命令&gt;             <span class="c1"># 带环境变量</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">claude mcp add -s &lt;作用域&gt; ...                        <span class="c1"># 指定作用域 local/project/user</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="c1"># 管理</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">claude mcp list                                       <span class="c1"># 列表</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">claude mcp get &lt;名&gt;                                   <span class="c1"># 详情</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">claude mcp remove &lt;名&gt;                                <span class="c1"># 删除</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">claude mcp add-from-claude-desktop                    <span class="c1"># 从 Claude Desktop 导入（仅 Mac/WSL）</span></span></span></code></pre></div></div>
+<p><strong>作用域</strong>：<code>local</code>（默认，仅本项目本地）/ <code>project</code>（存 <code>.mcp.json</code>，团队共享）/ <code>user</code>（全局）。</p>
 <h2 id="f-常见问题-faq">F. 常见问题 FAQ</h2>
 <p><strong>Q：怎么换模型？</strong>
 A：会话里 <code>/model</code> 选，或启动时 <code>claude --model sonnet</code>。别名有 <code>opus</code>/<code>sonnet</code>/<code>haiku</code> 等，也能用完整模型名。</p>
@@ -1006,26 +1034,6 @@ A：精简优先。写<strong>为什么</strong>和<strong>约束</strong>，别
         
         
         
-        <span id="/2026/claude-code-guide/" class="leancloud_visitors" data-flag-title="Claude Code 命令行活用指南">
-            <em class="post-meta-item-text">访问量 </em>
-            <i class="leancloud-visitors-count"></i>
-            <p></p>
-        </span>
-        <div id="vcomments"></div>
-        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-        <script type="text/javascript">
-            new Valine({
-                el: '#vcomments',
-                appId: 'akZxFlWl93ch0j3q9zW344By-gzGzoHsz',
-                appKey: 'r0AJ6JpWaArIR0GoXVnxNY1R',
-                notify: '',
-                verify: '',
-                avatar: 'mp',
-                placeholder: '说点什么吧...',
-                visitor: 'true'
-            });
-        </script>
-        
     
     </div>
 </article>
@@ -1048,7 +1056,6 @@ A：精简优先。写<strong>为什么</strong>和<strong>约束</strong>，别
         <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/mrbruce516/LeaveIt" target="_blank" rel="external nofollow">LeaveIt</a></span>
    </div>
 </footer>
-
 
 
 

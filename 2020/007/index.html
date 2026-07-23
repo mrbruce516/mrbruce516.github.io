@@ -57,7 +57,8 @@
  
 
 <script type="application/ld+json">
- "@context" : "http://schema.org",
+{
+    "@context" : "http://schema.org",
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
@@ -77,7 +78,7 @@
     "datePublished": "2020-08-20 11:34:00 \u002b0800 CST",
     "dateModified" : "2020-08-20 11:34:00 \u002b0800 CST",
     "url" : "https:\/\/blog.mrbruce516.online\/2020\/007\/",
-    "wordCount" : "1258",
+    "wordCount" : "1272",
     "keywords" : [ "vim", "麻吉麻社长"]
 }
 </script>    
@@ -176,7 +177,7 @@
                     datetime=2020-08-20
                     itemprop="datePublished">2020-08-20</time>
             </span>
-            <i class="far fa-file-word"></i> <span class="post-word-count"> 1258 字</span>
+            <i class="far fa-file-word"></i> <span class="post-word-count"> 1272 字</span>
             <i class="far fa-clock"></i> <span class="more-meta"> 3 分钟</span>
         </div>
     </header>
@@ -451,11 +452,13 @@
 </table>
 <h2 id="配置文件">配置文件</h2>
 <p>  nvim的<a href="https://github.com/mrbruce516/dotfile/blob/master/init.vim">配置文件</a>路径在<code>~/.config/nvim/init.vim</code>，vim的配置文件位置在<code>~/.vimrc</code>，个人推荐在你的shell的配置文件中设置别名，方便修改vim的配置文件。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>alias configvim<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;vim ~/.config/nvim/init.vim&#39;</span>
-</span></span></code></pre></div><p>如果你和我一样使用nvim，也可以为nvim使用别名</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>alias vim<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;nvim&#39;</span>
-</span></span><span style="display:flex;"><span>alias vi<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;nvim&#39;</span>
-</span></span></code></pre></div>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="nb">alias</span> <span class="nv">configvim</span><span class="o">=</span><span class="s1">&#39;vim ~/.config/nvim/init.vim&#39;</span></span></span></code></pre></div></div>
+<p>如果你和我一样使用nvim，也可以为nvim使用别名</p>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="nb">alias</span> <span class="nv">vim</span><span class="o">=</span><span class="s1">&#39;nvim&#39;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="nb">alias</span> <span class="nv">vi</span><span class="o">=</span><span class="s1">&#39;nvim&#39;</span></span></span></code></pre></div></div>
+
     </div>
 
     <div class="post-copyright">
@@ -516,26 +519,6 @@
         
         
         
-        <span id="/2020/007/" class="leancloud_visitors" data-flag-title="vim学习笔记">
-            <em class="post-meta-item-text">访问量 </em>
-            <i class="leancloud-visitors-count"></i>
-            <p></p>
-        </span>
-        <div id="vcomments"></div>
-        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-        <script type="text/javascript">
-            new Valine({
-                el: '#vcomments',
-                appId: 'akZxFlWl93ch0j3q9zW344By-gzGzoHsz',
-                appKey: 'r0AJ6JpWaArIR0GoXVnxNY1R',
-                notify: '',
-                verify: '',
-                avatar: 'mp',
-                placeholder: '说点什么吧...',
-                visitor: 'true'
-            });
-        </script>
-        
     
     </div>
 </article>
@@ -570,10 +553,9 @@
 
 
 
-
     
      <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
-      
+     
      <script src="/js/vendor_gallery.min.js" async="" ></script>
     
   

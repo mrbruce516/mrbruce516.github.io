@@ -57,7 +57,8 @@
  
 
 <script type="application/ld+json">
- "@context" : "http://schema.org",
+{
+    "@context" : "http://schema.org",
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
@@ -77,7 +78,7 @@
     "datePublished": "2020-04-18 14:51:13 \u002b0800 CST",
     "dateModified" : "2020-04-18 14:51:13 \u002b0800 CST",
     "url" : "https:\/\/blog.mrbruce516.online\/2020\/005\/",
-    "wordCount" : "430",
+    "wordCount" : "434",
     "keywords" : [ "toc","aplayer", "麻吉麻社长"]
 }
 </script>    
@@ -176,7 +177,7 @@
                     datetime=2020-04-18
                     itemprop="datePublished">2020-04-18</time>
             </span>
-            <i class="far fa-file-word"></i> <span class="post-word-count"> 430 字</span>
+            <i class="far fa-file-word"></i> <span class="post-word-count"> 434 字</span>
             <i class="far fa-clock"></i> <span class="more-meta"> 1 分钟</span>
         </div>
     </header>
@@ -216,8 +217,9 @@
 <li>在引用hash的对象前，包一层<code>decodeURIComponent()</code>,这样就能正常处理中文的标签和 location 的对应问题了</li>
 </ol>
 <p>例如：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (decodeURIComponent(<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">hash</span>) <span style="color:#f92672">!==</span> decodeURIComponent(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">hash</span>))
-</span></span></code></pre></div><p>  其实就是把hash进行decodeURIComponent处理，这样就能正常处理中文的标签和位置的对应问题了。</p>
+<div class="chroma-wrapper" data-lang="js">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nb">decodeURIComponent</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">hash</span><span class="p">)</span> <span class="o">!==</span> <span class="nb">decodeURIComponent</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">hash</span><span class="p">))</span></span></span></code></pre></div></div>
+<p>  其实就是把hash进行decodeURIComponent处理，这样就能正常处理中文的标签和位置的对应问题了。</p>
 <p>我这里的话之前用的是官方js文件，嫌麻烦的话直接换成大佬改好的js文件即可<a href="https://src.wangriyu.wang/lib/Aplayer/APlayer.min.js">APlayer.min.js</a></p>
 
     </div>
@@ -283,26 +285,6 @@
         
         
         
-        <span id="/2020/005/" class="leancloud_visitors" data-flag-title="解决aplayer导致文章toc失效">
-            <em class="post-meta-item-text">访问量 </em>
-            <i class="leancloud-visitors-count"></i>
-            <p></p>
-        </span>
-        <div id="vcomments"></div>
-        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-        <script type="text/javascript">
-            new Valine({
-                el: '#vcomments',
-                appId: 'akZxFlWl93ch0j3q9zW344By-gzGzoHsz',
-                appKey: 'r0AJ6JpWaArIR0GoXVnxNY1R',
-                notify: '',
-                verify: '',
-                avatar: 'mp',
-                placeholder: '说点什么吧...',
-                visitor: 'true'
-            });
-        </script>
-        
     
     </div>
 </article>
@@ -325,7 +307,6 @@
         <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/mrbruce516/LeaveIt" target="_blank" rel="external nofollow">LeaveIt</a></span>
    </div>
 </footer>
-
 
 
 

@@ -57,7 +57,8 @@
  
 
 <script type="application/ld+json">
- "@context" : "http://schema.org",
+{
+    "@context" : "http://schema.org",
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
@@ -77,7 +78,7 @@
     "datePublished": "2020-11-25 19:26:41 \u002b0800 CST",
     "dateModified" : "2020-11-25 19:26:41 \u002b0800 CST",
     "url" : "https:\/\/blog.mrbruce516.online\/2020\/010\/",
-    "wordCount" : "1050",
+    "wordCount" : "1067",
     "keywords" : [ "javascript","rss", "麻吉麻社长"]
 }
 </script>    
@@ -176,7 +177,7 @@
                     datetime=2020-11-25
                     itemprop="datePublished">2020-11-25</time>
             </span>
-            <i class="far fa-file-word"></i> <span class="post-word-count"> 1050 字</span>
+            <i class="far fa-file-word"></i> <span class="post-word-count"> 1067 字</span>
             <i class="far fa-clock"></i> <span class="more-meta"> 3 分钟</span>
         </div>
     </header>
@@ -231,17 +232,21 @@
 <h3 id="docker部署">Docker部署</h3>
 <p>docker部署非常快捷，干净，首先需要在你的服务器上有个docker环境，怎么装就不在这篇里说了。</p>
 <p>运行下面的命令下载RSSHub镜像</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker pull diygod/rsshub
-</span></span></code></pre></div><p>然后运行 RSSHub 即可</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ docker run -d --name rsshub -p 1200:1200 diygod/rsshub
-</span></span></code></pre></div><p>在浏览器中打开 <a href="http://127.0.0.1:1200/">http://127.0.0.1:1200/ (opens new window)</a>，enjoy it! ✅</p>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">docker pull diygod/rsshub</span></span></code></pre></div></div>
+<p>然后运行 RSSHub 即可</p>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">$ docker run -d --name rsshub -p 1200:1200 diygod/rsshub</span></span></code></pre></div></div>
+<p>在浏览器中打开 <a href="http://127.0.0.1:1200/">http://127.0.0.1:1200/ (opens new window)</a>，enjoy it! ✅</p>
 <p>您可以使用下面的命令来关闭 RSSHub</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ docker stop rsshub
-</span></span></code></pre></div><h3 id="更新">更新</h3>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">$ docker stop rsshub</span></span></code></pre></div></div>
+<h3 id="更新">更新</h3>
 <p>删除旧容器</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ docker stop rsshub
-</span></span><span style="display:flex;"><span>$ docker rm rsshub
-</span></span></code></pre></div><p>然后重复安装步骤</p>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">$ docker stop rsshub
+</span></span><span class="line"><span class="ln">2</span><span class="cl">$ docker rm rsshub</span></span></code></pre></div></div>
+<p>然后重复安装步骤</p>
 <h3 id="更多安装方法">更多安装方法</h3>
 <p>其他还有如docker-compose、本地部署（仅推荐开发rss使用）等，可在官方的<a href="https://docs.rsshub.app/install/">部署手册</a>中进行查看</p>
 <h2 id="2-使用rsshub">2. 使用RSSHub</h2>
@@ -318,26 +323,6 @@
         
         
         
-        <span id="/2020/010/" class="leancloud_visitors" data-flag-title="超棒的rss生成器，rsshub">
-            <em class="post-meta-item-text">访问量 </em>
-            <i class="leancloud-visitors-count"></i>
-            <p></p>
-        </span>
-        <div id="vcomments"></div>
-        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-        <script type="text/javascript">
-            new Valine({
-                el: '#vcomments',
-                appId: 'akZxFlWl93ch0j3q9zW344By-gzGzoHsz',
-                appKey: 'r0AJ6JpWaArIR0GoXVnxNY1R',
-                notify: '',
-                verify: '',
-                avatar: 'mp',
-                placeholder: '说点什么吧...',
-                visitor: 'true'
-            });
-        </script>
-        
     
     </div>
 </article>
@@ -372,10 +357,9 @@
 
 
 
-
     
      <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
-      
+     
      <script src="/js/vendor_gallery.min.js" async="" ></script>
     
   

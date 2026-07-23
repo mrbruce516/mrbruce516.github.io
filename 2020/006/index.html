@@ -57,7 +57,8 @@
  
 
 <script type="application/ld+json">
- "@context" : "http://schema.org",
+{
+    "@context" : "http://schema.org",
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
@@ -77,7 +78,7 @@
     "datePublished": "2020-04-27 11:26:00 \u002b0800 CST",
     "dateModified" : "2020-04-27 11:26:00 \u002b0800 CST",
     "url" : "https:\/\/blog.mrbruce516.online\/2020\/006\/",
-    "wordCount" : "343",
+    "wordCount" : "385",
     "keywords" : [ "hugo", "麻吉麻社长"]
 }
 </script>    
@@ -176,7 +177,7 @@
                     datetime=2020-04-27
                     itemprop="datePublished">2020-04-27</time>
             </span>
-            <i class="far fa-file-word"></i> <span class="post-word-count"> 343 字</span>
+            <i class="far fa-file-word"></i> <span class="post-word-count"> 385 字</span>
             <i class="far fa-clock"></i> <span class="more-meta"> 1 分钟</span>
         </div>
     </header>
@@ -216,33 +217,37 @@
 <h2 id="step1-创建html标签">Step.1 创建html标签</h2>
 <p>  我们首先要新建一个 Hugo Shortcodes 来规范化的插入 HTML 标签</p>
 <p>  在 <code>layouts/shortcodes</code> 文件夹中创建文件 <code>spoiler.html</code> (如果没有那个文件夹就自己新建一个)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;spoiler&#34;</span> &gt;{{.Inner}}&lt;/<span style="color:#f92672">span</span>&gt;
-</span></span></code></pre></div><p>  然后再在 <code>/assets/css/_common/_page/post.scss</code> (每个主题的不一样) 中编写 CSS</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>    <span style="color:#f92672">//</span> <span style="color:#f92672">隐藏文字</span>
-</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">spoiler</span> { 
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">black</span>; 
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">background-color</span>:<span style="color:#66d9ef">black</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">spoiler</span>:<span style="color:#a6e22e">hover</span>{
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">white</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span></code></pre></div><p>  同样的，如果你实在是不知道你的主题的 CSS 文件在哪儿，也可以直接往 <code>layouts/shortcodes/spoiler.html</code> 里写</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">style</span>&gt;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">//</span> <span style="color:#f92672">隐藏文字</span>
-</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">spoiler</span> { 
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">black</span>; 
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background-color</span>:<span style="color:#66d9ef">black</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">spoiler</span>:<span style="color:#a6e22e">hover</span>{
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">white</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">style</span>&gt;
-</span></span></code></pre></div><p>  然后就可以用了！</p>
+<div class="chroma-wrapper" data-lang="html">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="ln">1</span><span class="cl"><span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;spoiler&#34;</span> <span class="p">&gt;</span>{{.Inner}}<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span></span></span></code></pre></div></div>
+<p>  然后再在 <code>/assets/css/_common/_page/post.scss</code> (每个主题的不一样) 中编写 CSS</p>
+<div class="chroma-wrapper" data-lang="css">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="ln">1</span><span class="cl">    <span class="o">//</span> <span class="nt">隐藏文字</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="p">.</span><span class="nc">spoiler</span> <span class="p">{</span> 
+</span></span><span class="line"><span class="ln">3</span><span class="cl">        <span class="k">color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span> 
+</span></span><span class="line"><span class="ln">4</span><span class="cl">        <span class="k">background-color</span><span class="p">:</span><span class="kc">black</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">    <span class="p">.</span><span class="nc">spoiler</span><span class="p">:</span><span class="nd">hover</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl">        <span class="k">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl">    <span class="p">}</span></span></span></code></pre></div></div>
+<p>  同样的，如果你实在是不知道你的主题的 CSS 文件在哪儿，也可以直接往 <code>layouts/shortcodes/spoiler.html</code> 里写</p>
+<div class="chroma-wrapper" data-lang="html">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="o">//</span> <span class="nt">隐藏文字</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="p">.</span><span class="nc">spoiler</span> <span class="p">{</span> 
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">  <span class="k">color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span> 
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">  <span class="k">background-color</span><span class="p">:</span><span class="kc">black</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="p">.</span><span class="nc">spoiler</span><span class="p">:</span><span class="nd">hover</span><span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">  <span class="k">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span></span></span></code></pre></div></div>
+<p>  然后就可以用了！</p>
 <h2 id="step2-用法">Step.2 用法</h2>
 <p>  在你想使用「隐藏文字」的地方这么写</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>&lt;<span style="color:#f92672">spoiler</span>&gt; 隐藏文字 &lt;/<span style="color:#f92672">spoiler</span>&gt;
-</span></span><span style="display:flex;"><span>// 标签两旁记得带上{{ }}
-</span></span></code></pre></div>
+<div class="chroma-wrapper" data-lang="markdown">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="ln">1</span><span class="cl"><span class="p">&lt;</span><span class="nt">spoiler</span><span class="p">&gt;</span> 隐藏文字 <span class="p">&lt;/</span><span class="nt">spoiler</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">// 标签两旁记得带上{{ }}</span></span></code></pre></div></div>
+
     </div>
 
     <div class="post-copyright">
@@ -303,26 +308,6 @@
         
         
         
-        <span id="/2020/006/" class="leancloud_visitors" data-flag-title="为了防止剧透给博客加上隐藏文字">
-            <em class="post-meta-item-text">访问量 </em>
-            <i class="leancloud-visitors-count"></i>
-            <p></p>
-        </span>
-        <div id="vcomments"></div>
-        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-        <script type="text/javascript">
-            new Valine({
-                el: '#vcomments',
-                appId: 'akZxFlWl93ch0j3q9zW344By-gzGzoHsz',
-                appKey: 'r0AJ6JpWaArIR0GoXVnxNY1R',
-                notify: '',
-                verify: '',
-                avatar: 'mp',
-                placeholder: '说点什么吧...',
-                visitor: 'true'
-            });
-        </script>
-        
     
     </div>
 </article>
@@ -345,7 +330,6 @@
         <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/mrbruce516/LeaveIt" target="_blank" rel="external nofollow">LeaveIt</a></span>
    </div>
 </footer>
-
 
 
 

@@ -57,7 +57,8 @@
  
 
 <script type="application/ld+json">
- "@context" : "http://schema.org",
+{
+    "@context" : "http://schema.org",
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
@@ -77,7 +78,7 @@
     "datePublished": "2026-04-07 12:00:00 \u002b0800 CST",
     "dateModified" : "2026-04-07 12:00:00 \u002b0800 CST",
     "url" : "https:\/\/blog.mrbruce516.online\/2026\/ppocr-guide\/",
-    "wordCount" : "1579",
+    "wordCount" : "1619",
     "keywords" : [ "ocr","paddleocr","docker","部署教程", "麻吉麻社长"]
 }
 </script>    
@@ -176,7 +177,7 @@
                     datetime=2026-04-07
                     itemprop="datePublished">2026-04-07</time>
             </span>
-            <i class="far fa-file-word"></i> <span class="post-word-count"> 1579 字</span>
+            <i class="far fa-file-word"></i> <span class="post-word-count"> 1619 字</span>
             <i class="far fa-clock"></i> <span class="more-meta"> 4 分钟</span>
         </div>
     </header>
@@ -244,19 +245,22 @@
 <hr>
 <h2 id="2-构建镜像">2. 构建镜像</h2>
 <p>首先，通过 Git 克隆项目代码到本地，并进入项目目录：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/mrbruce516/ppocr.git
-</span></span><span style="display:flex;"><span>cd ppocr
-</span></span></code></pre></div><p>接下来，利用目录中提供的 <code>Dockerfile</code> 进行镜像构建。执行如下命令：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker build -t ppocr .
-</span></span></code></pre></div><p><strong>原理解析</strong>：在这个构建过程中，我们采用了 Docker 的多阶段构建（Multi-stage Build）。在第一阶段（builder）中，系统会下载并安装 Miniconda 以及所有的依赖库；而在第二阶段，我们仅将配置好的 Conda 虚拟环境复制到最终的基础镜像中，从而去除了 Conda 自身的庞大体积以及构建时的临时文件，使得镜像结构更加紧凑。</p>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">git clone https://github.com/mrbruce516/ppocr.git
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="nb">cd</span> ppocr</span></span></code></pre></div></div>
+<p>接下来，利用目录中提供的 <code>Dockerfile</code> 进行镜像构建。执行如下命令：</p>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">docker build -t ppocr .</span></span></code></pre></div></div>
+<p><strong>原理解析</strong>：在这个构建过程中，我们采用了 Docker 的多阶段构建（Multi-stage Build）。在第一阶段（builder）中，系统会下载并安装 Miniconda 以及所有的依赖库；而在第二阶段，我们仅将配置好的 Conda 虚拟环境复制到最终的基础镜像中，从而去除了 Conda 自身的庞大体积以及构建时的临时文件，使得镜像结构更加紧凑。</p>
 <hr>
 <h2 id="3-运行与交互式体验">3. 运行与交互式体验</h2>
 <p>镜像构建完成后，即可启动容器。为了方便数据交互与测试，推荐采用挂载本地目录的方式进入交互式终端（Interactive Shell）。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -it --rm <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --gpus <span style="color:#e6db74">&#39;&#34;device=0&#34;&#39;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -v ./test:/test <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    ppocr /bin/bash
-</span></span></code></pre></div><p><strong>参数说明</strong>：</p>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">docker run -it --rm <span class="se">\
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="se"></span>    --gpus <span class="s1">&#39;&#34;device=0&#34;&#39;</span> <span class="se">\
+</span></span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="se"></span>    -v ./test:/test <span class="se">\
+</span></span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="se"></span>    ppocr /bin/bash</span></span></code></pre></div></div>
+<p><strong>参数说明</strong>：</p>
 <ul>
 <li><code>-it</code>: 分配一个伪终端并保持标准输入打开，方便我们输入命令。</li>
 <li><code>--rm</code>: 容器退出时自动清理容器实例，避免占用磁盘空间。</li>
@@ -267,13 +271,14 @@
 <h2 id="4-执行-ocr-推理任务">4. 执行 OCR 推理任务</h2>
 <p>成功进入容器终端后，就可以使用 PaddleOCR 提供的命令行工具进行文本识别了。</p>
 <p>以下是一个针对 PDF 文件的识别示例：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>paddleocr ocr -i /test/your_file.pdf <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --use_doc_orientation_classify False <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --use_doc_unwarping False <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --use_textline_orientation False <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --save_path /test/output <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --device gpu:0
-</span></span></code></pre></div><h3 id="命令参数详解">命令参数详解</h3>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">paddleocr ocr -i /test/your_file.pdf <span class="se">\
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="se"></span>    --use_doc_orientation_classify False <span class="se">\
+</span></span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="se"></span>    --use_doc_unwarping False <span class="se">\
+</span></span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="se"></span>    --use_textline_orientation False <span class="se">\
+</span></span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="se"></span>    --save_path /test/output <span class="se">\
+</span></span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="se"></span>    --device gpu:0</span></span></code></pre></div></div>
+<h3 id="命令参数详解">命令参数详解</h3>
 <table>
 <thead>
 <tr>
@@ -390,26 +395,6 @@
         
         
         
-        <span id="/2026/ppocr-guide/" class="leancloud_visitors" data-flag-title="基于 Docker 的 PaddleOCR 快速部署与使用指南">
-            <em class="post-meta-item-text">访问量 </em>
-            <i class="leancloud-visitors-count"></i>
-            <p></p>
-        </span>
-        <div id="vcomments"></div>
-        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-        <script type="text/javascript">
-            new Valine({
-                el: '#vcomments',
-                appId: 'akZxFlWl93ch0j3q9zW344By-gzGzoHsz',
-                appKey: 'r0AJ6JpWaArIR0GoXVnxNY1R',
-                notify: '',
-                verify: '',
-                avatar: 'mp',
-                placeholder: '说点什么吧...',
-                visitor: 'true'
-            });
-        </script>
-        
     
     </div>
 </article>
@@ -432,7 +417,6 @@
         <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/mrbruce516/LeaveIt" target="_blank" rel="external nofollow">LeaveIt</a></span>
    </div>
 </footer>
-
 
 
 

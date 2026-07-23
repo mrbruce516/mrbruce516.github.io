@@ -57,7 +57,8 @@
  
 
 <script type="application/ld+json">
- "@context" : "http://schema.org",
+{
+    "@context" : "http://schema.org",
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
@@ -77,7 +78,7 @@
     "datePublished": "2021-12-09 12:59:39 \u002b0800 CST",
     "dateModified" : "2021-12-09 12:59:39 \u002b0800 CST",
     "url" : "https:\/\/blog.mrbruce516.online\/2021\/003\/",
-    "wordCount" : "3887",
+    "wordCount" : "3898",
     "keywords" : [ "raid", "麻吉麻社长"]
 }
 </script>    
@@ -176,7 +177,7 @@
                     datetime=2021-12-09
                     itemprop="datePublished">2021-12-09</time>
             </span>
-            <i class="far fa-file-word"></i> <span class="post-word-count"> 3887 字</span>
+            <i class="far fa-file-word"></i> <span class="post-word-count"> 3898 字</span>
             <i class="far fa-clock"></i> <span class="more-meta"> 8 分钟</span>
         </div>
     </header>
@@ -263,23 +264,25 @@
 <li>接下来开始纠结用lvm的raid模式还是直接通过mdadm直接抽象raid</li>
 </ol>
 <p>在查阅了大量帖子后，发现很多人也有这个疑问。。目前还没有可靠的对比分析，但是从设计上来看这两种模式分别对应以下两张图</p>
-<pre tabindex="0"><code># mdadm抽象raid模式
-| / | /var | /usr | /home  |
- --------------------------
-|       RAID Volume        |
- --------------------------
-| Disk 1 | Disk 2 | Disk 3 | 
-</code></pre><pre tabindex="0"><code># lvm创建raid模式
-| / | /var | /usr | /home  |
- --------------------------
-|       LVM Volume 2       |
- --------------------------
-|       RAID Volume        |
- --------------------------
-|       LVM Volume 1       |
- --------------------------
-| Disk 1 | Disk 2 | Disk 3 | 
-</code></pre><p>很明显，层级变多了，且好多大佬都猜测lvm创建raid可能是调用了mdadm而已。。</p>
+<div class="chroma-wrapper" data-lang="text">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="ln">1</span><span class="cl"># mdadm抽象raid模式
+</span></span><span class="line"><span class="ln">2</span><span class="cl">| / | /var | /usr | /home  |
+</span></span><span class="line"><span class="ln">3</span><span class="cl"> --------------------------
+</span></span><span class="line"><span class="ln">4</span><span class="cl">|       RAID Volume        |
+</span></span><span class="line"><span class="ln">5</span><span class="cl"> --------------------------
+</span></span><span class="line"><span class="ln">6</span><span class="cl">| Disk 1 | Disk 2 | Disk 3 | </span></span></code></pre></div></div>
+<div class="chroma-wrapper" data-lang="text">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="ln"> 1</span><span class="cl"># lvm创建raid模式
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">| / | /var | /usr | /home  |
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"> --------------------------
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">|       LVM Volume 2       |
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"> --------------------------
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">|       RAID Volume        |
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"> --------------------------
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">|       LVM Volume 1       |
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"> --------------------------
+</span></span><span class="line"><span class="ln">10</span><span class="cl">| Disk 1 | Disk 2 | Disk 3 | </span></span></code></pre></div></div>
+<p>很明显，层级变多了，且好多大佬都猜测lvm创建raid可能是调用了mdadm而已。。</p>
 <blockquote>
 <p>Creating mdadm arrays on top of an LVM logical volume is nonsense. It technically works, but completely defeats the point of almost everything involved.</p>
 <p>However, LVM can create logical volumes that are backed by a software RAID. You still get all the fancy bits of LVM, though. Like the ability to move which physical disk is holding the stripes of your RAID. Afaik, LVM&rsquo;s software raid is actually just a call to mdadm anyway, so that adds an extra bit of confusion.</p>
@@ -449,26 +452,6 @@
         
         
         
-        <span id="/2021/003/" class="leancloud_visitors" data-flag-title="理清磁盘冗余技术">
-            <em class="post-meta-item-text">访问量 </em>
-            <i class="leancloud-visitors-count"></i>
-            <p></p>
-        </span>
-        <div id="vcomments"></div>
-        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-        <script type="text/javascript">
-            new Valine({
-                el: '#vcomments',
-                appId: 'akZxFlWl93ch0j3q9zW344By-gzGzoHsz',
-                appKey: 'r0AJ6JpWaArIR0GoXVnxNY1R',
-                notify: '',
-                verify: '',
-                avatar: 'mp',
-                placeholder: '说点什么吧...',
-                visitor: 'true'
-            });
-        </script>
-        
     
     </div>
 </article>
@@ -503,10 +486,9 @@
 
 
 
-
     
      <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
-      
+     
      <script src="/js/vendor_gallery.min.js" async="" ></script>
     
   

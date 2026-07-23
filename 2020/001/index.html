@@ -57,7 +57,8 @@
  
 
 <script type="application/ld+json">
- "@context" : "http://schema.org",
+{
+    "@context" : "http://schema.org",
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
@@ -77,7 +78,7 @@
     "datePublished": "2020-01-08 15:52:52 \u002b0800 CST",
     "dateModified" : "2020-01-08 15:52:52 \u002b0800 CST",
     "url" : "https:\/\/blog.mrbruce516.online\/2020\/001\/",
-    "wordCount" : "484",
+    "wordCount" : "516",
     "keywords" : [ "yum","linux","包管理器", "麻吉麻社长"]
 }
 </script>    
@@ -176,8 +177,8 @@
                     datetime=2020-01-08
                     itemprop="datePublished">2020-01-08</time>
             </span>
-            <i class="far fa-file-word"></i> <span class="post-word-count"> 484 字</span>
-            <i class="far fa-clock"></i> <span class="more-meta"> 1 分钟</span>
+            <i class="far fa-file-word"></i> <span class="post-word-count"> 516 字</span>
+            <i class="far fa-clock"></i> <span class="more-meta"> 2 分钟</span>
         </div>
     </header>
         
@@ -229,32 +230,38 @@
 <p>  稍微提一句，一般系统镜像在<a href="https://developer.aliyun.com/mirror">阿里源</a>上即可获取。</p>
 <h3 id="step2-导入镜像">Step.2 导入镜像</h3>
 <p>  下载完成后，通过工具（ftp、scp等）导入系统，在系统中创建一个存放系统镜像的盘。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir /mnt/iso      <span style="color:#75715e">#用于存放系统镜像</span>
-</span></span><span style="display:flex;"><span>mkdir /mnt/cdrom    <span style="color:#75715e">#用于挂载目录</span>
-</span></span></code></pre></div><p>  创建好存放路径后</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#挂载镜像到cdrom下</span>
-</span></span><span style="display:flex;"><span>mount -o loop /mnt/iso/XXXXX.iso /mnt/cdrom
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看挂载情况</span>
-</span></span><span style="display:flex;"><span>df -h
-</span></span></code></pre></div><h3 id="step3-编写yum源文件">Step.3 编写yum源文件</h3>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">mkdir /mnt/iso      <span class="c1">#用于存放系统镜像</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">mkdir /mnt/cdrom    <span class="c1">#用于挂载目录</span></span></span></code></pre></div></div>
+<p>  创建好存放路径后</p>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="c1">#挂载镜像到cdrom下</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">mount -o loop /mnt/iso/XXXXX.iso /mnt/cdrom
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c1"># 查看挂载情况</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">df -h</span></span></code></pre></div></div>
+<h3 id="step3-编写yum源文件">Step.3 编写yum源文件</h3>
 <p>  若镜像挂载完毕，上述工作全部准备就绪，基本大部分工作已完成了，最后一步编写yum源文件，即可以后每次 <code>yum install</code> 的时候从本地镜像中离线安装软件，非常方便。</p>
 <p><strong>Yum源文件路径</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /etc/yum.repos.d
-</span></span></code></pre></div><p><strong>编写yum文件</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim local.repo
-</span></span></code></pre></div><p><strong>内容如下</strong></p>
-<pre tabindex="0"><code class="language-repo" data-lang="repo">[local]
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="nb">cd</span> /etc/yum.repos.d</span></span></code></pre></div></div>
+<p><strong>编写yum文件</strong></p>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">vim local.repo</span></span></code></pre></div></div>
+<p><strong>内容如下</strong></p>
+<div class="chroma-wrapper" data-lang="repo">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><pre tabindex="0"><code class="language-repo" data-lang="repo">[local]
 name=local
 #注：这里的baseurl就是你挂载的目录，在这里是/mnt/cdrom
 baseurl=file:///mnt/cdrom
 #注：这里的值enabled一定要为1
 enabled=1
 #文件校验，我一般就关掉了
-gpgcheck=0
-</code></pre><h3 id="测试一下">测试一下</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yum clean all
-</span></span><span style="display:flex;"><span>yum search xxx
-</span></span></code></pre></div>
+gpgcheck=0</code></pre></div>
+<h3 id="测试一下">测试一下</h3>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">yum clean all
+</span></span><span class="line"><span class="ln">2</span><span class="cl">yum search xxx</span></span></code></pre></div></div>
+
     </div>
 
     <div class="post-copyright">
@@ -321,26 +328,6 @@ gpgcheck=0
         
         
         
-        <span id="/2020/001/" class="leancloud_visitors" data-flag-title="如何搭离线yum源">
-            <em class="post-meta-item-text">访问量 </em>
-            <i class="leancloud-visitors-count"></i>
-            <p></p>
-        </span>
-        <div id="vcomments"></div>
-        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-        <script type="text/javascript">
-            new Valine({
-                el: '#vcomments',
-                appId: 'akZxFlWl93ch0j3q9zW344By-gzGzoHsz',
-                appKey: 'r0AJ6JpWaArIR0GoXVnxNY1R',
-                notify: '',
-                verify: '',
-                avatar: 'mp',
-                placeholder: '说点什么吧...',
-                visitor: 'true'
-            });
-        </script>
-        
     
     </div>
 </article>
@@ -363,7 +350,6 @@ gpgcheck=0
         <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/mrbruce516/LeaveIt" target="_blank" rel="external nofollow">LeaveIt</a></span>
    </div>
 </footer>
-
 
 
 

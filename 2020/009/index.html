@@ -57,7 +57,8 @@
  
 
 <script type="application/ld+json">
- "@context" : "http://schema.org",
+{
+    "@context" : "http://schema.org",
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
@@ -77,7 +78,7 @@
     "datePublished": "2020-10-28 14:08:29 \u002b0800 CST",
     "dateModified" : "2020-10-28 14:08:29 \u002b0800 CST",
     "url" : "https:\/\/blog.mrbruce516.online\/2020\/009\/",
-    "wordCount" : "2455",
+    "wordCount" : "2502",
     "keywords" : [ "linux", "麻吉麻社长"]
 }
 </script>    
@@ -176,7 +177,7 @@
                     datetime=2020-10-28
                     itemprop="datePublished">2020-10-28</time>
             </span>
-            <i class="far fa-file-word"></i> <span class="post-word-count"> 2455 字</span>
+            <i class="far fa-file-word"></i> <span class="post-word-count"> 2502 字</span>
             <i class="far fa-clock"></i> <span class="more-meta"> 5 分钟</span>
         </div>
     </header>
@@ -242,11 +243,12 @@
 <p>加密的意思是将一段数据经过处理之后，输出为一段外人无法或者很难破译的数据，除了指定的人可以解密之外。
 一般来说，加密的输入还会有一个key，这个key作为加密的参数，而在解密的时候也会用一个相关联(有可能是相同)的key作为输入。
 粗略来说是下面的流程：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 加密方</span>
-</span></span><span style="display:flex;"><span>encrypted_data <span style="color:#f92672">=</span> encrypt<span style="color:#f92672">(</span>raw_data, key<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 解密方</span>
-</span></span><span style="display:flex;"><span>raw_data <span style="color:#f92672">=</span> decrypt<span style="color:#f92672">(</span>encrypted_data, key1<span style="color:#f92672">)</span>
-</span></span></code></pre></div><p>目前主流的加密算法一般分为下面两类：</p>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="c1"># 加密方</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="nv">encrypted_data</span> <span class="o">=</span> encrypt<span class="o">(</span>raw_data, key<span class="o">)</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c1"># 解密方</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="nv">raw_data</span> <span class="o">=</span> decrypt<span class="o">(</span>encrypted_data, key1<span class="o">)</span></span></span></code></pre></div></div>
+<p>目前主流的加密算法一般分为下面两类：</p>
 <ol>
 <li><a href="https://link.zhihu.com/?target=http%3A//en.wikipedia.org/wiki/Symmetric-key_algorithm">私钥(secret key)加密</a>，也称为对称加密</li>
 <li><a href="https://link.zhihu.com/?target=http%3A//en.wikipedia.org/wiki/Public-key_encryption">公钥(public key)加密</a></li>
@@ -281,10 +283,12 @@ A怎么可以判断发送回来的数据就真的是B发送的呢？现实中有
 <li>将公钥上传到服务器上</li>
 </ol>
 <h3 id="生成ssh私钥和公钥">生成SSH私钥和公钥</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-keygen		<span style="color:#75715e"># ssh-keygen不带参数默认为rsa加密</span>
-</span></span></code></pre></div><p>如果你只输入ssh-keygen生成的RSA密钥长度为2048，如果你对安全性要求比较高可以指定4096位的长度：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-keygen -b <span style="color:#ae81ff">4096</span> -t rsa
-</span></span></code></pre></div><p>这里-b就是多少位，当然你对这些参数感兴趣可以使用&ndash;help参数看看具体的含义和解释。</p>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">ssh-keygen		<span class="c1"># ssh-keygen不带参数默认为rsa加密</span></span></span></code></pre></div></div>
+<p>如果你只输入ssh-keygen生成的RSA密钥长度为2048，如果你对安全性要求比较高可以指定4096位的长度：</p>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">ssh-keygen -b <span class="m">4096</span> -t rsa</span></span></code></pre></div></div>
+<p>这里-b就是多少位，当然你对这些参数感兴趣可以使用&ndash;help参数看看具体的含义和解释。</p>
 <p>当你在生成SSHKEY的时候在命令行下会提示你Enter file in which to save the key，让你确认密钥文件保存的路径，
 一般回车即可（一般默认会在当前用户家目录下的.ssh目录下）。</p>
 <p>第二个提示是 Enter passphrase (empty for no passphrase) 让你输入一个密钥的密码，如果不输入则留空；回车生成公私钥完毕 :)</p>
@@ -294,15 +298,18 @@ A怎么可以判断发送回来的数据就真的是B发送的呢？现实中有
 <p>我们前面在自己的操作系统生成了公私钥，然后将公钥的内容告诉给服务器就可以了，让服务器知道自己公钥的操作方式还蛮多的。</p>
 <h3 id="上传公钥文件">上传公钥文件</h3>
 <p>将本地的公钥文件上传到服务器上，如果说你已经给服务器设置过别名了，那么这个过程将会非常的简单便捷，具体看下面的代码。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 若已设置过别名</span>
-</span></span><span style="display:flex;"><span>scp id_rsa.pub $你设置好的别名:
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 若无设置别名</span>
-</span></span><span style="display:flex;"><span>scp -P $端口 id_rsa.pub $用户@$IP:
-</span></span></code></pre></div><p>然后在服务器需要免密登录的用户家目录下查看是否有 ~/.ssh/authorized_keys 这个文件，如果没有手动创建一个:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>touch ~/.ssh/authorized_keys
-</span></span></code></pre></div><p>然后我们将公钥内容写入到authorized_keys文件中，因为这个文件可能已经有内容了，所以你可以使用如下方式</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat ~/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys
-</span></span></code></pre></div><p>这样就将公钥内容追加到authorized_keys中了，然后需要注意配置权限了，否则SSH不会工作的，我在这里踩了坑。。</p>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="c1"># 若已设置过别名</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">scp id_rsa.pub $你设置好的别名:
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c1"># 若无设置别名</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">scp -P $端口 id_rsa.pub $用户@<span class="nv">$IP</span>:</span></span></code></pre></div></div>
+<p>然后在服务器需要免密登录的用户家目录下查看是否有 ~/.ssh/authorized_keys 这个文件，如果没有手动创建一个:</p>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">touch ~/.ssh/authorized_keys</span></span></code></pre></div></div>
+<p>然后我们将公钥内容写入到authorized_keys文件中，因为这个文件可能已经有内容了，所以你可以使用如下方式</p>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">cat ~/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</span></span></code></pre></div></div>
+<p>这样就将公钥内容追加到authorized_keys中了，然后需要注意配置权限了，否则SSH不会工作的，我在这里踩了坑。。</p>
 <ol>
 <li>将.ssh目录的权限为700</li>
 <li>将authorized_keys目录的权限为600</li>
@@ -321,8 +328,9 @@ A怎么可以判断发送回来的数据就真的是B发送的呢？现实中有
 <p>指定 ssh 只能使用配置文件指定的 identity 和 certificate 文件或通过 ssh 命令行通过身份验证，即使 ssh-agent 或 PKCS11Provider 提供了多个 identities。值可以为 no(default)/yes。</p>
 </blockquote>
 <p>如果说一切配置正常，那么使用使用ssh登录到服务器将会是一件非常爽快的事情</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh $服务器别名
-</span></span></code></pre></div><p>这一行命令就免密登录上你的机器啦</p>
+<div class="chroma-wrapper" data-lang="bash">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">ssh $服务器别名</span></span></code></pre></div></div>
+<p>这一行命令就免密登录上你的机器啦</p>
 
     </div>
 
@@ -384,26 +392,6 @@ A怎么可以判断发送回来的数据就真的是B发送的呢？现实中有
         
         
         
-        <span id="/2020/009/" class="leancloud_visitors" data-flag-title="玩转ssh免密登录">
-            <em class="post-meta-item-text">访问量 </em>
-            <i class="leancloud-visitors-count"></i>
-            <p></p>
-        </span>
-        <div id="vcomments"></div>
-        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-        <script type="text/javascript">
-            new Valine({
-                el: '#vcomments',
-                appId: 'akZxFlWl93ch0j3q9zW344By-gzGzoHsz',
-                appKey: 'r0AJ6JpWaArIR0GoXVnxNY1R',
-                notify: '',
-                verify: '',
-                avatar: 'mp',
-                placeholder: '说点什么吧...',
-                visitor: 'true'
-            });
-        </script>
-        
     
     </div>
 </article>
@@ -438,10 +426,9 @@ A怎么可以判断发送回来的数据就真的是B发送的呢？现实中有
 
 
 
-
     
      <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
-      
+     
      <script src="/js/vendor_gallery.min.js" async="" ></script>
     
   
