@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Test on 麻吉麻社长</title>
+    <link>https://blog.mrbruce516.online/tags/test/</link>
+    <description>Recent content in Test on 麻吉麻社长</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 24 Jul 2026 10:00:00 +0800</lastBuildDate>
+    <atom:link href="https://blog.mrbruce516.online/tags/test/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TMP TEST featured_image</title>
+      <link>https://blog.mrbruce516.online/2026/_tmp_featured_test/</link>
+      <pubDate>Fri, 24 Jul 2026 10:00:00 +0800</pubDate>
+      <guid>https://blog.mrbruce516.online/2026/_tmp_featured_test/</guid>
+      <description>正文测试占位。</description>
+    </item>
+  </channel>
+</rss>
