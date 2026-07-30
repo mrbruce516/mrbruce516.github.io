@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="theme-color" content="#ffffff">
+  
+  <meta name="baidu-site-verification" content="e0YUuV3foo" />
+  
+  <meta name="keywords" content="claude-code, 权限模式, 安全, agent">
+  
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/gh/mrbruce516/LeaveIt/assets/js/APlayer.min.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+
+  
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="麻吉麻社长">
+  <meta name="description" content="麻吉麻社长的个人博客">
+  <meta name="google-site-verification" content="qBhN37UVDaBUvaz17i59dfjE4jbN-y-8Q_8EDJSxTUo" />
+  <link rel="prev" href="https://blog.mrbruce516.online/2026/lvm-commands/" />
+  
+  <link rel="canonical" href="https://blog.mrbruce516.online/2026/claude-code-permission-modes/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Claude Code 权限模式详解 | 麻吉麻社长
+       
+  </title>
+  <meta name="title" content="Claude Code 权限模式详解 | 麻吉麻社长">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/blog.mrbruce516.online\/2026\/claude-code-permission-modes\/"
+    },
+    "articleSection": "posts",
+    "name": "Claude Code 权限模式详解",
+    "headline": "Claude Code 权限模式详解",
+    "description": "Claude Code 六种权限模式(default\/acceptEdits\/plan\/auto\/dontAsk\/bypassPermissions)的完整解读：各自能做什么、不能做什么、适用场景，以及受保护路径与切换方式。",
+    "inLanguage": "zh-CN",
+    "author": {
+        "@type": "Person",
+        "name": "麻吉麻社长"
+    },
+    "publisher": {
+        "@type": "Person",
+        "name": "麻吉麻社长"
+    },
+    "copyrightYear": "2026",
+    "datePublished": "2026-07-30T23:09:02\u002b08:00",
+    "dateModified": "2026-07-30T23:09:02\u002b08:00",
+    "url": "https:\/\/blog.mrbruce516.online\/2026\/claude-code-permission-modes\/",
+    "wordCount": "4753",
+    "image": "https:\/\/blog.mrbruce516.online\/images\/seo\/og-default.jpg",
+    "keywords": ["claude-code", "ai", "权限", "安全"]
+}
+</script>
+
+  <meta property="og:site_name" content="麻吉麻社长">
+<meta property="og:title" content="Claude Code 权限模式详解">
+<meta property="og:url" content="https://blog.mrbruce516.online/2026/claude-code-permission-modes/">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:type" content="article">
+<meta property="og:description" content="Claude Code 六种权限模式(default/acceptEdits/plan/auto/dontAsk/bypassPermissions)的完整解读：各自能做什么、不能做什么、适用场景，以及受保护路径与切换方式。">
+<meta property="og:image" content="https://blog.mrbruce516.online/images/seo/og-default.jpg">
+<meta property="article:published_time" content="2026-07-30T23:09:02&#43;08:00">
+<meta property="article:modified_time" content="2026-07-30T23:09:02&#43;08:00">
+<meta property="article:tag" content="claude-code">
+<meta property="article:tag" content="ai">
+<meta property="article:tag" content="权限">
+<meta property="article:tag" content="安全">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Claude Code 权限模式详解">
+<meta name="twitter:description" content="Claude Code 六种权限模式(default/acceptEdits/plan/auto/dontAsk/bypassPermissions)的完整解读：各自能做什么、不能做什么、适用场景，以及受保护路径与切换方式。">
+<meta name="twitter:image" content="https://blog.mrbruce516.online/images/seo/og-default.jpg">
+<meta name="twitter:site" content="@kgrskmio">
+<meta name="twitter:creator" content="@kgrskmio">
+
+  <link href="//use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    
+        <div class="top-scroll-bar"></div>
+    
+    <div class="container">
+        
+            <div class="navbar-header header-back2home-logo">
+                <span class="logo_mark" >>$</span>
+                <a href="https://blog.mrbruce516.online/">
+                    <span class="logo_text" >cd /home/</span>
+                    <span class="logo_cursor" ></span>
+                </a>
+            </div>
+        
+        <div class="navbar-right">
+                
+                <span class="menu">
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                </span>
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     
+         <div class="top-scroll-bar"></div>
+     
+     <div class="container">
+        <div class="navbar-header">
+            <div class="header-logo">
+                
+                    <span class="logo_mark">>$</span>
+                    <a href="https://blog.mrbruce516.online/">
+                        <span class="logo_text"> cd /home/ </span>
+                        <span class="logo_cursor"></span>
+                </a>
+                
+            </div>
+            <div class="navbar-right">
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a>
+                <div class="menu-toggle">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Claude Code 权限模式详解</h1>
+        <div class="post-meta">
+            <i class="far fa-folder-open"></i>
+            <span class="post-category">
+                <a href="https://blog.mrbruce516.online/categories/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/"> 效率工具 </a>
+                
+            </span>
+            <span class="post-time">
+                <i class="far fa-calendar-alt"></i> <time
+                    datetime=2026-07-30
+                    itemprop="datePublished">2026-07-30</time>
+            </span>
+            <i class="far fa-file-word"></i> <span class="post-word-count"> 4753 字</span>
+            <i class="far fa-clock"></i> <span class="more-meta"> 10 分钟</span>
+        </div>
+    </header>
+        
+            <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title"></h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#总览">总览</a></li>
+    <li><a href="#切换方式通用">切换方式（通用）</a></li>
+    <li><a href="#1-default默认--manual-模式">1. default（默认 / Manual 模式）</a></li>
+    <li><a href="#2-acceptedits自动接受编辑模式">2. acceptEdits（自动接受编辑模式）</a></li>
+    <li><a href="#3-plan计划模式">3. plan（计划模式）</a></li>
+    <li><a href="#4-auto自动模式--全自动带安全检查">4. auto（自动模式 / 全自动带安全检查）</a></li>
+    <li><a href="#5-dontask只允许预批准工具">5. dontAsk（只允许预批准工具）</a></li>
+    <li><a href="#6-bypasspermissions跳过所有检查">6. bypassPermissions（跳过所有检查）</a></li>
+    <li><a href="#受保护路径所有模式通用">受保护路径（所有模式通用）</a></li>
+    <li><a href="#实用提示">实用提示</a></li>
+    <li><a href="#文档来源">文档来源</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+        
+    <div class="post-content">
+        
+
+        
+        
+        
+
+        
+        
+        
+
+        <blockquote>
+<p>权限模式决定 Claude 在执行文件编辑、shell 命令、网络请求前&quot;停下来问你&quot;的频率。所有模式都以你的权限规则（allow / ask / deny）为基线，模式只改变基线的松紧。</p>
+<p>本文是 <a href="/2026/claude-code-guide/">Claude Code 命令行活用指南</a> 的姊妹篇，专讲权限这一块。</p>
+</blockquote>
+<h2 id="总览">总览</h2>
+<table>
+<thead>
+<tr>
+<th>模式（配置值）</th>
+<th>CLI 状态栏标签</th>
+<th>无需提示即可执行</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>default</code></td>
+<td>Manual</td>
+<td>仅读取</td>
+<td>入门、敏感操作</td>
+</tr>
+<tr>
+<td><code>acceptEdits</code></td>
+<td><code>⏵⏵ accept edits on</code></td>
+<td>读取、文件编辑、常见文件系统命令</td>
+<td>边改边 review 的迭代</td>
+</tr>
+<tr>
+<td><code>plan</code></td>
+<td><code>⏸ plan mode on</code></td>
+<td>读取，外加（auto 可用时）分类器批准的命令</td>
+<td>动手前先探查、出方案</td>
+</tr>
+<tr>
+<td><code>auto</code></td>
+<td><code>⏵⏵ auto mode on</code></td>
+<td>几乎一切，带后台分类器安全检查</td>
+<td>长任务、减少提示疲劳</td>
+</tr>
+<tr>
+<td><code>dontAsk</code></td>
+<td><code>⏵⏵ don't ask on</code></td>
+<td>仅预批准工具</td>
+<td>锁定的 CI、脚本</td>
+</tr>
+<tr>
+<td><code>bypassPermissions</code></td>
+<td><code>⏵⏵ bypass permissions on</code></td>
+<td>一切（含受保护路径）</td>
+<td>仅限隔离容器/VM</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>命名差异：审查每个动作的模式在 CLI、<code>claude --help</code>、IDE 中都叫 <strong>Manual</strong>，但配置值是 <code>default</code>。CLI 接受 <code>manual</code> 作为别名。</p>
+</blockquote>
+<h2 id="切换方式通用">切换方式（通用）</h2>
+<ul>
+<li><strong>会话中</strong>：按 <code>Shift+Tab</code> 循环 <code>default → acceptEdits → plan</code>，再回到 default。<code>auto</code>、<code>bypassPermissions</code> 在满足条件时插入循环。Windows 上若 VT 输入未启用，改用 <code>Alt+M</code>。</li>
+<li><strong>单次提示进 plan</strong>：在提示前加 <code>/plan</code>。</li>
+<li><strong>启动时</strong>：<code>claude --permission-mode &lt;mode&gt;</code>（同样支持 <code>-p</code> 非交互运行）。</li>
+<li><strong>持久默认</strong>：settings 文件中设 <code>permissions.defaultMode</code>。</li>
+</ul>
+<p><code>auto</code>、<code>bypassPermissions</code>、<code>dontAsk</code> 不在默认循环里：</p>
+<ul>
+<li><code>auto</code>：账号满足要求时才出现在循环中。</li>
+<li><code>bypassPermissions</code>：需用 <code>--permission-mode bypassPermissions</code>、<code>--dangerously-skip-permissions</code> 启动，之后才进入循环；普通会话启动后无法切进去。</li>
+<li><code>dontAsk</code>：永不进入循环，只能用 <code>--permission-mode dontAsk</code> 启动。</li>
+</ul>
+<hr>
+<h2 id="1-default默认--manual-模式">1. default（默认 / Manual 模式）</h2>
+<ul>
+<li><strong>触发</strong>：默认即此模式；<code>Shift+Tab</code> 循环到它；<code>claude --permission-mode default</code>（或 <code>manual</code>）。</li>
+<li><strong>能做</strong>：读取文件、运行内置只读 Bash 命令，无需提示。</li>
+<li><strong>不能做</strong>：任何写文件、非只读 shell 命令、网络请求都要先问你。</li>
+<li><strong>适用</strong>：刚入门、做敏感操作、对方向还不确定时，逐个审查每个动作。</li>
+<li><strong>注意</strong>：受保护路径写入仍会提示。</li>
+</ul>
+<h2 id="2-acceptedits自动接受编辑模式">2. acceptEdits（自动接受编辑模式）</h2>
+<ul>
+<li><strong>触发</strong>：<code>Shift+Tab</code> 从 Manual 按一次进入；<code>claude --permission-mode acceptEdits</code>；或 settings <code>defaultMode: &quot;acceptEdits&quot;</code>。</li>
+<li><strong>能做（免提示）</strong>：
+<ul>
+<li>在工作目录（及 <code>additionalDirectories</code>）内创建/编辑文件；</li>
+<li>常见文件系统命令：<code>mkdir</code>、<code>touch</code>、<code>rm</code>、<code>rmdir</code>、<code>mv</code>、<code>cp</code>、<code>sed</code>；带安全环境变量前缀（如 <code>LANG=C</code>、<code>NO_COLOR=1</code>）或进程包装（<code>timeout</code>、<code>nice</code>、<code>nohup</code>）也免提示；</li>
+<li>启用 PowerShell 工具时，<code>Set-Content</code>、<code>Add-Content</code>、<code>Clear-Content</code>、<code>Remove-Item</code> 及常见别名同样免提示。</li>
+</ul>
+</li>
+<li><strong>不能做（仍提示）</strong>：工作目录外的路径、受保护路径写入、除内置只读集外的其他 Bash 命令。</li>
+<li><strong>适用</strong>：你愿意事后用编辑器或 <code>git diff</code> 审查改动，而不是逐条批准内联编辑。</li>
+<li><strong>注意</strong>：仅限工作目录内；范围外和受保护路径仍提示。</li>
+</ul>
+<h2 id="3-plan计划模式">3. plan（计划模式）</h2>
+<ul>
+<li><strong>触发</strong>：<code>Shift+Tab</code> 循环到；提示前加 <code>/plan</code>；<code>claude --permission-mode plan</code>；或 settings <code>defaultMode: &quot;plan&quot;</code>。再按 <code>Shift+Tab</code> 可不批准计划直接退出 plan。</li>
+<li><strong>能做</strong>：读文件、跑命令探查代码库、写出计划方案——但不编辑源码。</li>
+<li><strong>不能做</strong>：编辑源码（在有 bypass 的会话除外）。命令方面：
+<ul>
+<li>当 auto 模式可用且 <code>useAutoModeDuringPlan</code> 开启（默认开）时，分类器审查 shell 命令：批准的运行，拒绝的阻断；</li>
+<li>否则，除内置只读集外的命令都要提示批准；</li>
+<li>有 bypass 权限的会话跳过这两条路径。</li>
+</ul>
+</li>
+<li><strong>计划审批</strong>：Claude 呈现计划后可选：
+<ul>
+<li>Yes, and use auto mode（auto 不可用时显示 &ldquo;Yes, auto-accept edits&rdquo;；bypass 会话显示 &ldquo;Yes, and bypass permissions&rdquo;）；</li>
+<li>Yes, manually approve edits；</li>
+<li>No, refine with Ultraplan on Claude Code on the web（送到浏览器审阅）；</li>
+<li>No, keep planning。</li>
+<li><code>Ctrl+G</code> 可在默认文本编辑器里直接改写计划再继续。</li>
+</ul>
+</li>
+<li><strong>适用</strong>：动手前先理解代码库、出方案再执行。</li>
+<li><strong>注意</strong>：批准计划即退出 plan，切到对应模式开始编辑；想再规划要重新切回 plan。</li>
+</ul>
+<p>设为项目默认（<code>.claude/settings.json</code>）：</p>
+<div class="chroma-wrapper" data-lang="json">
+  <button class="copy-code-btn" type="button" aria-label="复制代码">复制</button><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="ln">1</span><span class="cl"><span class="p">{</span> <span class="nt">&#34;permissions&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&#34;defaultMode&#34;</span><span class="p">:</span> <span class="s2">&#34;plan&#34;</span> <span class="p">}</span> <span class="p">}</span></span></span></code></pre></div></div>
+<h2 id="4-auto自动模式--全自动带安全检查">4. auto（自动模式 / 全自动带安全检查）</h2>
+<p>这是&quot;全自动&quot;的推荐方式——不是无脑放行，而是由独立分类器模型在执行前审查每个动作，阻断越界行为。</p>
+<ul>
+<li><strong>触发</strong>：满足账号要求时出现在 <code>Shift+Tab</code> 循环中；<code>claude --permission-mode auto</code>；settings <code>defaultMode: &quot;auto&quot;</code>（<strong>仅用户/托管 settings 生效</strong>，会忽略项目/本地 settings 里的 <code>auto</code>，防止仓库自行授予 auto）。</li>
+<li><strong>能做</strong>：几乎一切，分类器判定安全即放行。默认放行：工作目录内本地文件操作、按锁文件/清单装依赖、读 <code>.env</code> 并把凭据发给匹配的 API、只读 HTTP、push 到当前仓库任意分支、创建符合请求的 PR 等。</li>
+<li><strong>不能做（分类器默认阻断）</strong>：下载并执行代码（<code>curl | bash</code>）、向外部端点发敏感数据、生产部署/迁移、云存储批量删除、授予 IAM/repo 权限、改共享基础设施、不可逆销毁会话前已存在文件、force push、<code>git reset --hard</code>/<code>git checkout -- .</code>/<code>git restore .</code>/<code>git clean -fd</code>/<code>git stash drop</code>/<code>git stash clear</code>、<code>git commit --amend</code>（HEAD 非本会话创建，或已 push）、<code>terraform/pulumi/cdk/terragrunt destroy</code> 及销毁性 apply；还阻断写 secret manager、改 DNS/TLS、合并无人批准的 PR、关 CI 检查、改生产 feature flag、对受保护 IaC 施变更、开反向隧道、打印活凭据、绕过内部包仓库装包、用 <code>--insecure</code> 等解除安全护栏的命令、启动无沙箱无人审批的自治 agent 循环等。<code>rm -rf /</code> 和 <code>rm -rf ~</code>（含命令/进程替换形式）由分类器判定。</li>
+<li><strong>边界</strong>：你在对话里声明的边界（如&quot;别 push&quot;&ldquo;部署前等我 review&rdquo;）会被分类器当作阻断信号，直到你后续消息解除。但边界不存为规则，上下文压缩可能丢失——要硬保证就加 deny 规则。</li>
+<li><strong>回退</strong>：连续被阻断 3 次或累计 20 次，auto 暂停并恢复提示；批准被提示的动作即恢复 auto。阈值不可配。非交互 <code>-p</code> 模式下重复阻断会中止会话。</li>
+<li><strong>成本/延迟</strong>：分类器默认跑在 Claude Sonnet 5，而非你的 <code>/model</code>；调用计入 token 用量。读取和工作目录内编辑（非受保护路径）跳过分类器，开销主要来自 shell 命令和网络。</li>
+<li><strong>账号要求</strong>：所有套餐；Team/Enterprise 默认开（管理员可用 <code>permissions.disableAutoMode: &quot;disable&quot;</code> 关闭）；模型需 Opus 4.6+/Sonnet 4.6+/Fable 5。</li>
+<li><strong>适用</strong>：长任务、信任大方向但想要后台安全网。<strong>官方明确：auto 减少提示但不保证安全，不能替代对敏感操作的审查。</strong></li>
+<li><strong>注意</strong>：进入 auto 时，宽泛的代码执行 allow 规则（如 <code>Bash(*)</code>、<code>Bash(python*)</code>、包管理器 run、<code>Agent</code> allow）会被丢弃，离开时恢复；窄规则（如 <code>Bash(npm test)</code>）保留。</li>
+</ul>
+<p>查看完整默认规则：<code>claude auto-mode defaults</code>（输出 JSON）。</p>
+<h2 id="5-dontask只允许预批准工具">5. dontAsk（只允许预批准工具）</h2>
+<ul>
+<li><strong>触发</strong>：<code>claude --permission-mode dontAsk</code>（永不进入 <code>Shift+Tab</code> 循环）。</li>
+<li><strong>能做</strong>：仅匹配 <code>permissions.allow</code> 规则的动作、内置只读 Bash 命令、被 PreToolUse hook 批准的调用。会话永不等待输入。</li>
+<li><strong>不能做</strong>：其余一切自动拒绝；显式 <code>ask</code> 规则匹配的调用被拒绝（而非提示）；内置 <code>AskUserQuestion</code> 工具被拒；组织设为 <code>ask</code> 的连接器工具被拒；MCP 工具标记 <code>requiresUserInteraction</code> 的也被拒。</li>
+<li><strong>适用</strong>：CI 流水线、受限环境，你已预先精确设定 Claude 能做什么。</li>
+<li><strong>注意</strong>：云会话（Claude Code on the web）忽略 <code>defaultMode: &quot;dontAsk&quot;</code>。</li>
+</ul>
+<h2 id="6-bypasspermissions跳过所有检查">6. bypassPermissions（跳过所有检查）</h2>
+<ul>
+<li><strong>触发</strong>：<code>claude --permission-mode bypassPermissions</code>，或等价的 <code>--dangerously-skip-permissions</code>，或 settings <code>defaultMode: &quot;bypassPermissions&quot;</code>，或 <code>--allow-dangerously-skip-permissions</code>（仅加入循环不激活）。一旦普通会话启动后无法切进去。</li>
+<li><strong>能做</strong>：一切立即执行，包括写入受保护路径。</li>
+<li><strong>仍会提示（即使此模式）</strong>：
+<ul>
+<li>显式 <code>ask</code> 规则、组织设为 <code>ask</code> 的连接器工具、<code>requiresUserInteraction</code> 标记的 MCP 工具；</li>
+<li>针对 <code>/</code> 和 <code>~</code> 的删除（如 <code>rm -rf /</code>、<code>rm -rf ~</code>）作为&quot;熔断器&quot;；含 <code>$(...)</code>、反引号、<code>&lt;(...)</code> 的命令也触发，无论删除在替换内还是同命令别处。</li>
+</ul>
+</li>
+<li><strong>安全限制</strong>：
+<ul>
+<li>首次交互启动会弹警告对话框要求你承担责任，接受后存到用户 settings（仅一次）；拒绝则退出；非交互模式不弹窗；<code>--bg</code> 后台会话在你交互接受前会被拒绝；</li>
+<li>Linux/macOS 上以 root 或 sudo 运行时拒绝启动（识别到的沙箱内自动跳过此检查），建议用 dev container 配置以非 root 用户跑。</li>
+</ul>
+</li>
+<li><strong>适用</strong>：仅限隔离环境——容器、VM、无网络的 dev container，Claude 伤不到宿主。</li>
+<li><strong>注意</strong>：官方警告此模式对 prompt 注入或意外动作无任何防护。要&quot;少提示但有安全网&quot;请用 auto 而非 bypass。管理员可用 <code>permissions.disableBypassPermissionsMode: &quot;disable&quot;</code> 在托管 settings 中禁用。</li>
+</ul>
+<hr>
+<h2 id="受保护路径所有模式通用">受保护路径（所有模式通用）</h2>
+<p>写入下列路径除 <code>bypassPermissions</code>（及有 bypass 的 plan 会话）外永不自动批准，防止破坏仓库状态和 Claude 自身配置。<code>permissions.allow</code> 规则也<strong>不能</strong>预批准这些写入（安全检查在 allow 规则之前执行）。</p>
+<p>各模式对受保护路径写入的处理：</p>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>受保护路径写入</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>default</code>、<code>acceptEdits</code></td>
+<td>提示</td>
+</tr>
+<tr>
+<td><code>plan</code></td>
+<td>提示；有 bypass 的会话允许；否则 auto 可用时走分类器</td>
+</tr>
+<tr>
+<td><code>auto</code></td>
+<td>走分类器</td>
+</tr>
+<tr>
+<td><code>dontAsk</code></td>
+<td>拒绝</td>
+</tr>
+<tr>
+<td><code>bypassPermissions</code></td>
+<td>允许</td>
+</tr>
+</tbody>
+</table>
+<p><strong>受保护目录</strong>：<code>.git</code>、<code>.config/git</code>、<code>.vscode</code>、<code>.idea</code>、<code>.husky</code>、<code>.cargo</code>、<code>.devcontainer</code>、<code>.yarn</code>、<code>.mvn</code>、<code>.claude</code>（除 <code>.claude/worktrees</code>）。</p>
+<p><strong>受保护文件</strong>：<code>.gitconfig</code>、<code>.gitmodules</code>；shell 配置（<code>.bashrc</code>/<code>.zshrc</code>/<code>.profile</code>/<code>.envrc</code> 等）；包管理配置（<code>.npmrc</code>/<code>.yarnrc</code>/<code>.pnp.cjs</code>/<code>bunfig.toml</code> 等）；<code>.bazelrc</code> 等；<code>.pre-commit-config.yaml</code>/<code>lefthook.yml</code>；<code>gradle-wrapper.properties</code>/<code>maven-wrapper.properties</code>；<code>.devcontainer.json</code>；<code>.ripgreprc</code>/<code>pyrightconfig.json</code>；<code>.mcp.json</code>/<code>.claude.json</code>。</p>
+<p>在提示模式下，<code>.claude/</code> 写入的提示会提供 &ldquo;Yes, and allow Claude to edit its own settings for this session&rdquo;，一次批准后续该会话内 <code>.claude/</code> 写入不再提示。</p>
+<hr>
+<h2 id="实用提示">实用提示</h2>
+<ul>
+<li>&ldquo;复杂任务先进计划模式&rdquo;——可直接把项目默认设为 plan（<code>.claude/settings.json</code> 的 <code>defaultMode: &quot;plan&quot;</code>），或继续用 <code>/plan</code> 前缀单次进入。</li>
+<li>想少打字但仍要安全网，优先用 <strong>auto</strong> 而非 bypass。<code>/doctor</code> 会在支持的 provider 上建议把 auto 设为用户默认。</li>
+<li>查看当前权限规则与最近拒绝：会话内 <code>/permissions</code>（最近拒绝的可在 &ldquo;Recently denied&rdquo; 标签按 <code>r</code> 重试）。</li>
+<li>调整权限规则（如预批准常用只读命令减少提示），可用 <code>/update-config</code> 或 <code>/fewer-permission-prompts</code>。</li>
+</ul>
+<h2 id="文档来源">文档来源</h2>
+<ul>
+<li>权限模式主文档：https://code.claude.com/docs/en/permission-modes.md</li>
+<li>权限系统与规则：https://code.claude.com/docs/en/permissions.md</li>
+<li>auto 模式配置：https://code.claude.com/docs/en/auto-mode-config.md</li>
+<li>交互模式快捷键：https://code.claude.com/docs/en/interactive-mode.md</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+        
+        <p class="copyright-item">
+            <span><i class="fas fa-user"></i> : </span>
+            <span>麻吉麻社长 </span>
+        </p>
+        
+
+        
+        <p class="copyright-item">
+            <span><i class="fa fa-link"> : </i></span>
+            <span><a href=https://blog.mrbruce516.online/2026/claude-code-permission-modes/>https://blog.mrbruce516.online/2026/claude-code-permission-modes/</span>
+        </p>
+        
+
+        <p class="copyright-item lincese">
+            <span><i class="fa fa-copyright"> : </i>
+            本文采用
+            <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh">
+            知识共享署名-非商业性使用 4.0 国际许可协议
+            </a>进行许可</span>
+        </p>
+        
+    </div>
+
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://blog.mrbruce516.online/tags/claude-code/">
+                    #claude-code</a></span>
+            
+            <span class="tag"><a href="https://blog.mrbruce516.online/tags/ai/">
+                    #ai</a></span>
+            
+            <span class="tag"><a href="https://blog.mrbruce516.online/tags/%E6%9D%83%E9%99%90/">
+                    #权限</a></span>
+            
+            <span class="tag"><a href="https://blog.mrbruce516.online/tags/%E5%AE%89%E5%85%A8/">
+                    #安全</a></span>
+            
+            </section>
+        
+        
+        <section>
+            <span><a href="javascript:window.history.back();">back</a></span> ·
+            <span><a href="https://blog.mrbruce516.online/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://blog.mrbruce516.online/2026/lvm-commands/" class="prev" rel="prev" title="Linux LVM 创建命令速查"><i
+                class="iconfont icon-left"></i>&nbsp;Linux LVM 创建命令速查</a>
+        
+        
+    </div>
+
+    <div class="post-comment">
+        
+        
+        
+    
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+   <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2026</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://blog.mrbruce516.online/">麻吉麻社长</a> | </span> 
+         
+
+         
+        <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/mrbruce516/LeaveIt" target="_blank" rel="external nofollow">LeaveIt</a></span>
+   </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/mrbruce516/live2d-widget@1.0.3/autoload.js"></script>
+
+     </div>
+  </body>
+</html>

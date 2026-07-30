@@ -6,8 +6,36 @@
     <description>Recent content in Tags on 麻吉麻社长</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 23 Jul 2026 17:15:39 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jul 2026 23:09:02 +0800</lastBuildDate>
     <atom:link href="https://blog.mrbruce516.online/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ai</title>
+      <link>https://blog.mrbruce516.online/tags/ai/</link>
+      <pubDate>Thu, 30 Jul 2026 23:09:02 +0800</pubDate>
+      <guid>https://blog.mrbruce516.online/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Claude-Code</title>
+      <link>https://blog.mrbruce516.online/tags/claude-code/</link>
+      <pubDate>Thu, 30 Jul 2026 23:09:02 +0800</pubDate>
+      <guid>https://blog.mrbruce516.online/tags/claude-code/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>安全</title>
+      <link>https://blog.mrbruce516.online/tags/%E5%AE%89%E5%85%A8/</link>
+      <pubDate>Thu, 30 Jul 2026 23:09:02 +0800</pubDate>
+      <guid>https://blog.mrbruce516.online/tags/%E5%AE%89%E5%85%A8/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>权限</title>
+      <link>https://blog.mrbruce516.online/tags/%E6%9D%83%E9%99%90/</link>
+      <pubDate>Thu, 30 Jul 2026 23:09:02 +0800</pubDate>
+      <guid>https://blog.mrbruce516.online/tags/%E6%9D%83%E9%99%90/</guid>
+      <description></description>
+    </item>
     <item>
       <title>LVM</title>
       <link>https://blog.mrbruce516.online/tags/lvm/</link>
@@ -34,20 +62,6 @@
       <link>https://blog.mrbruce516.online/tags/agent/</link>
       <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
       <guid>https://blog.mrbruce516.online/tags/agent/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Ai</title>
-      <link>https://blog.mrbruce516.online/tags/ai/</link>
-      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
-      <guid>https://blog.mrbruce516.online/tags/ai/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Claude-Code</title>
-      <link>https://blog.mrbruce516.online/tags/claude-code/</link>
-      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
-      <guid>https://blog.mrbruce516.online/tags/claude-code/</guid>
       <description></description>
     </item>
     <item>

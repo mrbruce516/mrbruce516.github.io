@@ -6,8 +6,15 @@
     <description>Recent content in Claude-Code on 麻吉麻社长</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 15 Jul 2026 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jul 2026 23:09:02 +0800</lastBuildDate>
     <atom:link href="https://blog.mrbruce516.online/tags/claude-code/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Claude Code 权限模式详解</title>
+      <link>https://blog.mrbruce516.online/2026/claude-code-permission-modes/</link>
+      <pubDate>Thu, 30 Jul 2026 23:09:02 +0800</pubDate>
+      <guid>https://blog.mrbruce516.online/2026/claude-code-permission-modes/</guid>
+      <description>权限模式决定 Claude 在执行文件编辑、shell 命令、网络请求前&amp;quot;停下来问你&amp;quot;的频率。所有模式都以你的权限规则（allow / ask /</description>
+    </item>
     <item>
       <title>Claude Code 命令行活用指南</title>
       <link>https://blog.mrbruce516.online/2026/claude-code-guide/</link>
