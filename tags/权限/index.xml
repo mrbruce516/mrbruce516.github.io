@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>权限 on 麻吉麻社长</title>
-    <link>https://blog.mrbruce516.online/tags/%E6%9D%83%E9%99%90/</link>
+    <link>https://blog.mrbruce516.life/tags/%E6%9D%83%E9%99%90/</link>
     <description>Recent content in 权限 on 麻吉麻社长</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 30 Jul 2026 23:09:02 +0800</lastBuildDate>
-    <atom:link href="https://blog.mrbruce516.online/tags/%E6%9D%83%E9%99%90/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.mrbruce516.life/tags/%E6%9D%83%E9%99%90/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Claude Code 权限模式详解</title>
-      <link>https://blog.mrbruce516.online/2026/claude-code-permission-modes/</link>
+      <link>https://blog.mrbruce516.life/2026/claude-code-permission-modes/</link>
       <pubDate>Thu, 30 Jul 2026 23:09:02 +0800</pubDate>
-      <guid>https://blog.mrbruce516.online/2026/claude-code-permission-modes/</guid>
+      <guid>https://blog.mrbruce516.life/2026/claude-code-permission-modes/</guid>
       <description>权限模式决定 Claude 在执行文件编辑、shell 命令、网络请求前&amp;quot;停下来问你&amp;quot;的频率。所有模式都以你的权限规则（allow / ask /</description>
     </item>
   </channel>
